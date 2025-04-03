@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
-function App() {
+import { Box } from "src/components/mui";
+import Appbar from './components/tools/appBar.tsx';
+import AppRoutes from "./routers/appRouters.tsx";
+
+// Module not found: Error: Can't resolve './routers/app_routers.tsx' in '/Users/rea_wen/Desktop/code/deepheart_web/src'
+
+
+function AppLayout() {
+  const theme = useTheme();
+
+  // Automatically adapt to the height of AppBar
+  const autoHeight = {
+    ...theme.mixins.toolbar,
+    padding: '1.5rem',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment> {/* JSX expressions must have one parent element. */}
+      <Appbar />
+      <Box sx={autoHeight} />
+      <AppRoutes />
+    </React.Fragment>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <AppLayout />
+    </Router>
+  );
+}
