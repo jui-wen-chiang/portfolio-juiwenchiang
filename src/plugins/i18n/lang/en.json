@@ -1,0 +1,15 @@
+{
+    "test":{
+        "close": "close",
+        "welcome": "welcome"
+    },
+    "common":{
+        "close": "close",
+        "save":"save",
+        "cancel":"cancel"
+    },
+    "recordMood":{
+        "recordButton":"Write & Embrace Myself",
+        "recordTitle":"A Moment for Myself 💛"
+    }
+}
