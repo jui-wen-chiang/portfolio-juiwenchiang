@@ -8,6 +8,10 @@
         },
         "jsx": "react-jsx",
         "resolveJsonModule": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        // "moduleResolution": "node",
+        // "allowSyntheticDefaultImports": true,
+        // "skipLibCheck": true
     }
+
 }

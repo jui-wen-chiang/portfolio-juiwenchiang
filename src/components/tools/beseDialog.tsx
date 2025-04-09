@@ -1,22 +1,21 @@
 import { useTranslation } from "react-i18next";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button} from 'src/components/mui';
+import { BaseDialogProps } from "src/types/components/tools"
 
-import {
-    Dialog, DialogTitle, DialogContent, DialogActions, Box, Button
-} from 'src/components/mui';
-
-
-export default function ModalDialog({ open, handleClose, title, children }) {
-    const { t } = useTranslation(); // 取得翻譯函式
+export default function BaseDialog({ isOpen, closeDialog, title, content }: BaseDialogProps) {
+    // const { t } = useTranslation();
 
     return (
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={isOpen} onClose={closeDialog}>
             <DialogTitle>{title}</DialogTitle>
             <DialogContent>
-                <h2>{children}</h2>
+                <p>{content}</p>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>{t("save")}</Button>
+                <Button onClick={closeDialog} color="primary">
+                    Close
+                </Button>
             </DialogActions>
         </Dialog>
     );
-}
+};

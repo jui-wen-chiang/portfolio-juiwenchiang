@@ -1,11 +1,9 @@
 import * as React from 'react';
-import TestPage from "../mocks/page/test";
+import { RouteConfig } from "src/types/router";
 
-export interface RouteConfig {
-  path: string;
-  name: string;
-  element: React.ReactNode;
-}
+import TimelinePage from "src/views/timeline";
+import TestPage from "src/mocks/page/test";
+
 
 export const ROUTES: RouteConfig[] = [
   // {
@@ -28,6 +26,11 @@ export const ROUTES: RouteConfig[] = [
   //   name: "Personality",
   //   element: React.createElement(PersonalityPage)
   // },
+  {
+    path: "/timeline",
+    name: "TimelineView",
+    element: React.createElement(TimelinePage)
+  },
   {
     path: "/test",
     name: "TestPage",

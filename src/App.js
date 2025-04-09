@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 
 import { Box } from "src/components/mui";
 import Appbar from './components/tools/appBar.tsx';
-import AppRoutes from "./routers/appRouters.tsx";
+import AppRoutes from "./router/appRouters.tsx";
 
 // Module not found: Error: Can't resolve './routers/app_routers.tsx' in '/Users/rea_wen/Desktop/code/deepheart_web/src'
 

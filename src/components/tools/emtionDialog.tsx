@@ -28,7 +28,7 @@ export default function ModalDialog({ open, handleClose }) {
 
     return (
         <Dialog open={open} onClose={handleClose} sx={{ test }}>
-            <DialogTitle>{t("recordMood.recordTitle")}</DialogTitle>
+            {/* <DialogTitle>{t("recordMood.recordTitle")}</DialogTitle> */}
             <DialogContent>
                 <p>提醒可以前往setting page 設定情緒種類。</p>
                 {/* <Box>
@@ -36,8 +36,8 @@ export default function ModalDialog({ open, handleClose }) {
                 </Box> */}
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>{t("common.save")}</Button>
-                <Button onClick={handleClose}>{t("common.cancel")}</Button>
+                {/* <Button onClick={handleClose}>{t("common.save")}</Button>
+                <Button onClick={handleClose}>{t("common.cancel")}</Button> */}
             </DialogActions>
         </Dialog>
     );
