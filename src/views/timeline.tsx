@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import { Container, Box, Button, IconButton, FormControl, MenuItem,Select } from 'src/components/mui';
+import { Container, Box, Button, IconButton, FormControl, MenuItem, Select } from 'src/components/mui';
 import { RatioRowContainer, ColPageContainer, ControlButton } from 'src/assets/styles/commonStyles'
 
 import { Chrono } from 'react-chrono';
@@ -156,15 +156,19 @@ export default function TimelinePage() {
         <RatioRowContainer ratio={[1, 9]}>
             {/* Customize Control Bar */}
             <ColPageContainer>
-                <ControlButton aria-label="previous" onClick={handlePrev}>
-                    <KeyboardArrowUpRoundedIcon />
+                <ControlButton aria-label="previous" size="large" onClick={handlePrev}>
+                    <KeyboardArrowUpRoundedIcon fontSize="inherit" />
                 </ControlButton>
-                <IconButton aria-label="next" onClick={handleNext}>
-                    <KeyboardArrowDownRoundedIcon />
-                </IconButton>
-                <IconButton aria-label="Play or Stop" onClick={() => setIsPlaying((prev) => !prev)}>
-                    {isPlaying ? <PauseCircleFilledRoundedIcon /> : <PlayCircleRoundedIcon />}
-                </IconButton>
+                <ControlButton aria-label="next" size="large" onClick={handleNext}>
+                    <KeyboardArrowDownRoundedIcon fontSize="inherit" />
+                </ControlButton>
+                <ControlButton aria-label="Play or Stop" size="large"
+                    onClick={() => setIsPlaying((prev) => !prev)}>
+                    {isPlaying
+                        ? <PauseCircleFilledRoundedIcon fontSize="inherit" />
+                        : <PlayCircleRoundedIcon fontSize="inherit" />}
+                </ControlButton>
+
                 <FormControl>
                     <Select
                         value={activeIndex}

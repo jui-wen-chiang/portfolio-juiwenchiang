@@ -8,9 +8,15 @@ import AppRoutes from "./router/appRouters.tsx";
 
 // Module not found: Error: Can't resolve './routers/app_routers.tsx' in '/Users/rea_wen/Desktop/code/deepheart_web/src'
 
+// import { ThemeProvider, CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline } from "@mui/material/styles";
+// import theme from './assets/styles/theme';
+import theme from './theme/index';
+
 
 function AppLayout() {
   const theme = useTheme();
+  console.log('Current theme:', theme.palette.violet.light); // 看看有沒有 violet
 
   // Automatically adapt to the height of AppBar
   const autoHeight = {
@@ -29,8 +35,10 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <Router>
-      <AppLayout />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <AppLayout />
+      </Router>
+    </ThemeProvider>
   );
 }

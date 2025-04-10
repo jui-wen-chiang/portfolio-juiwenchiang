@@ -1,8 +1,5 @@
 import { styled } from "@mui/material/styles";
-// import styled from "styled-components";
-import { Container, Box, Card, Button,IconButton } from "src/components/mui";
-import * as styles from "./componentStyle";
-import React, { ReactNode, Children } from "react";
+import { Container, Box, Card, Button, IconButton } from "src/components/mui";
 
 
 export const fullSize = {
@@ -22,9 +19,11 @@ export const colFlexContainer = {
     'gap': '1rem'
 }
 
-export const ControlButton = styled(IconButton)({
-    color:'bule',
-    '&:active': {
-        color: 'red',
-      }
-});
+// sx
+// export const leftColumn: React.CSSProperties = {
+//     flex: 2
+// };
+
+// export const rightColumn: React.CSSProperties = {
+//     flex: 1,
+// };
