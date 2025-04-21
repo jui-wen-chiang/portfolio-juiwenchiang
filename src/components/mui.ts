@@ -14,3 +14,4 @@ export { default as DialogActions } from "@mui/material/DialogActions";
 export { default as Card } from "@mui/material/Card";
 export { default as FormControl } from "@mui/material/FormControl";
 export { default as Select } from "@mui/material/Select";
+export { default as LinearProgress } from '@mui/material/LinearProgress';;

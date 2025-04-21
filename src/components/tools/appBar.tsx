@@ -43,10 +43,10 @@ export default function Appbar() {
         <StyledToolbar variant="dense" disableGutters>
 
           {/* Pages Button */}
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center'}}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, px: 0, gap:2}}>
               {ROUTES.map(({ path, name }) => (
-                <Button key={path} variant="text" color="info" size="small" onClick={() => navigate(path)}>
+                <Button key={path} color="info" size="small" onClick={() => navigate(path)}>
                   {name}
                 </Button>
               ))}
@@ -54,7 +54,7 @@ export default function Appbar() {
           </Box>
 
           {/* Sign Button */}
-          <Box
+          {/* <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
               gap: 1,
@@ -63,7 +63,7 @@ export default function Appbar() {
           >
             <Button variant="text" size="small">Sign in</Button>
             <Button variant="contained" size="small">Sign up</Button>
-          </Box>
+          </Box> */}
 
 
           {/* Is responsive, using a Drawer for small screens. */}
@@ -78,7 +78,7 @@ export default function Appbar() {
                 },
               }}
             >
-              <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
+              {/* <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
                 <MenuItem>Item</MenuItem>
                 <Divider sx={{ my: 3 }} />
                 <MenuItem>
@@ -91,7 +91,7 @@ export default function Appbar() {
                     Sign in
                   </Button>
                 </MenuItem>
-              </Box>
+              </Box> */}
             </Drawer>
           </Box>
         </StyledToolbar>

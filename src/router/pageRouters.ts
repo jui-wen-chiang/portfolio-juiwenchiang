@@ -4,6 +4,8 @@ import { RouteConfig } from "src/types/router";
 import TimelinePage from "src/views/timeline";
 import TestPage from "src/mocks/page/test";
 
+import TimelineView from "src/views/TimelineView";
+
 
 export const ROUTES: RouteConfig[] = [
   // {
@@ -27,10 +29,15 @@ export const ROUTES: RouteConfig[] = [
   //   element: React.createElement(PersonalityPage)
   // },
   {
-    path: "/timeline",
+    path: "/timelineview",
     name: "TimelineView",
-    element: React.createElement(TimelinePage)
+    element: React.createElement(TimelineView)
   },
+  // {
+  //   path: "/timeline",
+  //   name: "timeline",
+  //   element: React.createElement(TimelinePage)
+  // },
   {
     path: "/test",
     name: "TestPage",

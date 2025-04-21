@@ -16,8 +16,6 @@ import theme from './theme/index';
 
 function AppLayout() {
   const theme = useTheme();
-  console.log('Current theme:', theme.palette.violet.light); // 看看有沒有 violet
-
   // Automatically adapt to the height of AppBar
   const autoHeight = {
     ...theme.mixins.toolbar,

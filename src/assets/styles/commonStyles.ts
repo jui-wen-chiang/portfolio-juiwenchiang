@@ -24,11 +24,17 @@ export const RatioRowContainer = styled(Container, {
 export const ColPageContainer = styled(Container)({
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
+});
+
+export const ViewLayout = styled(Container)({
+    ...base.fullSize,
+    display: 'flex',
+    alignItems: 'center'
 });
 
 export const ControlButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.violet.main,
+    color: theme.palette.primary.main,
     'border-radius': '5rem',
     'font-size':'3rem',
 }));

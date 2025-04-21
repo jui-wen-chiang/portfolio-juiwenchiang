@@ -1,28 +1,30 @@
-/* Custom progress bar animation */
+/* 動畫：由上往下填滿 */
 @keyframes fillProgress {
   from {
-    width: 0%;
+    transform: translateY(-100%);
   }
   to {
-    width: 100%;
+    transform: translateY(0%);
   }
 }
 
-/* .progress-bar {
-  animation: fillProgress linear forwards;
-} */
 .progress-bar {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: gray;
-  overflow: hidden;
+  top: 0;           /* 從頂部開始 */
+  /* right: 0;         可以放在右邊，也可 left: 0 放左邊 */
+  left: 0 ;
+  width: 0.5rem;       /* 縮成細條，變成垂直進度條 */
+  height: 100%;     /* 撐滿整張卡片的高度 */
+  max-height:100%;
+  background: gray; /* 背景為進度軌道 */
+  board-round:5rem;
 }
 
 .progress-bar .filling {
+  width: 100%;
   height: 100%;
+  min-height:100%;
   background: blue;
   animation: fillProgress 2000ms linear forwards;
+  transform: translateY(-100%); /* 初始位置隱藏在上方*/
 }
