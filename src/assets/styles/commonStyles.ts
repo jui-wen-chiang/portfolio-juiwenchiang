@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { RatioRowProps } from "src/types/styles/commonStyle"
 import * as base from "./baseStyle";
 
-import { Container, Box, Card, Button,IconButton } from "src/components/mui";
+import { Container, Box, Card, Button,IconButton } from "src/components/mui/components";
 
 
 export const RatioRowContainer = styled(Container, {

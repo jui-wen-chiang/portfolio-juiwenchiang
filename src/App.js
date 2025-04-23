@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
-import { Box } from "src/components/mui";
+import { Box } from "src/components/mui/components";
 import Appbar from './components/tools/appBar.tsx';
 import AppRoutes from "./router/appRouters.tsx";
 
@@ -12,6 +12,9 @@ import AppRoutes from "./router/appRouters.tsx";
 import { ThemeProvider, CssBaseline } from "@mui/material/styles";
 // import theme from './assets/styles/theme';
 import theme from './theme/index';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function AppLayout() {

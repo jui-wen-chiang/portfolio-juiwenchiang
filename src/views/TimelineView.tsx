@@ -1,53 +1,19 @@
 import * as React from 'react';
 import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef } from "react";
-
-import { Container, Box, Button } from 'src/components/mui';
-import { RatioRowContainer, ColPageContainer, ControlButton, ViewLayout } from 'src/assets/styles/commonStyles'
-import { TimelineContainer, VerticalLine, TimeLinePoint, ItemCard } from 'src/assets/styles/views/Timeline'
-
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActionArea from '@mui/material/CardActionArea';
-import Chip from '@mui/material/Chip';
-
-
-
-import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
-
-import Typography from '@mui/material/Typography';
-
+// data
 import { timelineData } from "src/data/timeline"
-import { gap, padding, width } from '@mui/system';
-import { red } from '@mui/material/colors';
+// style
+import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { TimelineContainer, VerticalLine, TimeLinePoint } from 'src/assets/styles/views/Timeline'
+import { Container, Box, Typography, Card, CardContent, CardMedia, CardActionArea } from 'src/components/mui/components';
+import { AirplanemodeActiveIcon } from 'src/components/mui/icons';
+
 
 export default function TimelineView() {
     const { t } = useTranslation(); // 取得翻譯函式
 
 
-    // const timelineData = [
-    //     {
-    //         title: "University Student",
-    //         subtitle: "Art and Design",
-    //         year: "2023",
-    //         month: "09",
-    //         country: "Taiwan",
-    //         location: "Hualien",
-    //         image: {
-    //             // url:"",
-    //             url: "/test.png",
-    //             lable: "history"
-    //         },
-    //         activity: "Start the new academic term.",
-    //         details: ""
-    //     },
-    //     { date: "2020", title: "開始學程式", description: "第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。第一次接觸 HTML、CSS、JS。" },
-    //     { date: "2021", title: "進階學習", description: "學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。學了 React 和 Vue，開始做 side project。" },
-    //     { date: "2022", title: "實習工作", description: "加入新創公司實習，做前端開發。" },
-    //     { date: "2023", title: "正職工作", description: "成為全職前端工程師。" },
-    // ];
     const [currentStep, setCurrentStep] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const containerRef = useRef(null);
@@ -203,11 +169,6 @@ export default function TimelineView() {
                                 </div>
                             </div>
                         </Container>
-
-
-                        // <div key={index} style={styles.itemContainer} >
-
-                        // </div>
                     );
                 })}
             </TimelineContainer>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Box, Button, IconButton, FormControl, MenuItem, Select } from 'src/components/mui';
+import { Container, Box, Button, IconButton, FormControl, MenuItem, Select } from 'src/components/mui/components';
 import { RatioRowContainer, ColPageContainer, ControlButton } from 'src/assets/styles/commonStyles'
 
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';

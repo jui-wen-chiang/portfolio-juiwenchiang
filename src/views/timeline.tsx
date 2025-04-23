@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // component
-import { FormControl, MenuItem, Select } from 'src/components/mui';
+import { FormControl, MenuItem, Select } from 'src/components/mui/components';
 import { RatioRowContainer, ColPageContainer, ControlButton } from 'src/assets/styles/commonStyles'
 import { Chrono } from 'react-chrono';
 // icon

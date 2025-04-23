@@ -12,3 +12,13 @@ export interface timelineItem {
     activity:any;
     details:any;
 }
+
+export interface galleryItem {
+    title: string;
+    subtitle: string;
+    year: string;
+    cardImage: {
+        url: string;
+        lable: string;
+    }
+}

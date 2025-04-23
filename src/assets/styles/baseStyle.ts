@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Container, Box, Card, Button, IconButton } from "src/components/mui";
+import { Container, Box, Card, Button, IconButton } from "src/components/mui/components";
 
 
 export const fullSize = {

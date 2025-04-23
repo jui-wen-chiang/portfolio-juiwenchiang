@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import {
     Dialog, DialogTitle, DialogContent, DialogActions, Box, Button
-} from 'src/components/mui';
+} from 'src/components/mui/components';
 // import RadarChart from 'src/components/charts/radar'
 // import { BasicBox } from 'src/assets/styles/commonStyles'
 

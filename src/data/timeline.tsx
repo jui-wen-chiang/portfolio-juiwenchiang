@@ -1,4 +1,4 @@
-import { timelineItem } from "src/types/data/timeline"
+import { timelineItem } from "src/types/data/viewsData"
 
 export const timelineData: Array<timelineItem> = [
     {

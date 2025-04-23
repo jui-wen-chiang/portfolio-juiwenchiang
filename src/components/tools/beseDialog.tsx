@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button} from 'src/components/mui';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button} from 'src/components/mui/components';
 import { BaseDialogProps } from "src/types/components/tools"
 
 export default function BaseDialog({ isOpen, closeDialog, title, content }: BaseDialogProps) {
