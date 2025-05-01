@@ -1,6 +1,3 @@
-import { timelineItem } from "src/types/data/viewsData"
-// export const timelineData: Array<timelineItem> = [
-
 export const galleryData = [
     {
         title: "Season",

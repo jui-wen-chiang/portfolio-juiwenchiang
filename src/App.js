@@ -15,6 +15,7 @@ import theme from './theme/index';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import '@xyflow/react/dist/style.css';
 
 
 function AppLayout() {

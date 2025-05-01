@@ -22,3 +22,16 @@ export interface galleryItem {
         lable: string;
     }
 }
+
+interface skilltreeNode {
+    id: string;
+    data: { label: string };
+    position: { x: number; y: number };
+    type: string;
+    expanded?: boolean;
+    childNodes?: Array<any>;
+}
+
+export interface skilltreeItem extends skilltreeNode{
+    childNodes?: Array<skilltreeNode>;
+}

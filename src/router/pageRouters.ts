@@ -4,9 +4,12 @@ import { RouteConfig } from "src/types/router";
 import TimelinePage from "src/views/timeline";
 import TestPage from "src/mocks/page/test";
 
+import SkillsView from "src/views/SkillsView";
 import TimelineView from "src/views/TimelineView";
 import GalleryView from "src/views/GalleryView";
 
+
+import MindMapView from "src/views/MindMapView";
 
 
 export const ROUTES: RouteConfig[] = [
@@ -30,12 +33,23 @@ export const ROUTES: RouteConfig[] = [
   //   name: "Personality",
   //   element: React.createElement(PersonalityPage)
   // },
+  //  mindMapView
+  {
+    path: "/MindMapView",
+    name: "MindMapView",
+    element: React.createElement(MindMapView)
+  },
+  // {
+  //   path: "/skills",
+  //   name: "SkillsView",
+  //   element: React.createElement(SkillsView)
+  // },
   {
     path: "/timeline",
     name: "TimelineView",
     element: React.createElement(TimelineView)
   },
-  
+
   // {
   //   path: "/timeline",
   //   name: "timeline",
