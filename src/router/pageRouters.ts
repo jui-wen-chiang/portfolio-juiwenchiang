@@ -10,6 +10,7 @@ import GalleryView from "src/views/GalleryView";
 
 
 import MindMapView from "src/views/MindMapView";
+import AboutView from "src/views/About";
 
 
 export const ROUTES: RouteConfig[] = [
@@ -18,11 +19,11 @@ export const ROUTES: RouteConfig[] = [
   //   name: "Home",
   //   element: React.createElement(HomePage)
   // },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   element: React.createElement(AboutPage)
-  // },
+  {
+    path: "/about",
+    name: "About",
+    element: React.createElement(AboutView)
+  },
   // {
   //   path: "/dashboard",
   //   name: "Dashboard",
@@ -33,7 +34,6 @@ export const ROUTES: RouteConfig[] = [
   //   name: "Personality",
   //   element: React.createElement(PersonalityPage)
   // },
-  //  mindMapView
   {
     path: "/MindMapView",
     name: "MindMapView",
