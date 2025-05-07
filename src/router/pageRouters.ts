@@ -11,6 +11,7 @@ import GalleryView from "src/views/GalleryView";
 
 import MindMapView from "src/views/MindMapView";
 import AboutView from "src/views/About";
+import ProjectsView from "src/views/ProjectView";
 
 
 export const ROUTES: RouteConfig[] = [
@@ -23,6 +24,11 @@ export const ROUTES: RouteConfig[] = [
     path: "/about",
     name: "About",
     element: React.createElement(AboutView)
+  },
+  {
+    path: "/projects",
+    name: "Projects",
+    element: React.createElement(ProjectsView)
   },
   // {
   //   path: "/dashboard",

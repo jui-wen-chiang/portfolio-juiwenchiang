@@ -20,6 +20,8 @@ export { default as DialogContent } from "@mui/material/DialogContent";
 export { default as DialogActions } from "@mui/material/DialogActions";
 
 export { default as Chip } from "@mui/material/Chip";
+export { default as Avatar } from "@mui/material/Avatar";
+
 export { default as FormControl } from "@mui/material/FormControl";
 export { default as Select } from "@mui/material/Select";
 export { default as LinearProgress } from '@mui/material/LinearProgress';
