@@ -10,9 +10,9 @@ import AboutView from "src/views/About";
 import ProjectsView from "src/views/ProjectView";
 
 const ROUTES:Array<any> = [
-  { path: 'home', name: 'Home' },
+  // { path: 'home', name: 'Home' },
   { path: 'about', name: 'About' },
-  { path: 'project', name: 'Project' },
+  { path: 'projects', name: 'Project' },
   { path: 'mindmap', name: 'mindmap' },
   { path: 'timeline', name: 'timeline' },
   { path: 'gallery', name: 'gallery' },
