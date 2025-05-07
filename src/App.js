@@ -1,22 +1,18 @@
 import * as React from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
+// theme
 import { useTheme } from "@mui/material/styles";
-
-import { Box } from "src/components/mui/components";
-import Appbar from './components/tools/appBar.tsx';
-import AppRoutes from "./router/appRouters.tsx";
-
-// Module not found: Error: Can't resolve './routers/app_routers.tsx' in '/Users/rea_wen/Desktop/code/deepheart_web/src'
-
-// import { ThemeProvider, CssBaseline } from '@mui/material';
-import { ThemeProvider, CssBaseline } from "@mui/material/styles";
-// import theme from './assets/styles/theme';
+import { ThemeProvider } from "@mui/material/styles";
 import theme from './theme/index';
-
+// views & Router
+import { BrowserRouter as Router } from "react-router-dom";
+import Appbar from './components/tools/appBar.tsx';
+import IndexViews from "src/views/IndexViews";
+import AppRoutes from "./router/appRouters.tsx";
+// style
+import { Box } from "src/components/mui/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@xyflow/react/dist/style.css';
-
 
 function AppLayout() {
   const theme = useTheme();
@@ -27,10 +23,11 @@ function AppLayout() {
   };
 
   return (
-    <React.Fragment> {/* JSX expressions must have one parent element. */}
+    <React.Fragment>
       <Appbar />
       <Box sx={autoHeight} />
-      <AppRoutes />
+      {/* <AppRoutes/> */}
+      <IndexViews />
     </React.Fragment>
   );
 }

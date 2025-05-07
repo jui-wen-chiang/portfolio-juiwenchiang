@@ -7,6 +7,7 @@ import ROUTES from "src/router/pageRouters";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
+  flexDirection: "column",
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
@@ -27,72 +28,56 @@ export default function Appbar() {
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <AppBar
       position="fixed"
       enableColorOnDark
       sx={{
+        top: 0,
+        left: 0,
+        bottom: 0,
+        width: '10%',
         boxShadow: 0,
         bgcolor: 'transparent',
         backgroundImage: 'none',
-        mt: 'calc(var(--template-frame-height, 0px) + 28px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-
-          {/* Pages Button */}
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center'}}>
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, px: 0, gap:2}}>
-              {ROUTES.map(({ path, name }) => (
+          <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex', display: 'flex', alignItems: 'center', flexDirection: "column" }, px: 0, gap: 2 }}>
+              {/* {ROUTES.map(({ path, name }) => (
                 <Button key={path} color="info" size="small" onClick={() => navigate(path)}>
                   {name}
                 </Button>
-              ))}
+              ))} */}
+              {ROUTES.map(({ path, name }) => (
+              <Button key={path} color="info" size="small" onClick={() => handleScroll(path)}>
+                {name}
+              </Button>
+            ))}
             </Box>
           </Box>
-
-          {/* Sign Button */}
-          {/* <Box
+          <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: 'none', md: 'flex', flexDirection: "column" },
               gap: 1,
               alignItems: 'center',
             }}
           >
             <Button variant="text" size="small">Sign in</Button>
             <Button variant="contained" size="small">Sign up</Button>
-          </Box> */}
-
-
-          {/* Is responsive, using a Drawer for small screens. */}
-          <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
-            <Drawer
-              anchor="top"
-              open={open}
-              onClose={toggleDrawer(false)}
-              PaperProps={{
-                sx: {
-                  top: 'var(--template-frame-height, 0px)',
-                },
-              }}
-            >
-              {/* <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
-                <MenuItem>Item</MenuItem>
-                <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
-              </Box> */}
-            </Drawer>
           </Box>
         </StyledToolbar>
       </Container>
