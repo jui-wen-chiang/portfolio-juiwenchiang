@@ -12,7 +12,7 @@ const barContainer = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 };
 
 const NavBar = styled(Toolbar)(({ theme }) => ({

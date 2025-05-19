@@ -9,15 +9,17 @@ import MindMapView from "src/views/MindMapView";
 import AboutView from "src/views/About";
 import ProjectsView from "src/views/ProjectView";
 
+// Single Page Application
 const ROUTES:Array<any> = [
-  // { path: 'home', name: 'Home' },
+  { path: 'home', name: 'Home' },
   { path: 'about', name: 'About' },
   { path: 'projects', name: 'Project' },
-  { path: 'mindmap', name: 'mindmap' },
-  { path: 'timeline', name: 'timeline' },
+  // { path: 'mindmap', name: 'mindmap' },
+  // { path: 'timeline', name: 'timeline' },
   { path: 'gallery', name: 'gallery' },
 ];
 
+// multiple pages
 // const ROUTES: RouteConfig[] = [
 //   // {
 //   //   path: "/",

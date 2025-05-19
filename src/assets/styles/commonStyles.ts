@@ -30,7 +30,7 @@ export const ColPageContainer = styled(Container)({
 export const ViewLayout = styled(Container)({
     ...base.fullSize,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
 });
 
 export const ControlButton = styled(Button)(({ theme }) => ({

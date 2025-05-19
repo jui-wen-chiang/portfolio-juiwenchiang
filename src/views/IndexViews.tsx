@@ -1,4 +1,6 @@
-import { Box } from 'src/components/mui/components';
+import { Container, Box } from 'src/components/mui/components';
+import HomeView from 'src/views/Home';
+
 import AboutView from 'src/views/About';
 import ProjectsView from 'src/views/ProjectView';
 import MindMapView from 'src/views/MindMapView';
@@ -7,7 +9,10 @@ import GalleryView from 'src/views/GalleryView';
 
 export default function IndexViews() {
   return (
-    <Box sx={{ px: 2 }}>
+    <Box>
+      <Box id="home" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+        <HomeView />
+      </Box>
       <Box id="about" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <AboutView />
       </Box>

@@ -9,26 +9,25 @@ import Appbar from './components/tools/appBar.tsx';
 import IndexViews from "src/views/IndexViews";
 import AppRoutes from "./router/appRouters.tsx";
 // style
-import { Box } from "src/components/mui/components";
+import { Container,Box } from "src/components/mui/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@xyflow/react/dist/style.css';
-
 function AppLayout() {
   const theme = useTheme();
   // Automatically adapt to the height of AppBar
   const autoHeight = {
     ...theme.mixins.toolbar,
-    padding: '1.5rem',
+    padding: '5rem',
   };
 
   return (
-    <React.Fragment>
+    <Container>
       <Appbar />
-      <Box sx={autoHeight} />
+      {/* <Box sx={autoHeight}/> */}
       {/* <AppRoutes/> */}
-      <IndexViews />
-    </React.Fragment>
+      <IndexViews/>
+    </Container>
   );
 }
 

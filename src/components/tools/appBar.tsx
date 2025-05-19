@@ -33,7 +33,7 @@ export default function Appbar() {
                 {name}
               </Button>
             ))}
-            <Button variant="contained" size="small">Sign in</Button>
+            {/* <Button variant="contained" size="small">Sign in</Button> */}
           </NavItems>
         </NavBar>
       </Container>
