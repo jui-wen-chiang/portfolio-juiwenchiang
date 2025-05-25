@@ -31,7 +31,7 @@ const box2: React.CSSProperties = {
     // backgroundColor: 'green',
     'display': 'flex',
     marginLeft: '-5rem',
-    opacity: 0.6,
+    // opacity: 0.6,
 };
 
 const contant: React.CSSProperties = {
@@ -99,17 +99,19 @@ export default function ProjectsView() {
                                         })}
                                     </Typography>
                                 </CardContent>
-                                <CardActions sx={{ margin: 0, padding: '0 8px' }}>
+                                {/* <CardActions sx={{ margin: 0, padding: '0 8px' }}>
                                     <Button size="small">Learn More</Button>
-                                </CardActions>
+                                </CardActions> */}
                             </Card>
                         </Box>
                         <Box sx={box2}>
                             <Box
                                 component="img"
-                                sx={{ padding: '1rem', width: '100%' }}
+                                sx={{
+                                    padding: '1rem', width: '100%', borderRadius: '2rem'
+                                }}
                                 alt="The house from the offer."
-                                src="/testimg.jpg"
+                                src={item.image}
                             />
                         </Box>
                     </Container>
