@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { useTransition, animated } from '@react-spring/web'
 import { ViewLayout } from 'src/assets/styles/commonStyles'
-import { Container, Box, Button, Typography } from 'src/components/mui/components';
+import { Container, Box, Button, Typography, IconButton } from 'src/components/mui/components';
 import ReactEcharts from "echarts-for-react";
+import { SchoolIcon, GitHubIcon,LinkedInIcon,EmailRoundedIcon } from 'src/components/mui/icons';
 
 const mainT: React.CSSProperties = {
     minWidth: '100px',
@@ -73,7 +74,7 @@ export default function AboutView() {
                     {
                         type: 'text',
                         // left: 'left',
-                        right:'0',
+                        right: '0',
                         top: 'center',
                         style: {
                             text: 'Jui-Wen Chiang',
@@ -141,16 +142,20 @@ export default function AboutView() {
     return (
         <ViewLayout>
             <Container sx={{ padding: '10rem' }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column',padding: '0 0 1rem 0'}}>
-                    <Typography sx={{padding:'1rem 0',  fontSize:'1.5rem'}}>Hello, I'm</Typography>
-                    <Typography variant="h1" sx={{fontSize:'4rem'}}>Jui-Wen Chiang</Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', padding: '0 0 1rem 0' }}>
+                    <Typography sx={{ padding: '1rem 0', fontSize: '1.5rem' }}>Hello, I'm</Typography>
+                    <Typography variant="h1" sx={{ fontSize: '4rem' }}>Jui-Wen Chiang</Typography>
                     {/* <MyNmae /> */}
-                    <Typography sx={{padding:'1rem 0', fontSize:'1.5rem'}}>
-                        A Full Stack Developer and UI/UX designer
+                    <Typography sx={{ padding: '1rem 0', fontSize: '1.5rem' }}>
+                        A Full Stack Developer and UI/UX designer.
                     </Typography>
                 </Box>
-                <Button variant="contained" size="small">Get Resume</Button>
-
+                <Box sx={{ display: 'flex', padding: '0 0 1rem 0' }}>
+                    <Button variant="contained" size="small" sx={{padding:'1rem'}}>Get Resume</Button>
+                    <IconButton aria-label="go to my Linkedin" color="primary" sx={{padding:'1rem'}}> <LinkedInIcon /></IconButton>
+                    <IconButton aria-label="get in touch" color="primary" sx={{padding:'1rem'}}> <EmailRoundedIcon /></IconButton>
+                    <IconButton aria-label="go to my Github" color="primary" sx={{padding:'1rem'}}> <GitHubIcon /></IconButton>
+                </Box>
                 {/* <div style={mainT}>
                     {transitions(({ innerHeight, ...rest }, item) => (
                         <animated.div  {...(rest as any)} className={transitionsItemT} style={rest} onClick={reset}>

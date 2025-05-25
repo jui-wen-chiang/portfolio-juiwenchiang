@@ -6,3 +6,8 @@ export { default as AirplanemodeActiveIcon } from '@mui/icons-material/Airplanem
 
 export { default as SchoolIcon } from  '@mui/icons-material/School';
 export { default as WorkIcon } from '@mui/icons-material/Work';
+
+// brand
+export { default as GitHubIcon } from '@mui/icons-material/GitHub';
+export { default as LinkedInIcon } from '@mui/icons-material/LinkedIn';
+export { default as EmailRoundedIcon } from '@mui/icons-material/EmailRounded';
