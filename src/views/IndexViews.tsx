@@ -9,6 +9,8 @@ import TimelinePage from 'src/views/timeline';
 
 import GalleryView from 'src/views/GalleryView';
 import ExperienceView from 'src/views/ExperienceView';
+import FooterView from 'src/views/Footer';
+
 
 export default function IndexViews() {
   return (
@@ -37,6 +39,11 @@ export default function IndexViews() {
       {/* <Box id="gallery" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <GalleryView />
       </Box> */}
+      <Box id="footer" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+        <FooterView />
+      </Box>
+
+
     </Box>
   );
 }
