@@ -5,7 +5,10 @@ import AboutView from 'src/views/About';
 import ProjectsView from 'src/views/ProjectView';
 import MindMapView from 'src/views/MindMapView';
 import TimelineView from 'src/views/TimelineView';
+import TimelinePage from 'src/views/timeline';
+
 import GalleryView from 'src/views/GalleryView';
+import ExperienceView from 'src/views/ExperienceView';
 
 export default function IndexViews() {
   return (
@@ -16,18 +19,24 @@ export default function IndexViews() {
       <Box id="about" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <AboutView />
       </Box>
+      <Box id="experience" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+        <ExperienceView />
+      </Box>
+      {/* <Box id="timeline" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+        <TimelinePage />
+      </Box> */}
+      {/* <Box id="timeline" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+        <TimelineView />
+      </Box> */}
       <Box id="projects" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <ProjectsView />
       </Box>
-      <Box id="mindmap" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+      {/* <Box id="mindmap" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <MindMapView />
-      </Box>
-      <Box id="timeline" sx={{ scrollMarginTop: '80px', mb: 8 }}>
-        <TimelineView />
-      </Box>
-      <Box id="gallery" sx={{ scrollMarginTop: '80px', mb: 8 }}>
+      </Box> */}
+      {/* <Box id="gallery" sx={{ scrollMarginTop: '80px', mb: 8 }}>
         <GalleryView />
-      </Box>
+      </Box> */}
     </Box>
   );
 }

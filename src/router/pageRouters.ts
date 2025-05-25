@@ -13,10 +13,11 @@ import ProjectsView from "src/views/ProjectView";
 const ROUTES:Array<any> = [
   { path: 'home', name: 'Home' },
   { path: 'about', name: 'About' },
+  { path: 'experience', name: 'Experience' },
+  // { path: 'timeline', name: 'timeline' },
   { path: 'projects', name: 'Project' },
   // { path: 'mindmap', name: 'mindmap' },
-  // { path: 'timeline', name: 'timeline' },
-  { path: 'gallery', name: 'gallery' },
+  // { path: 'gallery', name: 'gallery' },
 ];
 
 // multiple pages
