@@ -70,22 +70,23 @@ export default function ProjectsView() {
 
     return (
         <ViewLayout sx={{ flexDirection: 'column' }}>
+            <Typography variant="caption" component='h2'>PROJECTS</Typography>
             {projectData.map((item, index) => {
                 return (
                     <Container sx={BlackContainer}>
                         <Box sx={box1}>
                             <Card>
                                 <CardContent sx={{ padding: '8px 8px 8px 8px' }}>
-                                    <Typography sx={{ fontSize: '0.2rem' }} >
+                                    <Typography variant="subtitle2" >
                                         {item.type}
                                     </Typography>
-                                    <Typography variant="h4" sx={{ padding: '0.4rem 0' }}>
+                                    <Typography variant="h2">
                                         {item.title}
                                     </Typography>
                                     <Typography variant="body1" sx={body}>
                                         {item.summary}
                                     </Typography>
-                                    <Typography sx={iconsList}>
+                                    <Typography variant="body2" sx={iconsList}>
                                         {item.icons.map((icon, index) => {
                                             return (
                                                 <Chip
@@ -93,7 +94,10 @@ export default function ProjectsView() {
                                                     label={icon.lable}
                                                     variant="outlined"
                                                     size="small"
-                                                    sx={{ margin: '0 0.3rem' }}
+                                                    sx={{
+                                                        margin: '0 0.3rem',
+                                                        fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+                                                    }}
                                                 />
                                             )
                                         })}

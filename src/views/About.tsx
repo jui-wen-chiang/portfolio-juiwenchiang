@@ -1,7 +1,10 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react'
-import { useTransition, animated } from '@react-spring/web'
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import React, { useState, useCallback, useRef, useEffect } from 'react';
+import { useTransition, animated } from '@react-spring/web';
+import { paragraphProfessional } from "src/data/aboutData";
+
+import { ViewLayout } from 'src/assets/styles/commonStyles';
 import { Container, Box, Button, Typography, List, ListItem } from 'src/components/mui/components';
+
 
 const mainT: React.CSSProperties = {
     minWidth: '100px',
@@ -76,18 +79,22 @@ export default function AboutView() {
     ]
 
     return (
-        <ViewLayout>
+        <ViewLayout sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+            <Typography variant="caption" component='h2'>ABOUT</Typography>
             <Container sx={{ width: '100%', display: 'flex' }}>
-
+                <Box
+                    component="img"
+                    sx={{
+                        width: '35%',
+                        height: 'auto',
+                        objectFit: 'cover',
+                        borderRadius: '1rem',
+                    }}
+                    alt="The house from the offer."
+                    src="/image_2022_professional portrait_half_body.jpeg"
+                />
                 <Box sx={{ display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
-                    <Typography>
-                        {p1}
-                    </Typography>
-                    <br />
-                    <Typography>
-                        {p2}
-                    </Typography>
-                    <br />
+                    <Typography>{paragraphProfessional}</Typography>
                     <Typography>
                         Here are a few of the other activities that I love to do!
                     </Typography>
@@ -106,18 +113,6 @@ export default function AboutView() {
                         })}
                     </List>
                 </Box>
-                <Box
-                    component="img"
-                    sx={{
-                        height: 'auto',
-                        minWidth: '40%',
-                        // maxHeight: { xs: 233, md: 167 },
-                        // maxWidth: { xs: 350, md: 250 },
-                        borderRadius: '1rem',
-                    }}
-                    alt="The house from the offer."
-                    src="/image_2022_professional portrait_half_body.jpeg"
-                />
             </Container>
 
             {/* <div style={mainT}>

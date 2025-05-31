@@ -2,23 +2,9 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, useNavigate } from "react-router-dom";
 import ROUTES from "src/router/pageRouters";
 
-import { styled, alpha } from '@mui/material/styles';
-import { Box, AppBar, Toolbar, Button, Container, Divider, MenuItem, Drawer } from "src/components/mui/components";
-
-// const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-const StyledToolbar = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'flex-end',
-  borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
-  backdropFilter: 'blur(24px)',
-  border: '1px solid',
-  borderColor: ((theme as any).vars || theme).palette.divider,
-  backgroundColor: (theme as any).vars
-    ? `rgba(${(theme as any).vars.palette.background.defaultChannel} / 0.4)`
-    : alpha(theme.palette.background.default, 0.4),
-  boxShadow: ((theme as any).vars || theme).shadows[1],
-  padding: '0.5rem 2rem',
-}));
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { HorizontalAppBar, HorizontalToolbar } from 'src/assets/styles/components/appbarStyle'
+import { Slide, Box, Button } from "src/components/mui/components";
 
 export default function Appbar() {
   const navigate = useNavigate();
@@ -34,29 +20,45 @@ export default function Appbar() {
     }
   };
 
+  const HideOnScroll = (props: { children: React.ReactElement }) => {
+    // children is the element that needs to be hiden
+    const trigger = useScrollTrigger(); // to verify if it is scrolled or not
+    return (
+      <Box>
+        <Slide appear={false} direction="down" in={!trigger}>
+          {props.children}
+        </Slide>
+      </Box>
+    );
+  }
 
   return (
     // Nav bar
-    <AppBar
-      position="fixed"
-      enableColorOnDark
-      sx={{
-        boxShadow: 0,
-        bgcolor: 'transparent',
-        backgroundImage: 'none',
-        mt: 'calc(var(--template-frame-height, 0px) + 28px)',
-      }}
-    >
-      <Container>
-        <StyledToolbar>
+    <HideOnScroll>
+      <HorizontalAppBar position="fixed" enableColorOnDark>
+        <HorizontalToolbar>
           {ROUTES.map(({ path, name }) => (
-            <Button sx={{padding:"0 1rem"}} key={path} color="info" size="small" onClick={() => handleScroll(path)}>
-              {name}
-            </Button>
+            name == "Home"
+              ? <Button
+                key={path}
+                color="info"
+                size="small"
+                sx={{ marginRight: "auto", padding: "0 1rem" }}
+                onClick={() => handleScroll(path)}>
+                {name}
+              </Button>
+              : <Button
+                key={path}
+                color="info"
+                size="small"
+                sx={{ padding: "0 1rem" }}
+                onClick={() => handleScroll(path)}>
+                {name}
+              </Button>
           ))}
-        </StyledToolbar>
-      </Container>
-    </AppBar>
+        </HorizontalToolbar>
+      </HorizontalAppBar>
+    </HideOnScroll>
 
     // Side bar
     // <AppBar

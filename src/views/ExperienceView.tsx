@@ -26,6 +26,8 @@ export default function ExperienceView() {
         <ViewLayout sx={{
             display: 'flex', flexDirection: 'column',
         }}>
+                        <Typography variant="caption" component='h2'>EXPERIENCE</Typography>
+
             <Stepper nonLinear activeStep={activeStep} orientation="vertical"
                 sx={{
                     padding: '2rem',
@@ -36,12 +38,12 @@ export default function ExperienceView() {
                 {experienceData.map((item, index) => (
                     <Step key={item.title}>
                         <StepButton icon={StepIcon(item.class)} color="inherit" onClick={handleStep(index)}>
-                            <Typography sx={{ fontSize: '2rem' }}>{item.title}</Typography>
+                            <Typography variant="h2">{item.title}</Typography>
                         </StepButton>
                         <StepContent>
                             <Card sx={{ minWidth: '100%' }}>
                                 <CardContent>
-                                    <Typography>{item.date}</Typography>
+                                    <Typography variant="subtitle2" >{item.date}</Typography>
                                     <List sx={{
                                         listStyleType: 'disc',
                                         listStylePosition: 'inside'

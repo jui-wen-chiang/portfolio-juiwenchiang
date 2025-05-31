@@ -1,20 +1,55 @@
 import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
 
-const violetBase = '#7F00FF';
-const violetMain = alpha(violetBase, 0.7);
-
 export default createTheme({
+    // MUI will prioritize the typography settings of Theme
     typography: {
         fontSize: 16,
-        fontFamily: ["Inter", "-apple-system", "BlinkMacSystemFont"].join(","),
+        fontFamily: "DM Serif Display , serif",
+        // 'body1'
+        // | 'body2'
+        // | 'button'
+        // | 'caption'
+        // | 'h1'
+        // | 'h2'
+        // | 'h3'
+        // | 'h4'
+        // | 'h5'
+        // | 'h6'
+        // | 'inherit'
+        // | 'overline'
+        // | 'subtitle1'
+        // | 'subtitle2'
         h1: {
+            fontSize: "4.5rem",
+        },
+        subtitle1: {
+            padding: '1rem 0',
+            fontSize: "1.5rem",
+        },
+        caption: {
             fontSize: "2rem",
-            fontWeight: 500
         },
         h2: {
-            fontSize: "1.5rem",
-            fontWeight: 400
-        }
+            fontSize: "2rem",
+            padding: '0.4rem 0'
+        },
+        h3: {
+            fontSize: "1.2rem",
+        },
+        subtitle2:{
+            fontSize: "1.2rem",
+            fontStyle: 'oblique',
+            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+        },
+        body1: { 
+            // default value of variant
+            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+            lineHeight: 2,
+        },
+        body2: { 
+            fontSize: "0.5rem",
+            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+        },
     },
     palette: {
         primary: {
@@ -65,30 +100,24 @@ export default createTheme({
             disabled: '#9E9E9E',
         },
         divider: '#E0E0E0',
-
-        // primary: {
-        //     // main: "#4C5D88",
-        //     main: alpha(violetBase, 0.5),
-        //     // light: will be calculated from palette.primary.main,
-        //     // dark: will be calculated from palette.primary.main,
-        //     // contrastText: will be calculated to contrast with palette.primary.main
-        // },
-        // secondary: {
-        //     main: '#E0C2FF',
-        // },
-        // violet: {
-        //     main: violetMain,
-        //     light: alpha(violetBase, 0.5),
-        //     dark: alpha(violetBase, 0.9),
-        //     contrastText: getContrastRatio(violetMain, '#fff') > 4.5 ? '#fff' : '#111',
-        // },
-        // error: {
-        //     main: "#FFEED6"
-        // },
-        // success: {
-        //     // main: "#8EDCA9"
-        //     // main: "#006400"
-        //     main:"#0000FF"
-        // },
+    },
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                // Changes the global style of all native HTML tags
+                body: {
+                    // backgroundImage: `url('/test.jpg')`,
+                    // backgroundRepeat: 'no-repeat',
+                    // backgroundSize: 'cover',
+                    // backgroundPosition: 'center',
+                    // backgroundImage: `url('/test.jpg')`,
+                    // backgroundSize: 'cover',
+                    // backgroundRepeat: 'no-repeat',
+                    // backgroundPosition: 'center'
+                    cursor: 'url("/dot.png"), auto',
+                    // cursor: 'help',
+                },
+            }
+        }
     }
 });

@@ -3,7 +3,7 @@ import { useTransition, animated } from '@react-spring/web'
 import { ViewLayout } from 'src/assets/styles/commonStyles'
 import { Container, Box, Button, Typography, IconButton } from 'src/components/mui/components';
 import ReactEcharts from "echarts-for-react";
-import { SchoolIcon, GitHubIcon,LinkedInIcon,EmailRoundedIcon } from 'src/components/mui/icons';
+import { SchoolIcon, GitHubIcon, LinkedInIcon, EmailRoundedIcon } from 'src/components/mui/icons';
 
 const mainT: React.CSSProperties = {
     minWidth: '100px',
@@ -140,21 +140,36 @@ export default function AboutView() {
     };
 
     return (
-        <ViewLayout>
+        // <Box
+        // sx={{
+        //     backgroundImage: `url('/test.jpg')`,
+        //     backgroundSize: 'cover',
+        //     backgroundRepeat: 'no-repeat',
+        //     backgroundPosition: 'center'
+        // }}>
+        <ViewLayout
+            sx={{
+                // background: "radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%)"
+                // backgroundImage: `url('/test.jpg')`,
+                // backgroundSize: 'cover',
+                // backgroundRepeat: 'no-repeat',
+                // backgroundPosition: 'center'
+            }}
+        >
             <Container sx={{ padding: '10rem' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', padding: '0 0 1rem 0' }}>
-                    <Typography sx={{ padding: '1rem 0', fontSize: '1.5rem' }}>Hello, I'm</Typography>
-                    <Typography variant="h1" sx={{ fontSize: '4rem' }}>Jui-Wen Chiang</Typography>
+                    <Typography variant="subtitle1">Hello, I'm</Typography>
+                    <Typography variant="h1">Jui-Wen Chiang</Typography>
                     {/* <MyNmae /> */}
-                    <Typography sx={{ padding: '1rem 0', fontSize: '1.5rem' }}>
+                    <Typography variant="subtitle1">
                         A Full Stack Developer and UI/UX designer.
                     </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', padding: '0 0 1rem 0' }}>
-                    <Button variant="contained" size="small" sx={{padding:'1rem'}}>Get Resume</Button>
-                    <IconButton aria-label="go to my Linkedin" color="primary" sx={{padding:'1rem'}}> <LinkedInIcon /></IconButton>
-                    <IconButton aria-label="get in touch" color="primary" sx={{padding:'1rem'}}> <EmailRoundedIcon /></IconButton>
-                    <IconButton aria-label="go to my Github" color="primary" sx={{padding:'1rem'}}> <GitHubIcon /></IconButton>
+                    <Button variant="contained" size="small" sx={{ padding: '1rem' }}>Get Resume</Button>
+                    <IconButton aria-label="go to my Linkedin" color="primary" sx={{ padding: '1rem' }}> <LinkedInIcon /></IconButton>
+                    <IconButton aria-label="get in touch" color="primary" sx={{ padding: '1rem' }}> <EmailRoundedIcon /></IconButton>
+                    <IconButton aria-label="go to my Github" color="primary" sx={{ padding: '1rem' }}> <GitHubIcon /></IconButton>
                 </Box>
                 {/* <div style={mainT}>
                     {transitions(({ innerHeight, ...rest }, item) => (
@@ -165,5 +180,6 @@ export default function AboutView() {
                 </div> */}
             </Container>
         </ViewLayout>
+        // </Box>
     )
 }

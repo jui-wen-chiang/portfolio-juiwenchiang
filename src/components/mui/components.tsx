@@ -4,6 +4,7 @@ export { default as Box } from "@mui/material/Box";
 // bar
 export { default as AppBar } from "@mui/material/AppBar";
 export { default as Toolbar } from "@mui/material/Toolbar";
+export { default as Slide } from '@mui/material/Slide';
 // card
 export { default as Card } from "@mui/material/Card";
 export { default as CardActions } from "@mui/material/CardActions";
