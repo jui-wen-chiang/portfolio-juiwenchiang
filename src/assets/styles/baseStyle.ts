@@ -7,4 +7,8 @@ const commBorderRadius = {
     borderRadius: '1rem'
 };
 
-export { fullSize, commBorderRadius }
+const dmSerifFontFamily ={
+    letterSpacing: '0.3rem',
+};
+
+export { fullSize, commBorderRadius,dmSerifFontFamily }

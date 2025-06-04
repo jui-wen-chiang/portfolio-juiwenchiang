@@ -1,4 +1,6 @@
 import { styled, alpha } from '@mui/material/styles';
+import * as base from "src/assets/styles/baseStyle";
+
 import { AppBar, Container, Box, Toolbar } from "src/components/mui/components";
 
 // horizontal bar
@@ -16,7 +18,7 @@ const HorizontalToolbar = styled(Container)(({ theme }) => ({
 
     borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
     backdropFilter: 'blur(24px)',
-    border: '1px solid',
+    // border: '1px solid',
     borderColor: ((theme as any).vars || theme).palette.divider,
     backgroundColor: (theme as any).vars
         ? `rgba(${(theme as any).vars.palette.background.defaultChannel} / 0.4)`
@@ -24,6 +26,12 @@ const HorizontalToolbar = styled(Container)(({ theme }) => ({
     boxShadow: ((theme as any).vars || theme).shadows[1],
     // padding: '0.5rem 2rem',
 }));
+
+const ButtonStyle = {
+    padding: "0 1rem",
+    fontSize: '1.2rem',
+    ...base.dmSerifFontFamily
+};
 
 // vertical bar
 const SideBar = {
@@ -64,4 +72,4 @@ const NavItems = styled(Box)({
     gap: 10
 });
 
-export { HorizontalAppBar, HorizontalToolbar, SideBar, NavBar, NavItems }
+export { HorizontalAppBar, HorizontalToolbar, ButtonStyle,SideBar, NavBar, NavItems }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, useNavigate } from "react-router-
 import ROUTES from "src/router/pageRouters";
 
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { HorizontalAppBar, HorizontalToolbar } from 'src/assets/styles/components/appbarStyle'
+import { HorizontalAppBar, HorizontalToolbar, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
 import { Slide, Box, Button } from "src/components/mui/components";
 
 export default function Appbar() {
@@ -42,16 +42,16 @@ export default function Appbar() {
               ? <Button
                 key={path}
                 color="info"
-                size="small"
-                sx={{ marginRight: "auto", padding: "0 1rem" }}
+                size="large"
+                sx={{ ...ButtonStyle, marginRight: "auto" }}
                 onClick={() => handleScroll(path)}>
                 {name}
               </Button>
               : <Button
                 key={path}
                 color="info"
-                size="small"
-                sx={{ padding: "0 1rem" }}
+                size="large"
+                sx={ButtonStyle}
                 onClick={() => handleScroll(path)}>
                 {name}
               </Button>

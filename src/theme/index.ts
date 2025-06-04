@@ -25,6 +25,7 @@ export default createTheme({
     typography: {
         fontSize: 16,
         fontFamily: FontSystem.primary,
+        // Home View
         h1: {
             fontSize: "4.5rem",
             color: ColorSystem.lemonYellow
@@ -32,15 +33,19 @@ export default createTheme({
         subtitle1: {
             padding: '1rem 0',
             fontSize: "1.5rem",
+            letterSpacing: '0.1rem',
         },
+        // Title of each View
         caption: {
             fontSize: "2rem",
-            color: ColorSystem.plumRed
+            letterSpacing: '0.1rem',
+            color: ColorSystem.plumRed,
         },
         h2: {
             fontSize: "2rem",
             padding: '0.4rem 0',
-            // color: ColorSystem.earthyOrange
+            letterSpacing: '0.1rem',
+            color: ColorSystem.earthyOrange
         },
         h3: {
             fontSize: "1.2rem",
@@ -77,7 +82,7 @@ export default createTheme({
         },
         // State color
         info: {
-            main: '#db6d5b', // appbar
+            main: ColorSystem.alabasterWhite,
         },
         // Neutrals color
         text: {

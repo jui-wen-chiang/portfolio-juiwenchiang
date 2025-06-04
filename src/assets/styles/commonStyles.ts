@@ -19,7 +19,6 @@ const ColContainer = styled(Container)({
     alignItems: 'center'
 });
 
-
 const ControlButton = styled(Button)(({ theme }) => ({
     color: theme.palette.primary.main,
     borderRadius: '5rem',
