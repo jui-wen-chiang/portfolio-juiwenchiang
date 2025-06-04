@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 // component
 import { FormControl, MenuItem, Select } from 'src/components/mui/components';
-import { RatioRowContainer, ColPageContainer, ControlButton } from 'src/assets/styles/commonStyles'
+import { RatioRowContainer, ColContainer, ControlButton } from 'src/assets/styles/commonStyles'
 import { Chrono } from 'react-chrono';
 // icon
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
@@ -170,7 +170,7 @@ export default function TimelinePage() {
     return (
         <RatioRowContainer ratio={[1, 9]}>
             {/* Customize Control Bar */}
-            <ColPageContainer>
+            <ColContainer>
                 <ControlButton aria-label="previous" size="large" onClick={handlePrev}>
                     <KeyboardArrowUpRoundedIcon fontSize="inherit" />
                 </ControlButton>
@@ -198,7 +198,7 @@ export default function TimelinePage() {
                         ))}
                     </Select>
                 </FormControl>
-            </ColPageContainer>
+            </ColContainer>
             {/* Time line */}
             <div style={{ height: "80vh", overflowY: "auto", width: "100%" }}>
                 {/* <LinearProgress variant="determinate" value={intervalRef} /> */}

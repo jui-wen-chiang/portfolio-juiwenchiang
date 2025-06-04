@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { galleryData } from "src/data/galleryData"
 
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/assets/styles/commonStyles'
 import { Container, Box, IconButton, Typography } from 'src/components/mui/components';
 import { ArrowBackRoundedIcon, ArrowForwardRoundedIcon } from 'src/components/mui/icons';
 
@@ -63,7 +63,7 @@ export default function GalleryView() {
 
 
     return (
-        <ViewLayout sx={{ justifyContent: 'center' }}>
+        <RowContainer sx={{ justifyContent: 'center' }}>
             <IconButton sx={{ padding: '1rem 0' }} onClick={() => slider?.current?.slickPrev()} color="primary">
                 <ArrowBackRoundedIcon />
             </IconButton>
@@ -104,6 +104,6 @@ export default function GalleryView() {
                     Pause
                 </button>
             </div> */}
-        </ViewLayout >
+        </RowContainer >
     );
 }

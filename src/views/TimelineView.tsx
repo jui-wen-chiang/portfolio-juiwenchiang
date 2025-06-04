@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 // data
 import { timelineData } from "src/data/timeline"
 // style
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/assets/styles/commonStyles'
 import { TimelineContainer, VerticalLine, TimeLinePoint } from 'src/assets/styles/views/Timeline'
 import { Container, Box, Typography, Card, CardContent, CardMedia, CardActionArea } from 'src/components/mui/components';
 import { AirplanemodeActiveIcon } from 'src/components/mui/icons';
@@ -137,7 +137,7 @@ export default function TimelineView() {
     }
 
     return (
-        <ViewLayout>
+        <RowContainer>
             <TimelineContainer>
                 <VerticalLine />
 
@@ -172,6 +172,6 @@ export default function TimelineView() {
                     );
                 })}
             </TimelineContainer>
-        </ViewLayout>
+        </RowContainer>
     )
 }

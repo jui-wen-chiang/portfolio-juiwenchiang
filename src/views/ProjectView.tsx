@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { projectData } from "src/data/projectsData"
 
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { ColContainer } from 'src/assets/styles/commonStyles'
 import { Container, Box, Typography, Card, CardContent, CardMedia, CardActionArea, CardActions, Button, Chip, Avatar } from 'src/components/mui/components';
 
 const BlackContainer: React.CSSProperties = {
@@ -22,7 +22,6 @@ const box1: React.CSSProperties = {
     // marginLeft: '-20px',
     // padding:'2rem',
     'flexDirection': 'column',
-
 };
 
 const box2: React.CSSProperties = {
@@ -61,22 +60,22 @@ const body: React.CSSProperties = {
     zIndex: '2',
     padding: '1rem',
     margin: '0.4rem auto',
-    backgroundColor: 'rgb(23, 42, 69)',
-    color: 'rgb(168, 178, 209)',
+    // backgroundColor: 'rgb(23, 42, 69)',
+    backgroundColor: '#002147',
     'borderRadius': '1rem',
 };
 
 export default function ProjectsView() {
 
     return (
-        <ViewLayout sx={{ flexDirection: 'column' }}>
+        <ColContainer>
             <Typography variant="caption" component='h2'>PROJECTS</Typography>
             {projectData.map((item, index) => {
                 return (
                     <Container sx={BlackContainer}>
                         <Box sx={box1}>
-                            <Card>
-                                <CardContent sx={{ padding: '8px 8px 8px 8px' }}>
+                            <Card sx={{ padding: '8px 8px 8px 8px', backgroundColor:'#000a33' }}>
+                                <CardContent>
                                     <Typography variant="subtitle2" >
                                         {item.type}
                                     </Typography>
@@ -96,6 +95,7 @@ export default function ProjectsView() {
                                                     size="small"
                                                     sx={{
                                                         margin: '0 0.3rem',
+                                                        color:'#f1f1e6',
                                                         fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
                                                     }}
                                                 />
@@ -121,6 +121,6 @@ export default function ProjectsView() {
                     </Container>
                 )
             })}
-        </ViewLayout >
+        </ColContainer >
     )
 }

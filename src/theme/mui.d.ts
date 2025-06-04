@@ -1,20 +1,22 @@
+// module augmentation : added some new legal options
+import "@mui/material";
 import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
 
-// Augment the palette to include a violet color
+
+// Augment the palette to include custom color
 declare module '@mui/material/styles' {
     interface Palette {
-        violet: Palette['primary'];
+        blueCard: Palette['primary'];
     }
-
     interface PaletteOptions {
-        violet?: PaletteOptions['primary'];
+        blueCard?: Palette['primary'];
 
     }
 }
 
-// Update the Button's color options to include a violet option
-declare module '@mui/material/Button' {
-    interface ButtonPropsColorOverrides {
-        violet: true;
+// Add options of component
+declare module '@mui/material/Paper' {
+    interface PaperPropsVariantOverrides {
+      gray: true
     }
-}
+  }

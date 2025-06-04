@@ -1,6 +1,6 @@
 import React from 'react';
 import Tree from 'react-d3-tree';
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/assets/styles/commonStyles'
 
 // This is a simplified example of an org chart with a depth of 2.
 // Note how deeper levels are defined recursively via the `children` property.
@@ -106,8 +106,8 @@ export default function SkillsView() {
         // <div id="treeWrapper" style={{ margin:'10rem', padding:'5rem', width: '50em', height: '20em' }}>
         //     <Tree data={orgChart} />
         // </div>
-        <ViewLayout sx={{ height: '80vh' }}>
+        <RowContainer sx={{ height: '80vh' }}>
             <Tree data={orgChart} orientation="horizontal"/>
-        </ViewLayout>
+        </RowContainer>
     );
 }

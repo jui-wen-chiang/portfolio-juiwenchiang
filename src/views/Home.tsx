@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { useTransition, animated } from '@react-spring/web'
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/assets/styles/commonStyles'
 import { Container, Box, Button, Typography, IconButton } from 'src/components/mui/components';
 import ReactEcharts from "echarts-for-react";
 import { SchoolIcon, GitHubIcon, LinkedInIcon, EmailRoundedIcon } from 'src/components/mui/icons';
@@ -147,7 +147,7 @@ export default function AboutView() {
         //     backgroundRepeat: 'no-repeat',
         //     backgroundPosition: 'center'
         // }}>
-        <ViewLayout
+        <RowContainer
             sx={{
                 // background: "radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%)"
                 // backgroundImage: `url('/test.jpg')`,
@@ -179,7 +179,7 @@ export default function AboutView() {
                     ))}
                 </div> */}
             </Container>
-        </ViewLayout>
+        </RowContainer>
         // </Box>
     )
 }

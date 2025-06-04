@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 import { paragraphProfessional } from "src/data/aboutData";
 
-import { ViewLayout } from 'src/assets/styles/commonStyles';
+import { ColContainer } from 'src/assets/styles/commonStyles';
 import { Container, Box, Button, Typography, List, ListItem } from 'src/components/mui/components';
 
 
@@ -79,7 +79,7 @@ export default function AboutView() {
     ]
 
     return (
-        <ViewLayout sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+        <ColContainer>
             <Typography variant="caption" component='h2'>ABOUT</Typography>
             <Container sx={{ width: '100%', display: 'flex' }}>
                 <Box
@@ -122,6 +122,6 @@ export default function AboutView() {
                     </animated.div>
                 ))}
             </div> */}
-        </ViewLayout>
+        </ColContainer>
     )
 }

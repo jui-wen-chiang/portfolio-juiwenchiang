@@ -1,26 +1,33 @@
 import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
 
+const FontSystem: { [key: string]: string } = {
+    'primary': "DM Serif Display,  -apple-system, BlinkMacSystemFont, serif",
+    'secondary': "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif"
+};
+
+const ColorSystem: { [key: string]: string } = {
+    'darkBlue': '#000919',
+    'midnightBlue': '#000a33',
+    'plumRed': '#9f3e60',
+    'earthyOrange': '#db6d5b',
+    'lemonYellow': '#f9f871',
+    'alabasterWhite': '#f1f1e6',
+};
+
+// plum: '#532253',
+// amber: '#fbaf57',
+// default: '#002147', // Oxford Blue
+// default: '#003153', // Prussian Blue
+
+
 export default createTheme({
     // MUI will prioritize the typography settings of Theme
     typography: {
         fontSize: 16,
-        fontFamily: "DM Serif Display , serif",
-        // 'body1'
-        // | 'body2'
-        // | 'button'
-        // | 'caption'
-        // | 'h1'
-        // | 'h2'
-        // | 'h3'
-        // | 'h4'
-        // | 'h5'
-        // | 'h6'
-        // | 'inherit'
-        // | 'overline'
-        // | 'subtitle1'
-        // | 'subtitle2'
+        fontFamily: FontSystem.primary,
         h1: {
             fontSize: "4.5rem",
+            color: ColorSystem.lemonYellow
         },
         subtitle1: {
             padding: '1rem 0',
@@ -28,78 +35,64 @@ export default createTheme({
         },
         caption: {
             fontSize: "2rem",
+            color: ColorSystem.plumRed
         },
         h2: {
             fontSize: "2rem",
-            padding: '0.4rem 0'
+            padding: '0.4rem 0',
+            // color: ColorSystem.earthyOrange
         },
         h3: {
             fontSize: "1.2rem",
         },
-        subtitle2:{
+        subtitle2: {
             fontSize: "1.2rem",
             fontStyle: 'oblique',
-            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+            color: ColorSystem.alabasterWhite,
+            fontFamily: FontSystem.secondary,
         },
-        body1: { 
+        body1: {
             // default value of variant
-            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
             lineHeight: 2,
+            fontFamily: FontSystem.secondary,
+            color: ColorSystem.alabasterWhite,
+
         },
-        body2: { 
+        body2: {
             fontSize: "0.5rem",
-            fontFamily: "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif",
+            fontFamily: FontSystem.secondary,
+            color: ColorSystem.alabasterWhite,
         },
     },
     palette: {
+        background: {
+            default: ColorSystem.midnightBlue
+            // default: ColorSystem.darkBlue
+        },
         primary: {
-            main: '#00BFFF',
-            light: '#33CCFF',
-            dark: '#009ACD',
-            contrastText: '#ffffff',
+            main: '#9f3e60',
         },
         secondary: {
             main: '#FFC107',
-            light: '#FFD700',
-            dark: '#FFA000',
-            contrastText: '#000000',
         },
         // State color
-        success: {
-            // light: '#66E39D',
-            main: '#28A745',
-            dark: '#1E7E34',
-            contrastText: '#ffffff',
-        },
-        warning: {
-            light: '#FFEE58',
-            main: '#FFC107',
-            dark: '#FF8F00',
-            contrastText: '#000000',
-        },
-        error: {
-            light: '#FF6B6B',
-            main: '#DC3545',
-            dark: '#B02A37',
-            contrastText: '#ffffff',
-        },
         info: {
-            light: '#64B6F7',
-            main: '#2196F3',
-            dark: '#1769AA',
-            contrastText: '#ffffff',
+            main: '#db6d5b', // appbar
         },
         // Neutrals color
-        background: {
-            default: '#F4F9FC',
-            paper: '#ffffff',
-        },
         text: {
             primary: '#1A1A1A',
             secondary: '#4F4F4F',
             disabled: '#9E9E9E',
         },
         divider: '#E0E0E0',
+        // Custom colors
+        blueCard: {
+            main: '#002147', //Oxford Blue
+            light: '#002147',
+            dark: '#002147',
+            contrastText: '#002147',
+        }
     },
     components: {
         MuiCssBaseline: {
@@ -116,6 +109,12 @@ export default createTheme({
                     // backgroundPosition: 'center'
                     cursor: 'url("/dot.png"), auto',
                     // cursor: 'help',
+                    // backgroundColor: 'red',
+                    // backgroundImage:'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
+                    // color: '#f9f8ff',
+                    color: ColorSystem.alabasterWhite,
+                    // color:'#aaaabc', // Mischka
+                    // color:'#8f91c4',
                 },
             }
         }

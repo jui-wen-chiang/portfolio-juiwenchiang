@@ -1,7 +1,9 @@
 import React from 'react'
 import { experienceData } from "src/data/experienceData"
 
-import { ViewLayout } from 'src/assets/styles/commonStyles'
+import { ColContainer } from 'src/assets/styles/commonStyles'
+import { StyledStepper, StepCard } from 'src/assets/styles/views/ExperienceStyle'
+
 import {
     Typography, Stepper, Step, StepButton, StepContent, Card, CardContent, List, ListItem
 } from 'src/components/mui/components';
@@ -23,25 +25,16 @@ export default function ExperienceView() {
     };
 
     return (
-        <ViewLayout sx={{
-            display: 'flex', flexDirection: 'column',
-        }}>
-                        <Typography variant="caption" component='h2'>EXPERIENCE</Typography>
-
-            <Stepper nonLinear activeStep={activeStep} orientation="vertical"
-                sx={{
-                    padding: '2rem',
-                    // '& .MuiStepConnector-line': {
-                    //     minWidth: '100px',
-                    // }
-                }}>
+        <ColContainer>
+            <Typography variant="caption" component='h2'>EXPERIENCE</Typography>
+            <StyledStepper nonLinear activeStep={activeStep} orientation="vertical">
                 {experienceData.map((item, index) => (
                     <Step key={item.title}>
-                        <StepButton icon={StepIcon(item.class)} color="inherit" onClick={handleStep(index)}>
+                        <StepButton icon={StepIcon(item.class)} onClick={handleStep(index)}>
                             <Typography variant="h2">{item.title}</Typography>
                         </StepButton>
                         <StepContent>
-                            <Card sx={{ minWidth: '100%' }}>
+                            <StepCard>
                                 <CardContent>
                                     <Typography variant="subtitle2" >{item.date}</Typography>
                                     <List sx={{
@@ -49,17 +42,17 @@ export default function ExperienceView() {
                                         listStylePosition: 'inside'
                                     }}>
                                         {item.description.map((bullet, index) => (
-                                            <ListItem sx={{ display: 'list-item' }}>
+                                            <ListItem sx={{ display: 'list-item', color: '#f1f1e6' }}>
                                                 {bullet}
                                             </ListItem>
                                         ))}
                                     </List>
                                 </CardContent>
-                            </Card>
+                            </StepCard>
                         </StepContent>
                     </Step>
                 ))}
-            </Stepper>
-        </ViewLayout>
+            </StyledStepper>
+        </ColContainer>
     );
 }
