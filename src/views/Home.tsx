@@ -4,6 +4,8 @@ import { RowContainer } from 'src/assets/styles/commonStyles'
 import { Container, Box, Button, Typography, IconButton } from 'src/components/mui/components';
 import ReactEcharts from "echarts-for-react";
 import { SchoolIcon, GitHubIcon, LinkedInIcon, EmailRoundedIcon } from 'src/components/mui/icons';
+import LinkBar from 'src/components/tools/linkBar';
+
 
 const mainT: React.CSSProperties = {
     minWidth: '100px',
@@ -165,12 +167,7 @@ export default function AboutView() {
                         A Full Stack Developer and UI/UX designer.
                     </Typography>
                 </Box>
-                <Box sx={{ display: 'flex', padding: '0 0 1rem 0' }}>
-                    <Button variant="contained" size="small" sx={{ padding: '1rem' }}>Get Resume</Button>
-                    <IconButton aria-label="go to my Linkedin" color="primary" sx={{ padding: '1rem' }}> <LinkedInIcon /></IconButton>
-                    <IconButton aria-label="get in touch" color="primary" sx={{ padding: '1rem' }}> <EmailRoundedIcon /></IconButton>
-                    <IconButton aria-label="go to my Github" color="primary" sx={{ padding: '1rem' }}> <GitHubIcon /></IconButton>
-                </Box>
+                <LinkBar simplyResumeIcon={false}/>
                 {/* <div style={mainT}>
                     {transitions(({ innerHeight, ...rest }, item) => (
                         <animated.div  {...(rest as any)} className={transitionsItemT} style={rest} onClick={reset}>
