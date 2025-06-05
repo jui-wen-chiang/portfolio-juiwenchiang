@@ -40,6 +40,7 @@ export default createTheme({
             fontSize: "2rem",
             letterSpacing: '0.1rem',
             color: ColorSystem.plumRed,
+            padding:'2rem'
         },
         h2: {
             fontSize: "2rem",
