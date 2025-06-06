@@ -5,6 +5,14 @@ import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
 
 // Augment the palette to include custom color
 declare module '@mui/material/styles' {
+    interface TypographyVariants {
+        stepTitle: React.CSSProperties;
+    }
+
+    interface TypographyVariantsOptions {
+        stepTitle?: React.CSSProperties;
+    }
+
     interface Palette {
         blueCard: Palette['primary'];
     }
@@ -14,9 +22,14 @@ declare module '@mui/material/styles' {
     }
 }
 
-// Add options of component
+// Allow using custom options in components
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    stepTitle: true;
+  }
+}
 declare module '@mui/material/Paper' {
     interface PaperPropsVariantOverrides {
-      gray: true
+        gray: true
     }
-  }
+}

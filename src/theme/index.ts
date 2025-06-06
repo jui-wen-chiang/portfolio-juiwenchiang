@@ -52,8 +52,9 @@ export default createTheme({
             fontSize: "1.2rem",
         },
         subtitle2: {
-            fontSize: "1.2rem",
+            fontSize: "1rem",
             fontStyle: 'oblique',
+            lineHeight: 2,
             color: ColorSystem.alabasterWhite,
             fontFamily: FontSystem.secondary,
         },
@@ -69,17 +70,21 @@ export default createTheme({
             fontFamily: FontSystem.secondary,
             color: ColorSystem.alabasterWhite,
         },
+        // custom styles
+        stepTitle:{
+            fontSize: "1.6rem",
+            letterSpacing: '0.1rem',
+        }
     },
     palette: {
         background: {
             default: ColorSystem.midnightBlue
-            // default: ColorSystem.darkBlue
         },
         primary: {
-            main: '#9f3e60',
+            main: ColorSystem.plumRed,
         },
         secondary: {
-            main: '#FFC107',
+            main: ColorSystem.earthyOrange
         },
         // State color
         info: {
@@ -87,9 +92,7 @@ export default createTheme({
         },
         // Neutrals color
         text: {
-            primary: '#1A1A1A',
-            secondary: '#4F4F4F',
-            disabled: '#9E9E9E',
+            primary: ColorSystem.alabasterWhite
         },
         divider: '#E0E0E0',
         // Custom colors

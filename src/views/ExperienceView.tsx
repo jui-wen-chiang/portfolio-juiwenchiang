@@ -2,7 +2,7 @@ import React from 'react'
 import { experienceData } from "src/data/experienceData"
 
 import { ColContainer } from 'src/assets/styles/commonStyles'
-import { StyledStepper, StepCard } from 'src/assets/styles/views/ExperienceStyle'
+import { StyledStepper, StepCard, ListContainer, ListContent } from 'src/assets/styles/views/ExperienceStyle'
 
 import {
     Typography, Stepper, Step, StepButton, StepContent, Card, CardContent, List, ListItem
@@ -31,22 +31,18 @@ export default function ExperienceView() {
                 {experienceData.map((item, index) => (
                     <Step key={item.title}>
                         <StepButton icon={StepIcon(item.class)} onClick={handleStep(index)}>
-                            <Typography variant="h2">{item.title}</Typography>
+                            <Typography variant="stepTitle">{item.title}</Typography>
                         </StepButton>
                         <StepContent>
                             <StepCard>
                                 <CardContent>
-                                    <Typography variant="subtitle2" >{item.date}</Typography>
-                                    <List sx={{
-                                        listStyleType: 'disc',
-                                        listStylePosition: 'inside'
-                                    }}>
-                                        {item.description.map((bullet, index) => (
-                                            <ListItem sx={{ display: 'list-item', color: '#f1f1e6' }}>
-                                                {bullet}
-                                            </ListItem>
-                                        ))}
-                                    </List>
+                                    <Typography variant="subtitle2">{item.date}</Typography>
+                                    <Typography variant="subtitle2">{item.location}</Typography>
+                                    {item.description?.map((bullet, index) => (
+                                        <ListContainer >
+                                            <ListContent sx={{padding:0}}>{bullet}</ListContent>
+                                        </ListContainer>
+                                    ))}
                                 </CardContent>
                             </StepCard>
                         </StepContent>
