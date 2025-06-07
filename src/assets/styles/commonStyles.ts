@@ -1,9 +1,7 @@
 import { styled } from "@mui/material/styles";
 import * as base from "./baseStyle";
-
 import { RatioRowProps } from "src/types/styles/commonStyle"
-import { Container, Box, Card, Button } from "src/components/mui/components";
-
+import { Container, Box, Card, Button, List, ListItem } from "src/components/mui/components";
 
 const RowContainer = styled(Container)({
     ...base.fullSize,
@@ -26,6 +24,17 @@ const ControlButton = styled(Button)(({ theme }) => ({
 }));
 
 
+const ListContainer = styled(List)(({ theme }) => ({
+    listStyleType: 'disc',
+    listStylePosition: 'inside',
+    padding: 0
+}));
+
+const ListContent = styled(ListItem)(({ theme }) => ({
+    display: 'list-item',
+    color: theme.palette.text.primary
+}));
+
 // for timeline
 const RatioRowContainer = styled(Container, {
     // Indicates whether the prop should be forwarded to the Component.
@@ -44,4 +53,4 @@ const RatioRowContainer = styled(Container, {
     },
 }));
 
-export { RowContainer, ColContainer, ControlButton, RatioRowContainer }
+export { RowContainer, ColContainer, ControlButton, ListContainer,ListContent,RatioRowContainer }

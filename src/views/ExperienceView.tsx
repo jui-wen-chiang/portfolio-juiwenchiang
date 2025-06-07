@@ -1,12 +1,8 @@
 import React from 'react'
 import { experienceData } from "src/data/experienceData"
-
-import { ColContainer } from 'src/assets/styles/commonStyles'
-import { StyledStepper, StepCard, ListContainer, ListContent } from 'src/assets/styles/views/ExperienceStyle'
-
-import {
-    Typography, Stepper, Step, StepButton, StepContent, Card, CardContent, List, ListItem
-} from 'src/components/mui/components';
+import {Typography, Step, StepButton, StepContent, CardContent} from 'src/components/mui/components';
+import { ColContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { StyledStepper, StepCard } from 'src/assets/styles/views/ExperienceStyle';
 import { SchoolIcon, WorkIcon } from 'src/components/mui/icons';
 
 export default function ExperienceView() {
@@ -40,7 +36,7 @@ export default function ExperienceView() {
                                     <Typography variant="subtitle2">{item.location}</Typography>
                                     {item.description?.map((bullet, index) => (
                                         <ListContainer >
-                                            <ListContent sx={{padding:0}}>{bullet}</ListContent>
+                                            <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>
                                         </ListContainer>
                                     ))}
                                 </CardContent>

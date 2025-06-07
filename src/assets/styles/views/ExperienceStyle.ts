@@ -32,16 +32,6 @@ const StepCard = styled(Card)(({ theme }) => ({
   ...base.commBorderRadius,
 }));
 
-const ListContainer = styled(List)(({ theme }) => ({
-  listStyleType: 'disc',
-  listStylePosition: 'inside',
-  padding:0
-}));
 
-const ListContent = styled(ListItem)(({ theme }) => ({
-  display: 'list-item',
-  color: theme.palette.text.primary
-}));
-
-export { StyledStepper, StepCard, ListContainer, ListContent }
+export { StyledStepper, StepCard }
 

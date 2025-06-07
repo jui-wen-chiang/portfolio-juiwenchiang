@@ -1,34 +1,15 @@
 import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
-
-const FontSystem: { [key: string]: string } = {
-    'primary': "DM Serif Display,  -apple-system, BlinkMacSystemFont, serif",
-    'secondary': "Libre Baskerville, -apple-system, BlinkMacSystemFont, serif"
-};
-
-const ColorSystem: { [key: string]: string } = {
-    'darkBlue': '#000919',
-    'midnightBlue': '#000a33',
-    'plumRed': '#9f3e60',
-    'earthyOrange': '#db6d5b',
-    'lemonYellow': '#f9f871',
-    'alabasterWhite': '#f1f1e6',
-};
-
-// plum: '#532253',
-// amber: '#fbaf57',
-// default: '#002147', // Oxford Blue
-// default: '#003153', // Prussian Blue
-
+import {FontScheme,ColorScheme}from "src/theme/designTokens"
 
 export default createTheme({
     // MUI will prioritize the typography settings of Theme
     typography: {
         fontSize: 16,
-        fontFamily: FontSystem.primary,
+        fontFamily: FontScheme.primary,
         // Home View
         h1: {
             fontSize: "4.5rem",
-            color: ColorSystem.lemonYellow
+            color: ColorScheme.lemonYellow
         },
         subtitle1: {
             padding: '1rem 0',
@@ -39,14 +20,14 @@ export default createTheme({
         caption: {
             fontSize: "2rem",
             letterSpacing: '0.1rem',
-            color: ColorSystem.plumRed,
+            color: ColorScheme.plumRed,
             padding:'2rem'
         },
         h2: {
             fontSize: "2rem",
             padding: '0.4rem 0',
             letterSpacing: '0.1rem',
-            color: ColorSystem.earthyOrange
+            color: ColorScheme.earthyOrange
         },
         h3: {
             fontSize: "1.2rem",
@@ -55,20 +36,20 @@ export default createTheme({
             fontSize: "1rem",
             fontStyle: 'oblique',
             lineHeight: 2,
-            color: ColorSystem.alabasterWhite,
-            fontFamily: FontSystem.secondary,
+            color: ColorScheme.alabasterWhite,
+            fontFamily: FontScheme.secondary,
         },
         body1: {
             // default value of variant
             lineHeight: 2,
-            fontFamily: FontSystem.secondary,
-            color: ColorSystem.alabasterWhite,
+            fontFamily: FontScheme.secondary,
+            color: ColorScheme.alabasterWhite,
 
         },
         body2: {
             fontSize: "0.5rem",
-            fontFamily: FontSystem.secondary,
-            color: ColorSystem.alabasterWhite,
+            fontFamily: FontScheme.secondary,
+            color: ColorScheme.alabasterWhite,
         },
         // custom styles
         stepTitle:{
@@ -78,21 +59,21 @@ export default createTheme({
     },
     palette: {
         background: {
-            default: ColorSystem.midnightBlue
+            default: ColorScheme.midnightBlue
         },
         primary: {
-            main: ColorSystem.plumRed,
+            main: ColorScheme.plumRed,
         },
         secondary: {
-            main: ColorSystem.earthyOrange
+            main: ColorScheme.earthyOrange
         },
         // State color
         info: {
-            main: ColorSystem.alabasterWhite,
+            main: ColorScheme.alabasterWhite,
         },
         // Neutrals color
         text: {
-            primary: ColorSystem.alabasterWhite
+            primary: ColorScheme.alabasterWhite
         },
         divider: '#E0E0E0',
         // Custom colors
@@ -121,7 +102,7 @@ export default createTheme({
                     // backgroundColor: 'red',
                     // backgroundImage:'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
                     // color: '#f9f8ff',
-                    color: ColorSystem.alabasterWhite,
+                    color: ColorScheme.alabasterWhite,
                     // color:'#aaaabc', // Mischka
                     // color:'#8f91c4',
                 },
