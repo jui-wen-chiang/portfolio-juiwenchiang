@@ -1,16 +1,16 @@
 import { styled } from "@mui/material/styles";
 import * as base from "./baseStyle";
 import { RatioRowProps } from "src/types/styles/commonStyle"
-import { Container, Box, Card, Button, List, ListItem } from "src/components/mui/components";
+import { Container,ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
 
-const RowContainer = styled(Container)({
+const RowContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
 });
 
-const ColContainer = styled(Container)({
+const ColContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,
     display: 'flex',
     flexDirection: 'column',

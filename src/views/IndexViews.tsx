@@ -9,6 +9,7 @@ import TimelineView from 'src/views/TimelineView';
 import TimelinePage from 'src/views/timeline';
 import GalleryView from 'src/views/GalleryView';
 import ExperienceView from 'src/views/ExperienceView';
+import ContactView from 'src/views/ContactView';
 import FooterView from 'src/views/Footer';
 
 const viewMapping: Array<ViewMappingItem> = [
@@ -27,6 +28,10 @@ const viewMapping: Array<ViewMappingItem> = [
   {
     id: 'projects',
     component: <ProjectsView />
+  },
+  {
+    id: 'contact',
+    component: <ContactView />
   },
   {
     id: 'footer',

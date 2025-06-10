@@ -16,6 +16,7 @@ const ROUTES:Array<any> = [
   { path: 'experience', name: 'Experience' },
   // { path: 'timeline', name: 'timeline' },
   { path: 'projects', name: 'Project' },
+  { path: 'contact', name: 'Contact' },
   // { path: 'mindmap', name: 'mindmap' },
   // { path: 'gallery', name: 'gallery' },
 ];

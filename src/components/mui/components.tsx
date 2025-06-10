@@ -1,6 +1,8 @@
 // layout
 export { default as Container } from "@mui/material/Container";
+export type { ContainerProps } from '@mui/material/Container';
 export { default as Box } from "@mui/material/Box";
+export type { BoxProps } from '@mui/material/Box';
 // bar
 export { default as AppBar } from "@mui/material/AppBar";
 export { default as Toolbar } from "@mui/material/Toolbar";
@@ -34,6 +36,8 @@ export { default as StepLabel } from "@mui/material/StepLabel";
 export { default as StepContent } from "@mui/material/StepContent";
 export { default as StepIcon } from "@mui/material/StepIcon";
 export { default as StepIconProps } from "@mui/material/StepIcon";
+// input
+export { default as TextField } from "@mui/material/TextField";
 
 export { default as Chip } from "@mui/material/Chip";
 export { default as Avatar } from "@mui/material/Avatar";
