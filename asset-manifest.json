@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/personal_jui_wen_chiang_website/static/css/main.7f2be88c.css",
+    "main.js": "/personal_jui_wen_chiang_website/static/js/main.6c054d43.js",
+    "static/js/453.29767283.chunk.js": "/personal_jui_wen_chiang_website/static/js/453.29767283.chunk.js",
+    "static/media/slick.svg": "/personal_jui_wen_chiang_website/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/personal_jui_wen_chiang_website/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/personal_jui_wen_chiang_website/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/personal_jui_wen_chiang_website/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/personal_jui_wen_chiang_website/index.html",
+    "main.7f2be88c.css.map": "/personal_jui_wen_chiang_website/static/css/main.7f2be88c.css.map",
+    "main.6c054d43.js.map": "/personal_jui_wen_chiang_website/static/js/main.6c054d43.js.map",
+    "453.29767283.chunk.js.map": "/personal_jui_wen_chiang_website/static/js/453.29767283.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f2be88c.css",
+    "static/js/main.6c054d43.js"
+  ]
+}
