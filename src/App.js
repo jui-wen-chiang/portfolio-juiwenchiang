@@ -49,7 +49,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <CssBaseline />
-      <Router>
+      <Router basename="/personal_jui_wen_chiang_website">
         <AppLayout />
       </Router>
     </ThemeProvider>

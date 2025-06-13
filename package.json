@@ -36,8 +36,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://jui-wen-chiang.github.io/personal_jui_wen_chiang_website",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -58,6 +61,7 @@
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.13",
+    "gh-pages": "^6.3.0",
     "typescript": "^4.9.5"
   }
 }
