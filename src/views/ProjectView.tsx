@@ -1,5 +1,6 @@
-import { projectData } from "src/data/projectsData";
+const { PUBLIC_URL } = process.env;
 
+import { projectData } from "src/data/projectsData";
 import { Typography, CardContent } from 'src/components/mui/components';
 import { ColContainer, RowContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { TextContainer, ImageContainer, TextCard, SummaryBox, IconBox, IconChip, ImageBox } from 'src/assets/styles/views/ProjectStyle';
@@ -37,7 +38,7 @@ export default function ProjectsView() {
                             </TextCard>
                         </TextContainer>
                         <ImageContainer>
-                            <ImageBox alt="project image" src={item.image}></ImageBox>
+                            <ImageBox alt={item.title} src={`${PUBLIC_URL}${item.image}`} ></ImageBox>
                         </ImageContainer>
                     </RowContainer>
                 )

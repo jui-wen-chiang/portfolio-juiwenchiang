@@ -1,7 +1,8 @@
-import { paragraphProfessional,paragraphList,skillsList } from "src/data/aboutData";
+const { PUBLIC_URL } = process.env;
 
-import { RowContainer,ColContainer } from 'src/assets/styles/commonStyles';
-import { Container, Box, Button, Typography, List, ListItem } from 'src/components/mui/components';
+import { paragraphProfessional, paragraphList, skillsList } from "src/data/aboutData";
+import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
+import { Box, Typography, List, ListItem } from 'src/components/mui/components';
 
 
 export default function AboutView() {
@@ -17,12 +18,12 @@ export default function AboutView() {
                         objectFit: 'cover',
                         borderRadius: '1rem',
                     }}
-                    alt="The house from the offer."
-                    src="/image_2022_professional portrait_half_body.jpeg"
+                    alt="Portrait"
+                    src={`${PUBLIC_URL}/imgs/portrait_half_body.jpeg`}
                 />
                 <Box sx={{ display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
                     <Typography>{paragraphProfessional}</Typography>
-                    <br/>
+                    <br />
                     <Typography>{paragraphList}</Typography>
                     <List
                         sx={{
@@ -32,7 +33,7 @@ export default function AboutView() {
                     >
                         {skillsList.map((item, index) => {
                             return (
-                                <ListItem sx={{ display: 'list-item', padding:'0' }}>
+                                <ListItem sx={{ display: 'list-item', padding: '0' }}>
                                     {item}
                                 </ListItem>
                             )
