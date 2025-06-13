@@ -1,9 +1,8 @@
-const { PUBLIC_URL } = process.env;
-
 import { paragraphProfessional, paragraphList, skillsList } from "src/data/aboutData";
 import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
 import { Box, Typography, List, ListItem } from 'src/components/mui/components';
 
+const { PUBLIC_URL } = process.env;
 
 export default function AboutView() {
     return (

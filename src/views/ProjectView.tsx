@@ -1,9 +1,9 @@
-const { PUBLIC_URL } = process.env;
-
 import { projectData } from "src/data/projectsData";
 import { Typography, CardContent } from 'src/components/mui/components';
 import { ColContainer, RowContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { TextContainer, ImageContainer, TextCard, SummaryBox, IconBox, IconChip, ImageBox } from 'src/assets/styles/views/ProjectStyle';
+
+const { PUBLIC_URL } = process.env;
 
 export default function ProjectsView() {
     return (
