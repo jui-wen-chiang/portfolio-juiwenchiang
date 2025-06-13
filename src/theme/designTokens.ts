@@ -10,7 +10,10 @@ const ColorScheme: { [key: string]: string } = {
     'earthyOrange': '#db6d5b',
     'lemonYellow': '#f9f871',
     'alabasterWhite': '#f1f1e6',
+    'oxfordBlue': '#002147',
+    'grey':'#9e9e9e'
 };
+
 
 // plum: '#532253',
 // amber: '#fbaf57',

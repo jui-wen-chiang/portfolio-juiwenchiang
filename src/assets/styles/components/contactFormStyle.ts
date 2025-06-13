@@ -1,51 +1,42 @@
 import { styled } from "@mui/material/styles";
-import { Container, ContainerProps, Box, Button, TextField, List, ListItem, BoxProps } from 'src/components/mui/components';
+import { Box, TextField } from 'src/components/mui/components';
 import { Theme } from '@mui/material/styles';
+import {ColorScheme}from "src/theme/designTokens"
+
 
 const TextFieldBox = styled(Box)(({ theme }) => ({
     width: '100%',
-    padding:'1rem 2rem'
+    padding: '1rem 2rem'
 }));
 
 const UserTextField = styled(TextField)(({ theme }) => ({
-    // padding: '2rem',
-    // paddingTop: '0',
-    // width: '70vw',
     width: '100%',
-
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: 'white', // 未 focus 邊框
+            borderColor: ColorScheme.grey
         },
         '&:hover fieldset': {
-            borderColor: 'white', // hover 邊框
+            borderColor: ColorScheme.alabasterWhite
         },
         '&.Mui-focused fieldset': {
-            borderColor: '#f50057', // 聚焦邊框，可依 theme 改
+            borderColor: ColorScheme.alabasterWhite
         },
     },
     '& .MuiInputBase-input': {
-        color: 'white', // 輸入文字
+        color: ColorScheme.alabasterWhite
     },
     '& .MuiInputLabel-root': {
-        color: 'white', // label 初始顏色
+        color: ColorScheme.alabasterWhite
     },
     '& .MuiInputLabel-root.Mui-focused': {
-        color: '#f50057', // label 聚焦後顏色（optional）
+        color: ColorScheme.alabasterWhite
     },
 }));
 
 const inputPropsStyle = (theme: Theme) => ({
-    // ...theme.typography.body1,
+    ...theme.typography.body1,
     left: "1rem",
     right: "1rem",
-    fontSize: "20px",
-    // marginTop: "4px"
 });
 
-const inputLablePropsStyle = {
-    fontSize: "12px",
-    bottom: "20px"
-};
-
-export { TextFieldBox,UserTextField,inputPropsStyle }
+export { TextFieldBox, UserTextField, inputPropsStyle }

@@ -7,10 +7,10 @@ import { TextContainer, ImageContainer, TextCard, SummaryBox, IconBox, IconChip,
 export default function ProjectsView() {
     return (
         <ColContainer>
-            <Typography variant="caption" component='h2'>PROJECTS</Typography>
+            <Typography variant="caption" component='h2' sx={{paddingBottom:0}}>PROJECTS</Typography>
             {projectData.map((item, index) => {
                 return (
-                    <RowContainer sx={{ margin: '3rem auto' }}>
+                    <RowContainer sx={{ margin: '2rem auto' }}>
                         <TextContainer>
                             <TextCard sx={{ boxShadow: 0 }}>
                                 <CardContent>

@@ -15,14 +15,16 @@ const HorizontalToolbar = styled(Container)(({ theme }) => ({
     height: '8vh',
     display: 'flex',
     justifyContent: 'flex-end',
-
-    borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
+    borderRadius: `calc(${theme.shape.borderRadius}px + 30px)`,
     backdropFilter: 'blur(24px)',
     // border: '1px solid',
     borderColor: ((theme as any).vars || theme).palette.divider,
     backgroundColor: (theme as any).vars
-        ? `rgba(${(theme as any).vars.palette.background.defaultChannel} / 0.4)`
-        : alpha(theme.palette.background.default, 0.4),
+        ? `rgba(${(theme as any).vars.palette.divider} / 0.4)`
+        : alpha(theme.palette.divider, 0.4),
+    // backgroundColor: (theme as any).vars
+    //     ? `rgba(${(theme as any).vars.palette.text.primary} / 0.4)`
+    //     : alpha(theme.palette.text.primary, 0.4),
     boxShadow: ((theme as any).vars || theme).shadows[1],
     // padding: '0.5rem 2rem',
 }));
@@ -72,4 +74,4 @@ const NavItems = styled(Box)({
     gap: 10
 });
 
-export { HorizontalAppBar, HorizontalToolbar, ButtonStyle,SideBar, NavBar, NavItems }
+export { HorizontalAppBar, HorizontalToolbar, ButtonStyle, SideBar, NavBar, NavItems }

@@ -7,6 +7,8 @@ export type { BoxProps } from '@mui/material/Box';
 export { default as AppBar } from "@mui/material/AppBar";
 export { default as Toolbar } from "@mui/material/Toolbar";
 export { default as Slide } from '@mui/material/Slide';
+// grid
+export { default as Grid } from "@mui/material/Grid";
 // card
 export { default as Card } from "@mui/material/Card";
 export { default as CardActions } from "@mui/material/CardActions";

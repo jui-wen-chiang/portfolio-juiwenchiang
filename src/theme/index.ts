@@ -1,5 +1,5 @@
 import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
-import {FontScheme,ColorScheme}from "src/theme/designTokens"
+import { FontScheme, ColorScheme } from "src/theme/designTokens"
 
 export default createTheme({
     // MUI will prioritize the typography settings of Theme
@@ -20,8 +20,8 @@ export default createTheme({
         caption: {
             fontSize: "2rem",
             letterSpacing: '0.1rem',
-            color: ColorScheme.plumRed,
-            padding:'2rem'
+            color: ColorScheme.lemonYellow,
+            padding: '2rem'
         },
         h2: {
             fontSize: "2rem",
@@ -52,7 +52,7 @@ export default createTheme({
             color: ColorScheme.alabasterWhite,
         },
         // custom styles
-        stepTitle:{
+        stepTitle: {
             fontSize: "1.6rem",
             letterSpacing: '0.1rem',
         }
@@ -75,13 +75,13 @@ export default createTheme({
         text: {
             primary: ColorScheme.alabasterWhite
         },
-        divider: '#E0E0E0',
+        divider: '#33bfff',
         // Custom colors
         blueCard: {
-            main: '#002147', //Oxford Blue
-            light: '#002147',
-            dark: '#002147',
-            contrastText: '#002147',
+            main: ColorScheme.oxfordBlue,
+            light: ColorScheme.oxfordBlue,
+            dark: ColorScheme.oxfordBlue,
+            contrastText: ColorScheme.oxfordBlue
         }
     },
     components: {

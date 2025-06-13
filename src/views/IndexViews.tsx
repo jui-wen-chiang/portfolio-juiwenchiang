@@ -38,13 +38,15 @@ const viewMapping: Array<ViewMappingItem> = [
     component: <FooterView />
   }
 ];
+let lastIndex = viewMapping.length - 1;
 
 export default function IndexViews() {
   return (
     <Box>
-      {viewMapping.map((view, inde) => {
+      {viewMapping.map((view, index) => {
+        let mbSetting = index == lastIndex ? 2 : 10;
         return (
-          <Box id={view.id} sx={{ scrollMarginTop: '80px', mb: 10 }}>
+          <Box id={view.id} sx={{ scrollMarginTop: '80px', mb: mbSetting }}>
             {view.component}
           </Box>
         )

@@ -18,8 +18,8 @@ const ImageContainer = styled(Box)(({ theme }) => ({
 }));
 
 const TextCard = styled(Card)(({ theme }) => ({
-    padding: '8px',
-    margin: 0,
+    // padding: '1rem',
+    // margin: 0,
     backgroundColor: theme.palette.background.default
 }));
 

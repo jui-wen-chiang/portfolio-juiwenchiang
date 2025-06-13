@@ -1,19 +1,14 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Container, Box, Button, TextField, Typography } from 'src/components/mui/components';
-import { TextFieldBox, UserTextField, inputPropsStyle } from 'src/assets/styles/components/contactFormStyle';
-import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
+import { Grid, Button, Typography } from 'src/components/mui/components';
+import { UserTextField, inputPropsStyle } from 'src/assets/styles/components/contactFormStyle';
+import { ColContainer } from 'src/assets/styles/commonStyles';
 
 export default function ContactUs() {
-  // const form = useRef();
   const form = useRef(null);
-
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // const  handleOnSubmit = ( e ) => { e.preventDefault (
-    //   ) ; emailjs.sendForm      ( SERVICE_ID , TEMPLATE_ID , e.target , PUBLIC_KEY ) .then        ( ( result ) = > { alert ( '訊息發送成功' )        } , consert . ( '出現錯誤！' ) }        ); e.target.reset      ( ) }    ;
 
     emailjs
       .sendForm(
@@ -38,30 +33,28 @@ export default function ContactUs() {
 
   return (
     <ColContainer component="form" ref={form} onSubmit={sendEmail}>
-      <TextFieldBox >
+      {/* <TextFieldBox >
         <Typography>SEND TO</Typography>
         <Typography> raewen.juiwenchiang@gmail.com</Typography>
-      </TextFieldBox>
-
-      <TextFieldBox>
-        <Typography>NAME</Typography>
-        <UserTextField name="user_name" variant="outlined" color="secondary" placeholder="Please enter  your name" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required
-        />
-      </TextFieldBox>
-
-      <TextFieldBox>
-        <Typography>EMAIL</Typography>
-        <UserTextField name="user_email" variant="outlined" color="secondary" placeholder="Please enter your email" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required type="email"
-        />
-      </TextFieldBox>
-
-      <TextFieldBox>
-        <Typography>WHAT DO YOU HAVE IN MIND</Typography>
-        <UserTextField name="message" variant="outlined" color="secondary" placeholder="Please enter message" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required multiline rows={10}
-        />
-      </TextFieldBox>
-      
-      <Button variant="contained" type="submit">Send Message</Button>
+      </TextFieldBox> */}
+      <Grid container spacing={3} sx={{ padding: '2rem', width: '100%' }}>
+        <Grid size={6}>
+          <Typography>Name</Typography>
+          <UserTextField name="user_name" variant="outlined" color="secondary" placeholder="Please enter your name" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required
+          />
+        </Grid>
+        <Grid size={6}>
+          <Typography>Email</Typography>
+          <UserTextField name="user_email" variant="outlined" color="secondary" placeholder="Please enter your email" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required type="email"
+          />
+        </Grid>
+        <Grid size={12}>
+          <Typography>What do you have in mind</Typography>
+          <UserTextField name="message" variant="outlined" color="secondary" placeholder="Please enter the message" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required multiline rows={10}
+          />
+        </Grid>
+      </Grid>
+      <Button variant="contained" type="submit" sx={{ margin: '1rem' }}>Send Message</Button>
     </ColContainer>
   );
 };
