@@ -20,12 +20,12 @@ const linkBarContent = [
         webSrc: 'https://github.com/jui-wen-chiang',
         icon: <GitHubIcon />
     },
-    {
-        name: 'Email',
-        lable: 'get in touch',
-        webSrc: 'https://mui.com/material-ui/react-button/#contained-buttons',
-        icon: <EmailRoundedIcon />
-    },
+    // {
+    //     name: 'Email',
+    //     lable: 'get in touch',
+    //     webSrc: 'https://mui.com/material-ui/react-button/#contained-buttons',
+    //     icon: <EmailRoundedIcon />
+    // },
 ];
 
 

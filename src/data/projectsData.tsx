@@ -13,10 +13,13 @@ const projectData = [
             "Enhanced decision-making through data integration."
         ],
         icons: [
-            { lable: 'VueJS3', src: '' },
+            { lable: 'VueJS', src: '' },
             { lable: 'Python', src: '' },
-            { lable: 'Odoo', src: '' },
-            { lable: 'i18n', src: '' }
+            { lable: 'I18n', src: '' },
+            { lable: 'PostgreSQL', src: '' },
+            { lable: 'Redis', src: '' },
+            { lable: 'Docker', src: '' },
+            { lable: 'Jenkins', src: '' },
         ],
         details: {},
     },
@@ -33,9 +36,12 @@ const projectData = [
         ],
         icons: [
             { lable: 'Bert NPL', src: '' },
+            { lable: 'PyTorch', src: '' },
             { lable: 'Python', src: '' },
             { lable: 'FastAPI', src: '' },
-            { lable: 'Vue2', src: '' }
+            { lable: 'VueJS', src: '' },
+            { lable: 'MongoDB', src: '' },
+            { lable: 'Docker', src: '' },
         ],
         details: {},
     },
@@ -52,6 +58,9 @@ const projectData = [
         ],
         icons: [
             { lable: 'Bert NPL', src: '' },
+            { lable: 'Tensorflow', src: '' },
+            { lable: 'Beautifulsoup', src: '' },
+            { lable: 'MySQL', src: '' },
             { lable: 'Python', src: '' },
             { lable: 'LineBot', src: '' },
         ],
