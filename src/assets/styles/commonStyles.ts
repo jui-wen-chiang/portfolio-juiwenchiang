@@ -1,20 +1,32 @@
 import { styled } from "@mui/material/styles";
 import * as base from "./baseStyle";
 import { RatioRowProps } from "src/types/styles/commonStyle"
-import { Container,ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
+import { Container, ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
 
 const RowContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+
+    [`@media (max-width:${base.breakpoints.sm}px)`]: {
+        flexDirection: 'column',
+        // padding: '2rem 1rem',
+    }
+    // 手機螢幕下改為直向排版
+    // '@media (max-width: 768px)': {
+    //     // project layout
+    //     flexDirection: 'column-reverse',
+    //     alignItems: 'center',
+    //     marginBottom: '3rem'
+    // }
 });
 
 const ColContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
 });
 
 const ControlButton = styled(Button)(({ theme }) => ({
@@ -53,4 +65,4 @@ const RatioRowContainer = styled(Container, {
     },
 }));
 
-export { RowContainer, ColContainer, ControlButton, ListContainer,ListContent,RatioRowContainer }
+export { RowContainer, ColContainer, ControlButton, ListContainer, ListContent, RatioRowContainer }

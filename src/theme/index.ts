@@ -1,7 +1,16 @@
-import { createTheme, alpha, getContrastRatio } from '@mui/material/styles';
+import { createTheme, alpha, getContrastRatio, responsiveFontSizes } from '@mui/material/styles';
 import { FontScheme, ColorScheme } from "src/theme/designTokens"
 
-export default createTheme({
+let theme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,      // phones
+            sm: 600,    // tablets
+            md: 900,    // small laptop
+            lg: 1200,   // desktop
+            xl: 1536,   // large desktop
+        }
+    },
     // MUI will prioritize the typography settings of Theme
     typography: {
         fontSize: 16,
@@ -99,14 +108,12 @@ export default createTheme({
                     // backgroundPosition: 'center'
                     cursor: 'url("/dot.png"), auto',
                     // cursor: 'help',
-                    // backgroundColor: 'red',
-                    // backgroundImage:'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
-                    // color: '#f9f8ff',
                     color: ColorScheme.alabasterWhite,
-                    // color:'#aaaabc', // Mischka
-                    // color:'#8f91c4',
                 },
             }
         }
     }
 });
+
+theme = responsiveFontSizes(theme);
+export default theme;

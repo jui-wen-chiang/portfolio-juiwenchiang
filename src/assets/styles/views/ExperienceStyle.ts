@@ -6,8 +6,8 @@ import { Stepper, Card, List, ListItem } from 'src/components/mui/components';
 
 const StyledStepper = styled(Stepper)(({ theme }) => ({
   "width": "100%",
-  [theme.breakpoints.down('xs')]: {
-    maxWidth: '100%'
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '80vw',
   },
   [theme.breakpoints.up('sm')]: {
     maxWidth: '800px'

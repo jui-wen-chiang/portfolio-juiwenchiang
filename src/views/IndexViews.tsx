@@ -51,18 +51,6 @@ export default function IndexViews() {
           </Box>
         )
       })}
-      {/* <Box id="timeline" sx={{ scrollMarginTop: '80px', mb: 8 }}>
-        <TimelinePage />
-      </Box> */}
-      {/* <Box id="timeline" sx={{ scrollMarginTop: '80px', mb: 8 }}>
-        <TimelineView />
-      </Box> */}
-      {/* <Box id="mindmap" sx={{ scrollMarginTop: '80px', mb: 8 }}>
-        <MindMapView />
-      </Box> */}
-      {/* <Box id="gallery" sx={{ scrollMarginTop: '80px', mb: 8 }}>
-        <GalleryView />
-      </Box> */}
     </Box>
   );
 }

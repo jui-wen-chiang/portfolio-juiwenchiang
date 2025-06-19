@@ -4,6 +4,10 @@ import {Typography, Step, StepButton, StepContent, CardContent} from 'src/compon
 import { ColContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { StyledStepper, StepCard } from 'src/assets/styles/views/ExperienceStyle';
 import { SchoolIcon, WorkIcon } from 'src/components/mui/icons';
+// 
+
+import { StyledTypography } from 'src/assets/styles/components/StyledComp';
+
 
 export default function ExperienceView() {
     const [activeStep, setActiveStep] = React.useState(1); // initial expansion step 2
@@ -27,7 +31,7 @@ export default function ExperienceView() {
                 {experienceData.map((item, index) => (
                     <Step key={item.title}>
                         <StepButton icon={StepIcon(item.class)} onClick={handleStep(index)}>
-                            <Typography variant="stepTitle">{item.title}</Typography>
+                            <StyledTypography variant="stepTitle">{item.title}</StyledTypography>
                         </StepButton>
                         <StepContent>
                             <StepCard>

@@ -1,4 +1,5 @@
 import { paragraphProfessional, paragraphList, skillsList } from "src/data/aboutData";
+import { portraitImage } from 'src/assets/styles/views/AboutStyle';
 import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
 import { Box, Typography, List, ListItem } from 'src/components/mui/components';
 
@@ -11,12 +12,7 @@ export default function AboutView() {
             <RowContainer >
                 <Box
                     component="img"
-                    sx={{
-                        width: '35%',
-                        height: 'auto',
-                        objectFit: 'cover',
-                        borderRadius: '1rem',
-                    }}
+                    sx={portraitImage}
                     alt="Portrait"
                     src={`${PUBLIC_URL}/imgs/portrait_half_body.jpeg`}
                 />
