@@ -26,24 +26,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const RowContainer = styled(Container)<ContainerProps>({
+const RowContainer = styled(Container)<ContainerProps>(({ theme }) => ({
     ...base.fullSize,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
 
-    [`@media (max-width:${base.breakpoints.sm}px)`]: {
+    [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
-        // padding: '2rem 1rem',
     }
-    // 手機螢幕下改為直向排版
-    // '@media (max-width: 768px)': {
-    //     // project layout
-    //     flexDirection: 'column-reverse',
-    //     alignItems: 'center',
-    //     marginBottom: '3rem'
-    // }
-});
+}));
+
 
 const ColContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,

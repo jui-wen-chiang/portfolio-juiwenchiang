@@ -16,14 +16,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
     alignContent: 'center',
     alignItems: 'center',
     flex: 1,
-    '@media (max-width: 768px)': {
-        // project layout
-        marginLeft: 0,
-        marginTop: '-3rem', // 手機時圖片上移蓋住下面的文字卡片
-        zIndex: 2
-    }
 }));
-
 
 
 const TextCard = styled(Card)(({ theme }) => ({
@@ -45,6 +38,18 @@ const SummaryBox = styled(Box)(({ theme }) => ({
     // transition: '0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 }));
 
+const BackgroundImageBox = styled(Box)(({ theme }) => ({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    opacity: 0.3,
+    zIndex: -1,
+}));
+
 const IconBox = styled(Box)(({ theme }) => ({
     width: "100%",
     display: 'flex',
@@ -58,8 +63,8 @@ const IconChip = styled(Chip)(({ theme }) => ({
     margin: '0 0.3rem',
     color: theme.palette.info.main,
     fontFamily: FontScheme.secondary,
-        [theme.breakpoints.down('sm')]: {
-    margin: '0.3rem',
+    [theme.breakpoints.down('sm')]: {
+        margin: '0.3rem',
     },
 }));
 
@@ -70,4 +75,4 @@ const ImageBox = styled('img')(({ theme }) => ({
     borderRadius: '2rem',
 }));
 
-export { TextContainer, ImageContainer, TextCard, SummaryBox, IconBox, IconChip, ImageBox }
+export { TextContainer, ImageContainer, TextCard, SummaryBox, BackgroundImageBox,IconBox, IconChip, ImageBox }

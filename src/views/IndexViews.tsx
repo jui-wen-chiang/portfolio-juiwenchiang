@@ -11,7 +11,7 @@ import GalleryView from 'src/views/GalleryView';
 import ExperienceView from 'src/views/ExperienceView';
 import ContactView from 'src/views/ContactView';
 import FooterView from 'src/views/Footer';
-import ResponsiveAppBar from "src/mocks/page/test";
+import TestView from "src/mocks/page/test";
 
 const viewMapping: Array<ViewMappingItem> = [
   {
@@ -20,7 +20,7 @@ const viewMapping: Array<ViewMappingItem> = [
   },
   // {
   //   id: 'test',
-  //   component: <ResponsiveAppBar />
+  //   component: <TestView />
   // },
   {
     id: 'about',
