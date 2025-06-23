@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { RouteConfig } from "src/types/router";
 import TimelinePage from "src/views/timeline";
-import TestPage from "src/mocks/page/test";
+import TestPage from "src/mocks/page/i18ntest";
+import ResponsiveAppBar from "src/mocks/page/test";
+
 import SkillsView from "src/views/SkillsView";
 import TimelineView from "src/views/TimelineView";
 import GalleryView from "src/views/GalleryView";
@@ -12,6 +14,7 @@ import ProjectsView from "src/views/ProjectView";
 // Single Page Application
 const ROUTES:Array<any> = [
   { path: 'home', name: 'Home' },
+  // { path: 'test', name: 'Test' },
   { path: 'about', name: 'About' },
   { path: 'experience', name: 'Experience' },
   // { path: 'timeline', name: 'timeline' },

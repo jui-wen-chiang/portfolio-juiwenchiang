@@ -1,29 +1,25 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import ROUTES from "src/router/pageRouters";
 
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { HorizontalAppBar, HorizontalToolbar, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
-import { Slide, Box, Button } from "src/components/mui/components";
+import { useStyles } from 'src/assets/styles/commonStyles'
+import { HorizontalAppBar, HorizontalContainer, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
+import { Toolbar, Menu, MenuItem, Box, Button } from "src/components/mui/components";
+import { MenuIcon } from 'src/components/mui/icons';
 
-
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 
 export default function Appbar() {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md')); // md 為桌機以上
+  /*
+   The difference between the two responsive layouts is not obvious,
+   so use sx.display { xs: '', md: '' }
+   instead of useMediaQuery(theme.breakpoints.up('md'))
+   */
+  const [appBarHeight, setAppBarHeight] = useState(64);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const appBarRef = useRef(null);
+  const classes = useStyles();
 
-  const navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
-
+  // scroll to page
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -31,108 +27,86 @@ export default function Appbar() {
     }
   };
 
-  const HideOnScroll = (props: { children: React.ReactElement }) => {
-    // children is the element that needs to be hiden
-    const trigger = useScrollTrigger(); // to verify if it is scrolled or not
-    return (
-      <Box>
-        <Slide appear={false} direction="down" in={!trigger}>
-          {props.children}
-        </Slide>
-      </Box>
-    );
-  }
+  // Menu
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  // set App Bar Height
+  useEffect(() => {
+    const updateHeight = () => {
+      console.log('appBarHeight', appBarHeight)
+      if (appBarRef.current) {
+        setAppBarHeight(appBarRef.current.offsetHeight);
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
 
   return (
-    // Nav bar
-    // <HideOnScroll>
-    //   <HorizontalAppBar position="fixed" enableColorOnDark>
-    //     <HorizontalToolbar>
-    //       {ROUTES.map(({ path, name }) => (
-    //         name == "Home"
-    //           ? <Button
-    //             key={path}
-    //             color="info"
-    //             size="large"
-    //             sx={{ ...ButtonStyle, marginRight: "auto" }}
-    //             onClick={() => handleScroll(path)}>
-    //             {name}
-    //           </Button>
-    //           : <Button
-    //             key={path}
-    //             color="info"
-    //             size="large"
-    //             sx={ButtonStyle}
-    //             onClick={() => handleScroll(path)}>
-    //             {name}
-    //           </Button>
-    //       ))}
-    //     </HorizontalToolbar>
-    //   </HorizontalAppBar>
-    // </HideOnScroll>
-
-    // Side bar
-    // <AppBar
-    //   position="fixed"
-    //   enableColorOnDark
-    //   sx={barContainer}
-    // >
-    //   <Container>
-    //     <NavBar>
-    //       <NavItems>
-    //         {ROUTES.map(({ path, name }) => (
-    //           <Button key={path} color="info" size="small" onClick={() => handleScroll(path)}>
-    //             {name}
-    //           </Button>
-    //         ))}
-    //         {/* <Button variant="contained" size="small">Sign in</Button> */}
-    //       </NavItems>
-    //     </NavBar>
-    //   </Container>
-    // </AppBar>
-
-    <>
-      {isDesktop ? (
-        // 桌機版 Appbar
-        <HideOnScroll>
-          <HorizontalAppBar position="fixed" enableColorOnDark>
-            <HorizontalToolbar>
+    /* breakpoints xs & md */
+    <HorizontalAppBar ref={appBarRef} position="fixed" enableColorOnDark>
+      <HorizontalContainer maxWidth="xl">
+        <Toolbar disableGutters>
+          {/* xs layout */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, width:'100vw' }}>
+            <Button aria-describedby="menu-appbar" variant="text" color="info" onClick={handleOpenNavMenu}>
+              <MenuIcon />
+            </Button>
+            <Menu
+              id="menu-appbar"
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              anchorEl={null}
+              anchorReference="anchorPosition"
+              anchorPosition={{ top: appBarHeight - 10, left: 0 }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+              className={classes.menu}
+            >
               {ROUTES.map(({ path, name }) => (
-                <Button
-                  key={path}
-                  color="info"
-                  size="large"
-                  sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
-                  onClick={() => handleScroll(path)}
-                >
-                  {name}
-                </Button>
-              ))}
-            </HorizontalToolbar>
-          </HorizontalAppBar>
-        </HideOnScroll>
-      ) : (
-        // 手機版 Sidebar（你可以改為 Drawer）
-        // sx={SideBar}
-        <AppBar position="fixed" >
-          <Container>
-            <Toolbar>
-              <Typography>
-                {ROUTES.map(({ path, name }) => (
+                <MenuItem key={path} onClick={handleCloseNavMenu}>
                   <Button
                     key={path}
                     color="info"
-                    size="small"
+                    size="large"
+                    sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
                     onClick={() => handleScroll(path)}
                   >
                     {name}
                   </Button>
-                ))}
-              </Typography>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      )}
-    </>
-  );
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          {/* md layout */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems: 'center' } }}>
+            {ROUTES.map(({ path, name }) => (
+              <Button
+                key={path}
+                color="info"
+                size="large"
+                // sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
+                onClick={() => handleScroll(path)}
+              >
+                {name}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </HorizontalContainer>
+    </HorizontalAppBar>
+  )
 }

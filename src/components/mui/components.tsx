@@ -48,5 +48,6 @@ export { default as Select } from "@mui/material/Select";
 export { default as LinearProgress } from '@mui/material/LinearProgress';
 export { default as Typography } from '@mui/material/Typography';
 export { default as Divider } from "@mui/material/Divider";
+export { default as Menu } from "@mui/material/Menu";
 export { default as MenuItem } from "@mui/material/MenuItem";
 export { default as Drawer } from "@mui/material/Drawer";
