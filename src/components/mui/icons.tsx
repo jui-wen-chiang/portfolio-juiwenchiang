@@ -9,7 +9,8 @@ export { default as EmailRoundedIcon } from '@mui/icons-material/EmailRounded';
 export { default as AssignmentIndSharpIcon } from '@mui/icons-material/AssignmentIndSharp';
 export { default as SimCardDownloadIcon } from '@mui/icons-material/SimCardDownload';
 
-// for test
+// basic
 export { default as AirplanemodeActiveIcon } from '@mui/icons-material/AirplanemodeActive';
 export { default as ArrowBackRoundedIcon } from '@mui/icons-material/ArrowBackRounded';
 export { default as ArrowForwardRoundedIcon } from  '@mui/icons-material/ArrowForwardRounded';
+export { default as KeyboardArrowUpIcon } from '@mui/icons-material/KeyboardArrowUp';

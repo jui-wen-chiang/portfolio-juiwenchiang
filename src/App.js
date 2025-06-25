@@ -6,6 +6,8 @@ import theme from './theme/index';
 // views & Router
 import { BrowserRouter as Router } from "react-router-dom";
 import Appbar from './components/tools/appBar.tsx';
+import BackToTop from './components/tools/backToTop.tsx';
+
 import MouseGlow from './components/tools/MouseGlow.tsx';
 
 import IndexViews from "src/views/IndexViews";
@@ -41,6 +43,7 @@ function AppLayout() {
       {/* <Box sx={autoHeight}/> */}
       {/* <AppRoutes/> */}
       <IndexViews />
+      <BackToTop/>
     </Container>
   );
 }

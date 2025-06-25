@@ -1,14 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { experienceData } from "src/data/experienceData"
 import { StyledTab, ExperienceCard } from "src/assets/styles/views/ExperienceTabStyle"
-import { Tabs, Typography, Card, CardContent, CardActions, Button } from 'src/components/mui/components';
-import { ColContainer, TextCard, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
-
-interface TabPanelProps {
-  key: string;
-  items: Array<{ [key: string]: any }>;
-}
+import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
+import { ColContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 
 function CustomTabPanel(props: TabPanelProps) {
   const { key, items } = props;

@@ -19,4 +19,8 @@ interface LinkBarProps {
     simplyResumeIcon?: boolean;
 };
 
-export { BaseDialogProps, ControlBarProps, LinkBarProps }
+interface BackToTopProps {
+    children?: React.ReactElement<unknown>;
+}
+
+export { BaseDialogProps, ControlBarProps, LinkBarProps,BackToTopProps }

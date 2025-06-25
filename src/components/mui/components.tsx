@@ -46,6 +46,9 @@ export { default as ListItemText } from "@mui/material/ListItemText";
 // button
 export { default as Button } from "@mui/material/Button";
 export { default as IconButton } from '@mui/material/IconButton';
+export { default as Fab } from "@mui/material/Fab";
+export { default as Fade } from '@mui/material/Fade';
+
 // input
 export { default as TextField } from "@mui/material/TextField";
 export { default as Typography } from '@mui/material/Typography';
