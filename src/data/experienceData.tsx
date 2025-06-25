@@ -28,7 +28,7 @@ const experienceData = [
         ]
     },
     {
-        class: 'education',
+        class: 'professional courses',
         title: 'Al Smart Application Development Practical Training Course',
         date: '2022 January - 2022 March',
         location: "Commerce Development Research Institute, Taiwan",
@@ -42,7 +42,7 @@ const experienceData = [
         ]
     },
     {
-        class: 'education',
+        class: 'professional courses',
         title: 'UI/UX Interface Design Course',
         date: '2021 March - 2021 June',
         location: "Workforce Development Agency, Taiwan",

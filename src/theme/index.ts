@@ -77,6 +77,15 @@ let theme = createTheme({
             main: ColorScheme.earthyOrange
         },
         // State color
+        success: {
+            main: ColorScheme.alabasterWhite,
+        },
+        error: {
+            main: ColorScheme.alabasterWhite,
+        },
+        warning: {
+            main: ColorScheme.lemonYellow,
+        },
         info: {
             main: ColorScheme.alabasterWhite,
         },

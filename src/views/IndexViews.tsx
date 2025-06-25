@@ -8,10 +8,11 @@ import MindMapView from 'src/views/MindMapView';
 import TimelineView from 'src/views/TimelineView';
 import TimelinePage from 'src/views/timeline';
 import GalleryView from 'src/views/GalleryView';
+import ExperienceTabView from 'src/views/ExperienceTabView';
 import ExperienceView from 'src/views/ExperienceView';
 import ContactView from 'src/views/ContactView';
 import FooterView from 'src/views/Footer';
-import TestView from "src/mocks/page/test";
+// import BasicTabs from "src/mocks/page/test";
 
 const viewMapping: Array<ViewMappingItem> = [
   {
@@ -20,7 +21,7 @@ const viewMapping: Array<ViewMappingItem> = [
   },
   // {
   //   id: 'test',
-  //   component: <TestView />
+  //   component: <BasicTabs />
   // },
   {
     id: 'about',
@@ -28,7 +29,7 @@ const viewMapping: Array<ViewMappingItem> = [
   },
   {
     id: 'experience',
-    component: <ExperienceView />
+    component: <ExperienceTabView />
   },
   {
     id: 'projects',

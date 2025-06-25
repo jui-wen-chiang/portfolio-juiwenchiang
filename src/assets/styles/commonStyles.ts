@@ -37,7 +37,6 @@ const RowContainer = styled(Container)<ContainerProps>(({ theme }) => ({
     }
 }));
 
-
 const ColContainer = styled(Container)<ContainerProps>({
     ...base.fullSize,
     display: 'flex',
@@ -51,16 +50,21 @@ const ControlButton = styled(Button)(({ theme }) => ({
     fontSize: '3rem',
 }));
 
+const TextCard = styled(Card)(({ theme }) => ({
+    backgroundColor: theme.palette.background.default
+}));
 
 const ListContainer = styled(List)(({ theme }) => ({
     listStyleType: 'disc',
-    listStylePosition: 'inside',
-    padding: 0
+    listStylePosition: 'outside',
+    margin: 0,
+    paddingLeft: theme.spacing(3), // Indent a little to make the bullet visible
 }));
 
 const ListContent = styled(ListItem)(({ theme }) => ({
     display: 'list-item',
-    color: theme.palette.text.primary
+    color: theme.palette.text.primary,
+    paddingLeft: 0, // remove default padding to avoid multiple indentations
 }));
 
 // for timeline
@@ -81,4 +85,13 @@ const RatioRowContainer = styled(Container, {
     },
 }));
 
-export { useStyles, RowContainer, ColContainer, ControlButton, ListContainer, ListContent, RatioRowContainer }
+export {
+    useStyles,
+    RowContainer,
+    ColContainer,
+    ControlButton,
+    TextCard,
+    ListContainer,
+    ListContent,
+    RatioRowContainer
+}

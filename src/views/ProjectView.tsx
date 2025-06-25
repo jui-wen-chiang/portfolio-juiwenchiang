@@ -3,9 +3,9 @@ import { useTheme } from '@mui/material/styles';
 
 import { projectData } from "src/data/projectsData";
 import { Typography, CardContent, CardActions, Button } from 'src/components/mui/components';
-import { ColContainer, RowContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ColContainer, RowContainer, TextCard,ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import {
-    TextContainer, ImageContainer, TextCard, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
+    TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
 } from 'src/assets/styles/views/ProjectStyle';
 
 const { PUBLIC_URL } = process.env;

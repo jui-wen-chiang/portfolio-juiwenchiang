@@ -19,12 +19,6 @@ const ImageContainer = styled(Box)(({ theme }) => ({
 }));
 
 
-const TextCard = styled(Card)(({ theme }) => ({
-    // padding: '1rem',
-    // margin: 0,
-    backgroundColor: theme.palette.background.default
-}));
-
 const SummaryBox = styled(Box)(({ theme }) => ({
     zIndex: '2',
     position: 'relative',
@@ -75,4 +69,4 @@ const ImageBox = styled('img')(({ theme }) => ({
     borderRadius: '2rem',
 }));
 
-export { TextContainer, ImageContainer, TextCard, SummaryBox, BackgroundImageBox,IconBox, IconChip, ImageBox }
+export { TextContainer, ImageContainer, SummaryBox, BackgroundImageBox,IconBox, IconChip, ImageBox }
