@@ -1,8 +1,7 @@
-
 import { styled, alpha } from '@mui/material/styles';
 import * as base from "src/assets/styles/baseStyle";
 
-const portraitImage = {
+const portraitImage = (theme) => ({
     width: {
         xs: '100%',
         sm: '70%',
@@ -15,10 +14,10 @@ const portraitImage = {
     borderRadius: '1rem',
     display: 'block',
     margin: '0 auto',
-    [`@media (max-width:${base.breakpoints.sm}px)`]: {
+    [theme.breakpoints.down('lg')]: {
         marginBottom: '2rem ',
         maxWidth: '300px'
     }
-};
+});
 
 export { portraitImage }

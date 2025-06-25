@@ -1,7 +1,7 @@
 import { paragraphProfessional, paragraphList, skillsList } from "src/data/aboutData";
 import { portraitImage } from 'src/assets/styles/views/AboutStyle';
-import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
-import { Box, Typography, List, ListItem } from 'src/components/mui/components';
+import { RowContainer, ColContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { Box, Typography } from 'src/components/mui/components';
 
 const { PUBLIC_URL } = process.env;
 
@@ -9,32 +9,25 @@ export default function AboutView() {
     return (
         <ColContainer>
             <Typography variant="caption" component='h2'>ABOUT</Typography>
-            <RowContainer >
+            <RowContainer sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
                 <Box
                     component="img"
                     sx={portraitImage}
                     alt="Portrait"
                     src={`${PUBLIC_URL}/imgs/portrait_half_body.jpeg`}
                 />
-                <Box sx={{ display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
+                <ColContainer sx={{ alignItems: 'flex-start', padding: '0 2rem' }}>
                     <Typography>{paragraphProfessional}</Typography>
                     <br />
                     <Typography>{paragraphList}</Typography>
-                    <List
-                        sx={{
-                            listStyleType: 'disc',
-                            listStylePosition: 'inside'
-                        }}
-                    >
+                    <ListContainer>
                         {skillsList.map((item, index) => {
                             return (
-                                <ListItem sx={{ display: 'list-item', padding: '0' }}>
-                                    {item}
-                                </ListItem>
+                                <ListContent>{item} </ListContent>
                             )
                         })}
-                    </List>
-                </Box>
+                    </ListContainer>
+                </ColContainer>
             </RowContainer>
         </ColContainer>
     )
