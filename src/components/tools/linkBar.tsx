@@ -2,19 +2,21 @@ import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { LinkBarProps } from "src/types/components/tools";
 import { linkBarContent } from "src/data/components/toolData";
 
-import{LinkBarBox} from "src/assets/styles/components/tool"
+import { LinkBarBox } from "src/assets/styles/components/tool"
 import { Box, Button, IconButton } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
+
+const { PUBLIC_URL } = process.env;
 
 export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
     const ref = useRef<ReturnType<typeof setTimeout>[]>([]);
     const [items, set] = useState<string[]>([]);
 
+    const downloadRef = useRef(null);
     const onDownload = () => {
-        const link = document.createElement("a");
-        link.download = `JuiWen_Chiang_Resume.pdf`;
-        link.href = "/pdf/JuiWen_Chiang_Resume.pdf";
-        link.click();
+        if (downloadRef.current) {
+            downloadRef.current.click();
+        }
     };
 
     return (
@@ -38,6 +40,13 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                                 startIcon={item.icon}
                                 sx={{ ...base.commPadding, ...base.dmSerifFontFamily }}
                                 onClick={onDownload}>
+                                <a
+                                    ref={downloadRef}
+                                    href={`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`}
+                                    download="JuiWen_Chiang_Resume.pdf"
+                                    style={{ display: "none" }}
+                                >
+                                </a>
                                 Get Resume
                             </Button>
                         )
