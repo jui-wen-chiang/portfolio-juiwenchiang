@@ -26,6 +26,22 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const ViewsContainer = styled(Box)<ContainerProps>(({ theme }) => ({
+    position: "relative"
+}));
+
+const BackgroundBox = styled(Box)<ContainerProps>(({ theme }) => ({
+    position: "absolute",
+    width: "100%",
+    height: "150vh",
+    top: 0,
+    left: 0,
+    zIndex: -1,
+    padding: 0,
+    margin: 0,
+    pointerEvents: "none",
+}));
+
 const RowContainer = styled(Container)<ContainerProps>(({ theme }) => ({
     ...base.fullSize,
     display: 'flex',
@@ -87,6 +103,8 @@ const RatioRowContainer = styled(Container, {
 
 export {
     useStyles,
+    ViewsContainer,
+    BackgroundBox,
     RowContainer,
     ColContainer,
     ControlButton,

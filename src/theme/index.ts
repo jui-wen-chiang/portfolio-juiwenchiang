@@ -68,7 +68,8 @@ let theme = createTheme({
     },
     palette: {
         background: {
-            default: ColorScheme.midnightBlue
+            // default: ColorScheme.midnightBlue
+            default: '#ffff'
         },
         primary: {
             main: ColorScheme.plumRed,
@@ -103,24 +104,34 @@ let theme = createTheme({
         }
     },
     components: {
-        MuiCssBaseline: {
-            styleOverrides: {
-                // Changes the global style of all native HTML tags
-                body: {
-                    // backgroundImage: `url('/test.jpg')`,
-                    // backgroundRepeat: 'no-repeat',
-                    // backgroundSize: 'cover',
-                    // backgroundPosition: 'center',
-                    // backgroundImage: `url('/test.jpg')`,
-                    // backgroundSize: 'cover',
-                    // backgroundRepeat: 'no-repeat',
-                    // backgroundPosition: 'center'
-                    cursor: 'url("/dot.png"), auto',
-                    // cursor: 'help',
-                    color: ColorScheme.alabasterWhite,
-                },
-            }
-        }
+        // MuiCssBaseline: {
+        //     styleOverrides: {
+        //         // Changes the global style of all native HTML tags
+        //         body: {
+        //             // backgroundImage: `url('/test.jpg')`,
+        //             // backgroundRepeat: 'no-repeat',
+        //             // backgroundSize: 'cover',
+        //             // backgroundPosition: 'center',
+        //             // backgroundImage: `url('/test.jpg')`,
+        //             // backgroundSize: 'cover',
+        //             // backgroundRepeat: 'no-repeat',
+        //             // backgroundPosition: 'center'
+        //             // cursor: 'url("/dot.png"), auto',
+        //             // cursor: 'help',
+        //             // color: ColorScheme.alabasterWhite,
+
+        //             // position: 'fixed',
+        //             // top: 0,
+        //             // left: 0,
+        //             // width: '100%',
+        //             // height: '100vh',
+        //             // background: 'linear-gradient(-45deg, #ee9ca7, #ffdde1, #a1c4fd, #c2e9fb)',
+        //             // backgroundSize: '400% 400%',
+        //             // animation: 'gradientAnimation 15s ease infinite',
+        //             // zIndex: '-1'
+        //         },
+        //     }
+        // }
     }
 });
 

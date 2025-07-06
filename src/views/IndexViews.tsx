@@ -1,5 +1,6 @@
 import { ViewMappingItem } from "src/types/view/index";
 import { Container, Box } from 'src/components/mui/components';
+import { ViewsContainer, BackgroundBox } from 'src/assets/styles/commonStyles';
 
 import HomeView from 'src/views/Home';
 import AboutView from 'src/views/About';
@@ -12,7 +13,9 @@ import ExperienceTabView from 'src/views/ExperienceTabView';
 import ExperienceView from 'src/views/ExperienceView';
 import ContactView from 'src/views/ContactView';
 import FooterView from 'src/views/Footer';
-// import BasicTabs from "src/mocks/page/test";
+import BasicTabs from "src/mocks/page/test";
+
+import VantaFogBackground from "src/components/tools/VantaFogBackground";
 
 const viewMapping: Array<ViewMappingItem> = [
   {
@@ -48,15 +51,20 @@ let lastIndex = viewMapping.length - 1;
 
 export default function IndexViews() {
   return (
-    <Box>
-      {viewMapping.map((view, index) => {
-        let mbSetting = index == lastIndex ? 2 : 10;
-        return (
-          <Box id={view.id} sx={{ scrollMarginTop: '80px', mb: mbSetting }}>
-            {view.component}
-          </Box>
-        )
-      })}
-    </Box>
+    <ViewsContainer>
+      <BackgroundBox>
+        <VantaFogBackground />
+      </BackgroundBox>
+      <Box>
+        {viewMapping.map((view, index) => {
+          let mbSetting = index == lastIndex ? 2 : 10;
+          return (
+            <Box id={view.id} sx={{ scrollMarginTop: '80px', mb: mbSetting }}>
+              {view.component}
+            </Box>
+          )
+        })}
+      </Box>
+    </ViewsContainer>
   );
 }
