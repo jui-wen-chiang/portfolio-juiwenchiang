@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 
 import { projectData } from "src/data/projectsData";
 import { Typography, CardContent, CardActions, Button } from 'src/components/mui/components';
-import { ColContainer, RowContainer, TextCard,ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ColContainer, RowContainer, TextCard, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import {
     TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
 } from 'src/assets/styles/views/ProjectStyle';
@@ -16,7 +16,7 @@ export default function ProjectsView() {
 
     return (
         <ColContainer>
-            <Typography variant="caption" component='h2' sx={{ paddingBottom: 0 }}>PROJECTS</Typography>
+            <Typography variant="h4" component='h4' sx={{ paddingBottom: 0 }}>PROJECTS</Typography>
             {projectData.map((item, index) => (
                 <RowContainer key={index}
                     sx={{ margin: '2rem auto', flexDirection: isDesktop ? 'row' : 'column-reverse' }}>
@@ -24,7 +24,7 @@ export default function ProjectsView() {
                         <TextCard sx={{ boxShadow: 0 }}>
                             <CardContent>
                                 <Typography variant="subtitle2">{item.subtitle}</Typography>
-                                <Typography variant="h2">{item.title}</Typography>
+                                <Typography variant="h5">{item.title}</Typography>
                                 <SummaryBox>
                                     {isDesktop ? (
                                         <>
@@ -49,7 +49,7 @@ export default function ProjectsView() {
                                 <IconBox>
                                     {item.icons.map((icon, idx) => (
                                         <IconChip
-                                            key={idx} label={icon.lable} color="primary" size="small" />
+                                            key={idx} label={icon.lable} size="small" />
                                     ))}
                                 </IconBox>
                             </CardContent>

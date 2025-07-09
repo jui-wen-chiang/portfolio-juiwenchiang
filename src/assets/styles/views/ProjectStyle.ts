@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { FontScheme } from "src/theme/designTokens";
+import { FontFamilyScheme } from "src/theme/designTokens";
 import { Box, Card, Chip } from 'src/components/mui/components';
 
 const TextContainer = styled(Box)(({ theme }) => ({
@@ -26,8 +26,8 @@ const SummaryBox = styled(Box)(({ theme }) => ({
     margin: '0.4rem auto',
     borderRadius: '1rem',
     backgroundColor: theme.palette.blueCard.main,
-    maskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))',
-    WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))',
+    maskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
+    WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
     // boxShadow: 'rgba(2, 12, 27, 0.7) 0px 10px 30px -15px',
     // transition: '0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 }));
@@ -55,8 +55,9 @@ const IconBox = styled(Box)(({ theme }) => ({
 
 const IconChip = styled(Chip)(({ theme }) => ({
     margin: '0 0.3rem',
-    color: theme.palette.info.main,
-    fontFamily: FontScheme.secondary,
+    color: theme.palette.secondary.light,
+    backgroundColor: theme.palette.neutral.main,
+    fontFamily: FontFamilyScheme.secondary,
     [theme.breakpoints.down('sm')]: {
         margin: '0.3rem',
     },
@@ -69,4 +70,4 @@ const ImageBox = styled('img')(({ theme }) => ({
     borderRadius: '2rem',
 }));
 
-export { TextContainer, ImageContainer, SummaryBox, BackgroundImageBox,IconBox, IconChip, ImageBox }
+export { TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox }

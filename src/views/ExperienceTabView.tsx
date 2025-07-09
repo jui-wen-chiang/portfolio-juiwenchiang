@@ -13,7 +13,7 @@ function CustomTabPanel(props: TabPanelProps) {
       <CardContent>
         {items.map((item, index) => (
           <Box sx={{ paddingTop: '2rem' }}>
-            < Typography variant="h2"> {item.title}</Typography>
+            <Typography variant="h5"> {item.title}</Typography>
             <Typography variant="subtitle2">{item.date}</Typography>
             <Typography variant="subtitle2" sx={{ paddingBottom: '1.5rem' }}>{item.location}</Typography>
             {item.description?.map((bullet, index) => (
@@ -48,7 +48,7 @@ export default function ExperienceTabView() {
 
   return (
     <ColContainer>
-      <Typography variant="caption" component='h2'>EXPERIENCE</Typography>
+      <Typography variant="h4" component='h4'>EXPERIENCE</Typography>
       <Box sx={{ width: '90%' }}>
         <Tabs
           value={value}

@@ -16,9 +16,9 @@ const HorizontalAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 const HorizontalContainer = styled(Container)(({ theme }) => ({
-    height: '8vh',
+    width:'100%',
+    height: '10vh',
     display: 'flex',
-    // justifyContent: 'flex-end',
     alignItems:'center',
 
     backdropFilter: 'blur(24px)',
@@ -32,7 +32,10 @@ const HorizontalContainer = styled(Container)(({ theme }) => ({
     // borderBottomRightRadius: `calc(${theme.shape.borderRadius}px + 20px)`,
 
     [theme.breakpoints.up('md')]: {
-        // borderRadius: `calc(${theme.shape.borderRadius}px + 30px)`,
+        width:'90%',
+        borderRadius: `calc(${theme.shape.borderRadius}px + 30px)`,
+        padding:'2rem',
+        marginTop: `calc(var(--template-frame-height, 0px) + 1rem)`,
     }
 }));
 

@@ -5,6 +5,8 @@ import { linkBarContent } from "src/data/components/toolData";
 import { LinkBarBox } from "src/assets/styles/components/tool"
 import { Box, Button, IconButton } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
+import { ColorScheme } from "src/theme/designTokens"
+
 
 const { PUBLIC_URL } = process.env;
 
@@ -27,7 +29,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                         return simplyResumeIcon ? (
                             <IconButton
                                 aria-label={item.lable}
-                                color="primary"
+                                color="secondary"
                                 sx={{ ...base.commPadding }}
                                 onClick={onDownload}
                             >
@@ -36,9 +38,10 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                         ) : (
                             <Button
                                 variant="contained"
+                                color="secondary"
                                 size="small"
                                 startIcon={item.icon}
-                                sx={{ ...base.commPadding, ...base.dmSerifFontFamily }}
+                                sx={{ ...base.commPadding, ...base.dmSerifFontFamily, color: ColorScheme.neutral.light }}
                                 onClick={onDownload}>
                                 <a
                                     ref={downloadRef}
@@ -57,7 +60,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                             aria-label={item.lable}
                             href={item.webSrc}
                             target="_blank"
-                            color="primary"
+                            color="secondary"
                             sx={{ ...base.commPadding }}
                         >
                             {item.icon}

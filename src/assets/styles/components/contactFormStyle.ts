@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Box, TextField } from 'src/components/mui/components';
 import { Theme } from '@mui/material/styles';
-import {ColorScheme}from "src/theme/designTokens"
+import { ColorScheme } from "src/theme/designTokens"
 
 
 const TextFieldBox = styled(Box)(({ theme }) => ({
@@ -13,24 +13,15 @@ const UserTextField = styled(TextField)(({ theme }) => ({
     width: '100%',
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: ColorScheme.grey
+            borderColor: ColorScheme.primary.contrastText
         },
         '&:hover fieldset': {
-            borderColor: ColorScheme.alabasterWhite
+            borderColor: ColorScheme.secondary.light
         },
         '&.Mui-focused fieldset': {
-            borderColor: ColorScheme.alabasterWhite
+            borderColor: ColorScheme.secondary.light
         },
-    },
-    '& .MuiInputBase-input': {
-        color: ColorScheme.alabasterWhite
-    },
-    '& .MuiInputLabel-root': {
-        color: ColorScheme.alabasterWhite
-    },
-    '& .MuiInputLabel-root.Mui-focused': {
-        color: ColorScheme.alabasterWhite
-    },
+    }
 }));
 
 const inputPropsStyle = (theme: Theme) => ({

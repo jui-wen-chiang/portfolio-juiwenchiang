@@ -10,39 +10,17 @@ export default function VantaFogBackground() {
     if (!vantaEffect && window.VANTA) {
       setVantaEffect(window.VANTA.FOG({
         el: vantaRef.current,
-        // case1
-        // mouseControls: true,
-        // touchControls: true,
-        // gyroControls: false,
-        // minHeight: 200.00,
-        // minWidth: 200.00,
-        // highlightColor: 0xf7f6f1,
-        // midtoneColor: 0xc85b4d,
-        // lowlightColor: 0xfa20fa,
-        // baseColor: 0x1b00ff,
-        // blurFactor: 0.56,
-        // speed: 0.70,
-        // zoom: 0.60
-
-        // case2
-        // mouseControls: true,
-        // touchControls: true,
-        // gyroControls: false,
-        // minHeight: 200.00,
-        // minWidth: 200.00,
-        // blurFactor: 0.90,
-        // speed: 2.00,
-        // zoom: 0.30
-
-        // case3
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        blurFactor: 0.65,
-        speed: 0.70,
-        zoom: 0.90
+        highlightColor: 0x5e2efb,
+        midtoneColor: 0xfe405a,
+        lowlightColor: 0x0007b1,
+        blurFactor: 0.75,
+        speed: 1.20,
+        zoom: 0.50
       }));
     }
     // 清除效果，避免記憶體洩漏

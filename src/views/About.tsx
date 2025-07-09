@@ -8,7 +8,7 @@ const { PUBLIC_URL } = process.env;
 export default function AboutView() {
     return (
         <ColContainer>
-            <Typography variant="caption" component='h2'>ABOUT</Typography>
+            <Typography variant="h4" component='h4'>ABOUT</Typography>
             <RowContainer sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
                 <Box
                     component="img"

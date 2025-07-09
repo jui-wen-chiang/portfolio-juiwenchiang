@@ -15,14 +15,11 @@ const StyledTypography = styled(Typography)(({ theme, variant }) => ({
     //     },
     // }),
 
-    ...(variant === 'caption' && {
+    ...(variant === 'h4' && {
         padding: '2rem',
-        // fontSize: '2rem',
         letterSpacing: '0.1rem',
-        // color: 'lemonYellow',
         [theme.breakpoints.down('md')]: {
             padding: '1rem',
-            //   fontSize: '1.5rem',
             letterSpacing: '0.05rem',
         },
     }),

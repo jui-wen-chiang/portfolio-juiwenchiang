@@ -26,7 +26,7 @@ export default function ExperienceView() {
 
     return (
         <ColContainer>
-            <Typography variant="caption" component='h2'>EXPERIENCE</Typography>
+            <Typography variant="h4" component='h4'>EXPERIENCE</Typography>
             <StyledStepper nonLinear activeStep={activeStep} orientation="vertical">
                 {experienceData.map((item, index) => (
                     <Step key={item.title}>

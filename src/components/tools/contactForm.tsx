@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { Grid, Button, Typography } from 'src/components/mui/components';
 import { UserTextField, inputPropsStyle } from 'src/assets/styles/components/contactFormStyle';
 import { ColContainer } from 'src/assets/styles/commonStyles';
+import { ColorScheme } from "src/theme/designTokens"
 
 export default function ContactUs() {
   const form = useRef(null);
@@ -51,7 +52,7 @@ export default function ContactUs() {
           />
         </Grid>
       </Grid>
-      <Button variant="contained" type="submit" sx={{ margin: '1rem' }}>Send Message</Button>
+      <Button variant="contained" type="submit" sx={{ margin: '1rem', color: ColorScheme.neutral.light }}>Send Message</Button>
     </ColContainer>
   );
 };

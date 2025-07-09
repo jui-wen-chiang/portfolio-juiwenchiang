@@ -51,12 +51,16 @@ export default function Appbar() {
 
   return (
     /* breakpoints xs & md */
-    <HorizontalAppBar ref={appBarRef} position="fixed" enableColorOnDark>
+    <HorizontalAppBar ref={appBarRef} position="fixed" enableColorOnDark sx={{ width: '100vw' }}>
       <HorizontalContainer maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ width: "100%" }}>
           {/* xs layout */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, width:'100vw' }}>
-            <Button aria-describedby="menu-appbar" variant="text" color="info" onClick={handleOpenNavMenu}>
+          <Box sx={{ width: '100%', flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Button
+              aria-describedby="menu-appbar"
+              variant="text"
+              color="neutral"
+              onClick={handleOpenNavMenu}>
               <MenuIcon />
             </Button>
             <Menu
@@ -79,7 +83,7 @@ export default function Appbar() {
                 <MenuItem key={path} onClick={handleCloseNavMenu}>
                   <Button
                     key={path}
-                    color="info"
+                    color="neutral"
                     size="large"
                     sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
                     onClick={() => handleScroll(path)}
@@ -92,13 +96,20 @@ export default function Appbar() {
           </Box>
 
           {/* md layout */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems: 'center' } }}>
+          <Box sx={{
+            width: '100%',
+            flexGrow: 1,
+            display: { xs: 'none', md: 'flex' },
+            alignItems: 'center',
+            alignContent: 'center',
+            justifyContent: 'flex-end',
+          }}>
             {ROUTES.map(({ path, name }) => (
               <Button
                 key={path}
-                color="info"
+                color="neutral"
                 size="large"
-                // sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
+                sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
                 onClick={() => handleScroll(path)}
               >
                 {name}

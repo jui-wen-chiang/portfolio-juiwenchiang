@@ -1,0 +1,25 @@
+:root {
+  --color-bg: #fefefc;
+
+  /* 主色 Primary */
+  --color-primary: #5e2efb;
+  --color-primary-dark: #0007b1;
+  --color-primary-text: #222222;
+
+  /* 次要色 Secondary */
+  --color-secondary: #fe405a;
+  --color-secondary-light: #845ffc;
+  --color-secondary-text: #555555;
+
+  /* 中性色 Neutral */
+  --color-neutral-main: #ffebed;
+  --color-neutral-text: #858585;
+
+  /* 分隔線 */
+  --color-divider: #0007b1;
+
+  /* 反饋 Feedback */
+  --color-success: #4caf50;
+  --color-error: #f44336;
+  --color-warning: #ffc107;
+}

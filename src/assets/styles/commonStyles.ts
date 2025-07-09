@@ -15,13 +15,16 @@ const useStyles = makeStyles((theme) => ({
             minWidth: '100vw',
             display: 'block',
             left: 'auto !important',
-            borderRadius: 0,
+            // borderRadius: '0 0 50px 50px',
             boxShadow: 'none',
             backdropFilter: 'blur(24px)',
-            borderColor: '#33bfff',
+            borderColor: '#0007b1',
+            // borderRadius: `calc(${theme.shape.borderRadius}px + 30px)`,
+            // padding: '2rem',
+            // marginTop: `calc(var(--template-frame-height, 0px) + 1rem)`,
             backgroundColor: (theme as any).vars
-                ? `rgba('#33bfff' / 0.4)`
-                : alpha('#33bfff', 0.4)
+                ? `rgba('#0007b1' / 0.4)`
+                : alpha('#0007b1', 0.4)
         },
     }
 }));
