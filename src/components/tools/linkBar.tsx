@@ -5,7 +5,7 @@ import { linkBarContent } from "src/data/components/toolData";
 import { LinkBarBox } from "src/assets/styles/components/tool"
 import { Box, Button, IconButton } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
-import { ColorScheme } from "src/theme/designTokens"
+import { ColorScheme } from "src/theme/UIstandard"
 
 
 const { PUBLIC_URL } = process.env;

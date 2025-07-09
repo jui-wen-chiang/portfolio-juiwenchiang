@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Box, TextField } from 'src/components/mui/components';
 import { Theme } from '@mui/material/styles';
-import { ColorScheme } from "src/theme/designTokens"
+import { ColorScheme } from "src/theme/UIstandard"
 
 
 const TextFieldBox = styled(Box)(({ theme }) => ({

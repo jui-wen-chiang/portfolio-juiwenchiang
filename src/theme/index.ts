@@ -1,5 +1,5 @@
 import { createTheme, alpha, getContrastRatio, responsiveFontSizes } from '@mui/material/styles';
-import { FontFamilyScheme, ColorScheme, BreakPointsSchem } from "src/theme/designTokens"
+import { FontFamilyScheme, ColorScheme, BreakPointsSchem } from "src/theme/UIstandard"
 
 let theme = createTheme({
     breakpoints: {
@@ -56,16 +56,16 @@ let theme = createTheme({
         },
         // State color
         success: {
-            main: ColorScheme.feedback.success.main
+            main: ColorScheme.state.success.main
         },
         error: {
-            main: ColorScheme.feedback.error.main
+            main: ColorScheme.state.error.main
         },
         warning: {
-            main: ColorScheme.feedback.warning.main
+            main: ColorScheme.state.warning.main
         },
         info: {
-            main: ColorScheme.feedback.info.main
+            main: ColorScheme.state.info.main
         },
         text: {
             primary: ColorScheme.primary.contrastText,

@@ -1,0 +1,25 @@
+:root {
+  --color-primary: #5e2efb;
+  --color-primary-light: #977bff;
+  --color-primary-dark: #0007b1;
+  --color-primary-text: #222222;
+
+  --color-secondary: #fe405a;
+  --color-secondary-light: #ff7786;
+  --color-secondary-dark: #c6002f;
+  --color-secondary-text: #858585;
+
+  --color-neutral: #ffebed;
+  --color-neutral-light: #ffffff;
+  --color-neutral-dark: #d6c6c8;
+  --color-neutral-text: #858585;
+
+  --color-bg: #fefefc;
+  --color-divider: #0007b1;
+
+  /* 反饋 Feedback */
+  --color-state-success: #4caf50;
+  --color-state-warning: #ffc107;
+  --color-state-error: #f44336;
+  --color-state-info: #222222;
+}

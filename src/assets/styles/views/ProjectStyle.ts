@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { FontFamilyScheme } from "src/theme/designTokens";
+import { FontFamilyScheme } from "src/theme/UIstandard";
 import { Box, Card, Chip } from 'src/components/mui/components';
 
 const TextContainer = styled(Box)(({ theme }) => ({

@@ -2,7 +2,7 @@ import * as base from "src/assets/styles/baseStyle";
 import { styled, alpha } from "@mui/material/styles";
 import { Stepper, Card, List, ListItem } from 'src/components/mui/components';
 import { Tabs, Tab } from "src/components/mui/components";
-import { FontSizeScheme } from "src/theme/designTokens";
+import { FontSizeScheme } from "src/theme/UIstandard";
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     color: theme.palette.text.primary,

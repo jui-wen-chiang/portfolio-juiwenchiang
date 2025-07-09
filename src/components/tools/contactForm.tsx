@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { Grid, Button, Typography } from 'src/components/mui/components';
 import { UserTextField, inputPropsStyle } from 'src/assets/styles/components/contactFormStyle';
 import { ColContainer } from 'src/assets/styles/commonStyles';
-import { ColorScheme } from "src/theme/designTokens"
+import { ColorScheme } from "src/theme/UIstandard"
 
 export default function ContactUs() {
   const form = useRef(null);
