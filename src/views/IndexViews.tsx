@@ -17,6 +17,8 @@ import BasicTabs from "src/mocks/page/test";
 
 import VantaFogBackground from "src/components/tools/VantaFogBackground";
 
+import CustomShape from "src/components/tools/CustomShape";
+
 const viewMapping: Array<ViewMappingItem> = [
   {
     id: 'home',
@@ -53,6 +55,7 @@ export default function IndexViews() {
   return (
     <ViewsContainer>
       <BackgroundBox>
+        {/* <CustomShape/> */}
         <VantaFogBackground />
       </BackgroundBox>
       <Box>

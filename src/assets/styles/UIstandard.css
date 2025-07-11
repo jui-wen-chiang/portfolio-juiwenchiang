@@ -1,4 +1,68 @@
 :root {
+  /* Primary */
+  --color-primary: #3676f4;
+  --color-primary-light: #a5c4ff;
+  --color-primary-dark: #0046a3;
+  --color-primary-text: #0e2a71;
+
+  /* Secondary */
+  --color-secondary: #e7364a;
+  --color-secondary-light: #ff8590;
+  --color-secondary-dark: #b0001f;
+  --color-secondary-text: #66000f;
+
+  /* Neutral */
+  --color-neutral: #f5f5f7; /* 區塊背景，淡灰白 */
+  --color-neutral-light: #fefefc; /* 亮背景，如頁面本體 */
+  --color-neutral-dark: #c1c3cc; /* 分隔線、邊框、hover 背景 */
+  --color-neutral-text: #3a3a3a; /* 主要文字（濃灰，非全黑更舒服） */
+
+  // accent
+  --color-accent: #2ec4b6; /* 明亮清爽綠松 */
+  --color-accent-light: #9af0e6; /* 淺綠藍 */
+  --color-accent-dark: #00796b; /* 深綠藍 */
+  --color-accent-text: #00423c; /* 穩重點綴用 */
+
+  --color-accent: #f5b700; /* 琥珀黃 */
+  --color-accent-light: #ffe378; /* 柔和亮黃 */
+  --color-accent-dark: #c79300; /* 穩重金黃 */
+  --color-accent-text: #5c4400; /* 可搭白底黑底都清晰 */
+
+  --color-accent: #6c9ba5; /* 柔和青藍綠 */
+  --color-accent-light: #bddde2; /* 淡青藍 */
+  --color-accent-dark: #3a6e78; /* 深點綴 */
+  --color-accent-text: #254c51; /* 可當小字、次要資訊色 */
+
+  --color-accent: #977bff; /* 柔和的薰衣草紫 */
+  --color-accent-light: #c6adff; /* 淡紫，適合 hover 或背景 */
+  --color-accent-dark: #5e2efb; /* 深紫，穩重、優雅 */
+  --color-accent-text: #2e1b57; /* 深紫文字，閱讀性佳 */
+
+  /* Feedback/State */
+  --color-success: #2ecc71;
+  --color-success-light: #b9f6c9;
+  --color-success-dark: #1e7f4e;
+  --color-success-text: #145f3e;
+
+  --color-warning: #f5b700;
+  --color-warning-light: #fff2a6;
+  --color-warning-dark: #aa8700;
+  --color-warning-text: #5e4500;
+
+  --color-error: #e7364a;
+  --color-error-light: #ff9aa6;
+  --color-error-dark: #a8001f;
+  --color-error-text: #5c0010;
+
+  --color-info: #3676f4;
+  --color-info-light: #a5c4ff;
+  --color-info-dark: #0046a3;
+  --color-info-text: #0e2a71;
+
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  // border-radius: 12px;
+
+  /* case 1 */
   --color-primary: #5e2efb;
   --color-primary-light: #977bff;
   --color-primary-dark: #0007b1;
@@ -9,13 +73,10 @@
   --color-secondary-dark: #c6002f;
   --color-secondary-text: #858585;
 
-  --color-neutral: #ffebed;
-  --color-neutral-light: #ffffff;
-  --color-neutral-dark: #d6c6c8;
-  --color-neutral-text: #858585;
-
   --color-bg: #fefefc;
   --color-divider: #0007b1;
+  --color-divider: #e0e0e0;
+
 
   /* 反饋 Feedback */
   --color-state-success: #4caf50;

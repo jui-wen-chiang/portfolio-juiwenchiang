@@ -28,7 +28,7 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
 
 const StepCard = styled(Card)(({ theme }) => ({
   width: '100%',
-  backgroundColor: theme.palette.blueCard.main,
+  backgroundColor: theme.palette.neutral.main,
   ...base.commBorderRadius,
 }));
 

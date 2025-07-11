@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useState, useRef, useEffect } from "react";
 import ROUTES from "src/router/pageRouters";
-
-import { useStyles } from 'src/assets/styles/commonStyles'
-import { HorizontalAppBar, HorizontalContainer, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
-import { Toolbar, Menu, MenuItem, Box, Button } from "src/components/mui/components";
+import { HorizontalAppBar, HorizontalContainer, XSBoxLayout, MDBoxLayout, CustomMenu, MenuSlotProps, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
+import { Toolbar, MenuItem, Box, IconButton, Button, Typography } from "src/components/mui/components";
 import { MenuIcon } from 'src/components/mui/icons';
 
+import Logout from '@mui/icons-material/Logout';
+import Avatar from '@mui/material/Avatar';
 
 export default function Appbar() {
   /*
@@ -17,7 +17,9 @@ export default function Appbar() {
   const [appBarHeight, setAppBarHeight] = useState(64);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const appBarRef = useRef(null);
-  const classes = useStyles();
+  const open = Boolean(anchorElNav);
+
+  // const classes = useStyles();
 
   // scroll to page
   const handleScroll = (id) => {
@@ -55,30 +57,31 @@ export default function Appbar() {
       <HorizontalContainer maxWidth="xl">
         <Toolbar disableGutters sx={{ width: "100%" }}>
           {/* xs layout */}
-          <Box sx={{ width: '100%', flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <Button
-              aria-describedby="menu-appbar"
-              variant="text"
-              color="neutral"
-              onClick={handleOpenNavMenu}>
+          <XSBoxLayout>
+            <Typography sx={{ minWidth: 100, fontSize: '0.3rem' }}>JUI WEN CHIANG</Typography>
+            <IconButton
+              onClick={handleOpenNavMenu}
+              size="small"
+              sx={{ ml: 2 }}
+              aria-controls={open ? 'menu-appbar' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}>
               <MenuIcon />
-            </Button>
-            <Menu
+            </IconButton>
+            <CustomMenu
               id="menu-appbar"
-              open={Boolean(anchorElNav)}
+              anchorEl={anchorElNav}
+              open={open}
               onClose={handleCloseNavMenu}
-              anchorEl={null}
-              anchorReference="anchorPosition"
-              anchorPosition={{ top: appBarHeight - 10, left: 0 }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+              onClick={handleCloseNavMenu}
+              slotProps={{
+                paper: {
+                  elevation: 0,
+                  sx: (theme) => MenuSlotProps(theme),
+                },
               }}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-              className={classes.menu}
-            >
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
               {ROUTES.map(({ path, name }) => (
                 <MenuItem key={path} onClick={handleCloseNavMenu}>
                   <Button
@@ -92,18 +95,18 @@ export default function Appbar() {
                   </Button>
                 </MenuItem>
               ))}
-            </Menu>
-          </Box>
+              {/* <MenuItem>
+                <Box>
+                  <Avatar /> Profile
+                  <Logout fontSize="small" />
+                  Logout
+                </Box>
+              </MenuItem> */}
+            </CustomMenu>
+          </XSBoxLayout>
 
           {/* md layout */}
-          <Box sx={{
-            width: '100%',
-            flexGrow: 1,
-            display: { xs: 'none', md: 'flex' },
-            alignItems: 'center',
-            alignContent: 'center',
-            justifyContent: 'flex-end',
-          }}>
+          <MDBoxLayout >
             {ROUTES.map(({ path, name }) => (
               <Button
                 key={path}
@@ -115,7 +118,7 @@ export default function Appbar() {
                 {name}
               </Button>
             ))}
-          </Box>
+          </MDBoxLayout>
         </Toolbar>
       </HorizontalContainer>
     </HorizontalAppBar>

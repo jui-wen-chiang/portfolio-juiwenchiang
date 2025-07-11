@@ -15,12 +15,22 @@ export default function VantaFogBackground() {
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        highlightColor: 0x5e2efb,
-        midtoneColor: 0xfe405a,
-        lowlightColor: 0x0007b1,
+        // case 1 紫紅
+        // highlightColor: 0x5e2efb,
+        // midtoneColor: 0xfe405a,
+        // lowlightColor: 0x0007b1,
+        // case 3 冷單一
+        // highlightColor: 0x5ea0ff,   // 明亮藍
+        // midtoneColor: 0x6c9ba5,     // 灰藍綠（accent）
+        // lowlightColor: 0x1a2a38,     // 深灰藍，沈穩背景
+        // case 4 小瘀青
+        highlightColor: 0xf06a7e,   // 淺紅粉（由 #e7364a 淡化）
+        midtoneColor: 0x3676f4,     // 你的主色藍，穩定主調
+        lowlightColor: 0x0e1d40,     // 深藍黑，做為背景基底
         blurFactor: 0.75,
         speed: 1.20,
-        zoom: 0.50
+        // zoom: 0.50
+        zoom: 0.70
       }));
     }
     // 清除效果，避免記憶體洩漏
@@ -28,6 +38,9 @@ export default function VantaFogBackground() {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
+
+
+  
 
   return (
     // full page
@@ -43,6 +56,7 @@ export default function VantaFogBackground() {
     //   }}
     // />
 
+
     <div
       ref={vantaRef}
       style={{
@@ -57,9 +71,6 @@ export default function VantaFogBackground() {
         pointerEvents: "none",
         WebkitMaskImage: `linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 1) 55%,
-          rgba(0, 0, 0, 0.9) 65%,
-          rgba(0, 0, 0, 0.75) 72%,
           rgba(0, 0, 0, 0.6) 78%,
           rgba(0, 0, 0, 0.45) 83%,
           rgba(0, 0, 0, 0.3) 88%,
@@ -69,9 +80,6 @@ export default function VantaFogBackground() {
         )`,
         maskImage: `linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 1) 55%,
-          rgba(0, 0, 0, 0.9) 65%,
-          rgba(0, 0, 0, 0.75) 72%,
           rgba(0, 0, 0, 0.6) 78%,
           rgba(0, 0, 0, 0.45) 83%,
           rgba(0, 0, 0, 0.3) 88%,

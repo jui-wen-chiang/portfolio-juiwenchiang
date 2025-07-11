@@ -14,22 +14,22 @@ declare module '@mui/material/styles' {
     }
 
     interface Palette {
-        blueCard: Palette['primary'];
+        // itemCard: Palette['primary'];
         neutral: Palette['primary'];
     }
     interface PaletteOptions {
-        blueCard?: Palette['primary'];
+        // itemCard?: Palette['primary'];
         neutral?: Palette['primary'];
     }
 }
 
 // Allow using custom options in components
 
-declare module '@mui/material/Paper' {
-    interface PaperPropsVariantOverrides {
-        gray: true
-    }
-}
+// declare module '@mui/material/Paper' {
+//     interface PaperPropsVariantOverrides {
+//         gray: true
+//     }
+// }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {

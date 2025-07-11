@@ -1,33 +1,8 @@
 import { styled, alpha } from "@mui/material/styles";
-import { makeStyles } from '@mui/styles';
-import { Theme } from '@mui/material/styles';
-
 import * as base from "./baseStyle";
 import { RatioRowProps } from "src/types/styles/commonStyle"
 import { Container, ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
 
-
-const useStyles = makeStyles((theme) => ({
-    menu: {
-        "& .MuiPaper-root": {
-            width: '100vw',
-            maxWidth: '100vw',
-            minWidth: '100vw',
-            display: 'block',
-            left: 'auto !important',
-            // borderRadius: '0 0 50px 50px',
-            boxShadow: 'none',
-            backdropFilter: 'blur(24px)',
-            borderColor: '#0007b1',
-            // borderRadius: `calc(${theme.shape.borderRadius}px + 30px)`,
-            // padding: '2rem',
-            // marginTop: `calc(var(--template-frame-height, 0px) + 1rem)`,
-            backgroundColor: (theme as any).vars
-                ? `rgba('#0007b1' / 0.4)`
-                : alpha('#0007b1', 0.4)
-        },
-    }
-}));
 
 const ViewsContainer = styled(Box)<ContainerProps>(({ theme }) => ({
     position: "relative"
@@ -36,7 +11,7 @@ const ViewsContainer = styled(Box)<ContainerProps>(({ theme }) => ({
 const BackgroundBox = styled(Box)<ContainerProps>(({ theme }) => ({
     position: "absolute",
     width: "100%",
-    height: "150vh",
+    height: "120vh",
     top: 0,
     left: 0,
     zIndex: -1,
@@ -105,7 +80,6 @@ const RatioRowContainer = styled(Container, {
 }));
 
 export {
-    useStyles,
     ViewsContainer,
     BackgroundBox,
     RowContainer,

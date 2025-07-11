@@ -25,7 +25,7 @@ const SummaryBox = styled(Box)(({ theme }) => ({
     padding: '1rem 1.5rem',
     margin: '0.4rem auto',
     borderRadius: '1rem',
-    backgroundColor: theme.palette.blueCard.main,
+    backgroundColor: theme.palette.neutral.main,
     maskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
     WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
     // boxShadow: 'rgba(2, 12, 27, 0.7) 0px 10px 30px -15px',

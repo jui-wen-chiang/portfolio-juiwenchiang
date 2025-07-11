@@ -1,6 +1,7 @@
 export { default as MenuIcon } from  '@mui/icons-material/Menu';
 export { default as SchoolIcon } from  '@mui/icons-material/School';
 export { default as WorkIcon } from '@mui/icons-material/Work';
+export { default as SunnyIcon } from '@mui/icons-material/Sunny';
 
 // brand
 export { default as GitHubIcon } from '@mui/icons-material/GitHub';

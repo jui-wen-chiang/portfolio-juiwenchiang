@@ -15,11 +15,12 @@ const StyledTab = styled(Tab)(({ theme }) => ({
 
 const ExperienceCard = styled(Card)(({ theme }) => ({
     ...base.commBorderRadius,
-    backgroundImage: `linear-gradient(
-    to top,
-    ${alpha(theme.palette.blueCard.main, 1)} 0%,
-    ${alpha(theme.palette.blueCard.main, 0)} 100%)`,
-    backgroundColor: 'transparent',
+    // backgroundImage: `linear-gradient(
+    // to top,
+    // ${alpha(theme.palette.neutral.main, 1)} 0%,
+    // ${alpha(theme.palette.neutral.main, 0)} 100%)`,
+    // backgroundColor: 'transparent',
+    backgroundColor: theme.palette.neutral.main,
 }));
 
 
