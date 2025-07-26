@@ -7,6 +7,7 @@ import { MenuIcon } from 'src/components/mui/icons';
 
 import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
+import { ColorScheme } from "src/theme/UIstandard"
 
 export default function Appbar() {
   /*
@@ -112,7 +113,14 @@ export default function Appbar() {
                 key={path}
                 color="neutral"
                 size="large"
-                sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
+                sx={{
+                  ...ButtonStyle,
+                  ...(name === "Home" && { marginRight: "auto" }),
+                  '&:hover': {
+                    backgroundColor: 'inherit',
+                    color:ColorScheme.secondary.dark
+                  },
+                }}
                 onClick={() => handleScroll(path)}
               >
                 {name}

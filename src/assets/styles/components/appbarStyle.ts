@@ -16,7 +16,7 @@ const HorizontalAppBar = styled(AppBar)(({ theme }) => ({
 
 const HorizontalContainer = styled(Container)(({ theme }) => ({
     width: '100%',
-    height: '10vh',
+    height: '7vh',
     display: 'flex',
     alignItems: 'center',
     backdropFilter: 'blur(24px)',

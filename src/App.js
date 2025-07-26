@@ -7,10 +7,9 @@ import theme from './theme/index';
 import { BrowserRouter as Router } from "react-router-dom";
 import Appbar from './components/tools/appBar.tsx';
 import BackToTop from './components/tools/backToTop.tsx';
-import MouseGlow from './components/tools/MouseGlow.tsx';
 import IndexViews from "src/views/IndexViews";
 // style
-import { Container, Box } from "src/components/mui/components";
+import { Container } from "src/components/mui/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@xyflow/react/dist/style.css';
@@ -26,7 +25,6 @@ function AppLayout() {
         padding: '0'
       }}
     >
-      {/* <MouseGlow /> */}
       <Appbar />
       <IndexViews />
       <BackToTop />

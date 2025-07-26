@@ -15,7 +15,7 @@ let theme = createTheme({
             fontFamily: FontFamilyScheme.signature,
         },
         h4: {
-            padding: '0.4rem 0',
+            padding: '1.5rem 0',
             color: ColorScheme.primary.dark,
         },
         h5: {

@@ -2,6 +2,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { Box, Fab, Fade } from "src/components/mui/components";
 import { KeyboardArrowUpIcon } from "src/components/mui/icons";
 import { BackToTopProps } from "src/types/components/tools";
+import { ColorScheme } from "src/theme/UIstandard"
 
 function ScrollTop(props: BackToTopProps) {
     const { children } = props;
@@ -41,8 +42,13 @@ export default function BackToTop(props: BackToTopProps) {
     return (
         <Box>
             <ScrollTop {...props}>
-                <Fab size="small" aria-label="scroll back to top">
-                    <KeyboardArrowUpIcon />
+                <Fab size="small" aria-label="scroll back to top" sx={{
+                    backgroundColor: ColorScheme.primary.light,
+                    "&:hover": {
+                        backgroundColor: ColorScheme.primary.main
+                    }
+                }}>
+                    <KeyboardArrowUpIcon sx={{ color: ColorScheme.neutral.main }} />
                 </Fab>
             </ScrollTop>
         </Box>

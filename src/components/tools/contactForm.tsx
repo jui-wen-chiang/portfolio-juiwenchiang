@@ -48,11 +48,11 @@ export default function ContactUs() {
         </Grid>
         <Grid size={12}>
           <Typography>What do you have in mind?</Typography>
-          <UserTextField name="message" variant="outlined" color="secondary" placeholder="Please enter the message" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required multiline rows={10}
+          <UserTextField name="message" variant="outlined" color="secondary" placeholder="Please enter the message" inputProps={{ sx: inputPropsStyle }} InputLabelProps={{ shrink: true, sx: inputPropsStyle }} required multiline rows={5}
           />
         </Grid>
       </Grid>
-      <Button variant="contained" type="submit" sx={{ margin: '1rem', color: ColorScheme.neutral.light }}>Send Message</Button>
+      <Button color="secondary" variant="contained" type="submit" sx={{ color: ColorScheme.neutral.light }}>Send Message</Button>
     </ColContainer>
   );
 };

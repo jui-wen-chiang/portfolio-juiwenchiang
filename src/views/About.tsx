@@ -9,7 +9,21 @@ export default function AboutView() {
     return (
         <ColContainer>
             <Typography variant="h4" component='h4'>ABOUT</Typography>
-            <RowContainer sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
+            <ColContainer sx={{ alignItems: 'flex-start', padding: '0, 2rem' }}>
+                <Typography>{paragraphProfessional}</Typography>
+                <br />
+                <Typography>{paragraphList}</Typography>
+                <ListContainer>
+                    {skillsList.map((item, index) => {
+                        return (
+                            <ListContent>{item} </ListContent>
+                        )
+                    })}
+                </ListContainer>
+            </ColContainer>
+            
+            {/* Photo version */}
+            {/* <RowContainer sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
                 <Box
                     component="img"
                     sx={portraitImage}
@@ -28,7 +42,7 @@ export default function AboutView() {
                         })}
                     </ListContainer>
                 </ColContainer>
-            </RowContainer>
+            </RowContainer> */}
         </ColContainer>
     )
 }

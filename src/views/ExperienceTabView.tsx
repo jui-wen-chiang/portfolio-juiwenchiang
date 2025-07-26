@@ -12,10 +12,10 @@ function CustomTabPanel(props: TabPanelProps) {
     <ExperienceCard>
       <CardContent>
         {items.map((item, index) => (
-          <Box sx={{ paddingTop: '2rem' }}>
+          <Box sx={{ paddingTop: '1rem' }}>
             <Typography variant="h5"> {item.title}</Typography>
             <Typography variant="subtitle2">{item.date}</Typography>
-            <Typography variant="subtitle2" sx={{ paddingBottom: '1.5rem' }}>{item.location}</Typography>
+            <Typography variant="subtitle2" sx={{ paddingBottom: '1rem' }}>{item.location}</Typography>
             {item.description?.map((bullet, index) => (
               <ListContainer >
                 <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>

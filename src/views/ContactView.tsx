@@ -8,7 +8,7 @@ import ContactUs from 'src/components/tools/contactForm'
 export default function ContactView() {
     return (
         <ColContainer>
-            <Typography variant="h4" component='h4' sx={{ padding: '0' }}>CONTACT</Typography>
+            <Typography variant="h4" component='h4'>CONTACT</Typography>
             <ContactUs />
         </ColContainer>
     )

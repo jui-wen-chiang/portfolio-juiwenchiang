@@ -52,13 +52,15 @@ const ListContainer = styled(List)(({ theme }) => ({
     listStyleType: 'disc',
     listStylePosition: 'outside',
     margin: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: theme.spacing(3), // Indent a little to make the bullet visible
 }));
 
 const ListContent = styled(ListItem)(({ theme }) => ({
     display: 'list-item',
     color: theme.palette.text.primary,
-    paddingLeft: 0, // remove default padding to avoid multiple indentations
+    padding: 0 // remove default padding to avoid multiple indentations
 }));
 
 // for timeline
