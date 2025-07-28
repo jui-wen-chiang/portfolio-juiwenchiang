@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { IconType } from 'react-icons';
 
 interface BaseDialogProps {
@@ -21,13 +22,19 @@ interface LinkBarProps {
     simplyResumeIcon?: boolean;
 };
 
-interface BackToTopProps {
-    children?: React.ReactElement<unknown>;
+interface ScrollTopBaseProps {
+    children: ReactNode;
+    threshold?: number;
+    alwaysVisible?: boolean;
 }
 
-interface SkillIconMap {
-    [key: string]: IconType;
-};
+interface BackToTopProps {
+    variant: string;
+    alwaysVisible?: boolean;
+    textContent?: string;
+    iconNode?: any
+}
+
 
 interface SkillList {
     category: string;
@@ -39,4 +46,12 @@ interface TechnologyProps {
     class: string;
 }
 
-export { BaseDialogProps, ControlBarProps, LinkBarProps, BackToTopProps, SkillList, TechnologyProps }
+export {
+    BaseDialogProps,
+    ControlBarProps,
+    LinkBarProps,
+    ScrollTopBaseProps,
+    BackToTopProps,
+    SkillList,
+    TechnologyProps
+}

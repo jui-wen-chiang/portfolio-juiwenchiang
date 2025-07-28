@@ -6,7 +6,7 @@ import theme from './theme/index';
 // views & Router
 import { BrowserRouter as Router } from "react-router-dom";
 import Appbar from './components/tools/appBar.tsx';
-import BackToTop from './components/tools/backToTop.tsx';
+import BackToTop from './components/tools/BackToTop/BackToTop.tsx';
 import IndexViews from "src/views/IndexViews";
 // style
 import { Container } from "src/components/mui/components";

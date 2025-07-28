@@ -4,37 +4,23 @@ import { AppBar, Container, Menu, Box, Toolbar } from "src/components/mui/compon
 
 // horizontal bar
 const HorizontalAppBar = styled(AppBar)(({ theme }) => ({
-    height: 50, // breakpoints xs
+    height: 70,
     boxShadow: 'none',
     backgroundColor: 'transparent',
     backgroundImage: 'none',
-
-    [theme.breakpoints.up('md')]: {
-        height: 70,
-    }
 }));
 
 const HorizontalContainer = styled(Container)(({ theme }) => ({
-    width: '100%',
+    ...base.baseBoxShadow,
+    width: '95%',
     height: '7vh',
+    padding: '2rem',
+    marginTop: `calc(var(--template-frame-height, 0px) + 0.5rem)`,
     display: 'flex',
     alignItems: 'center',
     backdropFilter: 'blur(24px)',
-    boxShadow: ((theme as any).vars || theme).shadows[1],
     backgroundColor: alpha(theme.palette.primary.main, 0.4),
-
     borderRadius: `calc(${theme.shape.borderRadius}px + 5rem)`,
-    marginTop: `calc(var(--template-frame-height, 0px) + 0.5rem)`,
-
-    // borderBottomLeftRadius: `calc(${theme.shape.borderRadius}px + 20px)`,
-    // borderBottomRightRadius: `calc(${theme.shape.borderRadius}px + 20px)`,
-
-    [theme.breakpoints.up('md')]: {
-        width: '95%',
-        borderRadius: `calc(${theme.shape.borderRadius}px + 5rem)`,
-        padding: '2rem',
-        marginTop: `calc(var(--template-frame-height, 0px) + 0.5rem)`,
-    }
 }));
 
 const XSBoxLayout = styled(Box)(({ theme }) => ({
@@ -76,7 +62,7 @@ const CustomMenu = styled(Menu)(({ theme }) => ({
 const MenuSlotProps = (theme: Theme) => ({
     overflow: 'visible',
     filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-    mt: 1.5,
+    mt: 2.5,
     '& .MuiAvatar-root': {
         width: 32,
         height: 32,
@@ -94,7 +80,10 @@ const MenuSlotProps = (theme: Theme) => ({
         bgcolor: 'background.paper',
         transform: 'translateY(-50%) rotate(45deg)',
         zIndex: 0,
-    }
+    },
+    [theme.breakpoints.up('md')]: {
+        display: 'none',
+    },
 });
 
 const ButtonStyle = {
@@ -102,6 +91,7 @@ const ButtonStyle = {
     fontSize: '1.2rem',
     ...base.dmSerifFontFamily
 };
+
 
 // vertical bar
 /*

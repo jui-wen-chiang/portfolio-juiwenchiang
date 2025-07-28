@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { useState, useRef, useEffect } from "react";
 import ROUTES from "src/router/pageRouters";
-import { HorizontalAppBar, HorizontalContainer, XSBoxLayout, MDBoxLayout, CustomMenu, MenuSlotProps, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
-import { Toolbar, MenuItem, Box, IconButton, Button, Typography } from "src/components/mui/components";
-import { MenuIcon } from 'src/components/mui/icons';
+import { useTheme } from '@mui/material/styles';
 
-import Logout from '@mui/icons-material/Logout';
-import Avatar from '@mui/material/Avatar';
+import {
+  HorizontalAppBar, HorizontalContainer,
+  XSBoxLayout, MDBoxLayout, CustomMenu, MenuSlotProps, ButtonStyle
+} from 'src/assets/styles/components/appbarStyle'
+import { Toolbar, MenuItem, IconButton, Button } from "src/components/mui/components";
+import { MenuIcon } from 'src/components/mui/icons';
 import { ColorScheme } from "src/theme/UIstandard"
+import BackToTop from 'src/components/tools/BackToTop/BackToTop';
 
 export default function Appbar() {
   /*
@@ -19,6 +22,7 @@ export default function Appbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const appBarRef = useRef(null);
   const open = Boolean(anchorElNav);
+  const theme = useTheme();
 
   // const classes = useStyles();
 
@@ -59,7 +63,7 @@ export default function Appbar() {
         <Toolbar disableGutters sx={{ width: "100%" }}>
           {/* xs layout */}
           <XSBoxLayout>
-            <Typography sx={{ minWidth: 100, fontSize: '0.3rem' }}>JUI WEN CHIANG</Typography>
+            <BackToTop variant="text" textContent="JUI WEN, CHIANG" alwaysVisible={true} />
             <IconButton
               onClick={handleOpenNavMenu}
               size="small"
@@ -67,7 +71,7 @@ export default function Appbar() {
               aria-controls={open ? 'menu-appbar' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}>
-              <MenuIcon />
+              <MenuIcon sx={{ color: theme.palette.primary.dark }} />
             </IconButton>
             <CustomMenu
               id="menu-appbar"
@@ -118,7 +122,7 @@ export default function Appbar() {
                   ...(name === "Home" && { marginRight: "auto" }),
                   '&:hover': {
                     backgroundColor: 'inherit',
-                    color:ColorScheme.secondary.dark
+                    color: ColorScheme.secondary.dark
                   },
                 }}
                 onClick={() => handleScroll(path)}
