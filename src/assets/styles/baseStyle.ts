@@ -27,4 +27,8 @@ const commPadding = {
     padding: '1rem',
 };
 
-export { breakpoints, fullSize, commBorderRadius, commPadding, dmSerifFontFamily }
+const baseBoxShadow = {
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+}
+
+export { breakpoints, fullSize, commBorderRadius, commPadding, dmSerifFontFamily, baseBoxShadow }

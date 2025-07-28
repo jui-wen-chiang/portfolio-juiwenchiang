@@ -14,6 +14,7 @@ import ExperienceView from 'src/views/ExperienceView';
 import ContactView from 'src/views/ContactView';
 import FooterView from 'src/views/Footer';
 import BasicTabs from "src/mocks/page/test";
+import SkillCardView from "src/views/SkillCardView";
 
 import VantaFogBackground from "src/components/tools/VantaFogBackground";
 
@@ -24,13 +25,13 @@ const viewMapping: Array<ViewMappingItem> = [
     id: 'home',
     component: <HomeView />
   },
-  // {
-  //   id: 'test',
-  //   component: <BasicTabs />
-  // },
   {
     id: 'about',
     component: <AboutView />
+  },
+  {
+    id: 'skillcard',
+    component: <SkillCardView />
   },
   {
     id: 'experience',

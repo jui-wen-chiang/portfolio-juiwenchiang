@@ -21,7 +21,7 @@ export default function AboutView() {
                     })}
                 </ListContainer>
             </ColContainer>
-            
+
             {/* Photo version */}
             {/* <RowContainer sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
                 <Box

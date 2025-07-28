@@ -11,4 +11,5 @@ const skillsList = [
     'Skilled in responsive web with React, Vue, HTML/CSS, Figma.'
 ];
 
-export { paragraphProfessional, paragraphHobbies,paragraphList,skillsList }
+
+export { paragraphProfessional, paragraphHobbies, paragraphList, skillsList }

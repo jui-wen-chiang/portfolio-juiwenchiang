@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons';
+
 interface BaseDialogProps {
     isOpen: boolean;
     closeDialog: () => void;
@@ -23,4 +25,18 @@ interface BackToTopProps {
     children?: React.ReactElement<unknown>;
 }
 
-export { BaseDialogProps, ControlBarProps, LinkBarProps,BackToTopProps }
+interface SkillIconMap {
+    [key: string]: IconType;
+};
+
+interface SkillList {
+    category: string;
+    technologies: TechnologyProps[];
+}
+interface TechnologyProps {
+    name: string;
+    icon?: IconType;
+    class: string;
+}
+
+export { BaseDialogProps, ControlBarProps, LinkBarProps, BackToTopProps, SkillList, TechnologyProps }
