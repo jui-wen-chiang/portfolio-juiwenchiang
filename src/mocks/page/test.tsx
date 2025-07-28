@@ -1,234 +1,246 @@
-// import * as React from 'react';
-// import { useState, useRef, useEffect } from "react";
-// import ROUTES from "src/router/pageRouters";
+// // import * as motion from "motion/react-client"
+// import { motion, Variants } from "framer-motion"
 
-// import { HorizontalAppBar, HorizontalContainer, CustomMenu, ButtonStyle } from 'src/assets/styles/components/appbarStyle'
-// import { Toolbar, MenuItem, Box, Button } from "src/components/mui/components";
-// import { MenuIcon } from 'src/components/mui/icons';
+// // import type { Variants } from "motion/react"
 
-
-// export default function TestAppbar() {
-//   /*
-//    The difference between the two responsive layouts is not obvious,
-//    so use sx.display { xs: '', md: '' }
-//    instead of useMediaQuery(theme.breakpoints.up('md'))
-//    */
-//   const [appBarHeight, setAppBarHeight] = useState(64);
-//   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-//   const appBarRef = useRef(null);
-//   // const classes = useStyles();
-
-//   // scroll to page
-//   const handleScroll = (id) => {
-//     const element = document.getElementById(id);
-//     if (element) {
-//       element.scrollIntoView({ behavior: 'smooth' });
-//     }
-//   };
-
-//   // Menu
-//   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-//     setAnchorElNav(event.currentTarget);
-//   };
-
-//   const handleCloseNavMenu = () => {
-//     setAnchorElNav(null);
-//   };
-
-//   // set App Bar Height
-//   useEffect(() => {
-//     const updateHeight = () => {
-//       console.log('appBarHeight', appBarHeight)
-//       if (appBarRef.current) {
-//         setAppBarHeight(appBarRef.current.offsetHeight);
-//       }
-//     };
-//     updateHeight();
-//     window.addEventListener('resize', updateHeight);
-//     return () => window.removeEventListener('resize', updateHeight);
-//   }, []);
-
-//   return (
-//     /* breakpoints xs & md */
-//     <HorizontalAppBar ref={appBarRef} position="fixed" enableColorOnDark sx={{ width: '100vw' }}>
-//       <HorizontalContainer maxWidth="xl">
-//         <Toolbar disableGutters sx={{ width: "100%" }}>
-//           {/* xs layout */}
-//           <Box sx={{ width: '100%', flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-//             <Button
-//               aria-describedby="menu-appbar"
-//               variant="text"
-//               color="neutral"
-//               onClick={handleOpenNavMenu}>
-//               <MenuIcon />
-//             </Button>
-//             <CustomMenu
-//               id="menu-appbar"
-//               open={Boolean(anchorElNav)}
-//               onClose={handleCloseNavMenu}
-//               anchorEl={null}
-//               anchorReference="anchorPosition"
-//               anchorPosition={{ top: appBarHeight - 10, left: 0 }}
-//               transformOrigin={{
-//                 vertical: 'top',
-//                 horizontal: 'left',
-//               }}
-//               sx={{
-//                 display: { xs: 'block', md: 'none' },
-//               }}
-
-//             >
-//               {ROUTES.map(({ path, name }) => (
-//                 <MenuItem key={path} onClick={handleCloseNavMenu}>
-//                   <Button
-//                     key={path}
-//                     color="neutral"
-//                     size="large"
-//                     sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
-//                     onClick={() => handleScroll(path)}
-//                   >
-//                     {name}
-//                   </Button>
-//                 </MenuItem>
-//               ))}
-//             </CustomMenu>
-//           </Box>
-
-//           {/* md layout */}
-//           <Box sx={{
-//             width: '100%',
-//             flexGrow: 1,
-//             display: { xs: 'none', md: 'flex' },
-//             alignItems: 'center',
-//             alignContent: 'center',
-//             justifyContent: 'flex-end',
-//           }}>
-//             {ROUTES.map(({ path, name }) => (
-//               <Button
-//                 key={path}
-//                 color="neutral"
-//                 size="large"
-//                 sx={name === "Home" ? { ...ButtonStyle, marginRight: "auto" } : ButtonStyle}
-//                 onClick={() => handleScroll(path)}
-//               >
-//                 {name}
-//               </Button>
+// export default function ScrollTriggered() {
+//     return (
+//         <div style={container}>
+//             {food.map(([emoji, hueA, hueB], i) => (
+//                 <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
 //             ))}
-//           </Box>
-//         </Toolbar>
-//       </HorizontalContainer>
-//     </HorizontalAppBar>
-//   )
+//         </div>
+//     )
 // }
 
+// interface CardProps {
+//     emoji: string
+//     hueA: number
+//     hueB: number
+//     i: number
+// }
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+// function Card({ emoji, hueA, hueB, i }: CardProps) {
+//     const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`
 
-export default function TestAppbar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  return (
-    <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-        <Typography sx={{ minWidth: 100 }}>Profile</Typography>
-        <Typography sx={{ minWidth: 100 }}>Profile</Typography>
-        <Typography sx={{ minWidth: 50 }}>Profile</Typography>
+//     return (
+//         <motion.div
+//             className={`card-container-${i}`}
+//             style={cardContainer}
+//             initial="offscreen"
+//             whileInView="onscreen"
+//             viewport={{ amount: 0.8 }}
+//         >
+//             <div style={{ ...splash, background }} />
+//             <motion.div style={card} variants={cardVariants} className="card">
+//                 {emoji}
+//             </motion.div>
+//         </motion.div>
+//     )
+// }
 
-        <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32, backgroundColor:'red' }}>JUI</Avatar>
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        slotProps={{
-          paper: {
-            elevation: 0,
-            sx: {
-              overflow: 'visible',
-              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-              mt: 1.5,
-              '& .MuiAvatar-root': {
-                width: 32,
-                height: 32,
-                ml: -0.5,
-                mr: 1,
-              },
-              '&::before': {
-                content: '""',
-                display: 'block',
-                position: 'absolute',
-                top: 0,
-                right: 14,
-                width: 10,
-                height: 10,
-                bgcolor: 'background.paper',
-                transform: 'translateY(-50%) rotate(45deg)',
-                zIndex: 0,
-              },
-            },
-          },
-        }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
-      </Menu>
-    </React.Fragment>
-  );
+// const cardVariants: Variants = {
+//     offscreen: {
+//         y: 300,
+//     },
+//     onscreen: {
+//         y: 50,
+//         rotate: -10,
+//         transition: {
+//             type: "spring",
+//             bounce: 0.4,
+//             duration: 0.8,
+//         },
+//     },
+// }
+
+// const hue = (h: number) => `hsl(${h}, 100%, 50%)`
+
+// /**
+//  * ==============   Styles   ================
+//  */
+
+// const container: React.CSSProperties = {
+//     margin: "100px auto",
+//     maxWidth: 500,
+//     paddingBottom: 100,
+//     width: "100%",
+// }
+
+// const cardContainer: React.CSSProperties = {
+//     overflow: "hidden",
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     position: "relative",
+//     paddingTop: 20,
+//     marginBottom: -120,
+// }
+
+// const splash: React.CSSProperties = {
+//     position: "absolute",
+//     top: 0,
+//     left: 0,
+//     right: 0,
+//     bottom: 0,
+//     clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
+// }
+
+// const card: React.CSSProperties = {
+//     fontSize: 164,
+//     width: 300,
+//     height: 430,
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     borderRadius: 20,
+//     background: "#f5f5f5",
+//     boxShadow:
+//         "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
+//     transformOrigin: "10% 60%",
+// }
+
+// /**
+//  * ==============   Data   ================
+//  */
+
+// const food: [string, number, number][] = [
+//     ["🍅", 340, 10],
+//     ["🍊", 20, 40],
+//     ["🍋", 60, 90],
+//     ["🍐", 80, 120],
+//     ["🍏", 100, 140],
+//     ["🫐", 205, 245],
+//     ["🍆", 260, 290],
+//     ["🍇", 290, 320],
+// ]
+
+
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion"
+import { useRef } from "react"
+
+function useParallax(value: MotionValue<number>, distance: number) {
+    return useTransform(value, [0, 1], [-distance, distance])
+}
+
+function Image({ id }: { id: number }) {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({ target: ref })
+    const y = useParallax(scrollYProgress, 300)
+
+    return (
+        <section className="img-container">
+            <div ref={ref}>
+                <img
+                    src={`/photos/cityscape/${id}.jpg`}
+                    alt="A London skyscraper"
+                />
+            </div>
+            <motion.h2
+                // Hide until scroll progress is measured
+                initial={{ visibility: "hidden" }}
+                animate={{ visibility: "visible" }}
+                style={{ y }}
+            >
+              {`#00${id}`}
+            </motion.h2>
+        </section>
+    )
+}
+
+export default function Parallax() {
+    // const { scrollYProgress } = useScroll()
+    // const scaleX = useSpring(scrollYProgress, {
+    //     stiffness: 100,
+    //     damping: 30,
+    //     restDelta: 0.001,
+    // })
+
+    return (
+        <div id="example">
+            {[1, 2, 3, 4, 5].map((image) => (
+                <Image key={image} id={image} />
+            ))}
+            {/* <motion.div className="progress" style={{ scaleX }} /> */}
+            <StyleSheet />
+        </div>
+    )
+}
+
+/**
+ * ==============   Styles   ================
+ */
+
+function StyleSheet() {
+    return (
+        <style>{`
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        .img-container {
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .img-container > div {
+            width: 300px;
+            height: 400px;
+            margin: 20px;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 300px;
+            height: 400px;
+        }
+
+        @media (max-width: 500px) {
+            .img-container > div {
+                width: 150px;
+                height: 200px;
+            }
+
+            .img-container img {
+                width: 150px;
+                height: 200px;
+            }
+        }
+
+        .img-container h2 {
+            color: #8df0cc;
+            margin: 0;
+            font-family: "Azeret Mono", monospace;
+            font-size: 50px;
+            font-weight: 700;
+            letter-spacing: -3px;
+            line-height: 1.2;
+            position: absolute;
+            display: inline-block;
+            top: calc(50% - 25px);
+            left: calc(50% + 120px);
+        }
+
+        .progress {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #8df0cc;
+            bottom: 50px;
+            transform: scaleX(0);
+        }
+    `}</style>
+    )
 }

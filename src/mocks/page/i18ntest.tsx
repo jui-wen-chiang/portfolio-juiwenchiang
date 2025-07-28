@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 
 import { Container, Box, Button } from 'src/components/mui/components';
 // import { PageContainer } from 'src/assets/styles/commonStyles'
-import ModalDialog from 'src/components/tools/emtionDialog'
-import BaseDialog from 'src/components/tools/beseDialog'
+import ModalDialog from 'src/components/tools/Dialog/emtionDialog'
+import BaseDialog from 'src/components/tools/Dialog/beseDialog'
 import useDialog from "src/hooks/useDialog";
 
 const chartBoard: React.CSSProperties = {

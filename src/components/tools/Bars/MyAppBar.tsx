@@ -122,7 +122,7 @@ export default function Appbar() {
                   ...(name === "Home" && { marginRight: "auto" }),
                   '&:hover': {
                     backgroundColor: 'inherit',
-                    color: ColorScheme.secondary.dark
+                    color: ColorScheme.primary.dark
                   },
                 }}
                 onClick={() => handleScroll(path)}

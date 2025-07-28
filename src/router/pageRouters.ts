@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { RouteConfig } from "src/types/router";
-import TimelinePage from "src/views/timeline";
+import TimelinePage from "src/views/User/timeline";
 import TestPage from "src/mocks/page/i18ntest";
 import ResponsiveAppBar from "src/mocks/page/test";
 
-import SkillsView from "src/views/SkillsView";
-import TimelineView from "src/views/TimelineView";
-import GalleryView from "src/views/GalleryView";
-import MindMapView from "src/views/MindMapView";
-import AboutView from "src/views/About";
-import ProjectsView from "src/views/ProjectView";
+import SkillsView from "src/views/User/SkillsView";
+import TimelineView from "src/views/User/TimelineView";
+import GalleryView from "src/views/User/GalleryView";
+import MindMapView from "src/views/User/MindMapView";
+import AboutView from "src/views/Base/About";
+import ProjectsView from "src/views/Base/ProjectView";
 
 // Single Page Application
 const ROUTES:Array<any> = [

@@ -2,7 +2,7 @@ import { personalInof } from "src/data/views/homeData"
 import { RowContainer } from 'src/assets/styles/commonStyles'
 import { HomeContainer, ContentWrapper, ContentBox } from "src/assets/styles/views/HomeStyle"
 import { Typography } from 'src/components/mui/components';
-import LinkBar from 'src/components/tools/linkBar';
+import LinkBar from 'src/components/tools/Bars/LinkingBar';
 
 
 export default function HomeView() {

@@ -5,7 +5,7 @@ import { CssBaseline } from '@mui/material';
 import theme from './theme/index';
 // views & Router
 import { BrowserRouter as Router } from "react-router-dom";
-import Appbar from './components/tools/appBar.tsx';
+import Appbar from './components/tools/Bars/MyAppBar.tsx';
 import BackToTop from './components/tools/BackToTop/BackToTop.tsx';
 import IndexViews from "src/views/IndexViews";
 // style
