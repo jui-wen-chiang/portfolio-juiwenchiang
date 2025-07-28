@@ -30,7 +30,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                             <IconButton
                                 aria-label={item.lable}
                                 color="secondary"
-                                sx={{ ...base.commPadding }}
+                                sx={{ ...base.basePadding }}
                                 onClick={onDownload}
                             >
                                 {item.icon}
@@ -41,7 +41,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                                 color="secondary"
                                 size="small"
                                 startIcon={item.icon}
-                                sx={{ ...base.commPadding, ...base.dmSerifFontFamily, color: ColorScheme.neutral.light }}
+                                sx={{ ...base.basePadding, ...base.dmSerifFontFamily, color: ColorScheme.neutral.light }}
                                 onClick={onDownload}>
                                 <a
                                     ref={downloadRef}
@@ -61,7 +61,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                             href={item.webSrc}
                             target="_blank"
                             color="secondary"
-                            sx={{ ...base.commPadding }}
+                            sx={{ ...base.basePadding }}
                         >
                             {item.icon}
                         </IconButton>

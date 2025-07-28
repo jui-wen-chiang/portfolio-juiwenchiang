@@ -23,7 +23,7 @@ const dmSerifFontFamily = {
     }
 };
 
-const commPadding = {
+const basePadding = {
     padding: '1rem',
 };
 
@@ -31,4 +31,4 @@ const baseBoxShadow = {
     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
 }
 
-export { breakpoints, fullSize, commBorderRadius, commPadding, dmSerifFontFamily, baseBoxShadow }
+export { breakpoints, fullSize, commBorderRadius, basePadding, dmSerifFontFamily, baseBoxShadow }
