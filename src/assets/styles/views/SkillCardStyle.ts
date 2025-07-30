@@ -5,6 +5,7 @@ import { ContainerProps, Box } from "src/components/mui/components";
 
 
 const SkillContainer = styled(Box)(({ theme }) => ({
+    width: '100%',
     display: 'grid',
     gap: theme.spacing(2),
     gridTemplateColumns: 'repeat(2, 1fr)', // xs

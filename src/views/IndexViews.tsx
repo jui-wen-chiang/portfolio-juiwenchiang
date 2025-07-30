@@ -45,7 +45,7 @@ const viewMapping: Array<ViewMappingItem> = [
     component: <AboutView />
   },
   {
-    id: 'skillcard',
+    id: 'skills',
     component: <SkillCardView />
   },
   {

@@ -12,10 +12,11 @@ import AboutView from "src/views/Base/About";
 import ProjectsView from "src/views/Base/ProjectView";
 
 // Single Page Application
-const ROUTES:Array<any> = [
+const ROUTES: Array<any> = [
   { path: 'home', name: 'Home' },
   // { path: 'test', name: 'Test' },
   { path: 'about', name: 'About' },
+  { path: 'skills', name: 'Skills' },
   { path: 'experience', name: 'Experience' },
   // { path: 'timeline', name: 'timeline' },
   { path: 'projects', name: 'Project' },
