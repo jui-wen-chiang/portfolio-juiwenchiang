@@ -1,5 +1,5 @@
 {
-  "name": "jui_wen_chiang_website",
+  "name": "portfolio-juiwenchiang",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +45,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://jui-wen-chiang.github.io/personal_jui_wen_chiang_website",
+  "homepage": "https://jui-wen-chiang.github.io/portfolio-juiwenchiang",
   "eslintConfig": {
     "extends": [
       "react-app",

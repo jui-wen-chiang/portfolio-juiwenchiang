@@ -29,7 +29,7 @@ function CustomTabPanel(props: TabPanelProps) {
 }
 
 export default function ExperienceTabView() {
-  const [value, setValue] = React.useState('profession'); // default target tab
+  const [value, setValue] = React.useState('career'); // default target tab
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);

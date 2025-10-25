@@ -14,7 +14,7 @@ const experienceData = [
         // ]
     },
     {
-        class: 'profession',
+        class: 'career',
         title: 'Assistant Software Engineer',
         date: '2022 May - 2024 October',
         location: "MIRLE Automation Corporation, Taiwan",
@@ -28,7 +28,7 @@ const experienceData = [
         ]
     },
     {
-        class: 'professional courses',
+        class: 'certifications',
         title: 'Al Smart Application Development Practical Training Course',
         date: '2022 January - 2022 March',
         location: "Commerce Development Research Institute, Taiwan",
@@ -42,7 +42,7 @@ const experienceData = [
         ]
     },
     {
-        class: 'professional courses',
+        class: 'certifications',
         title: 'UI/UX Interface Design Course',
         date: '2021 March - 2021 June',
         location: "Workforce Development Agency, Taiwan",

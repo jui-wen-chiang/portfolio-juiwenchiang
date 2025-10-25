@@ -36,7 +36,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <CssBaseline />
-      <Router basename="/personal_jui_wen_chiang_website">
+      <Router basename="/portfolio-juiwenchiang">
         <AppLayout />
       </Router>
     </ThemeProvider>
