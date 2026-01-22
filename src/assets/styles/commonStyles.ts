@@ -1,11 +1,36 @@
 import { styled, alpha } from "@mui/material/styles";
 import * as base from "./baseStyle";
-import { RatioRowProps } from "src/types/styles/commonStyle"
-import { Container, ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
+import { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
+import { Container, ContainerProps, Box, Card, Button, List, ListItem, Typography } from "src/components/mui/components";
 
+
+// 使用方式：
+// <SectionTitle>About</SectionTitle>
+
+const ViewsContainerT = styled(Box)<ViewsContainerProps>(({ theme, currentBg }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    width: '100%',
+    backgroundColor: currentBg,
+    transition: 'background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+
+    color: '#1E293B', // 使用 Slate 800 作為主要文字顏色，比純黑更高級
+    //  position: "relative"
+}));
 
 const ViewsContainer = styled(Box)<ContainerProps>(({ theme }) => ({
-    position: "relative"
+    position: 'relative',
+    bacwidth: '100%',
+    // 建立一個從上到下的長漸層
+    background: 'linear-gradient(180deg, #060b14 0%, #0a1120 25%, #052e16 50%, #060b14 100%)',
+    backgroundSize: '100% 100%',
+    color: '#E2E8F0',
+
+    // fontFamily: `'Inter', ${theme.typography.fontFamily}`,
+    // scrollBehavior: 'smooth',
+    // transition: 'background-color 0.8s ease',
+    // backgroundImage: 'linear-gradient(180deg, #020617, #020617)',
 }));
 
 const BackgroundBox = styled(Box)<ContainerProps>(({ theme }) => ({
@@ -45,7 +70,8 @@ const ControlButton = styled(Button)(({ theme }) => ({
 }));
 
 const TextCard = styled(Card)(({ theme }) => ({
-    backgroundColor: theme.palette.background.default
+    backgroundColor: 'transparent'
+    // backgroundColor: theme.palette.background.default
 }));
 
 const ListContainer = styled(List)(({ theme }) => ({
@@ -82,6 +108,7 @@ const RatioRowContainer = styled(Container, {
 }));
 
 export {
+    ViewsContainerT,
     ViewsContainer,
     BackgroundBox,
     RowContainer,

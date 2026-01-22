@@ -6,6 +6,7 @@ interface BaseDialogProps {
     closeDialog: () => void;
     title?: string;
     content?: any;
+    extra?: React.ReactNode;
 };
 
 interface ControlBarProps {

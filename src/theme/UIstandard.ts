@@ -1,8 +1,8 @@
 // MUI v5 default break points
 const BreakPointsSchem = {
-    xs: 0,      // phones
-    sm: 600,    // tablets
-    md: 900,    // small laptop
+    xs: 0,
+    sm: 600,    // phones
+    md: 900,    // tablets
     lg: 1200,   // desktop
     xl: 1536,   // large desktop
 };
@@ -89,6 +89,17 @@ const FontSizeScheme: { [key: string]: any } = {
     },
 };
 
+const BGCOLORS = {
+    // home: '#a0b2faff',       // 帶紫調的淺藍
+    home: '#F5F7FF',       // 帶紫調的淺藍
+    about: '#EEF2FF',      // Indigo 50
+    skill: '#E0E7FF',      // Indigo 100 (足夠深，能襯托出白色卡片)
+    experience: '#EEF2FF', // Indigo 50
+    projects: '#F5F7FF',   // 帶紫調的淺藍
+    contact: '#EEF2FF',    // Indigo 50
+    // contact: '#d3fee5ff',    // Indigo 50
+};
+
 const ColorScheme: { [key: string]: any } = {
     // 'dark' here means a darker variant of the primary color, not related to dark mode theme.
     primary: {
@@ -142,7 +153,6 @@ const ColorScheme: { [key: string]: any } = {
         }
     }
 };
-
 
 const oddColorScheme: { [key: string]: any } = {
     // 'dark' here means a darker variant of the primary color, not related to dark mode theme.
@@ -200,4 +210,10 @@ const oddColorScheme: { [key: string]: any } = {
     },
 };
 
-export { FontFamilyScheme, FontSizeScheme, ColorScheme, BreakPointsSchem }
+export {
+    FontFamilyScheme,
+    FontSizeScheme,
+    ColorScheme,
+    BreakPointsSchem,
+    BGCOLORS
+}

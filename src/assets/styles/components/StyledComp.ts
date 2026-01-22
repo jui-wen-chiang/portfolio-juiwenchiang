@@ -23,9 +23,22 @@ const StyledTypography = styled(Typography)(({ theme, variant }) => ({
             letterSpacing: '0.05rem',
         },
     }),
-    ...(variant === 'stepTitle' && {
+    ...(variant === 'stepTitleDate' && {
+        color: theme.palette.primary.main,
         // padding: '2rem',
         // // fontSize: '2rem',
+        // letterSpacing: '0.1rem',
+        // color: 'lemonYellow',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '1.2rem',
+            // padding: '1rem',
+            // //   fontSize: '1.5rem',
+            // letterSpacing: '0.05rem',
+        },
+    }),
+    ...(variant === 'stepTitle' && {
+        // padding: '2rem',
+        // fontSize: '1.5rem',
         // letterSpacing: '0.1rem',
         // color: 'lemonYellow',
         [theme.breakpoints.down('md')]: {

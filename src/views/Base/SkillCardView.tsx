@@ -11,10 +11,10 @@ export default function SkillCardView() {
 
     return (
         <ColContainer>
-            <Typography variant="h4" component='h4'>Skills</Typography>
+            <Typography variant="h3" component='h3' fontWeight="bold">Skills</Typography>
             {skillData.map((item) => (
                 <ColContainer sx={basePadding}>
-                    <Typography variant="h5" component='h5' sx={basePadding}>{item.category}</Typography>
+                    {/* <Typography variant="h5" component='h5' sx={basePadding}>{item.category}</Typography> */}
                     <SkillContainer>
                         {item.technologies.map((skill) => (
                             <SkillItemContainer>

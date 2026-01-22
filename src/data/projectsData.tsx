@@ -47,7 +47,8 @@ const projectData = [
     },
     {
         type: 'Side Project',
-        title: 'Emotion Journal App - Deepheart',
+        title: 'AI Emotion Tracker',
+        // title: 'Emotion Journal App - Deepheart',
         subtitle: "AI-Based Sentiment Tracker",
         image: "/imgs/sideproject_deepheart.jpg",
         summary: 'Designed a mobile app that allows users to write daily journals and uses AI to analyze the emotional tone of the text. The app provides emotion trend statistics, helping users recognize prolonged negative emotions and seek professional help when needed.',

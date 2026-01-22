@@ -9,26 +9,39 @@ import Appbar from './components/tools/Bars/MyAppBar.tsx';
 import BackToTop from './components/tools/BackToTop/BackToTop.tsx';
 import IndexViews from "src/views/IndexViews";
 // style
-import { Container } from "src/components/mui/components";
+import { Container, Box } from "src/components/mui/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@xyflow/react/dist/style.css';
+import { useState, useEffect } from 'react';
 
+import { AppLayoutContainer, ViewSection, ViewBox } from 'src/assets/styles/layoutStyles';
+
+import { BGCOLORS } from 'src/theme/UIstandard.ts'
+import { displayPartsToString } from 'typescript';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function AppLayout() {
+  const [bgColor, setBgColor] = useState(BGCOLORS.home);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      mirror: true, // 關鍵：讓往上捲動時也能觸發動畫
+      once: false,  // 讓動畫可以重複觸發
+    });
+  }, []);
+
   return (
-    <Container
-      disableGutters // a prop to cancel the default left and right padding
-      maxWidth={false}
-      sx={{
-        margin: '0',
-        padding: '0'
-      }}
-    >
-      <Appbar />
-      <IndexViews />
+    <AppLayoutContainer style={{ backgroundColor: bgColor }} maxWidth={false}>
+      <ViewSection flex={5}>
+        <Appbar />
+      </ViewSection>
+      <ViewSection flex={95}>
+        <IndexViews onColorChange={setBgColor} />
+      </ViewSection>
       <BackToTop />
-    </Container>
+    </AppLayoutContainer>
   );
 }
 
