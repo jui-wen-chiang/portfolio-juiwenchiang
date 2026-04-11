@@ -19,12 +19,12 @@ export default function ProjectsView() {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md')); // laptop or desktop
 
     return (
-        <ViewBox>
+        <ViewBox data-aos="zoom-in">
             <Typography variant="h3" component='h3' fontWeight="bold">Projects</Typography>
             <Box sx={{ position: 'relative', maxWidth: '1400px', margin: '0 auto' }}>
                 <ProjectRows>
                     {projectData.map((item, index) => (
-                        <Box key={index}>
+                        <Box key={index} sx={{ margin: '0'}}>
                             <OverlapTitle>
                                 <h3>{item.title}</h3>
                             </OverlapTitle>

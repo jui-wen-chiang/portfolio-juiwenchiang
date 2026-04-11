@@ -57,7 +57,7 @@ export default function Appbar() {
     updateHeight();
     window.addEventListener('resize', updateHeight);
     return () => window.removeEventListener('resize', updateHeight);
-  }, []);
+  }, [appBarHeight]);
 
   return (
     <BaseAppBar>

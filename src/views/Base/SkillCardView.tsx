@@ -10,7 +10,7 @@ export default function SkillCardView() {
     const theme = useTheme();
 
     return (
-        <ColContainer>
+        <ColContainer data-aos="zoom-in">
             <Typography variant="h3" component='h3' fontWeight="bold">Skills</Typography>
             {skillData.map((item) => (
                 <ColContainer sx={basePadding}>

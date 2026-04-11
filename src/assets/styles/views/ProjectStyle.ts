@@ -34,7 +34,7 @@ import { Box, Card, Chip } from 'src/components/mui/components';
 // --------- test now
 const ProjectRows = styled(Box)(({ theme }) => ({
     maxWidth: '100%',
-    margin: '3rem auto',
+    // margin: '3rem auto',
     position: 'relative',
     display: 'grid',
     gap: '2rem',

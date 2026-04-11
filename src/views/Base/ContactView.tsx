@@ -11,7 +11,7 @@ export default function ContactView() {
     const [open, setOpen] = useState(false);
 
     return (
-        <ColContainer>
+        <ColContainer data-aos="fade-left" >
             <Typography variant="h3" component='h3' fontWeight="bold">Let's Connect </Typography>
             <Typography>
                 I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out!

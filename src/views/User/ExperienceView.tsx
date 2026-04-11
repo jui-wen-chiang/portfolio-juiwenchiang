@@ -39,7 +39,7 @@ export default function ExperienceView() {
     };
 
     return (
-        <ViewBox data-aos="zoom-in-up">
+        <ViewBox data-aos="zoom-in">
             <ColContainer sx={{ alignItems: 'flex-start', padding: '0, 2rem' }}>
                 <Typography variant="h3" component='h3' >Experience</Typography>
                 <StyledStepper nonLinear orientation="vertical" activeStep={-1}>
