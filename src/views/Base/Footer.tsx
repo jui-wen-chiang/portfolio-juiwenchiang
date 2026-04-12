@@ -6,7 +6,7 @@ export default function FooterView() {
     return (
         <ColContainer>
             <LinkBar />
-            <Typography>Copyright@Jui-Wen Chiang</Typography>
+            <Typography variant="caption"> © 2026 Jui-Wen Chiang </Typography>
         </ColContainer>
     )
 }

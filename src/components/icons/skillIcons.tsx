@@ -16,11 +16,14 @@ export { FaPhp } from "react-icons/fa";
 // Frontend Frameworks & UI
 export { RiReactjsFill } from "react-icons/ri";
 export { FaVuejs } from "react-icons/fa";
+export { SiMui } from "react-icons/si";
+export { SiVite } from "react-icons/si";
 
 // Backend Frameworks
 export { SiFlask } from "react-icons/si";
 export { DiDjango } from "react-icons/di";
 export { SiDjango } from "react-icons/si";
+export { SiFastapi } from "react-icons/si";
 
 // Machine Learning
 export { SiTensorflow } from "react-icons/si";
@@ -35,12 +38,22 @@ export { SiMongodb } from "react-icons/si";
 export { DiRedis } from "react-icons/di";
 export { IoLogoTableau } from "react-icons/io5";
 
+export { SiJsonwebtokens } from "react-icons/si";
+
+
 // Tools & Platforms
 export { FaGitAlt } from "react-icons/fa";
 export { FaDocker } from "react-icons/fa";
+export { SiAnaconda } from "react-icons/si";
+export { IoLogoVercel } from "react-icons/io5";
+export { SiRender } from "react-icons/si";
+export { RiSupabaseFill } from "react-icons/ri";
+
 
 // Code Quality & Testing Tools
 export { SiSonarqube } from "react-icons/si";
 
 // others
 export { IoLogoFigma } from "react-icons/io5";
+export { FaLine } from "react-icons/fa";
+export { FaJenkins } from "react-icons/fa";

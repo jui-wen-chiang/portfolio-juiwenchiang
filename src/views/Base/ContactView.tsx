@@ -16,8 +16,9 @@ export default function ContactView() {
             <Typography>
                 I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out!
             </Typography>
-            <Button variant="contained" onClick={() => setOpen(true)}>Drop Me a Line</Button>
-            <BaseDialog isOpen={open} closeDialog={() => setOpen(false)} extra={<ContactUs />} />
+            <Typography>raewen.juiwenchiang@gmail.com</Typography>
+            {/* <Button variant="contained" onClick={() => setOpen(true)}>Drop Me a Line</Button>
+            <BaseDialog isOpen={open} closeDialog={() => setOpen(false)} extra={<ContactUs />} /> */}
         </ColContainer>
     )
 }

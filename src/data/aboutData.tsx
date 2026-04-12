@@ -1,4 +1,7 @@
-const paragraphProfessional = "Software developer with 2.5 years of full-stack experience. Specialized in frontend, UI/UX, and NLP. At an intelligent automation company, built scalable components and improved delivery time by 60%. Passionate about crafting user-focused web applications and engineering efficiency. Self-taught modern NLP techniques and frontend frameworks to build full-featured applications with measurable user impact."
+const paragraphProfessional = "Product-minded Full-Stack Developer with 2.5 years of experience bridging UI/UX and technical execution. Achieved 60% faster delivery of scalable systems through process optimization, clear documentation, and cross-functional collaboration. Focusing on integrating NLP and LLM expertise to create intuitive, AI-enhanced web applications."
+
+// const paragraphProfessional = "Software developer with 2.5 years of full-stack experience. Specialized in frontend, UI/UX, and NLP. At an intelligent automation company, built scalable components and improved delivery time by 60%. Passionate about crafting user-focused web applications and engineering efficiency. Self-taught modern NLP techniques and frontend frameworks to build full-featured applications with measurable user impact."
+
 
 // const paragraphProfessional = "Hi, I am Jui-Wen Chiang — a software developer with a background in art and design. I am passionate about creating interfaces that are both visually appealing and highly usable. My journey into development began with a desire to blend aesthetics with functionality, and I thrive on learning new technologies and solving problems creatively."
 

@@ -11,10 +11,10 @@ import { ColorScheme } from "src/theme/UIstandard"
 const { PUBLIC_URL } = process.env;
 
 export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
+    console.log(`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`)
     const ref = useRef<ReturnType<typeof setTimeout>[]>([]);
     const [items, set] = useState<string[]>([]);
-
-    const downloadRef = useRef(null);
+    const downloadRef = useRef<HTMLAnchorElement>(null);
     const onDownload = () => {
         if (downloadRef.current) {
             downloadRef.current.click();
@@ -29,16 +29,19 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                         return simplyResumeIcon ? (
                             <IconButton
                                 aria-label={item.lable}
-                                color="secondary"
+                                color="primary"
                                 sx={{ ...base.basePadding }}
-                                onClick={onDownload}
+                                // onClick={onDownload}
+                                component="a"
+                                href={`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`}
+                                download="JuiWen_Chiang_Resume.pdf"
                             >
                                 {item.icon}
                             </IconButton>
                         ) : (
                             <Button
                                 variant="contained"
-                                color="secondary"
+                                color="primary"
                                 size="small"
                                 startIcon={item.icon}
                                 sx={{ ...base.basePadding, ...base.dmSerifFontFamily, color: ColorScheme.neutral.light }}
@@ -60,7 +63,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                             aria-label={item.lable}
                             href={item.webSrc}
                             target="_blank"
-                            color="secondary"
+                            color="primary"
                             sx={{ ...base.basePadding }}
                         >
                             {item.icon}
