@@ -1,17 +1,14 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
+        "ignoreDeprecations": "5.0",
+        "baseUrl": ".", // The evaluation will use TypeScript 7.0.
         "paths": {
-            "src/*": [
-                "src/*"
-            ]
+            "src/*": ["./src/*"]
         },
         "jsx": "react-jsx",
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        // "moduleResolution": "node",
-        // "allowSyntheticDefaultImports": true,
-        // "skipLibCheck": true
-    }
-
+        "types": ["node"]
+    },
+    "include": ["src/**/*"]
 }

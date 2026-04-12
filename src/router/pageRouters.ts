@@ -10,17 +10,26 @@ import GalleryView from "src/views/User/GalleryView";
 import MindMapView from "src/views/User/MindMapView";
 import AboutView from "src/views/Base/About";
 import ProjectsView from "src/views/Base/ProjectView";
+import { SvgIconComponent } from '@mui/icons-material';
+import { HomeIcon, ContactPageIcon, ConstructionIcon, AccountTreeIcon, BusinessCenterIcon, EmailIcon } from 'src/components/mui/icons';
+
+type RouteItem = {
+  path: string;
+  name: string;
+  icon: SvgIconComponent;
+  element?: any
+};
 
 // Single Page Application
-const ROUTES: Array<any> = [
-  { path: 'home', name: 'Home' },
+const ROUTES: Array<RouteItem> = [
+  { path: 'home', name: 'Home', icon: HomeIcon },
   // { path: 'test', name: 'Test' },
-  { path: 'about', name: 'About' },
-  { path: 'skills', name: 'Skills' },
-  { path: 'experience', name: 'Experience' },
+  { path: 'about', name: 'About', icon: ContactPageIcon },
+  { path: 'experience', name: 'Experience', icon: AccountTreeIcon },
   // { path: 'timeline', name: 'timeline' },
-  { path: 'projects', name: 'Project' },
-  { path: 'contact', name: 'Contact' },
+  { path: 'projects', name: 'Project', icon: BusinessCenterIcon },
+  { path: 'skills', name: 'Skills', icon: ConstructionIcon },
+  { path: 'contact', name: 'Contact', icon: EmailIcon },
   // { path: 'mindmap', name: 'mindmap' },
   // { path: 'gallery', name: 'gallery' },
 ];

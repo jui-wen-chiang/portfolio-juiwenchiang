@@ -4,6 +4,9 @@ export type { ContainerProps } from '@mui/material/Container';
 export { default as Box } from "@mui/material/Box";
 export type { BoxProps } from '@mui/material/Box';
 // menu
+
+export { default as Tooltip } from "@mui/material/Tooltip";
+
 export { default as Menu } from "@mui/material/Menu";
 export { default as MenuItem } from "@mui/material/MenuItem";
 // bar

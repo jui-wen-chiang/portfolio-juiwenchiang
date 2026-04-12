@@ -2,6 +2,28 @@ import { styled, alpha, type Theme } from '@mui/material/styles';
 import * as base from "src/assets/styles/baseStyle";
 import { AppBar, Container, Menu, Box, Toolbar } from "src/components/mui/components";
 
+//-----
+const BaseAppBar = styled(AppBar)(({ theme }) => ({
+    width: '100%',
+    height: '100vh',
+    // vertical app bar
+    position: 'sticky',
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxShadow: 'none',
+
+    // horizontal app bar
+    [theme.breakpoints.down('sm')]: {
+        position: "fixed",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'start',
+    }
+}));
+//------
+
 // horizontal bar
 const HorizontalAppBar = styled(AppBar)(({ theme }) => ({
     height: 70,
@@ -92,48 +114,47 @@ const ButtonStyle = {
     ...base.dmSerifFontFamily
 };
 
-
 // vertical bar
-/*
-const SideBar = {
-    top: 0,
-    left: 0,
-    bottom: 0,
+const VerticalSideBar = styled(Box)({
+    top: '0',
+    left: '10',
+    bottom: '0',
     width: '10%',
-    boxShadow: 0,
+    boxShadow: '0',
     bgcolor: 'transparent',
     backgroundImage: 'none',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    margin: '2rem'
-};
+    alignItems: 'center'
+    // margin: '2rem'
+});
 
-const NavBar = styled(Toolbar)(({ theme }) => ({
+const VerticalNavBar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
     flexDirection: "column",
     alignItems: 'center',
     justifyContent: 'space-between',
     flexShrink: 0,
-    borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
-    backdropFilter: 'blur(24px)',
-    borderColor: ((theme as any).vars || theme).palette.divider,
-    backgroundColor: alpha(theme.palette.primary.main, 0.4),
 
-    boxShadow: ((theme as any).vars || theme).shadows[1],
-    padding: '0.5rem',
+    // 覆蓋毛玻璃效果
+    // position: 'fixed',
+    // width: '100%',
+    // zIndex: 100,
+    // backgroundColor: 'rgba(255, 255, 255, 0.7)', // 半透明白
+    // backdropFilter: 'blur(10px)', // 毛玻璃效果
+    // borderBottom: '1px solid rgba(0, 0, 0, 0.05)', // 極淡的細線
 }));
 
-const NavItems = styled(Box)({
+const VerticalNavItems = styled(Box)({
     display: 'flex',
     flexDirection: "column",
     alignItems: 'center',
     gap: 10
 });
- */
 
 export {
+    BaseAppBar,
     HorizontalAppBar,
     HorizontalContainer,
     XSBoxLayout,
@@ -141,7 +162,7 @@ export {
     CustomMenu,
     MenuSlotProps,
     ButtonStyle,
-    // SideBar,
-    // NavBar,
-    // NavItems
+    VerticalSideBar,
+    VerticalNavBar,
+    VerticalNavItems
 }

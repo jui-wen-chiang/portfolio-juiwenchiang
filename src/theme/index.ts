@@ -8,11 +8,30 @@ let theme = createTheme({
     // MUI will prioritize the typography settings of Theme
     typography: {
         fontSize: 16,
-        fontFamily: FontFamilyScheme.primary,
+        // fontFamily: FontFamilyScheme.primary,
+        // fontFamily:'Inter',
+        // fontFamily: 'JetBrains Mono',
+        // fontFamily: [
+        //     '-app le-system',
+        //     'BlinkMacSystemFont',
+        //     '"Segoe UI"',
+        //     'Roboto',
+        //     '"Helvetica Neue"',
+        //     'Arial',
+        //     'sans-serif',
+        //     '"Apple Color Emoji"',
+        //     '"Segoe UI Emoji"',
+        //     '"Segoe UI Symbol"',
+        // ].join(','),
+
         // Home View
         h1: {
             color: ColorScheme.primary.dark,
-            fontFamily: FontFamilyScheme.signature,
+            // fontFamily: FontFamilyScheme.signature,
+        },
+        h3: {
+            padding: '1.5rem 0',
+            fontWeight:'bold'
         },
         h4: {
             padding: '1.5rem 0',
@@ -26,14 +45,14 @@ let theme = createTheme({
             lineHeight: 2,
             fontStyle: 'oblique',
             color: ColorScheme.secondary.contrastText,
-            fontFamily: FontFamilyScheme.secondary,
+            // fontFamily: FontFamilyScheme.secondary,
         },
         body1: {
             lineHeight: 2,
-            fontFamily: FontFamilyScheme.secondary,
+            // fontFamily: FontFamilyScheme.secondary,
         },
         body2: {
-            fontFamily: FontFamilyScheme.secondary,
+            // fontFamily: FontFamilyScheme.secondary,
         },
         // custom styles
         stepTitle: {

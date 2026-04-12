@@ -33,8 +33,6 @@ import { styled } from '@mui/material/styles';
 
 import { BGCOLORS } from 'src/theme/UIstandard';
 
-
-// src/router/pageRouters.ts
 const viewMapping: Array<ViewMappingItem> = [
   {
     id: 'home',
@@ -49,17 +47,16 @@ const viewMapping: Array<ViewMappingItem> = [
     component: <AboutView />
   },
   {
+    id: 'skills',
+    component: <SkillCardView />
+  },
+  {
     id: 'experience',
-    component: <ExperienceView />
-    // component: <ExperienceTabView />
+    component: <ExperienceTabView />
   },
   {
     id: 'projects',
     component: <ProjectsView />
-  },
-  {
-    id: 'skills',
-    component: <SkillCardView />
   },
   {
     id: 'contact',
@@ -72,6 +69,17 @@ const viewMapping: Array<ViewMappingItem> = [
 ];
 
 
+
+// const ViewsContainerT = styled(Box, {
+//   shouldForwardProp: (prop) => prop !== 'bgcolor',
+// })<{ bgcolor: string }>(({ bgcolor }) => ({
+//   minHeight: '100vh',
+//   width: '100%',
+//   backgroundColor: bgcolor, // 這裡接收動態變化的顏色
+//   transition: 'background-color 1.2s ease-in-out',
+//   color: '#E2E8F0',
+//   position: 'relative',
+// }));
 const Section = styled(Box)({
   minHeight: '100vh',
   display: 'flex',
@@ -81,6 +89,8 @@ const Section = styled(Box)({
 });
 
 export default function IndexViews({ onColorChange }) {
+
+
   // 1. 定義 Ref 的型別為一個物件，其 key 是字串，value 是 HTMLDivElement 或 null
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -117,6 +127,15 @@ export default function IndexViews({ onColorChange }) {
 
   return (
     <ViewsContainerT >
+      {/* 
+       <ViewsContainerT  currentBg={bgColor}> 
+       <BackgroundBox>
+        <CustomShape/>
+        <VantaFogBackground />
+      </BackgroundBox> 
+      */}
+
+
       {/* <Section id="home" data-bg="#F8FAFC">
         <Typography variant="h2" fontWeight="bold">Home</Typography>
         <Typography variant="h5" color="textSecondary">Welcome to my space.</Typography>
@@ -146,20 +165,32 @@ export default function IndexViews({ onColorChange }) {
         <Typography variant="h2" fontWeight="bold">Contact</Typography>
       </Section> */}
 
-      {viewMapping.map((view, index) => {
-        let mbSetting = view.id == 'home' ? 0
-          : view.id == 'footer' ? 2 : 10;
+      <Box>
+        {viewMapping.map((view, index) => {
+          // let mbSetting = index == lastIndex ? 2 : 10;
+          let mbSetting = view.id == 'home' ? 0
+            : view.id == 'footer' ? 2 : 10;
 
-        return (
-          <Box data-id={view.id} id={view.id}
-            sx={{ width: '100%', scrollMarginTop: '80px', mb: mbSetting }}
-            ref={(el: HTMLDivElement | null) => {
-              sectionRefs.current[view.id] = el;
-            }}>
-            {view.component}
-          </Box>
-        )
-      })}
+          return (
+            //     <div
+            //   key={view.id}
+            //   data-id={view.id} // 這裡存 ID 讓 Observer 讀取
+            //   ref={(el) => (sectionRefs.current[view.id] = el)}
+            // >
+            //   {view.component}
+            // </div>
+
+            <Box data-id={view.id} id={view.id} 
+            sx={{  width: '100%', scrollMarginTop: '80px', mb: mbSetting }} 
+            // 明確指定 el 的型別為 HTMLDivElement 或 null
+              ref={(el: HTMLDivElement | null) => {
+                sectionRefs.current[view.id] = el;
+              }}>
+              {view.component}
+            </Box>
+          )
+        })}
+      </Box>
     </ViewsContainerT>
 
   );

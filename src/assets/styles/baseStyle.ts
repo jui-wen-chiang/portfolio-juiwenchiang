@@ -1,7 +1,7 @@
 const breakpoints = {
-    xs: 0,      // phones
-    sm: 600,    // tablets
-    md: 900,    // small laptop
+    xs: 0,
+    sm: 600,    // phones
+    md: 900,    // table
     lg: 1200,   // desktop
     xl: 1536,   // large desktop
 };

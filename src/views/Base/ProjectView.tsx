@@ -1,67 +1,119 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-
 import { projectData } from "src/data/projectsData";
-import { Typography, CardContent, CardActions, Button } from 'src/components/mui/components';
-import { ColContainer, RowContainer, TextCard, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
-import {
-    TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
-} from 'src/assets/styles/views/ProjectStyle';
+import { Typography, Box, Chip, Dialog, DialogContent, DialogTitle, IconButton } from 'src/components/mui/components';
+import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ProjectRows, CardRoot, CardImg, CardOverlay, CardTitleAlways, CardImgSourceText, CardImgTitleText, CardSummaryText, CardBody, ViewButton } from 'src/assets/styles/views/ProjectStyle';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const { PUBLIC_URL } = process.env;
 
+
 export default function ProjectsView() {
+    const [selected, setSelected] = useState<typeof projectData[0] | null>(null);
     const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md')); // laptop or desktop
 
     return (
-        <ColContainer>
-            <Typography variant="h4" component='h4' sx={{ paddingBottom: 0 }}>PROJECTS</Typography>
-            {projectData.map((item, index) => (
-                <RowContainer key={index}
-                    sx={{ margin: '2rem auto', flexDirection: isDesktop ? 'row' : 'column-reverse' }}>
-                    <TextContainer>
-                        <TextCard sx={{ boxShadow: 0 }}>
-                            <CardContent>
-                                <Typography variant="subtitle2">{item.subtitle}</Typography>
-                                <Typography variant="h5">{item.title}</Typography>
-                                <SummaryBox>
-                                    {isDesktop ? (
-                                        <>
-                                            <Typography variant="body1">{item.summary}</Typography>
-                                            <Typography variant="body1" sx={{ mt: 2 }}>Key Features:</Typography>
-                                            {item.keyFeatures?.map((bullet, idx) => (
-                                                <ListContainer key={idx}>
-                                                    <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>
-                                                </ListContainer>
-                                            ))}
-                                        </>
-                                    ) : (
-                                        <>
-                                            <BackgroundImageBox sx={{ backgroundImage: `url(${PUBLIC_URL}${item.image})` }} />
-                                            <Typography variant="body1">{item.summary} </Typography>
-                                        </>
-                                    )}
-                                    {/* <CardActions sx={{ display: 'flex', padding: '1 0', justifyContent: 'flex-end' }}>
-                                        <Button size="small" color="info" variant="contained">Learn More</Button>
-                                    </CardActions> */}
-                                </SummaryBox>
-                                <IconBox>
-                                    {item.icons.map((icon, idx) => (
-                                        <IconChip
-                                            key={idx} label={icon.lable} size="small" />
+        <ViewBox data-aos="zoom-in">
+            <Typography variant="h3" component="h3" fontWeight="bold">Projects</Typography>
+            <ProjectRows>
+                {projectData.map((item, index) => (
+                    <CardRoot className="card-root" key={index}>
+                        <CardImg
+                            className="card-img"
+                            src={item.image}
+                            alt={item.title}
+                            loading="lazy"
+                        />
+                        <CardOverlay />
+
+                        <CardTitleAlways className="card-title-always">
+                            {item.title}
+                            <CardImgSourceText>
+                                {item.imgsource}
+                            </CardImgSourceText>
+                        </CardTitleAlways>
+
+                        <CardBody className="card-body">
+                            <CardImgTitleText>
+                                {item.title}
+                            </CardImgTitleText>
+                            <CardSummaryText>
+                                {item.summary}
+                            </CardSummaryText>
+
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                    {/* {item.techStack?.map((tech, i) => (
+                                        <Chip
+                                            key={i}
+                                            label={tech}
+                                            size="small"
+                                            sx={{
+                                                fontSize: 11,
+                                                height: 22,
+                                                color: '#fff',
+                                                background: 'rgba(255,255,255,0.18)',
+                                                border: '0.5px solid rgba(255,255,255,0.35)',
+                                                '& .MuiChip-label': { px: '10px' },
+                                            }}
+                                        />
+                                    ))} */}
+                                    {item.icons?.slice(0, 5).map((tech, i) => (
+                                        <Box sx={{ paddingTop: '0.5rem', paddingBottom: '0'}}>
+                                            {tech.src && <tech.src size={25} color='#fff' />}
+                                        </Box>
                                     ))}
-                                </IconBox>
-                            </CardContent>
-                        </TextCard>
-                    </TextContainer>
-                    {isDesktop && (
-                        <ImageContainer>
-                            <ImageBox alt={item.title} src={`${PUBLIC_URL}${item.image}`} />
-                        </ImageContainer>
+                                </Box>
+                                {/* <ViewButton
+                                    variant="outlined"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setSelected(item);
+                                    }}
+                                >
+                                    View
+                                </ViewButton> */}
+                            </Box>
+                        </CardBody>
+                    </CardRoot>
+                ))}
+            </ProjectRows>
+
+            {/* Modal */}
+            <Dialog
+                open={!!selected}
+                onClose={() => setSelected(null)}
+                maxWidth="sm"
+                fullWidth
+                PaperProps={{ sx: { borderRadius: 3, p: 1 } }}
+            >
+                <DialogTitle sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pb: 1 }}>
+                    <Typography variant="h6" fontWeight={500}>{selected?.title}</Typography>
+                    <IconButton size="small" onClick={() => setSelected(null)}>
+                        <CloseIcon fontSize="small" />
+                    </IconButton>
+                </DialogTitle>
+                <DialogContent>
+                    {selected?.image && (
+                        <Box
+                            component="img"
+                            src={selected.image}
+                            alt={selected.title}
+                            sx={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: 2, mb: 2 }}
+                        />
                     )}
-                </RowContainer>
-            ))}
-        </ColContainer>
-    )
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                        {selected?.summary}
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {selected?.techStack?.map((tech, i) => (
+                            <Chip key={i} label={tech} size="small" variant="outlined" />
+                        ))}
+                    </Box>
+                </DialogContent>
+            </Dialog>
+        </ViewBox>
+    );
 }

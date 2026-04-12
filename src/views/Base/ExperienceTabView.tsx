@@ -47,8 +47,8 @@ export default function ExperienceTabView() {
   );
 
   return (
-    <ColContainer>
-      <Typography variant="h4" component='h4'>EXPERIENCE</Typography>
+    <ColContainer  sx={{ alignItems: 'flex-start', padding: '0, 2rem' }}>
+      <Typography variant="h3" component='h3' fontWeight="bold" >Experience</Typography>
       <Box sx={{ width: '90%' }}>
         <Tabs
           value={value}

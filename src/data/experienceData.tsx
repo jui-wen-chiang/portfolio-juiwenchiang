@@ -1,23 +1,35 @@
 
 const experienceData = [
     {
+        class: 'career',
+        title: 'AI Research Assistant',
+        date: '2025 October - 2025 December',
+        location: "George Brown College",
+        src: "https://www.mirle.com.tw/en/",
+        description: [
+            "Designed RAG-based architecture and developed custom chatbot UIs.",
+            "Standardized system connectivity and data interpretation by implementing AI usability frameworks.",
+            "Boosted accessibility and usability using Explainable AI (XAI) and automated testing."
+        ]
+    },
+        {
         class: 'education',
         title: 'Computer Programming Advanced Diploma',
         date: '2025 January - 2026 April',
         location: "George Brown College, Toronto",
-        // description: [
-        //     "Database Management course",
-        //     "Database Management course",
-        //     "Object Oriented Programming course",
-        //     "Web Develop course",
-        //     "Full-stack development course",
-        // ]
+        description: [
+            "Database Management course",
+            "Database Management course",
+            "Object Oriented Programming course",
+            "Web Develop course",
+            "Full-stack development course",
+        ]
     },
     {
         class: 'career',
         title: 'Assistant Software Engineer',
         date: '2022 May - 2024 October',
-        location: "MIRLE Automation Corporation, Taiwan",
+        location: "MIRLE Automation Corporation",
         src: "https://www.mirle.com.tw/en/",
         description: [
             "Developed reusable frontend components and reducing redundant code.",
