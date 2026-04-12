@@ -5,7 +5,7 @@ import { paragraphProfessional, paragraphList, skillsList } from "src/data/about
 import { RowContainer, ColContainer } from 'src/assets/styles/commonStyles';
 import { Container, Box, Button, Typography, List, ListItem } from 'src/components/mui/components';
 import ContactUs from 'src/components/tools/contactForm';
-import BaseDialog from 'src/components/tools/Dialog/BeseDialog';
+// import BaseDialog from 'src/components/tools/Dialog/BeseDialog';
 
 export default function ContactView() {
     const [open, setOpen] = useState(false);
