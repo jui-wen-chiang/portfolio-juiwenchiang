@@ -1,7 +1,8 @@
 import { styled, alpha } from "@mui/material/styles";
 import * as base from "./baseStyle";
-import { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
-import { Container, ContainerProps, Box, Card, Button, List, ListItem, Typography } from "src/components/mui/components";
+import type { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
+import type {  ContainerProps } from "src/components/mui/components";
+import { Container, Box, Card, Button, List, ListItem, Typography } from "src/components/mui/components";
 
 
 // 使用方式：

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TabPanelProps } from "src/types/view/ExperienceTabProps"
+import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { experienceData } from "src/data/experienceData"
 import { StyledTab, ExperienceCard } from "src/assets/styles/views/ExperienceTabStyle"
 import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';

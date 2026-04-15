@@ -1,4 +1,4 @@
-import { SkillList } from 'src/types/components/tools';
+import type { SkillList } from 'src/types/components/tools';
 import {
     SiJavascript, FaPython, FaJava, SiTypescript, FaHtml5, FaCss3Alt, PiFileCSharp, FaPhp,
     FaGitAlt, FaDocker, RiReactjsFill, FaVuejs, IoLogoFigma, SiFlask, SiDjango, SiTensorflow, SiPytorch,

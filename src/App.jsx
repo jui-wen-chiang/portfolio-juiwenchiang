@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react';
 
 import { AppLayoutContainer, ViewSection, ViewBox } from 'src/assets/styles/layoutStyles';
 
-import { BGCOLORS } from 'src/theme/UIstandard.ts'
+import { BGCOLORS } from 'src/theme/UIstandard'
 // import { displayPartsToString } from 'typescript';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

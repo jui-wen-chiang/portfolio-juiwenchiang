@@ -6,17 +6,16 @@ import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ProjectRows, CardRoot, CardImg, CardOverlay, CardTitleAlways, CardImgSourceText, CardImgTitleText, CardSummaryText, CardBody, ViewButton } from 'src/assets/styles/views/ProjectStyle';
 import CloseIcon from '@mui/icons-material/Close';
 
-
-const { PUBLIC_URL } = process.env;
+// const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 
 
 export default function ProjectsView() {
     const [selected, setSelected] = useState<typeof projectData[0] | null>(null);
-    const theme = useTheme();
+    // const theme = useTheme();
 
     return (
         <ViewBox data-aos="zoom-in">
-            <Typography variant="h3" component="h3" fontWeight="bold">Projects</Typography>
+            {/* <Typography variant="h3" component="h3" fontWeight="bold">Projects</Typography> */}
             <ProjectRows>
                 {projectData.map((item, index) => (
                     <CardRoot className="card-root" key={index}>
@@ -87,10 +86,10 @@ export default function ProjectsView() {
                 onClose={() => setSelected(null)}
                 maxWidth="sm"
                 fullWidth
-                PaperProps={{ sx: { borderRadius: 3, p: 1 } }}
+                // PaperProps={{ sx: { borderRadius: 3, p: 1 } }}
             >
                 <DialogTitle sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pb: 1 }}>
-                    <Typography variant="h6" fontWeight={500}>{selected?.title}</Typography>
+                    {/* <Typography variant="h6" fontWeight={500}>{selected?.title}</Typography> */}
                     <IconButton size="small" onClick={() => setSelected(null)}>
                         <CloseIcon fontSize="small" />
                     </IconButton>

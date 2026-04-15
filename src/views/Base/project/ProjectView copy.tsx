@@ -9,7 +9,8 @@ import {
     TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
 } from 'src/assets/styles/views/ProjectStyle';
 
-const { PUBLIC_URL } = process.env;
+// const { PUBLIC_URL } = process.env;
+const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 
 export default function ProjectsView() {
     const theme = useTheme();

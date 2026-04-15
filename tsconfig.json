@@ -1,14 +1,32 @@
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["src/*"],
+//       // "src/*": ["./src/*"]
+//     }
+//   },
+//   "files": [],
+//   "references": [
+//     { "path": "./tsconfig.app.json" },
+//     { "path": "./tsconfig.node.json" }
+//   ]
+// }
+
+//@
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   }
+// }
 {
-    "compilerOptions": {
-        "ignoreDeprecations": "5.0",
-        "baseUrl": ".", // The evaluation will use TypeScript 7.0.
-        "paths": {
-            "src/*": ["./src/*"]
-        },
-        "jsx": "react-jsx",
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "types": ["node"]
-    },
-    "include": ["src/**/*"]
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "bundler",   // 用 modern bundler 模式
+    "ignoreDeprecations": "6.0"     // 短期靜音，可以之後再刪掉
+  }
 }

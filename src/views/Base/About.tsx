@@ -3,7 +3,8 @@ import { ColContainer } from 'src/assets/styles/commonStyles';
 import { Typography, Box, Chip } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 
-const { PUBLIC_URL } = process.env;
+// const { PUBLIC_URL } = process.env;
+// const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 
 export default function AboutView() {
     return (

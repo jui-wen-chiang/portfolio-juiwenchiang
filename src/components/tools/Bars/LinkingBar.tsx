@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
-import { LinkBarProps } from "src/types/components/tools";
+import type { LinkBarProps } from "src/types/components/tools";
 import { linkBarContent } from "src/data/components/toolData";
 
 import { LinkBarBox } from "src/assets/styles/components/tool"
@@ -8,7 +8,8 @@ import * as base from "src/assets/styles/baseStyle";
 import { ColorScheme } from "src/theme/UIstandard"
 
 
-const { PUBLIC_URL } = process.env;
+// const { PUBLIC_URL } = process.env;
+const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 
 export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
     console.log(`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`)

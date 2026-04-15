@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box, TextField } from 'src/components/mui/components';
-import { Theme } from '@mui/material/styles';
+import type { Theme } from '@mui/material/styles';
 import { ColorScheme } from "src/theme/UIstandard"
 
 

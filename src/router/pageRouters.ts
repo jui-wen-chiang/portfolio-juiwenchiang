@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RouteConfig } from "src/types/router";
+import type { RouteConfig } from "src/types/router";
 import TimelinePage from "src/views/User/timeline";
 import TestPage from "src/mocks/page/i18ntest";
 import ResponsiveAppBar from "src/mocks/page/test";
@@ -7,10 +7,10 @@ import ResponsiveAppBar from "src/mocks/page/test";
 import SkillsView from "src/views/User/SkillsView";
 import TimelineView from "src/views/User/TimelineView";
 import GalleryView from "src/views/User/GalleryView";
-import MindMapView from "src/views/User/MindMapView";
+// import MindMapView from "src/views/User/MindMapView";
 import AboutView from "src/views/Base/About";
 import ProjectsView from "src/views/Base/ProjectView";
-import { SvgIconComponent } from '@mui/icons-material';
+import type { SvgIconComponent } from '@mui/icons-material';
 import { HomeIcon, ContactPageIcon, ConstructionIcon, AccountTreeIcon, BusinessCenterIcon, EmailIcon } from 'src/components/mui/icons';
 
 type RouteItem = {

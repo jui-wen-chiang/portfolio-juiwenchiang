@@ -1,4 +1,4 @@
-import { ViewMappingItem } from "src/types/view/index";
+import type { ViewMappingItem } from "src/types/view/index";
 import { Box, Typography } from 'src/components/mui/components';
 import { ViewsContainer, BackgroundBox, ViewsContainerT } from 'src/assets/styles/commonStyles';
 import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
@@ -21,18 +21,18 @@ import ContactView from 'src/views/Base/ContactView';
 import FooterView from 'src/views/Base/Footer';
 
 // User views
-import MindMapView from 'src/views/User/MindMapView';
+// import MindMapView from 'src/views/User/MindMapView';
 import TimelineView from 'src/views/User/TimelineView';
 import TimelinePage from 'src/views/User/timeline';
 import GalleryView from 'src/views/User/GalleryView';
 import ExperienceView from 'src/views/User/ExperienceView';
 import React, { useState, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
+
 // test
 // import ScrollTriggered from 'src/mocks/page/test';
 
-import { BGCOLORS } from 'src/theme/UIstandard';
-
+import * as UIstandard from 'src/theme/UIstandard.ts';
 
 // src/router/pageRouters.ts
 const viewMapping: Array<ViewMappingItem> = [
@@ -79,8 +79,11 @@ const Section = styled(Box)({
   justifyContent: 'center',
   padding: '0 10%',
 });
+type IndexViewsProps = {
+  onColorChange: (color: string) => void;
+};
 
-export default function IndexViews({ onColorChange }) {
+export default function IndexViews({ onColorChange }:IndexViewsProps) {
   // 1. 定義 Ref 的型別為一個物件，其 key 是字串，value 是 HTMLDivElement 或 null
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -95,8 +98,8 @@ export default function IndexViews({ onColorChange }) {
         if (entry.isIntersecting) {
           // 使用 type assertion 確保 id 存在
           const sectionId = (entry.target as HTMLElement).dataset.id;
-          if (sectionId && BGCOLORS[sectionId as keyof typeof BGCOLORS]) {
-            onColorChange(BGCOLORS[sectionId as keyof typeof BGCOLORS]);
+          if (sectionId && UIstandard.BGCOLORS[sectionId as keyof typeof UIstandard.BGCOLORS]) {
+            onColorChange(UIstandard.BGCOLORS[sectionId as keyof typeof UIstandard.BGCOLORS]);
           }
         }
       });
@@ -147,7 +150,7 @@ export default function IndexViews({ onColorChange }) {
       </Section> */}
 
       {viewMapping.map((view, index) => {
-        let mbSetting = view.id == 'home' ? 0
+        const mbSetting = view.id == 'home' ? 0
           : view.id == 'footer' ? 2 : 10;
 
         return (

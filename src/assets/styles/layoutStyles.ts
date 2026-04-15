@@ -1,7 +1,7 @@
 import { styled, alpha } from "@mui/material/styles";
 import * as base from "./baseStyle";
-import { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
-import { Container, ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
+import type { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
+import { Container, type ContainerProps, Box, Card, Button, List, ListItem } from "src/components/mui/components";
 
 const AppLayoutContainer = styled(Container)(({ theme }) => ({
     minHeight: '100vh',

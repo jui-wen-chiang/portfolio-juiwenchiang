@@ -7,7 +7,7 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import PauseCircleFilledRoundedIcon from '@mui/icons-material/PauseCircleFilledRounded';
 
-import { ControlBarProps } from "src/types/components/tools"
+import type { ControlBarProps } from "src/types/components/tools"
 
 export default function ControlBar({
     activeIndex,

@@ -1,7 +1,8 @@
 import { styled, alpha } from '@mui/material/styles';
 import * as base from "src/assets/styles/baseStyle";
 import * as common from "src/assets/styles/commonStyles";
-import { ContainerProps, Box } from "src/components/mui/components";
+import type { ContainerProps} from "src/components/mui/components";
+import { Box } from "src/components/mui/components";
 
 
 const SkillContainer = styled(Box)(({ theme }) => ({
