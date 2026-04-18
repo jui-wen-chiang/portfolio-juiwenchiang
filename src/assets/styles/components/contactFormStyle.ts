@@ -9,7 +9,7 @@ const TextFieldBox = styled(Box)(({ theme }) => ({
     padding: '1rem 2rem'
 }));
 
-const UserTextField = styled(TextField)(({ theme }) => ({
+const UserTextField = styled(TextField)(() => ({
     width: '100%',
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
@@ -25,9 +25,7 @@ const UserTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const inputPropsStyle = (theme: Theme) => ({
-    ...theme.typography.body1,
-    left: "1rem",
-    right: "1rem",
+    ...theme.typography.body2,
 });
 
 export { TextFieldBox, UserTextField, inputPropsStyle }

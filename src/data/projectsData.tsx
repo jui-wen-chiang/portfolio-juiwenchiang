@@ -1,9 +1,9 @@
 // import { skilltreeItem } from "src/types/data/viewsData"
-import {
-    SiJavascript, FaPython, FaHtml5, FaCss3Alt, SiMui,
-    FaGitAlt, FaDocker, RiReactjsFill, FaVuejs, IoLogoFigma, SiFlask, SiDjango, SiTensorflow, SiPytorch, SiVite,
-    GrMysql, BiLogoPostgresql, SiMongodb, DiRedis, IoLogoTableau, SiSonarqube, FaLine, SiFastapi, FaJenkins, SiAnaconda, SiTypescript, RiSupabaseFill, SiRender, IoLogoVercel, SiJsonwebtokens, DiDjango
-} from 'src/components/icons/skillIcons';
+// import {
+//     SiJavascript, FaPython, FaHtml5, FaCss3Alt, SiMui,
+//     FaGitAlt, FaDocker, RiReactjsFill, FaVuejs, IoLogoFigma, SiFlask, SiDjango, SiTensorflow, SiPytorch, SiVite,
+//     GrMysql, BiLogoPostgresql, SiMongodb, DiRedis, IoLogoTableau, SiSonarqube, FaLine, SiFastapi, FaJenkins, SiAnaconda, SiTypescript, RiSupabaseFill, SiRender, IoLogoVercel, SiJsonwebtokens, DiDjango
+// } from 'src/components/icons/skillIcons';
 
 const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 
@@ -23,20 +23,20 @@ const projectData = [
         //     "Diary input interface for emotional expression.",
         //     "Visual statistics of emotional trends."
         // ],
-        icons: [
-            { lable: 'Vite', src: SiVite },
-            { lable: 'React', src: RiReactjsFill },
-            { lable: 'MUI', src: SiMui },
-            { lable: 'TypeScript', src: SiTypescript },
-            { lable: 'Django', src: DiDjango },
-            { lable: 'Python', src: FaPython },
-            { lable: 'PostgreSQL', src: BiLogoPostgresql },
-            { lable: 'JWT - JSON Web Token', src: SiJsonwebtokens },
-            { lable: 'Vercel', src: IoLogoVercel },
-            { lable: 'Render Web Service', src: SiRender },
-            { lable: 'Supabase', src: RiSupabaseFill },
-            { lable: 'Miniconda', src: SiAnaconda },
-        ],
+        // icons: [
+        //     { lable: 'Vite', src: SiVite },
+        //     { lable: 'React', src: RiReactjsFill },
+        //     { lable: 'MUI', src: SiMui },
+        //     { lable: 'TypeScript', src: SiTypescript },
+        //     { lable: 'Django', src: DiDjango },
+        //     { lable: 'Python', src: FaPython },
+        //     { lable: 'PostgreSQL', src: BiLogoPostgresql },
+        //     { lable: 'JWT - JSON Web Token', src: SiJsonwebtokens },
+        //     { lable: 'Vercel', src: IoLogoVercel },
+        //     { lable: 'Render Web Service', src: SiRender },
+        //     { lable: 'Supabase', src: RiSupabaseFill },
+        //     { lable: 'Miniconda', src: SiAnaconda },
+        // ],
         details: {},
     },
     {
@@ -51,15 +51,15 @@ const projectData = [
             "Dashboard interface for intuitive monitoring.",
             "Enhanced decision-making through data integration."
         ],
-        icons: [
-            { lable: 'VueJS', src: FaVuejs },
-            { lable: 'Python', src: FaPython },
-            { lable: 'PostgreSQL', src: BiLogoPostgresql },
-            { lable: 'Redis', src: DiRedis },
-            { lable: 'Docker', src: FaDocker },
-            { lable: 'Jenkins', src: FaJenkins },
-            { lable: 'I18n' },
-        ],
+        // icons: [
+        //     { lable: 'VueJS', src: FaVuejs },
+        //     { lable: 'Python', src: FaPython },
+        //     { lable: 'PostgreSQL', src: BiLogoPostgresql },
+        //     { lable: 'Redis', src: DiRedis },
+        //     { lable: 'Docker', src: FaDocker },
+        //     { lable: 'Jenkins', src: FaJenkins },
+        //     { lable: 'I18n' },
+        // ],
         details: {},
         techStack: ["python", "Vue"]
     },
@@ -75,15 +75,15 @@ const projectData = [
             "NLP-based semantic understanding of text blocks.",
             "Automatic document classification and structuring."
         ],
-        icons: [
-            { lable: 'PyTorch', src: SiPytorch },
-            { lable: 'Python', src: FaPython },
-            { lable: 'FastAPI', src: SiFastapi },
-            { lable: 'VueJS', src: FaVuejs },
-            { lable: 'MongoDB', src: SiMongodb },
-            { lable: 'Docker', src: FaDocker },
-            { lable: 'Bert NPL' },
-        ],
+        // icons: [
+        //     { lable: 'PyTorch', src: SiPytorch },
+        //     { lable: 'Python', src: FaPython },
+        //     { lable: 'FastAPI', src: SiFastapi },
+        //     { lable: 'VueJS', src: FaVuejs },
+        //     { lable: 'MongoDB', src: SiMongodb },
+        //     { lable: 'Docker', src: FaDocker },
+        //     { lable: 'Bert NPL' },
+        // ],
         details: {},
     },
     {
@@ -99,15 +99,15 @@ const projectData = [
             "Diary input interface for emotional expression.",
             "Visual statistics of emotional trends."
         ],
-        icons: [
-            { lable: 'Tensorflow', src: SiTensorflow },
-            { lable: 'MySQL', src: GrMysql },
-            { lable: 'Python', src: FaPython },
-            { lable: 'Tableau', src: IoLogoTableau },
-            { lable: 'LineBot', src: FaLine },
-            { lable: 'Bert NPL' },
-            { lable: 'Beautifulsoup' },
-        ],
+        // icons: [
+        //     { lable: 'Tensorflow', src: SiTensorflow },
+        //     { lable: 'MySQL', src: GrMysql },
+        //     { lable: 'Python', src: FaPython },
+        //     { lable: 'Tableau', src: IoLogoTableau },
+        //     { lable: 'LineBot', src: FaLine },
+        //     { lable: 'Bert NPL' },
+        //     { lable: 'Beautifulsoup' },
+        // ],
         details: {},
     }
 ];

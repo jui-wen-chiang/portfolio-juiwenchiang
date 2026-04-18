@@ -3,14 +3,15 @@ import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { eduData } from "src/data/eduData"
 import { StyledTab, ExperienceCard } from "src/assets/styles/views/ExperienceTabStyle"
 import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
-import { ColContainer, ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ViewBox } from 'src/assets/styles/layoutStyles';
 
 
 function CustomTabPanel(props: TabPanelProps) {
   const { items } = props;
 
   return (
-    <ExperienceCard>
+    <ExperienceCard sx={{padding:'0.5rem'}}>
       <CardContent>
         {items.map((item) => (
           <Box sx={{ paddingTop: '1rem' }}>
@@ -48,9 +49,10 @@ export default function EduAndCertView() {
   );
 
   return (
-    <ColContainer >
-      <Typography variant="h2" component='h2'>Education & Professional Development</Typography>
-      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', padding: '2rem' }}>
+    // aria-label="Experience" 
+    <ViewBox component="section" aria-label="Education"  data-aos="zoom-in">
+                  <Typography variant="h2" sx={{ textAlign: "center" }}>Education & Professional Development</Typography>
+            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', padding: '2rem' }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -72,6 +74,6 @@ export default function EduAndCertView() {
           ) : null
         )}
       </Box>
-    </ColContainer>
+    </ViewBox>
   );
 };

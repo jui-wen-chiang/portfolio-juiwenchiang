@@ -10,6 +10,7 @@ import * as UIstandard from 'src/theme/UIstandard.ts';
 import HomeView from 'src/views/Base/Home';
 import AboutView from 'src/views/Base/About';
 import SkillCardView from "src/views/Base/SkillCardView";
+import ExperienceView from 'src/views/Base/ExperienceView';
 import EduAndCertView from 'src/views/Base/EduAndCertView';
 import ProjectsView from 'src/views/Base/ProjectView';
 import ContactView from 'src/views/Base/ContactView';
@@ -19,7 +20,6 @@ import FooterView from 'src/views/Base/Footer';
 // import TimelineView from 'src/views/User/TimelineView';
 // import TimelinePage from 'src/views/User/timeline';
 // import GalleryView from 'src/views/User/GalleryView';
-import ExperienceView from 'src/views/User/ExperienceView';
 
 
 const viewMapping: Array<ViewMappingItem> = [
@@ -34,7 +34,6 @@ const viewMapping: Array<ViewMappingItem> = [
   {
     id: 'experience',
     component: <ExperienceView />
-    // component: <ExperienceTabView />
   },
   {
     id: 'projects',

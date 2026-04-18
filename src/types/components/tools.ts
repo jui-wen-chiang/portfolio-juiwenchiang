@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
-import type { IconType } from 'react-icons';
+// import type { IconType } from 'react-icons';
 
 interface BaseDialogProps {
     isOpen: boolean;
     closeDialog: () => void;
+    state?: string;
     title?: string;
     content?: any;
     extra?: React.ReactNode;
@@ -33,7 +34,7 @@ interface BackToTopProps {
     variant: string;
     alwaysVisible?: boolean;
     textContent?: string;
-    iconNode?: any
+    iconNode?: any;
 }
 
 
@@ -43,7 +44,8 @@ interface SkillList {
 }
 interface TechnologyProps {
     name: string;
-    icon?: IconType;
+    // icon?: IconType;
+    icon?: any;
     class: string;
 }
 

@@ -1,17 +1,18 @@
-import * as React from 'react';
-import type { RouteConfig } from "src/types/router";
-import TimelinePage from "src/views/User/timeline";
-import TestPage from "src/mocks/page/i18ntest";
-import ResponsiveAppBar from "src/mocks/page/test";
-
-import SkillsView from "src/views/User/SkillsView";
-import TimelineView from "src/views/User/TimelineView";
-import GalleryView from "src/views/User/GalleryView";
+// import * as React from 'react';
+// import type { RouteConfig } from "src/types/router";
+// import TimelinePage from "src/views/User/timeline";
+// import TestPage from "src/mocks/page/i18ntest";
+// import ResponsiveAppBar from "src/mocks/page/test";
+// import SkillsView from "src/views/User/SkillsView";
+// import TimelineView from "src/views/User/TimelineView";
+// import GalleryView from "src/views/User/GalleryView";
 // import MindMapView from "src/views/User/MindMapView";
-import AboutView from "src/views/Base/About";
-import ProjectsView from "src/views/Base/ProjectView";
+// import AboutView from "src/views/Base/About";
+// import ProjectsView from "src/views/Base/ProjectView";
 import type { SvgIconComponent } from '@mui/icons-material';
-import { HomeIcon, ContactPageIcon, ConstructionIcon, AccountTreeIcon, BusinessCenterIcon, EmailIcon } from 'src/components/mui/icons';
+import {
+  HomeIcon, FaceRetouchingNaturalIcon, BusinessCenterIcon, FolderSpecialIcon, SchoolIcon, TerminalIcon, EmailIcon
+} from 'src/components/mui/icons';
 
 type RouteItem = {
   path: string;
@@ -23,16 +24,12 @@ type RouteItem = {
 // Single Page Application
 const ROUTES: Array<RouteItem> = [
   { path: 'home', name: 'Home', icon: HomeIcon },
-  // { path: 'test', name: 'Test' },
-  { path: 'about', name: 'About', icon: ContactPageIcon },
-  { path: 'experience', name: 'Experience', icon: AccountTreeIcon },
-  // { path: 'timeline', name: 'timeline' },
-  { path: 'projects', name: 'Project', icon: BusinessCenterIcon },
-  { path: 'eduAndcert', name: 'Education & Professional Development', icon: AccountTreeIcon },
-  { path: 'skills', name: 'Skills', icon: ConstructionIcon },
+  { path: 'about', name: 'About', icon: FaceRetouchingNaturalIcon },
+  { path: 'experience', name: 'Experience', icon: BusinessCenterIcon },
+  { path: 'projects', name: 'Project', icon: FolderSpecialIcon },
+  { path: 'eduAndcert', name: 'Education & Professional Development', icon: SchoolIcon },
+  { path: 'skills', name: 'Skills', icon: TerminalIcon },
   { path: 'contact', name: 'Contact', icon: EmailIcon },
-  // { path: 'mindmap', name: 'mindmap' },
-  // { path: 'gallery', name: 'gallery' },
 ];
 
 // multiple pages

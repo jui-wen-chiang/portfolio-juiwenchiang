@@ -1,34 +1,35 @@
 import { skillData } from "src/data/skillCardData";
-import { useTheme } from '@mui/material/styles';
-import { basePadding } from 'src/assets/styles/baseStyle';
-import { SkillContainer, SkillItemContainer } from 'src/assets/styles/views/SkillCardStyle'
+import * as base from "src/assets/styles/baseStyle";
+import { SkillBox, SkillItemContainer } from 'src/assets/styles/views/SkillCardStyle'
 import { ColContainer } from 'src/assets/styles/commonStyles';
 import { Box, Typography } from 'src/components/mui/components';
+import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
 
 
 export default function SkillCardView() {
-    const theme = useTheme();
-
     return (
-        <ColContainer data-aos="zoom-in">
-            <Typography variant="h3" component='h3' fontWeight="bold">Skills</Typography>
-            {skillData.map((item) => (
-                <ColContainer sx={basePadding}>
-                    {/* <Typography variant="h5" component='h5' sx={basePadding}>{item.category}</Typography> */}
-                    <SkillContainer>
-                        {item.technologies.map((skill) => (
-                            <SkillItemContainer>
-                                {/* Rendering a dynamic icon component */}
-                                <Box sx={{ paddingTop: '0.5rem', paddingBottom: '0' }}>
-                                    {skill.icon && <skill.icon size={25} color={theme.palette.primary.main} />}
-                                </Box>
-                                <Typography>{skill.name}</Typography>
-                            </SkillItemContainer>
-                        ))}
-                    </SkillContainer>
-                </ColContainer >
-            ))
-            }
-        </ColContainer >
+        <ColContainer component="section" aria-label="Skills" data-aos="zoom-in">
+            <Typography variant="h2" sx={{ textAlign: "center" }}>Skills</Typography>
+            <BackgroundBlobs variant="skills" />
+
+            <SkillBox sx={{ padding: '2rem' }}>
+                {skillData.map((item) => (
+                    <SkillItemContainer disableGutters sx={{ ...base.baseBoxShadow }}>
+                        <Typography variant="body2" color="primary" sx={{ fontWeight: '500', padding: '1rem' }}>{item.category}</Typography>
+                        <ColContainer>
+                            {item.technologies.map((skill) => (
+                                <SkillItemContainer disableGutters>
+                                    <Box sx={{ paddingTop: '0.1rem', paddingBottom: '0' }}>
+                                        {skill.icon && <skill.icon size={25} />}
+                                    </Box>
+                                    <Typography variant="caption">{skill.name}</Typography>
+                                </SkillItemContainer>
+                            ))}
+                        </ColContainer>
+                    </SkillItemContainer>
+                ))
+                }
+            </SkillBox>
+        </ColContainer>
     )
 }

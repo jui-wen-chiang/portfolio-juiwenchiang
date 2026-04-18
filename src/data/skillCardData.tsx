@@ -1,109 +1,93 @@
 import type { SkillList } from 'src/types/components/tools';
 import {
-    SiJavascript, FaPython, FaJava, SiTypescript, FaHtml5, FaCss3Alt, PiFileCSharp, FaPhp,
-    FaGitAlt, FaDocker, RiReactjsFill, FaVuejs, IoLogoFigma, SiFlask, SiDjango, SiTensorflow, SiPytorch,
-    GrMysql, BiLogoPostgresql, SiMongodb, DiRedis, IoLogoTableau, SiSonarqube
-} from 'src/components/icons/skillIcons';
+    // front-end
+    JavascriptPlainIcon,
+    TypescriptPlainIcon,
+    TailwindcssOriginalIcon,
+    BootstrapPlainIcon,
+    Html5OriginalIcon,
+    Css3OriginalIcon,
+    ReactOriginalIcon,
+    VuejsOriginalIcon,
+    MaterialuiOriginalIcon,
+    ViteOriginalIcon,
+    EslintPlainIcon,
+    // back-end
+    NodejsOriginalIcon,
+    CsharpPlainIcon,
+    DotNetPlainIcon,
+    JavaOriginalIcon,
+    PythonOriginalIcon,
+    FlaskOriginalIcon,
+    DjangoPlainIcon,
+    FastapiOriginalIcon,
+    PhpOriginalIcon,
+    // Machine Learning
+    TensorflowOriginalIcon,
+    PytorchOriginalIcon,
+    // DataBase
+    PostgresqlPlainIcon,
+    MongodbPlainIcon,
+    MysqlOriginalIcon,
+    RedisPlainIcon,
+    // Tools & Platforms
+    GitPlainIcon,
+    DockerPlainIcon,
+    AnacondaOriginalIcon,
+    VercelOriginalIcon,
+    SupabasePlainIcon,
+    SonarqubeOriginalIcon,
+    JenkinsOriginalIcon,
+    // Design
+    FigmaPlainIcon,
+    PhotoshopPlainIcon,
+    IllustratorPlainIcon,
+} from 'src/components/icons/skillDevicon';
 
-
-const detilData: Array<SkillList> = [
-    {
-        category: 'Programming Language',
-        technologies: [
-            // Frontend
-            { class: 'frontend', name: 'JavaScript', icon: SiJavascript },
-            { class: 'frontend', name: 'TypeScript', icon: SiTypescript },
-            { class: 'frontend', name: 'HTML', icon: FaHtml5 },
-            { class: 'frontend', name: 'CSS', icon: FaCss3Alt },
-            // Backend
-            { class: 'backend', name: 'C#', icon: PiFileCSharp },
-            { class: 'backend', name: 'Python', icon: FaPython },
-            { class: 'backend', name: 'Java', icon: FaJava },
-            { class: 'backend', name: 'PHP', icon: FaPhp },
-        ]
-    },
-    {
-        category: 'Frameworks',
-        technologies: [
-            // Frontend
-            { class: 'frontend', name: 'ReactJS', icon: RiReactjsFill },
-            { class: 'frontend', name: 'VueJS', icon: FaVuejs },
-            // Backend
-            { class: 'backend', name: 'Flask' },
-            { class: 'backend', name: 'Django' },
-            // ML
-            { class: 'ml', name: 'TensorFlow', icon: SiTensorflow },
-            { class: 'ml', name: 'Pytorch', icon: SiPytorch },
-        ]
-    },
-    {
-        category: 'DataBase',
-        technologies: [
-            { class: 'database', name: 'PostgreSQL', icon: BiLogoPostgresql },
-            { class: 'database', name: 'MySQL', icon: GrMysql },
-            { class: 'database', name: 'MongoDB', icon: SiMongodb },
-            { class: 'database', name: 'Redis', icon: DiRedis },
-        ]
-    },
-    {
-        category: 'Tools & Platforms',
-        technologies: [
-            { class: 'tool', name: 'Git', icon: FaGitAlt },
-            { class: 'platform', name: 'Docker', icon: FaDocker },
-            { class: 'testing', name: 'SonarQube', icon: SiSonarqube },
-            { class: 'analysis', name: 'Tableau', icon: IoLogoTableau },
-            { class: 'testing', name: 'Mocha' },
-            { class: 'platform', name: 'Odoo' },
-        ]
-    },
-    {
-        category: 'Others',
-        technologies: [
-            { class: 'model', name: 'BERT NLP' },
-            { class: 'ui', name: 'Figma', icon: IoLogoFigma }
-        ]
-    }
-];
 
 const skillData: Array<SkillList> = [
     {
-        category: 'Programming Language',
+        category: 'Frontend',
         technologies: [
-            // Backend
-            { class: 'backend', name: 'C#', icon: PiFileCSharp },
-            { class: 'backend', name: 'Python', icon: FaPython },
-            // { class: 'backend', name: 'Java', icon: FaJava },
-            // { class: 'backend', name: 'PHP', icon: FaPhp },
-            // Frontend
-            { class: 'frontend', name: 'JavaScript', icon: SiJavascript },
-            { class: 'frontend', name: 'TypeScript', icon: SiTypescript },
-            { class: 'frontend', name: 'HTML', icon: FaHtml5 },
-            { class: 'frontend', name: 'CSS', icon: FaCss3Alt },
+            { class: 'frontend', name: 'JavaScript', icon: JavascriptPlainIcon },
+            { class: 'frontend', name: 'TypeScript', icon: TypescriptPlainIcon },
+            { class: 'frontend', name: 'HTML', icon: Html5OriginalIcon },
+            { class: 'frontend', name: 'CSS', icon: Css3OriginalIcon },
+            { class: 'frontend', name: 'React', icon: ReactOriginalIcon },
+            { class: 'frontend', name: 'Vuejs', icon: VuejsOriginalIcon },
         ]
     },
     {
-        category: 'Frameworks',
+        category: 'Backend',
         technologies: [
-            // Frontend
-            { class: 'frontend', name: 'ReactJS', icon: RiReactjsFill },
-            { class: 'frontend', name: 'VueJS', icon: FaVuejs },
-            // Backend
-            { class: 'backend', name: 'Flask', icon: SiFlask },
-            { class: 'backend', name: 'Django', icon: SiDjango },
-            // ML
-            { class: 'ml', name: 'TensorFlow', icon: SiTensorflow },
-            { class: 'ml', name: 'Pytorch', icon: SiPytorch },
+            { class: 'backend', name: 'Nodejs', icon: NodejsOriginalIcon },
+            { class: 'backend', name: 'Python', icon: PythonOriginalIcon },
+            { class: 'backend', name: 'FastAPI', icon: FastapiOriginalIcon },
+            { class: 'backend', name: 'Django', icon: DjangoPlainIcon },
+            { class: 'backend', name: 'C#', icon: CsharpPlainIcon },
+            { class: 'backend', name: 'Java', icon: JavaOriginalIcon },
         ]
     },
     {
-        category: 'DataBase & Tools ',
+        category: 'DataBase & AI ',
         technologies: [
-            { class: 'database', name: 'PostgreSQL', icon: BiLogoPostgresql },
-            { class: 'database', name: 'MySQL', icon: GrMysql },
-            { class: 'database', name: 'MongoDB', icon: SiMongodb },
-            { class: 'database', name: 'Redis', icon: DiRedis },
-            { class: 'tool', name: 'Git', icon: FaGitAlt },
-            { class: 'platform', name: 'Docker', icon: FaDocker },
+            { class: 'database', name: 'PostgreSQL', icon: PostgresqlPlainIcon },
+            { class: 'database', name: 'MongoDB', icon: MongodbPlainIcon },
+            { class: 'database', name: 'MySQL', icon: MysqlOriginalIcon },
+            { class: 'database', name: 'Redis', icon: RedisPlainIcon },
+            { class: 'ai', name: 'Tensorflow', icon: TensorflowOriginalIcon },
+            { class: 'ai', name: 'Pytorch', icon: PytorchOriginalIcon },
+        ]
+    },
+    {
+        category: 'Tools & Design',
+        technologies: [
+            { class: 'tool', name: 'Git', icon: GitPlainIcon },
+            { class: 'tool', name: 'Docker', icon: DockerPlainIcon },
+            { class: 'tool', name: 'Vercel', icon: VercelOriginalIcon },
+            { class: 'tool', name: 'Supabase', icon: SupabasePlainIcon },
+            { class: 'design', name: 'Figma', icon: FigmaPlainIcon },
+            { class: 'design', name: 'Illustrator', icon: IllustratorPlainIcon },
         ]
     }
 ];

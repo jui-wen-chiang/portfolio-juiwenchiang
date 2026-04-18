@@ -73,6 +73,6 @@ export default function Appbar() {
           </IconButton>
         </Tooltip>
       ))}
-    </BaseAppBar >
+    </BaseAppBar>
   )
 }

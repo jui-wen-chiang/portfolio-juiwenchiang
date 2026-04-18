@@ -59,11 +59,11 @@ export default function ProjectsView() {
                                             }}
                                         />
                                     ))} */}
-                                    {item.icons?.slice(0, 5).map((tech, i) => (
+                                    {/* {item.icons?.slice(0, 5).map((tech, i) => (
                                         <Box sx={{ paddingTop: '0.5rem', paddingBottom: '0'}}>
                                             {tech.src && <tech.src size={25} color='#fff' />}
                                         </Box>
-                                    ))}
+                                    ))} */}
                                 </Box>
                                 {/* <ViewButton
                                     variant="outlined"

@@ -1,14 +1,19 @@
 export { default as MenuIcon } from '@mui/icons-material/Menu';
-export { default as SchoolIcon } from '@mui/icons-material/School';
 export { default as WorkIcon } from '@mui/icons-material/Work';
 export { default as SunnyIcon } from '@mui/icons-material/Sunny';
 
 // side bar
 export { default as HomeIcon } from '@mui/icons-material/Home';
+export { default as FaceRetouchingNaturalIcon } from '@mui/icons-material/FaceRetouchingNatural';
+export { default as SentimentVerySatisfiedIcon } from '@mui/icons-material/SentimentVerySatisfied';
 export { default as ContactPageIcon } from '@mui/icons-material/ContactPage';
 export { default as ConstructionIcon } from '@mui/icons-material/Construction';
 export { default as AccountTreeIcon } from '@mui/icons-material/AccountTree';
 export { default as BusinessCenterIcon } from '@mui/icons-material/BusinessCenter';
+export { default as FolderSpecialIcon } from '@mui/icons-material/FolderSpecial';
+export { default as SchoolIcon } from '@mui/icons-material/School';
+export { default as CodeIcon } from '@mui/icons-material/Code';
+export { default as TerminalIcon } from '@mui/icons-material/Terminal';
 export { default as EmailIcon } from '@mui/icons-material/Email';
 
 // brand
