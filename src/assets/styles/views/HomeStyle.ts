@@ -1,8 +1,8 @@
 import { styled } from "@mui/material/styles";
-import { Container, Box } from 'src/components/mui/components';
+import { Container, Box,Typography } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
 
-const HomeContainer = styled(Container)(({ theme }) => ({
+const HomeContainer = styled(Container)(() => ({
     width: '100%',
     height: '100vh',
     justifyItems: 'center',
@@ -20,13 +20,21 @@ const ContentWrapper = styled(Box)({
     alignItems: 'flex-start'
 });
 
-const ContentBox = styled(Box)(({ theme }) => ({
+const ContentBox = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'column',
-    // padding: '0 0 rem 0'
     paddingBottom: '2rem'
 }));
 
+const GradientText = styled(Typography)({
+    background: 'linear-gradient(90deg, #60A5FA, #A78BFA)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    lineHeight: 1.3,
+    paddingBottom: '0.15em',
+    paddingRight: '0.1em',
+});
 
-export { HomeContainer, ContentWrapper, ContentBox }
+
+export { HomeContainer, ContentWrapper, ContentBox,GradientText }
 

@@ -28,6 +28,7 @@ const ROUTES: Array<RouteItem> = [
   { path: 'experience', name: 'Experience', icon: AccountTreeIcon },
   // { path: 'timeline', name: 'timeline' },
   { path: 'projects', name: 'Project', icon: BusinessCenterIcon },
+  { path: 'eduAndcert', name: 'Education & Professional Development', icon: AccountTreeIcon },
   { path: 'skills', name: 'Skills', icon: ConstructionIcon },
   { path: 'contact', name: 'Contact', icon: EmailIcon },
   // { path: 'mindmap', name: 'mindmap' },

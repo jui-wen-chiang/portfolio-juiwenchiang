@@ -15,7 +15,7 @@ export default function ProjectsView() {
 
     return (
         <ViewBox data-aos="zoom-in">
-            {/* <Typography variant="h3" component="h3" fontWeight="bold">Projects</Typography> */}
+            <Typography variant="h2" sx={{ textAlign: "center" }}>Projects</Typography>
             <ProjectRows>
                 {projectData.map((item, index) => (
                     <CardRoot className="card-root" key={index}>

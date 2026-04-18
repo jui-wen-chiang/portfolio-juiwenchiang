@@ -1,4 +1,3 @@
-// MUI v5 default break points
 const BreakPointsSchem = {
     xs: 0,
     sm: 600,    // phones
@@ -9,9 +8,9 @@ const BreakPointsSchem = {
 
 // import google fonts in public/index.html via <link>
 const FontFamilyScheme: { [key: string]: string } = {
-    signature: "Hurricane, sans-serif",
-    primary: "DM Serif Display, serif",
-    secondary: "Proza Libre, sans-serif"
+    signature: "Philosopher, sans-serif",
+    primary: "Jost, sans-serif",
+    secondary: "Jost, sans-serif",
 };
 
 // MUI v5 default typography
@@ -95,6 +94,16 @@ const FontSizeScheme: { [key: string]: any } = {
     },
 };
 
+
+// const BGCOLORS = {
+//     home: "#F8FAFF",
+//     about: "#EEF3FF",
+//     skill: "#E6EDFF",
+//     experience: "#F4F6FF",
+//     projects: "#F9FAFF",
+//     contact: "#EEF3FF",
+// };
+
 const BGCOLORS = {
     // home: '#a0b2faff',       // 帶紫調的淺藍
     home: '#F5F7FF',       // 帶紫調的淺藍
@@ -106,115 +115,61 @@ const BGCOLORS = {
     // contact: '#d3fee5ff',    // Indigo 50
 };
 
+
+
 const ColorScheme: { [key: string]: any } = {
-    // 'dark' here means a darker variant of the primary color, not related to dark mode theme.
     primary: {
-        main: '#3676f4',
-        light: '#a5c4ff',
-        dark: '#0046a3',
-        contrastText: '#0e2a71',
+        main: "#3676f4",
+        light: "#a5c4ff",
+        dark: "#0046a3",
+        // Do NOT use `main` as text on white/neutral
     },
     secondary: {
-        main: '#e7364a',
-        light: '#ff9aa6',
-        dark: '#a8001f',
-        contrastText: '#5c0010',
+        main: "#e7364a",
+        light: "#ff9aa6",
+        dark: "#a8001f",
+        // Do NOT use `main` as text on white/neutral
     },
     neutral: {
-        main: '#f5f5f7',
-        light: '#ffffff',
-        dark: '#c1c3cc',
-        contrastText: '#3a3a3a',
+        main: "#f5f5f7",
+        light: "#ffffff",
+        dark: "#c1c3cc",
+        contrastText: "#3a3a3a",
     },
     accent: {
-        main: '#977bff',
-        light: '#c6adff',
-        dark: '#5e2efb',
-        contrastText: '#2e1b57',
+        main: "#977bff",
+        light: "#c6adff",
+        dark: "#5e2efb",
+        contrastText: "#2e1b57",
     },
     state: {
         success: {
-            main: '#2ecc71',
-            light: '#b9f6c9',
-            dark: '#1e7f4e',
-            contrastText: '#145f3e',
+            main: "#2ecc71",
+            light: "#b9f6c9",
+            dark: "#1e7f4e",
+            contrastText: "#145f3e",
         },
         warning: {
-            main: '#f5b700',
-            light: '#fff2a6',
-            dark: '#aa8700',
-            contrastText: '#5e4500',
+            main: "#f5b700",
+            light: "#fff2a6",
+            dark: "#aa8700",
+            contrastText: "#5e4500",
         },
         error: {
-            main: '#e7364a',
-            light: '#ff9aa6',
-            dark: '#a8001f',
-            contrastText: '#5c0010',
+            main: "#e7364a",
+            light: "#ff9aa6",
+            dark: "#a8001f",
+            contrastText: "#5c0010",
         },
         info: {
-            main: '#3676f4',
-            light: '#a5c4ff',
-            dark: '#0046a3',
-            contrastText: '#0e2a71',
-        }
-    }
+            main: "#54a8f6",
+            light: "#a5c4ff",
+            dark: "#0046a3",
+            contrastText: "#0e2a71",
+        },
+    },
 };
 
-const oddColorScheme: { [key: string]: any } = {
-    // 'dark' here means a darker variant of the primary color, not related to dark mode theme.
-    background: {
-        default: "#fefefc"
-    },
-    // case2
-    primary: {
-        main: '#3676f4',
-        light: '#a5c4ff',
-        dark: '#0046a3',
-        contrastText: '#0e2a71',
-    },
-    secondary: {
-        main: '#e7364a',
-        light: '#ff8590',
-        dark: '#b0001f',
-        contrastText: '#66000f',
-    },
-    // case1
-    // primary: {
-    //     main: '#5e2efb',
-    //     light: '#977bff',
-    //     dark: '#0007b1',
-    //     contrastText: '#222222',
-    // },
-    // secondary: {
-    //     main: '#fe405a',
-    //     light: '#ff7786',
-    //     dark: '#c6002f',
-    //     contrastText: '#858585',
-    // },
-    neutral: {
-        main: "#ffebed",
-        light: '#ffffff',
-        dark: '#d6c6c8',
-        contrastText: "#858585",
-    },
-    divider: {
-        default: "#0007b1"
-    },
-    state: {
-        success: {
-            main: '#4caf50'
-        },
-        warning: {
-            main: '#ffc107'
-        },
-        error: {
-            main: '#f44336'
-        },
-        info: {
-            main: '#222222'
-        }
-    },
-};
 
 export {
     FontFamilyScheme,

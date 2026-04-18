@@ -26,11 +26,12 @@ const aboutData = {
         'Skilled in responsive web with React, Vue, HTML/CSS, Figma.'
     ],
     services: [
-        { tag: 'Full-stack Engineer', icon: '' },
-        { tag: 'AI Engineer', icon: '' },
-        { tag: 'UIUX Developer', icon: '' }
+        { tag: 'Product-minded', icon: '' },
+        { tag: 'Full-Stack Developer', icon: '' },
+        { tag: 'AI Developer', icon: '' },
+        { tag: 'UIUX Designer', icon: '' }
     ]
 };
 
 
-export { aboutData,paragraphProfessional, paragraphList, skillsList }
+export { aboutData, paragraphProfessional, paragraphList, skillsList }

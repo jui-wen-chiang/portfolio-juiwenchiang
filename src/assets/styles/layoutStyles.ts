@@ -40,7 +40,7 @@ const ViewBox = styled(Box)(({ theme }) => ({
     // backgroundColor: 'blue',
     // justifyContent: 'center',
     // alignItems: 'center'
-}));
+})) as typeof Box;
 {/* width="95%" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} */ }
 
 export {
