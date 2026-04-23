@@ -1,14 +1,15 @@
+import { Padding } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
-import { Box, Card, Chip, Button, Typography } from 'src/components/mui/components';
+import { Box, Dialog, Card, Chip, Button, Typography } from 'src/components/mui/components';
 
-// --------- test now
+
 const ProjectRows = styled(Box)(({ theme }) => ({
     position: 'relative',
     maxWidth: '100%',
     width: '100%',
     margin: '1rem auto 0',
     display: 'grid',
-    gap: '1.25rem',
+    gap: '2rem',
     mt: 2,
     [theme.breakpoints.up('sm')]: {
         gridTemplateColumns: 'repeat(1fr)',
@@ -18,141 +19,11 @@ const ProjectRows = styled(Box)(({ theme }) => ({
     },
 }));
 
-
-const OverlapTitle = styled(Box)(({ theme }) => ({
-    background: 'linear-gradient(90deg, #9333ea 0%, #ec4899 100%)',
-    padding: '1rem',
-    borderRadius: '2rem',
-    position: 'relative',
-    zIndex: 10,
-    transform: 'translateY(2rem)',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    '&:hover': {
-        transform: 'translateY(1.5rem)',
-        boxShadow: '0 8px 16px rgba(147, 51, 234, 0.4)',
-    },
-    '& h3': {
-        margin: 0,
-        // fontSize: '1.25rem',
-        fontWeight: 'bold',
-        color: 'white',
-    }
-}));
-
-const ColumnCard = styled(Card)(({ theme }) => ({
-    background: 'rgba(255, 255, 255, 0.1)',
-    // backdropFilter: 'blur(10px)',
-    // border: '1px solid rgba(255, 255, 255, 0.2)',
-    borderRadius: '1rem',
-    padding: '4rem 1.5rem 2rem',
-    height: '320px',
-    display: 'flex',
-    flexDirection: 'column',
-    transition: 'all 0.3s ease',
-    position: 'relative',
-    overflow: 'hidden',
-    '&:hover': {
-        background: 'rgba(255, 255, 255, 0.15)',
-        // border: '1px solid rgba(255, 255, 255, 0.3)',
-        transform: 'scale(1.05)',
-        boxShadow: '0 10px 20px rgba(147, 51, 234, 0.3)',
-    },
-    '&::before': {
-        content: '""',
-        position: 'absolute',
-        inset: 0,
-        background: 'linear-gradient(135deg, rgba(147, 51, 234, 0) 0%, rgba(236, 72, 153, 0) 100%)',
-        transition: 'all 0.3s ease',
-    },
-    '&:hover::before': {
-        background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%)',
-    },
-    '& p': {
-        margin: 0,
-        lineHeight: '1.7',
-        // fontSize: '0.95rem',
-        flex: 1,
-    }
-}));
-
-// ---------
-
-const TextContainer = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1.5,
-    width: "100%"
-}));
-
-const ImageContainer = styled(Box)(({ theme }) => ({
-    // minWidth: '50%',
-    marginLeft: '-5rem',
-    display: 'flex',
-    alignContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-}));
-
-
-const SummaryBox = styled(Box)(({ theme }) => ({
-    zIndex: '2',
-    position: 'relative',
-    padding: '1rem 1.5rem',
-    margin: '0.4rem auto',
-    borderRadius: '1rem',
-    backgroundColor: theme.palette.neutral.main,
-    maskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
-    WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
-    // boxShadow: 'rgba(2, 12, 27, 0.7) 0px 10px 30px -15px',
-    // transition: '0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
-}));
-
-const BackgroundImageBox = styled(Box)(({ theme }) => ({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    opacity: 0.3,
-    zIndex: -1,
-}));
-
-const IconBox = styled(Box)(({ theme }) => ({
-    width: "100%",
-    display: 'flex',
-    padding: '0.5rem 0',
-    [theme.breakpoints.down('sm')]: {
-        flexWrap: 'wrap',
-    },
-}));
-
-const IconChip = styled(Chip)(({ theme }) => ({
-    // margin: '0 0.3rem',
-    // color: theme.palette.secondary.light,
-    // backgroundColor: theme.palette.neutral.main,
-    // fontFamily: FontFamilyScheme.secondary,
-    [theme.breakpoints.down('sm')]: {
-        margin: '0.3rem',
-    },
-}));
-
-const ImageBox = styled('img')(({ theme }) => ({
-    width: '100%',
-    padding: '1rem',
-    alignSelf: 'center',
-    borderRadius: '2rem',
-}));
-
-
 const CardRoot = styled(Box)({
     position: 'relative',
-    borderRadius: 16,
+    borderRadius: '1.5rem',
     overflow: 'hidden',
-    cursor: 'pointer',
-    height: 320,
+    height: '25rem',
 
     '& .card-overlay': {
         position: 'absolute',
@@ -174,7 +45,6 @@ const CardRoot = styled(Box)({
     }
 });
 
-
 const CardImg = styled('img')({
     position: 'absolute',
     inset: 0,
@@ -182,7 +52,6 @@ const CardImg = styled('img')({
     height: '100%',
     objectFit: 'cover'
 });
-
 
 const CardOverlay = styled(Box)({
     position: 'absolute',
@@ -201,85 +70,90 @@ const CardOverlay = styled(Box)({
     // },
 });
 
-
-const CardTitleAlways = styled(Box)({
+const CardCover = styled(Box)({
     position: 'absolute',
     bottom: '0.5rem',
     left: '0.5rem',
     right: '0.5rem',
-    // width:'100%',
-    // maxWidth:'100%',
+
     padding: '0.5rem',
     backdropFilter: 'blur(20px)',
     WebkitBackdropFilter: 'blur(20px)',
     borderRadius: 12,
 
+    '& * ': {
+        padding: '0.1rem',
+        margin: '0.15rem 0',
+        fontSize: '0.75rem',
+        color: '#fff',
+    },
     '& .title': {
         fontSize: '1.1rem',
         fontWeight: 500,
-        color: '#fff',
-        margin: 0,
-        lineHeight: 1.3,
     },
-    '& .role': {
-        fontSize: '0.75rem',
+    '& .link-button': {
         color: '#fff',
-        margin: '3px 0 0',
+    },
+    '& .chips-box': {
+        display: 'flex',
+        gap: '0.7rem',
+        alignItems: 'center',
+    },
+    '& .chip': {
+        height: 22,
+        padding: '0.5rem',
+        background: 'rgba(255,255,255,0.18)',
+        border: '0.5px solid rgba(255,255,255,0.35)',
+    },
+    '& .button': {
+        display: 'flex',
+        gap: '0.7rem',
+        justifyContent: 'space-evenly',
+        '& .MuiLink-root': {
+            color: '#fff',
+        },
+        '& .MuiButton-root': {
+            height: '36px',
+            whiteSpace: 'nowrap',
+            background: 'rgba(84, 168, 246)',
+            border: '0.5px solid rgba(255,255,255,0.45)',
+            borderRadius: '2rem'
+        }
     }
 });
 
 
 
-const CardSummaryText = styled(Typography)({
-    mb: '10px',
-    // fontSize: 13,
-    color: 'rgba(255,255,255,0.82)',
-    lineHeight: 1.6,
-});
-
-const CardBody = styled(Box)({
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    padding: '1.25rem',
-    opacity: 0,
-    transform: 'translateY(4px)',
-    transition: 'opacity 0.35s ease, transform 0.35s ease',
-});
-
-const ViewButton = styled(Button)({
-    // fontSize: 13,
-    fontWeight: 500,
-    color: '#fff',
-    background: 'rgba(255,255,255,0.15)',
-    border: '0.5px solid rgba(255,255,255,0.45)',
-    borderRadius: 8,
-    padding: '6px 18px',
-    textTransform: 'none',
-    minWidth: 0,
-    '&:hover': {
-        background: 'rgba(255,255,255,0.28)',
+const DetailBox = styled(Box)({
+    '& .close-button': {
+        position: 'relative',
+        '& .MuiIconButton-root': {
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            color: '#fff',
+            background: 'rgba(0,0,0,0.45)',
+            '&:hover': { background: 'rgba(0,0,0,0.65)' }
+        }
     },
-    '&:after': {
-        // MUI ripple is built-in with TouchRipple
-    },
-});
-
-const PopupImg = styled('img')({
-    width: '100%',
-    maxHeight: 260,
-    objectFit: 'cover',
-    borderRadius: 12,
-    marginBottom: 16,
-    backdropFilter: 'blur(20px)',
-    WebkitBackdropFilter: 'blur(20px)',
+    '& .main-section': {
+        padding: '1.5rem',
+        '& .info': {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        },
+        '& .chips': {
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.5rem',
+            mb: 2
+        }
+    }
 });
 
 export {
-    CardRoot, CardImg, CardOverlay, CardTitleAlways, CardSummaryText, CardBody, ViewButton,
-    ProjectRows, ColumnCard, OverlapTitle,
-    TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox, PopupImg
+    ProjectRows, CardRoot, CardImg, CardOverlay, CardCover, DetailBox
 }
 
 

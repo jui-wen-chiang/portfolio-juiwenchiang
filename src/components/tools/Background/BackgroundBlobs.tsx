@@ -13,7 +13,8 @@ type BlobItem = {
   left?: number | string;
   right?: number | string;
   rotate?: number;
-  radius: string;
+  radius?: string;
+  borderRadius?: string,
   background: string;
   filter?: string;
 };
@@ -39,6 +40,17 @@ const variantMap: Record<NonNullable<BackgroundBlobsProps['variant']>, BlobItem[
       rotate: -12,
       filter: 'blur(1px)',
     },
+    // {
+    //   width: 360,
+    //   height: 260,
+    //   top: -60,
+    //   right: 20,
+    //   background: 'radial-gradient(circle, rgba(68, 34, 170, 0.2) 0%, rgba(224, 51, 7, 0) 74%)',
+    //   borderRadius: '60% 40% 70% 30% / 50% 60% 40% 50%',  // 👈 不對稱圓角產生波浪感
+    //   rotate: -12,
+    //   filter: 'blur(8px)',  // 👈 模糊加大讓邊緣更柔和
+    // }
+    
     // {
     //   width: 200,
     //   height: 200,
@@ -174,8 +186,8 @@ export default function BackgroundBlobs({ variant = 'hero', side = 'right' }: Ba
         pointerEvents: 'none',
         overflow: 'hidden',
         zIndex: 0,
-        padding:0,
-        margin:0
+        padding: 0,
+        margin: 0
       }}
     >
       {blobs.map((blob, i) => {
