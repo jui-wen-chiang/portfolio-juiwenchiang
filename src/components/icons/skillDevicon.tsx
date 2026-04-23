@@ -33,6 +33,7 @@ export {
     GitPlainIcon,
     DockerPlainIcon,
     AnacondaOriginalIcon,
+    AzurePlainIcon,
     VercelOriginalIcon,
     SupabasePlainIcon,
     SonarqubeOriginalIcon,

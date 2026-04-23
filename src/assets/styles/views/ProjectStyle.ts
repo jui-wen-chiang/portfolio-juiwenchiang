@@ -1,5 +1,4 @@
 import { styled } from "@mui/material/styles";
-import { FontFamilyScheme } from "src/theme/UIstandard";
 import { Box, Card, Chip, Button, Typography } from 'src/components/mui/components';
 
 // --------- test now
@@ -35,7 +34,7 @@ const OverlapTitle = styled(Box)(({ theme }) => ({
     },
     '& h3': {
         margin: 0,
-        fontSize: '1.25rem',
+        // fontSize: '1.25rem',
         fontWeight: 'bold',
         color: 'white',
     }
@@ -72,7 +71,7 @@ const ColumnCard = styled(Card)(({ theme }) => ({
     '& p': {
         margin: 0,
         lineHeight: '1.7',
-        fontSize: '0.95rem',
+        // fontSize: '0.95rem',
         flex: 1,
     }
 }));
@@ -154,24 +153,25 @@ const CardRoot = styled(Box)({
     overflow: 'hidden',
     cursor: 'pointer',
     height: 320,
-    transition: 'transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s ease',
 
     '& .card-overlay': {
         position: 'absolute',
         inset: 0,
         background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.0) 100%)',
-        transition: 'background 0.35s ease',
+        transition: 'background 0.35s ease'
     },
     '&:hover': {
         transform: 'translateY(-8px)',
-        boxShadow: '0 20px 40px rgba(0,0,0,0.18)',
+        // boxShadow: '0 20px 40px rgba(0,0,0,0.18)',
         '& .card-overlay': {
-            background: 'rgba(0,0,0,0.65)',  // hover 時換成純色深遮罩
+            // background: 'rgba(0,0,0,0.65)',
+            background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.0) 100%)',
+            transition: 'background 0.35s ease',
+            // backdropFilter: 'blur(15px)',
+            // WebkitBackdropFilter: 'blur(15px)',
+
         },
-        '& .card-img': { transform: 'scale(1.05)' },
-        '& .card-body': { opacity: 1, transform: 'translateY(0)' },
-        '& .card-title-always': { opacity: 0 },
-    },
+    }
 });
 
 
@@ -180,52 +180,59 @@ const CardImg = styled('img')({
     inset: 0,
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
-    transition: 'transform 0.5s ease',
+    objectFit: 'cover'
 });
+
 
 const CardOverlay = styled(Box)({
     position: 'absolute',
     inset: 0,
-    background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.05) 100%)',
-    transition: 'background 0.35s ease',
+    // background: 'linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, transparent 50%)',
+    // 預設：深紫黑，跟亮藍白背景形成色溫對比
+    background: 'linear-gradient(to top, rgba(15,5,35,0.8) 10%, rgba(10,2,20,0.15) 55%, transparent 100%)',
+    // background: 'linear-gradient(to top, rgba(255,255,255,0.30) 0%,rgba(15,5,35,0.7) 30%, rgba(10,2,20,0.15) 55%, transparent 100%)',
 
-    '.card-root:hover &': {
-        background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.3) 100%)',
-    },
+    // transition: 'background 0.35s ease',
+
+    // '.card-root:hover &': {
+    //     padding: '0.5rem',
+    //     backdropFilter: 'blur(15px)',
+    //     WebkitBackdropFilter: 'blur(15px)',
+    // },
 });
 
-const CardTitleAlways = styled(Typography)({
+
+const CardTitleAlways = styled(Box)({
     position: 'absolute',
-    bottom: '1.25rem',
-    left: '1.25rem',
-    fontSize: 18,
-    fontWeight: 500,
-    color: '#fff',
-    transition: 'opacity 0.3s ease',
-    pointerEvents: 'none',
+    bottom: '0.5rem',
+    left: '0.5rem',
+    right: '0.5rem',
+    // width:'100%',
+    // maxWidth:'100%',
+    padding: '0.5rem',
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+    borderRadius: 12,
+
+    '& .title': {
+        fontSize: '1.1rem',
+        fontWeight: 500,
+        color: '#fff',
+        margin: 0,
+        lineHeight: 1.3,
+    },
+    '& .role': {
+        fontSize: '0.75rem',
+        color: '#fff',
+        margin: '3px 0 0',
+    }
 });
 
-const CardImgSourceText = styled(Typography)({
-    mt: '2px',
-    fontSize: 9,
-    color: 'rgba(255,255,255,0.45)',
-    lineHeight: 1
-});
-
-
-const CardImgTitleText = styled(Typography)({
-    mb: '6px',
-    fontSize: 18,
-    fontWeight: 500,
-    color: '#fff',
-    lineHeight: 1.3
-});
 
 
 const CardSummaryText = styled(Typography)({
     mb: '10px',
-    fontSize: 13,
+    // fontSize: 13,
     color: 'rgba(255,255,255,0.82)',
     lineHeight: 1.6,
 });
@@ -242,7 +249,7 @@ const CardBody = styled(Box)({
 });
 
 const ViewButton = styled(Button)({
-    fontSize: 13,
+    // fontSize: 13,
     fontWeight: 500,
     color: '#fff',
     background: 'rgba(255,255,255,0.15)',
@@ -259,10 +266,20 @@ const ViewButton = styled(Button)({
     },
 });
 
+const PopupImg = styled('img')({
+    width: '100%',
+    maxHeight: 260,
+    objectFit: 'cover',
+    borderRadius: 12,
+    marginBottom: 16,
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+});
+
 export {
-    CardRoot, CardImg, CardOverlay, CardTitleAlways, CardImgSourceText, CardImgTitleText,CardSummaryText,CardBody, ViewButton,
+    CardRoot, CardImg, CardOverlay, CardTitleAlways, CardSummaryText, CardBody, ViewButton,
     ProjectRows, ColumnCard, OverlapTitle,
-    TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox
+    TextContainer, ImageContainer, SummaryBox, BackgroundImageBox, IconBox, IconChip, ImageBox, PopupImg
 }
 
 

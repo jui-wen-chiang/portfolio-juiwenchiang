@@ -89,6 +89,7 @@ export { default as Fab } from "@mui/material/Fab";
 export type { FabProps } from "@mui/material/Fab";
 export { default as Fade } from '@mui/material/Fade';
 export type { FadeProps } from '@mui/material/Fade';
+export { default as Link } from "@mui/material/Link";
 
 // input
 export { default as TextField } from "@mui/material/TextField";
@@ -110,3 +111,7 @@ export { default as Divider } from "@mui/material/Divider";
 export type { DividerProps } from "@mui/material/Divider";
 export { default as Drawer } from "@mui/material/Drawer";
 export type { DrawerProps } from "@mui/material/Drawer";
+
+// alert
+export { default as Alert } from '@mui/material/Alert';
+export { default as AlertTitle } from '@mui/material/AlertTitle';

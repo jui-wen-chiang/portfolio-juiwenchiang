@@ -13,6 +13,8 @@ import SkillCardView from "src/views/Base/SkillCardView";
 import ExperienceView from 'src/views/Base/ExperienceView';
 import EduAndCertView from 'src/views/Base/EduAndCertView';
 import ProjectsView from 'src/views/Base/ProjectView';
+// import ProjectsView from 'src/views/Base/ProjectView_old';
+
 import ContactView from 'src/views/Base/ContactView';
 import FooterView from 'src/views/Base/Footer';
 // User Views

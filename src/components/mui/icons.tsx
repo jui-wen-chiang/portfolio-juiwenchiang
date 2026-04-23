@@ -30,3 +30,6 @@ export { default as ArrowForwardRoundedIcon } from '@mui/icons-material/ArrowFor
 export { default as KeyboardArrowUpIcon } from '@mui/icons-material/KeyboardArrowUp';
 export { default as MoreHorizIcon } from '@mui/icons-material/MoreHoriz';
 export { default as AutoStoriesIcon } from '@mui/icons-material/AutoStories';
+export { default as ReadMoreIcon } from '@mui/icons-material/ReadMore';
+export { default as MoreIcon } from '@mui/icons-material/More';
+export { default as DescriptionIcon } from '@mui/icons-material/Description';
