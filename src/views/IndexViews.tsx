@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { styled } from '@mui/material/styles';
 // style
 import type { ViewMappingItem } from "src/types/view/index";
-import { Box, Typography } from 'src/components/mui/components';
-import { ViewsContainer, BackgroundBox, ViewsContainerT } from 'src/assets/styles/commonStyles';
-import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
+import { Box } from 'src/components/mui/components';
+import { ViewsContainerT } from 'src/assets/styles/commonStyles';
+// import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
+import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
 import * as UIstandard from 'src/theme/UIstandard.ts';
+
 // Base Views
 import HomeView from 'src/views/Base/Home';
 import AboutView from 'src/views/Base/About';
@@ -13,8 +14,6 @@ import SkillCardView from "src/views/Base/SkillCardView";
 import ExperienceView from 'src/views/Base/ExperienceView';
 import EduAndCertView from 'src/views/Base/EduAndCertView';
 import ProjectsView from 'src/views/Base/ProjectView';
-// import ProjectsView from 'src/views/Base/ProjectView_old';
-
 import ContactView from 'src/views/Base/ContactView';
 import FooterView from 'src/views/Base/Footer';
 // User Views
@@ -99,18 +98,24 @@ export default function IndexViews({ onColorChange, onSectionChange }: IndexView
   return (
     <ViewsContainerT>
       {viewMapping.map((view) => {
-        const mbSetting = view.id === 'home' ? 0 : view.id === 'footer' ? 2 : 10;
+        const mbSetting = view.id === 'home' ? 0 : view.id === 'footer' ? 1.5 : 10;
 
         return (
           <Box
             key={view.id}
             data-id={view.id}
             id={view.id}
-            sx={{ width: '100%', scrollMarginTop: '80px', mb: mbSetting }}
+            sx={{
+              width: '100%',
+              scrollMarginTop: '80px',
+              my: mbSetting,
+              position: 'relative',
+            }}
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current[view.id] = el;
             }}
           >
+            <BackgroundBlobs variant={view.id} />
             {view.component}
           </Box>
         );

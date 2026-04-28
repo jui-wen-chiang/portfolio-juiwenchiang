@@ -26,7 +26,7 @@ export default function ExperienceView() {
     };
 
     const IconColor = (step: number) => () => {
-        return openSteps.includes(step) ? ColorScheme.primary.main : 'black';
+        return openSteps.includes(step) ? ColorScheme.primary.dark : 'black';
     };
 
     const StepIcon = (category: string): React.ReactElement | null => {
@@ -49,12 +49,16 @@ export default function ExperienceView() {
                     return (
                         <Step key={item.title} expanded={isOpen}>
                             <StepButton icon={StepIcon(item.class)} onClick={toggleStep(index)} sx={{ color: IconColor(index) }}>
-                                <Typography variant="h6" sx={{ color: IconColor(index) }}> {item.title}</Typography>
+                                <Typography variant="h6" sx={{ color: IconColor(index) }}>
+                                    {item.title}
+                                </Typography>
                             </StepButton>
                             <StepContent>
                                 <StepCard>
                                     <CardContent>
-                                        <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.date} | {item.location}</Typography>
+                                        <Typography variant="caption" sx={{display:"block", margin: '0.5rem' }}>
+                                            {item.date} | {item.location}
+                                        </Typography>
                                         {item.description?.map((bullet, i) => (
                                             <ListContainer key={i}>
                                                 <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>

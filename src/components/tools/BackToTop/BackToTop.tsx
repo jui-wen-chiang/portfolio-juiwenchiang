@@ -42,7 +42,7 @@ export default function BackToTop(props: BackToTopProps) {
                         position: 'fixed', bottom: 16, right: 16
                     }}
                 >
-                    <KeyboardArrowUpIcon sx={{ color: ColorScheme.neutral.main }} />
+                    <KeyboardArrowUpIcon/>
                 </Fab>
 
             );

@@ -49,7 +49,6 @@ export default function Appbar() {
   // set App Bar Height
   useEffect(() => {
     const updateHeight = () => {
-      console.log('appBarHeight', appBarHeight)
       if (appBarRef.current) {
         setAppBarHeight(appBarRef.current.offsetHeight);
       }

@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { projecstData } from "src/data/projectsData";
 import { Typography, Box, Chip, Dialog, Button, Link, IconButton } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
-import { ProjectRows, CardRoot, CardImg, CardOverlay, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
+import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import { ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
 // import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
+import { ColorScheme, TypographyScheme } from 'src/theme/UIstandard';
+import Divider from '@mui/material/Divider';
+
 
 
 export default function ProjectsView() {
@@ -25,7 +28,7 @@ export default function ProjectsView() {
                             alt={item.img.lable}
                             loading="lazy"
                         />
-                        <CardOverlay className="card-overlay" />
+                        <Box className="card-overlay" />
                         <CardCover className="card-title-always">
                             <p className="title">{item.title}</p>
                             <p className="role">Role: {item.role}</p>
@@ -42,25 +45,28 @@ export default function ProjectsView() {
                                 {item.link?.map((link, i) => (
                                     <Button
                                         key={i}
-                                        component="label"
+                                        component="a"
+                                        href={link.url}
+                                        target="_blank"
                                         variant="contained"
                                         fullWidth
+                                        color='primary'
                                         startIcon={
                                             link.type === 'repo'
-                                                ? <GitHubIcon sx={{ fontSize: 18 }} />
+                                                ? <GitHubIcon sx={{ fontSize: 18, color: '#fff' }} />
                                                 : <DescriptionIcon sx={{ fontSize: 18 }} />
                                         }
-                                    >
-                                        <Link href={link.url} underline="none">{link.label}</Link>
+                                    >{link.label}
                                     </Button>
                                 ))}
                                 <Button
                                     component="label"
                                     variant="contained"
                                     fullWidth
+                                    color='primary'
                                     onClick={() => handleOpen(item)}
                                     startIcon={<ReadMoreIcon />}
-                                >Read More</Button>
+                                >Explore</Button>
                             </Box>
                         </CardCover>
                     </CardRoot>
@@ -72,9 +78,10 @@ export default function ProjectsView() {
                 onClose={handleClose}
                 sx={{
                     '& .MuiDialog-paper': {
-                        width: '80vw',
-                        height: '80vh',
+                        width: '95vw',
+                        height: '95vh',
                         maxWidth: 'none',
+                        borderRadius: '0.5rem'
                     }
                 }}
             >
@@ -88,8 +95,8 @@ export default function ProjectsView() {
 
                             <Box className="main-section">
                                 <Box className="info">
-                                    <Typography variant="h6" sx={{ mb: 2 }}> {selected.title} </Typography>
-                                    {selected.link?.map((link, i) => (
+                                    <Typography variant="h5" sx={{ mb: 2 }}> {selected.title} </Typography>
+                                    {selected.link?.map((link) => (
                                         <IconButton color='primary' size='large' href={link.url}
                                             target="_blank">
                                             {link.type === 'repo'
@@ -97,7 +104,7 @@ export default function ProjectsView() {
                                                 : <DescriptionIcon />}
                                         </IconButton>
                                     ))}
-                                    <Typography variant="body2" sx={{ mb: 2 }}> Role: {selected.role}</Typography>
+                                    <Typography variant="subtitle1" sx={{ mb: 2 }}> {selected.role}</Typography>
                                     <Box className="chips">
                                         {selected.tech.map((tech, i) => (
                                             <Chip
@@ -108,20 +115,21 @@ export default function ProjectsView() {
                                         ))}
                                     </Box>
                                 </Box>
-                                <Typography variant="subtitle2" color='primary' sx={{ my: '1.5rem' }}>
-                                    {selected.summary}
-                                </Typography>
-                                <Typography variant="subtitle1" sx={{ my: '0.5rem' }}> Problem: </Typography>
+                                <Divider sx={{ my: '1.5rem' }} />
+                                <Box className="summary">
+                                    <p className="summary-text"> {selected.summary}</p>
+                                </Box>
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Problem </Typography>
                                 <Typography> {selected.problem} </Typography>
-                                <Typography variant="subtitle1" sx={{ my: '0.5rem' }}> Solution: </Typography>
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
                                 <Typography> {selected.solution} </Typography>
-                                <Typography variant="subtitle1" sx={{ my: '0.5rem' }}> Impact: </Typography>
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Impact </Typography>
                                 <Typography> {selected.impact} </Typography>
                             </Box>
                         </DetailBox>
                     </>
                 )}
             </Dialog>
-        </ViewBox>
+        </ViewBox >
     );
 }

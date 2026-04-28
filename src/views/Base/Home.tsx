@@ -3,7 +3,6 @@ import { HomeContainer, ContentWrapper, ContentBox, GradientText } from "src/ass
 import { Typography } from 'src/components/mui/components';
 import LinkBar from 'src/components/tools/Bars/LinkingBar';
 import { ViewBox } from "src/assets/styles/layoutStyles";
-import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
 
 
 export default function HomeView() {
@@ -16,14 +15,11 @@ export default function HomeView() {
                 overflow: 'hidden',
             }}
         >
-            <BackgroundBlobs variant="hero" />
             <HomeContainer>
                 <ContentWrapper>
                     <ContentBox>
                         <Typography variant="h6">{personalInof.subtitle}</Typography>
-                        <GradientText variant="h1" sx={{ fontWeight: 'bold', paddingBottom: '1.5rem' }}>
-                            {personalInof.name}
-                        </GradientText>
+                        <GradientText variant="h1"> {personalInof.name}</GradientText>
                         <Typography variant="h6">{personalInof.summary}</Typography>
                     </ContentBox>
                     <LinkBar simplyResumeIcon={false} />

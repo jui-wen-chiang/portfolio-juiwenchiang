@@ -5,21 +5,23 @@ import { StyledTab, ExperienceCard } from "src/assets/styles/views/ExperienceTab
 import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ColorScheme } from 'src/theme/UIstandard';
 
 
 function CustomTabPanel(props: TabPanelProps) {
   const { items } = props;
 
   return (
-    <ExperienceCard sx={{padding:'0.5rem'}}>
+    <ExperienceCard sx={{ padding: '0.5rem' }}>
       <CardContent>
         {items.map((item) => (
-          <Box sx={{ paddingTop: '1rem' }}>
-            <Typography variant="h6"> {item.title}</Typography>
-            <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.date} | {item.location}</Typography>
-            {/* <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.location}</Typography> */}
+          <Box sx={{ padding: '1rem 0' }}>
+            <Typography variant="subtitle1" sx={{ color: ColorScheme.primary.dark }}> {item.title}</Typography>
+            <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.date}</Typography><br/>
+            <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.location}</Typography>
+
             {item.description?.map((bullet: string) => (
-              <ListContainer >
+              <ListContainer>
                 <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>
               </ListContainer>
             ))}
@@ -49,10 +51,9 @@ export default function EduAndCertView() {
   );
 
   return (
-    // aria-label="Experience" 
-    <ViewBox component="section" aria-label="Education"  data-aos="zoom-in">
-                  <Typography variant="h2" sx={{ textAlign: "center" }}>Education & Professional Development</Typography>
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', padding: '2rem' }}>
+    <ViewBox component="section" aria-label="Education" data-aos="zoom-in" sx={{ justifyContent: 'center', alignItems: 'center' }}>
+      <Typography variant="h2" sx={{ textAlign: "center" }}>Education & Professional Development</Typography>
+      <Box sx={{ width: '80%', display: 'flex', flexDirection: 'column', padding: '2rem' }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -65,9 +66,6 @@ export default function EduAndCertView() {
             <StyledTab key={item.class} label={item.class} value={item.class} />
           ))}
         </Tabs>
-      </Box>
-
-      <Box sx={{ width: '100%' }}>
         {categoryData.map((category: { [key: string]: any }) =>
           category.class === value ? (
             <CustomTabPanel key={category.class} items={category.children} />

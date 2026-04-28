@@ -9,6 +9,7 @@ export type techCategory =
     | "ai"
     | "devops"
     | "tool";
+    
 export interface projects {
     type: "side" | "business";
     title: string;

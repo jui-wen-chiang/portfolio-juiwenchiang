@@ -10,7 +10,7 @@ export default function SkillCardView() {
     return (
         <ColContainer component="section" aria-label="Skills" data-aos="zoom-in">
             <Typography variant="h2" sx={{ textAlign: "center" }}>Skills</Typography>
-            <BackgroundBlobs variant="skills" />
+            {/* <BackgroundBlobs variant="skills" /> */}
 
             <SkillBox sx={{ padding: '2rem' }}>
                 {skillData.map((item) => (

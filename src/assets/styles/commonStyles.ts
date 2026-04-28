@@ -79,8 +79,8 @@ const ListContainer = styled(List)(({ theme }) => ({
     listStyleType: 'disc',
     listStylePosition: 'outside',
     margin: 0,
-    paddingTop: 0,
-    paddingBottom: 0,
+    paddingTop: '0.15rem',
+    paddingBottom:'0.15rem',
     paddingLeft: theme.spacing(3), // Indent a little to make the bullet visible
 }));
 

@@ -1,6 +1,16 @@
 import type { ReactElement } from 'react';
 
+export type ViewItems =
+    | "home"
+    | "about"
+    | "experience"
+    | "projects"
+    | "eduAndcert"
+    | "skills"
+    | "contact"
+    | "footer";
+    
 export interface ViewMappingItem {
-  id: string;
+  id: ViewItems;
   component: ReactElement;
 }

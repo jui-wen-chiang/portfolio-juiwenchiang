@@ -93,7 +93,7 @@ export default function ContactUs({ onClose }: ContactUsProps) {
               />
             </Grid>
           </Grid>
-          <Button color="info" variant="contained" type="submit" sx={{ color: ColorScheme.neutral.light }}>Send Message</Button>
+          <Button color="info" variant="contained" type="submit">Send Message</Button>
         </ColContainer >
       </form>
 

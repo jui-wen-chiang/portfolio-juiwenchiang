@@ -38,19 +38,10 @@ function AppLayout() {
   return (
     <AppLayoutContainer style={{ backgroundColor: bgColor }} maxWidth={false}>
       {/* <BackgroundLayer sectionId={sectionId} />  */}
-      {/* 不能加 position: 'relative' appbar會不能固定 */} 
       <ViewSection component="header" flex={5}>
         <Appbar />
       </ViewSection>
       <ViewSection component="main" flex={95}>
-      {/* <ViewSection
-        component="main"
-        flex={95}
-        sx={{
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      > */}
         <IndexViews onColorChange={setBgColor} />
       </ViewSection>
       <BackToTop />

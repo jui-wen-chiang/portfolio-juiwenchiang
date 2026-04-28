@@ -8,7 +8,7 @@ export default function AboutView() {
     return (
         <ViewBox component="section" aria-label="About" data-aos="fade-left"
             sx={{ height: '40vh', position: 'relative', overflow: 'hidden' }}>
-            <BackgroundBlobs variant="about" />
+            {/* <BackgroundBlobs variant="about" /> */}
             <Typography variant="h2" sx={{ textAlign: "center" }}>About</Typography>
             <Box sx={{ display: 'flex',justifyContent: 'center', padding:'2rem' }}>
                 {aboutData.services.map((item, index) => {

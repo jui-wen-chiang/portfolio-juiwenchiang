@@ -10,10 +10,10 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
     maxWidth: '80vw',
   },
   [theme.breakpoints.up('sm')]: {
-    maxWidth: '800px'
+    maxWidth: '100vw'
   },
   [theme.breakpoints.up('lg')]: {
-    maxWidth: '1000px'
+    maxWidth: '100vw'
   },
   // "& .MuiStepLabel-root .Mui-completed": "{color: 'theme.secondary.dark'}",
   // Just text label (COMPLETED)
@@ -28,7 +28,7 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
 
 const StepCard = styled(Card)(({ theme }) => ({
   width: '100%',
-  backgroundColor: theme.palette.neutral.main,
+  backgroundColor: '#11ffee00',
   ...base.commBorderRadius,
 }));
 
