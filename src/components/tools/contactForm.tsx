@@ -50,8 +50,8 @@ export default function ContactUs({ onClose }: ContactUsProps) {
     <>
       <form ref={form} onSubmit={sendEmail}>
         <ColContainer >
-          <Typography color="primary">contact to:</Typography>
-          <Typography color="primary" sx={{ padding: '1rem' }}>raewen.juiwenchiang@gmail.com</Typography>
+          <Typography sx={{color:ColorScheme.primary.dark}}>contact to:</Typography>
+          <Typography sx={{ padding: '1rem',color:ColorScheme.primary.dark }}>raewen.juiwenchiang@gmail.com</Typography>
           <Grid container spacing={3} sx={{ padding: '1rem', width: '100%' }}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="body2">Name:</Typography>

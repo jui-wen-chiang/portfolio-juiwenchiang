@@ -4,17 +4,21 @@ import type { BackgroundBlobsProps, BlobItem } from "src/types/components/tools"
 
 export const VariantMap: Record<NonNullable<BackgroundBlobsProps['variant']>, BlobItem[]> = {
     home: [
-        {
-            width: 560,
-            height: 460,
-            top: 20,
-            right: 60,
-            background: `
-                radial-gradient(ellipse 100% 70% at 80% 20%, rgba(84, 168, 246,0.35), transparent),
-                radial-gradient(ellipse 100% 70% at 20% 90%, rgba(230, 84, 246, 0.1), transparent)`,
-            borderRadius: '39% 61% 32% 68% / 49% 44% 56% 51%',
-            filter: 'blur(15px)',
-        }
+        // {
+        //     width: 560,
+        //     height: 460,
+        //     top: 20,
+        //     right: 60,
+        //     // background: `
+        //     //     radial-gradient(ellipse 100% 70% at 80% 20%, rgba(84, 168, 246,0.35), transparent),
+        //     //     radial-gradient(ellipse 100% 70% at 20% 90%, rgba(230, 84, 246, 0.1), transparent)`,
+        //     background: `
+        //         radial-gradient(ellipse 100% 70% at 80% 20%, rgba(84, 168, 246,0.35), transparent),
+        //         radial-gradient(ellipse 100% 70% at 20% 90%, rgba(21, 122, 90, 0.1), transparent)`,
+
+        //     borderRadius: '39% 61% 32% 68% / 49% 44% 56% 51%',
+        //     filter: 'blur(15px)',
+        // },
     ],
     about: [],
     experience: [

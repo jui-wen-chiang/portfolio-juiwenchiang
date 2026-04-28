@@ -1,3 +1,6 @@
+import { ColorScheme } from 'src/theme/UIstandard';
+
+
 const breakpoints = {
     xs: 0,
     sm: 600,    // phones
@@ -29,6 +32,11 @@ const basePadding = {
 
 const baseBoxShadow = {
     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-}
+};
 
-export { breakpoints, fullSize, commBorderRadius, basePadding, dmSerifFontFamily, baseBoxShadow }
+
+const basePaperColor = {
+    backgroundColor:ColorScheme.background.paper,
+};
+
+export { breakpoints, fullSize, commBorderRadius, basePadding, dmSerifFontFamily, baseBoxShadow,basePaperColor }

@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import * as base from "src/assets/styles/baseStyle";
 import * as common from "src/assets/styles/commonStyles";
 import type { ContainerProps } from "src/components/mui/components";
 import { Box } from "src/components/mui/components";
@@ -10,7 +11,7 @@ const SkillBox = styled(Box)(({ theme }) => ({
     margin: '0 auto',
     gap: theme.spacing(2),
     gridTemplateColumns: 'repeat(2, 1fr)', // xs
-    
+
     [theme.breakpoints.up('sm')]: {
         gridTemplateColumns: 'repeat(3, 1fr)',
     },
@@ -21,7 +22,10 @@ const SkillBox = styled(Box)(({ theme }) => ({
 
 
 const SkillItemContainer = styled(common.ColContainer)<ContainerProps>({
+    ...base.basePaperColor,
+    ...base.baseBoxShadow,
     margin: '0.5rem',
+    marginBottom: '1rem',
     borderRadius: '0.5rem',
 });
 

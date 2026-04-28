@@ -33,3 +33,4 @@ export { default as AutoStoriesIcon } from '@mui/icons-material/AutoStories';
 export { default as ReadMoreIcon } from '@mui/icons-material/ReadMore';
 export { default as MoreIcon } from '@mui/icons-material/More';
 export { default as DescriptionIcon } from '@mui/icons-material/Description';
+export { default as CloudDownloadIcon } from '@mui/icons-material/CloudDownload';

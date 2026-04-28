@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import { projecstData } from "src/data/projectsData";
-import { Typography, Box, Chip, Dialog, Button, Link, IconButton } from 'src/components/mui/components';
+import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import { ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
-// import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
-import { ColorScheme, TypographyScheme } from 'src/theme/UIstandard';
-import Divider from '@mui/material/Divider';
-
 
 
 export default function ProjectsView() {
@@ -29,7 +25,7 @@ export default function ProjectsView() {
                             loading="lazy"
                         />
                         <Box className="card-overlay" />
-                        <CardCover className="card-title-always">
+                        <CardCover className="card-cover">
                             <p className="title">{item.title}</p>
                             <p className="role">Role: {item.role}</p>
                             {item.tech.some(t => t.display === 'cover' && t.icon) && (
@@ -53,8 +49,8 @@ export default function ProjectsView() {
                                         color='primary'
                                         startIcon={
                                             link.type === 'repo'
-                                                ? <GitHubIcon sx={{ fontSize: 18, color: '#fff' }} />
-                                                : <DescriptionIcon sx={{ fontSize: 18 }} />
+                                                ? <GitHubIcon/>
+                                                : <DescriptionIcon/>
                                         }
                                     >{link.label}
                                     </Button>

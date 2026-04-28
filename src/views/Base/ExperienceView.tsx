@@ -56,12 +56,15 @@ export default function ExperienceView() {
                             <StepContent>
                                 <StepCard>
                                     <CardContent>
-                                        <Typography variant="caption" sx={{display:"block", margin: '0.5rem' }}>
-                                            {item.date} | {item.location}
+                                        <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
+                                            {item.date}
+                                        </Typography>
+                                        <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
+                                            {item.location}
                                         </Typography>
                                         {item.description?.map((bullet, i) => (
                                             <ListContainer key={i}>
-                                                <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>
+                                                <ListContent className='list-content'>{bullet}</ListContent>
                                             </ListContainer>
                                         ))}
                                     </CardContent>

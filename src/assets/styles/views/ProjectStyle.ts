@@ -19,11 +19,13 @@ const ProjectRows = styled(Box)(({ theme }) => ({
     },
 }));
 
+
 const CardRoot = styled(Box)({
     position: 'relative',
     borderRadius: '1rem',
     overflow: 'hidden',
     height: '25rem',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
 
     '& .card-overlay': {
         position: 'absolute',
@@ -34,22 +36,37 @@ const CardRoot = styled(Box)({
     '&:hover': {
         transform: 'translateY(-8px)',
         '& .card-overlay': {
-            background: 'rgba(0,0,0,0.55)',
+            background: 'rgba(255, 255, 255, 0.55)',
         },
-        '& .card-title-always': {
+        '& .card-cover': {
             top: 0,
             bottom: 0,
             left: 0,
             right: 0,
-            padding: '0.5rem',
-            margin: '1rem',
+            padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-end',
-            borderRadius: '1rem'
+            borderRadius: '1rem',
+            '& * ': {
+                color: ColorScheme.primary.dark
+            },
+            '& .chip': {
+                background: 'rgba(30,64,175,0.18)',
+                border: '0.5px solid rgba(30,64,175,0.35)',
+            },
+            '& .button': {
+                '& .MuiButton-icon *': {
+                    color: `${ColorScheme.text.light} !important`,
+                },
+                '& .MuiButton-root': {
+                    color: ColorScheme.text.light
+                }
+            }
         },
     }
 });
+
 
 const CardImg = styled('img')({
     position: 'absolute',
@@ -106,6 +123,8 @@ const CardCover = styled(Box)({
         display: 'flex',
         gap: '0.7rem',
         justifyContent: 'space-evenly',
+        color: ColorScheme.text.light,
+        fontSize: '1rem',
         '& .MuiButton-root': {
             height: '36px',
             whiteSpace: 'nowrap',
@@ -148,7 +167,7 @@ const DetailBox = styled(Box)({
                 ...TypographyScheme.subtitle2,
                 color: ColorScheme.text.light,
                 padding: '1.5rem',
-                magrin:'1.5rem 0'
+                magrin: '1.5rem 0'
             }
         }
     }

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 // style
 import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
-import { ViewsContainerT } from 'src/assets/styles/commonStyles';
+import { ViewsContainer } from 'src/assets/styles/commonStyles';
 // import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
 import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
 import * as UIstandard from 'src/theme/UIstandard.ts';
@@ -96,7 +96,7 @@ export default function IndexViews({ onColorChange, onSectionChange }: IndexView
   }, [onColorChange, onSectionChange]);
 
   return (
-    <ViewsContainerT>
+    <ViewsContainer>
       {viewMapping.map((view) => {
         const mbSetting = view.id === 'home' ? 0 : view.id === 'footer' ? 1.5 : 10;
 
@@ -120,6 +120,6 @@ export default function IndexViews({ onColorChange, onSectionChange }: IndexView
           </Box>
         );
       })}
-    </ViewsContainerT>
+    </ViewsContainer>
   );
 }

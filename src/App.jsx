@@ -26,7 +26,6 @@ function AppLayout() {
   const [bgColor, setBgColor] = useState(BGCOLORS.home);
   const [sectionId, setSectionId] = useState('home');
 
-  // const [bgColor, setBgColor] = useState(BGCOLORS.home);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -36,13 +35,12 @@ function AppLayout() {
   }, []);
 
   return (
-    <AppLayoutContainer style={{ backgroundColor: bgColor }} maxWidth={false}>
-      {/* <BackgroundLayer sectionId={sectionId} />  */}
+    <AppLayoutContainer maxWidth={false}>
       <ViewSection component="header" flex={5}>
         <Appbar />
       </ViewSection>
       <ViewSection component="main" flex={95}>
-        <IndexViews onColorChange={setBgColor} />
+        <IndexViews />
       </ViewSection>
       <BackToTop />
     </AppLayoutContainer>

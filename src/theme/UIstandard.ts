@@ -24,13 +24,12 @@ export const ColorScheme: { [key: string]: any } = {
     mode: 'light',
     background: {
         default: '#F5F7FF',
-        paper: '#FFFFFF'
+        paper: '#f8fbfe'
     },
     text: {
         main: '#2b2b2b',
-        // light: '#424242',
         dark: '#000000',
-        light:'#FFFFFF'
+        light: '#FFFFFF'
     },
     primary: {
         main: '#2563EB',
@@ -171,7 +170,7 @@ export const PaletteScheme: ThemeOptions['palette'] = {
     info: ColorScheme.info,
 }
 
-
+// refer to AppLayoutContainer background
 export const BGCOLORS = {
     home: '#F5F7FF',
     about: '#EEF2FF',

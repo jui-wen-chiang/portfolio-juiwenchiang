@@ -1,7 +1,5 @@
-import { styled, alpha } from '@mui/material/styles';
-import * as base from "src/assets/styles/baseStyle";
-
-import { AppBar, Container, Box, Toolbar } from "src/components/mui/components";
+import { styled } from '@mui/material/styles';
+import {  Box } from "src/components/mui/components";
 
 
 const LinkBarBox = styled(Box)({

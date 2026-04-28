@@ -1,6 +1,6 @@
 import { personalInof } from "src/data/views/homeData"
 import { HomeContainer, ContentWrapper, ContentBox, GradientText } from "src/assets/styles/views/HomeStyle"
-import { Typography } from 'src/components/mui/components';
+import { Box, Typography } from 'src/components/mui/components';
 import LinkBar from 'src/components/tools/Bars/LinkingBar';
 import { ViewBox } from "src/assets/styles/layoutStyles";
 

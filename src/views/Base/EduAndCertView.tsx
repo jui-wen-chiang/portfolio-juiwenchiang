@@ -1,28 +1,26 @@
 import * as React from 'react';
 import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { eduData } from "src/data/eduData"
-import { StyledTab, ExperienceCard } from "src/assets/styles/views/ExperienceTabStyle"
+import { StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
 import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
-import { ColorScheme } from 'src/theme/UIstandard';
 
 
 function CustomTabPanel(props: TabPanelProps) {
   const { items } = props;
 
   return (
-    <ExperienceCard sx={{ padding: '0.5rem' }}>
+    <ExperienceCard>
       <CardContent>
         {items.map((item) => (
-          <Box sx={{ padding: '1rem 0' }}>
-            <Typography variant="subtitle1" sx={{ color: ColorScheme.primary.dark }}> {item.title}</Typography>
-            <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.date}</Typography><br/>
-            <Typography variant="caption" sx={{ paddingBottom: '1rem' }}>{item.location}</Typography>
-
+          <Box sx={{ padding: '0.8rem 0' }}>
+            <Typography variant="subtitle1" className='title'>{item.title}</Typography>
+            <Typography variant="caption" className='info'>{item.date} </Typography>
+            <Typography variant="caption" className='info'>{item.location} </Typography>
             {item.description?.map((bullet: string) => (
               <ListContainer>
-                <ListContent sx={{ padding: 0 }}>{bullet}</ListContent>
+                <ListContent className='list-content'>{bullet}</ListContent>
               </ListContainer>
             ))}
           </Box>
@@ -61,6 +59,7 @@ export default function EduAndCertView() {
           variant="scrollable"
           scrollButtons="auto"
           allowScrollButtonsMobile
+          sx={{marginBottom:'0.5rem'}}
         >
           {categoryData.map((item: { [key: string]: any }) => (
             <StyledTab key={item.class} label={item.class} value={item.class} />

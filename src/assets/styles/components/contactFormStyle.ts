@@ -4,7 +4,7 @@ import type { Theme } from '@mui/material/styles';
 import { ColorScheme } from "src/theme/UIstandard"
 
 
-const TextFieldBox = styled(Box)(({ theme }) => ({
+const TextFieldBox = styled(Box)(() => ({
     width: '100%',
     padding: '1rem 2rem'
 }));
@@ -13,13 +13,13 @@ const UserTextField = styled(TextField)(() => ({
     width: '100%',
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: ColorScheme.primary.contrastText
+            borderColor: ColorScheme.primary.main
         },
         '&:hover fieldset': {
-            borderColor: ColorScheme.secondary.light
+            borderColor: ColorScheme.primary.dark
         },
         '&.Mui-focused fieldset': {
-            borderColor: ColorScheme.secondary.light
+            borderColor: ColorScheme.primary.dark
         },
     }
 }));

@@ -20,6 +20,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
     return (
         <LinkBarBox>
             {linkBarContent.map((item) => {
+
                 if (item.name === 'Resume') {
                     {
                         return simplyResumeIcon ? (
@@ -30,7 +31,7 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                                 component="a"
                                 href={`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`}
                                 download="JuiWen_Chiang_Resume.pdf"
-                                sx={{ ...base.basePadding, '& svg': { fontSize: 40 } }}
+                                sx={{ ...base.basePadding }}
                             >
                                 {item.icon}
                             </IconButton>
@@ -42,22 +43,35 @@ export default function LinkBar({ simplyResumeIcon = true }: LinkBarProps) {
                                 href={`${PUBLIC_URL}/pdf/JuiWen_Chiang_Resume.pdf`}
                                 download="JuiWen_Chiang_Resume.pdf"
                                 component="a"
+                                sx={{ margin: '0.3rem' }}
                             >
-                                Get Resume
+                                {item.text}
                             </Button>
                         )
                     }
                 } else {
-                    return (
+                    return simplyResumeIcon ? (
                         <IconButton
                             aria-label={item.lable}
                             href={item.webSrc}
                             target="_blank"
                             color="primary"
-                            sx={{ ...base.basePadding, '& svg': { fontSize: 40 } }}
+                            sx={{ ...base.basePadding }}
                         >
                             {item.icon}
                         </IconButton>
+                    ) : (
+                        <Button
+                            component="a"
+                            variant="contained"
+                            color="primary"
+                            startIcon={item.icon}
+                            href={item.webSrc}
+                            target="_blank"
+                            sx={{ margin: '0.3rem' }}
+                        >
+                            {item.text}
+                        </Button>
                     )
                 }
             })}

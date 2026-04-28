@@ -9,7 +9,7 @@ const HomeContainer = styled(Container)(() => ({
     height: '100vh',
     justifyItems: 'center',
     padding: '10rem',
-    paddingTop: '12rem',
+    paddingTop: '13rem',
     [`@media (max-width:${base.breakpoints.sm}px)`]: {
         padding: '1.5rem',
         paddingTop: '7rem'
@@ -17,15 +17,18 @@ const HomeContainer = styled(Container)(() => ({
 }));
 
 const ContentWrapper = styled(Box)({
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-end'
 });
 
 const ContentBox = styled(Box)(() => ({
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: '2rem'
+    alignItems: 'flex-end',
+    paddingBottom: '5rem'
 }));
 
 const GradientText = styled(Typography)({
@@ -34,7 +37,7 @@ const GradientText = styled(Typography)({
     WebkitTextFillColor: 'transparent',
     lineHeight: 1.3,
     paddingBottom: '1.8rem',
-    paddingRight: '0.1em',
+    // paddingRight: '0.1em',
     fontWeight: 'bold'
 });
 
