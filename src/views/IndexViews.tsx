@@ -4,7 +4,7 @@ import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
 import { ViewsContainer } from 'src/assets/styles/commonStyles';
 // import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
-import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
+// import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
 import * as UIstandard from 'src/theme/UIstandard.ts';
 
 // Base Views
@@ -115,7 +115,7 @@ export default function IndexViews({ onColorChange, onSectionChange }: IndexView
               sectionRefs.current[view.id] = el;
             }}
           >
-            <BackgroundBlobs variant={view.id} />
+            {/* <BackgroundBlobs variant={view.id} /> */}
             {view.component}
           </Box>
         );
