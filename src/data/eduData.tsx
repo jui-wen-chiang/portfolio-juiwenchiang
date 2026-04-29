@@ -33,10 +33,12 @@ const eduData = [
         date: '2021 March - 2021 June',
         location: "Workforce Development Agency, Taiwan",
         // src: "https://www.mirle.com.tw/en/",
-        // description: [
-        //     "Commercial Design course",
-        //     "Applied Arts course",
-        // ]
+        description: [
+            "UI/UX Design Aesthetics",
+            "Interface Design Process and Practice",
+            "Responsive Web Design (RWD)",
+            "Mobile App Product Planning and Design",
+        ]
     },
     {
         class: 'education',
@@ -44,10 +46,12 @@ const eduData = [
         date: '2013 - 2017',
         location: "National Dong Hwa University, Taiwan",
         // src: "https://www.mirle.com.tw/en/",
-        // description: [
-        //     "Commercial Design course",
-        //     "Applied Arts course",
-        // ]
+        description: [
+            "Aesthetic",
+            "Basic Design",
+            "Color Theory",
+            "Product Packing Design",
+        ]
     },
 ];
 
