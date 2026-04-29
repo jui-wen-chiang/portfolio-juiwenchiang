@@ -1,118 +1,165 @@
 import { useState } from 'react';
-import { useTheme } from '@mui/material/styles';
-import { projectData } from "src/data/projectsData";
-import { Typography, Box, Chip, Dialog, DialogContent, DialogTitle, IconButton } from 'src/components/mui/components';
+import { projecstData } from "src/data/views/projectsData";
+import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
-import { ProjectRows, CardRoot, CardImg, CardOverlay, CardTitleAlways, CardImgSourceText, CardImgTitleText, CardSummaryText, CardBody, ViewButton } from 'src/assets/styles/views/ProjectStyle';
-import CloseIcon from '@mui/icons-material/Close';
-
-// const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
+import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
+import { CloseIcon, ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
+import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ColorScheme } from 'src/theme/UIstandard'
 
 
 export default function ProjectsView() {
-    const [selected, setSelected] = useState<typeof projectData[0] | null>(null);
-    // const theme = useTheme();
+    const [selected, setSelected] = useState<typeof projecstData[0] | null>(null);
+    const handleOpen = (item: typeof projecstData[0]) => setSelected(item);
+    const handleClose = () => setSelected(null);
+
+    const typeOrder = ['frontend', 'backend', 'database', 'ai', 'devops', 'tool', 'design'];
 
     return (
         <ViewBox data-aos="zoom-in">
-            {/* <Typography variant="h3" component="h3" fontWeight="bold">Projects</Typography> */}
+            <Typography variant="h2" sx={{ textAlign: "center", padding: '2rem' }}>Projects</Typography>
             <ProjectRows>
-                {projectData.map((item, index) => (
+                {projecstData.map((item, index) => (
                     <CardRoot className="card-root" key={index}>
                         <CardImg
                             className="card-img"
-                            src={item.image}
-                            alt={item.title}
+                            src={item.img.url}
+                            alt={item.img.lable}
                             loading="lazy"
                         />
-                        <CardOverlay />
-
-                        <CardTitleAlways className="card-title-always">
-                            {item.title}
-                            <CardImgSourceText>
-                                {item.imgsource}
-                            </CardImgSourceText>
-                        </CardTitleAlways>
-
-                        <CardBody className="card-body">
-                            <CardImgTitleText>
-                                {item.title}
-                            </CardImgTitleText>
-                            <CardSummaryText>
-                                {item.summary}
-                            </CardSummaryText>
-
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                                    {/* {item.techStack?.map((tech, i) => (
-                                        <Chip
-                                            key={i}
-                                            label={tech}
-                                            size="small"
-                                            sx={{
-                                                fontSize: 11,
-                                                height: 22,
-                                                color: '#fff',
-                                                background: 'rgba(255,255,255,0.18)',
-                                                border: '0.5px solid rgba(255,255,255,0.35)',
-                                                '& .MuiChip-label': { px: '10px' },
-                                            }}
-                                        />
-                                    ))} */}
-                                    {item.icons?.slice(0, 5).map((tech, i) => (
-                                        <Box sx={{ paddingTop: '0.5rem', paddingBottom: '0'}}>
-                                            {tech.src && <tech.src size={25} color='#fff' />}
-                                        </Box>
-                                    ))}
+                        <Box className="card-overlay" />
+                        <CardCover className="card-cover">
+                            <p className="title">{item.title}</p>
+                            <p className="role">Role: {item.role}</p>
+                            {item.tech.some(t => t.display === 'cover') && (
+                                <Box className="chips-box">
+                                    {item.tech
+                                        .filter(t => t.display === 'cover')
+                                        .map((tech, i) => (
+                                            <Chip key={i} label={tech.lable} className="chip" />
+                                        ))}
                                 </Box>
-                                {/* <ViewButton
-                                    variant="outlined"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setSelected(item);
-                                    }}
-                                >
-                                    View
-                                </ViewButton> */}
+                            )}
+                            <Box className="button">
+                                {item.link?.map((link, i) => (
+                                    <Button
+                                        key={i}
+                                        component="a"
+                                        href={link.url}
+                                        target="_blank"
+                                        variant="contained"
+                                        fullWidth
+                                        color='primary'
+                                        startIcon={
+                                            link.type === 'repo'
+                                                ? <GitHubIcon />
+                                                : <DescriptionIcon />
+                                        }
+                                    >{link.label}
+                                    </Button>
+                                ))}
+                                <Button
+                                    component="label"
+                                    variant="contained"
+                                    fullWidth
+                                    color='primary'
+                                    onClick={() => handleOpen(item)}
+                                    startIcon={<ReadMoreIcon />}
+                                >Explore</Button>
                             </Box>
-                        </CardBody>
+                        </CardCover>
                     </CardRoot>
                 ))}
             </ProjectRows>
 
-            {/* Modal */}
             <Dialog
                 open={!!selected}
-                onClose={() => setSelected(null)}
-                maxWidth="sm"
-                fullWidth
-                // PaperProps={{ sx: { borderRadius: 3, p: 1 } }}
+                onClose={handleClose}
+                sx={{
+                    '& .MuiDialog-paper': {
+                        width: '95vw',
+                        height: '95vh',
+                        maxWidth: 'none',
+                        borderRadius: '0.5rem'
+                    }
+                }}
             >
-                <DialogTitle sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pb: 1 }}>
-                    {/* <Typography variant="h6" fontWeight={500}>{selected?.title}</Typography> */}
-                    <IconButton size="small" onClick={() => setSelected(null)}>
-                        <CloseIcon fontSize="small" />
-                    </IconButton>
-                </DialogTitle>
-                <DialogContent>
-                    {selected?.image && (
-                        <Box
-                            component="img"
-                            src={selected.image}
-                            alt={selected.title}
-                            sx={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: 2, mb: 2 }}
-                        />
-                    )}
-                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
-                        {selected?.summary}
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                        {selected?.techStack?.map((tech, i) => (
-                            <Chip key={i} label={tech} size="small" variant="outlined" />
-                        ))}
-                    </Box>
-                </DialogContent>
+                {selected && (
+                    <>
+                        <DetailBox>
+                            <Box className="close-button" >
+                                <IconButton onClick={handleClose} > <CloseIcon /> </IconButton>
+                            </Box>
+
+                            <Box className="main-section">
+                                <Box className="info">
+                                    {selected.detailImg
+                                        ?.filter(img => img.tag === 'case')
+                                        .map((img, i) => (
+                                            <Box key={i} className="img-detail"
+                                                sx={{ backgroundColor: img.bgColor }} >
+                                                <Box component="img" className='img-detail-content'
+                                                    src={img.url}
+                                                    alt={img.lable}
+                                                />
+                                            </Box>
+                                        ))
+                                    }
+                                    <Box className="brief">
+                                        <Box className="brief-title">
+                                            {selected.link?.map((link) => (
+                                                <IconButton color='primary' size='large' href={link.url}
+                                                    target="_blank">
+                                                    {link.type === 'repo'
+                                                        ? <GitHubIcon />
+                                                        : <DescriptionIcon />}
+                                                </IconButton>
+                                            ))}
+                                            <Typography variant="h6" sx={{ my: 1, color: ColorScheme.primary.dark }}> {selected.title} </Typography>
+                                        </Box>
+
+                                        <Typography variant="subtitle2" sx={{ my: 1 }}> {selected.role}</Typography>
+                                        <Box className="chips">
+                                            {selected.tech
+                                                .sort((a, b) => typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type))
+                                                .map((tech, i) => (
+                                                    <Chip
+                                                        key={i}
+                                                        label={tech.lable}
+                                                        icon={tech?.icon && <tech.icon />}
+                                                    />
+                                                ))}
+                                        </Box>
+                                        <Typography variant="body1" sx={{ mb: 1 }}> {selected.summary}</Typography>
+                                    </Box>
+                                </Box>
+                                <Divider sx={{ my: '1.5rem' }} />
+
+
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
+                                <Typography> {selected.solution} </Typography>
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
+                                <Typography> {selected.task} </Typography>
+
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Actions </Typography>
+                                {selected.actions.map((bullet: string) => (
+                                    <ListContainer>
+                                        <ListContent className='list-content'>{bullet}</ListContent>
+                                    </ListContainer>
+                                ))}
+
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Results </Typography>
+                                {selected.results.map((bullet: string) => (
+                                    <ListContainer>
+                                        <ListContent className='list-content'>{bullet}</ListContent>
+                                    </ListContainer>
+                                ))}
+
+                            </Box>
+                        </DetailBox>
+                    </>
+                )}
             </Dialog>
-        </ViewBox>
+        </ViewBox >
     );
 }

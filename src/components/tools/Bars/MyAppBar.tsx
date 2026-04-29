@@ -15,6 +15,7 @@ import { MenuIcon } from 'src/components/mui/icons';
 import { ColorScheme } from "src/theme/UIstandard"
 import BackToTop from 'src/components/tools/BackToTop/BackToTop';
 
+
 export default function Appbar() {
   /*
    The difference between the two responsive layouts is not obvious,
@@ -49,7 +50,6 @@ export default function Appbar() {
   // set App Bar Height
   useEffect(() => {
     const updateHeight = () => {
-      console.log('appBarHeight', appBarHeight)
       if (appBarRef.current) {
         setAppBarHeight(appBarRef.current.offsetHeight);
       }
@@ -59,20 +59,19 @@ export default function Appbar() {
     return () => window.removeEventListener('resize', updateHeight);
   }, [appBarHeight]);
 
+
   return (
     <BaseAppBar>
       {ROUTES.map(({ path, name, icon: Icon }) => (
         <Tooltip key={path} title={name} placement="right">
           <IconButton
-            color="info"
-            sx={{ boxShadow: '0' }}
-            // size="small"
             onClick={() => handleScroll(path)}
+            sx={{ color: ColorScheme.primary.dark }}
           >
             <Icon />
           </IconButton>
         </Tooltip>
       ))}
-    </BaseAppBar >
+    </BaseAppBar>
   )
 }

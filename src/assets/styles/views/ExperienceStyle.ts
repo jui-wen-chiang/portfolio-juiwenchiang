@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
 import * as base from "src/assets/styles/baseStyle";
-
-import { Stepper, Card, List, ListItem } from 'src/components/mui/components';
+import { Stepper, Card} from 'src/components/mui/components';
 
 
 const StyledStepper = styled(Stepper)(({ theme }) => ({
@@ -10,10 +9,10 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
     maxWidth: '80vw',
   },
   [theme.breakpoints.up('sm')]: {
-    maxWidth: '800px'
+    maxWidth: '100vw'
   },
   [theme.breakpoints.up('lg')]: {
-    maxWidth: '1000px'
+    maxWidth: '100vw'
   },
   // "& .MuiStepLabel-root .Mui-completed": "{color: 'theme.secondary.dark'}",
   // Just text label (COMPLETED)
@@ -26,10 +25,11 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
   // "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {fill: 'black'},
 }));
 
-const StepCard = styled(Card)(({ theme }) => ({
+const StepCard = styled(Card)(() => ({
   width: '100%',
-  backgroundColor: theme.palette.neutral.main,
+  ...base.basePaperColor,
   ...base.commBorderRadius,
+  ...base.baseBoxShadow
 }));
 
 

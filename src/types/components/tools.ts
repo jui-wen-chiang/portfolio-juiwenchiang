@@ -1,15 +1,16 @@
 import type { ReactNode } from "react";
-import type { IconType } from 'react-icons';
+import type { ViewItems } from "src/types/view/index";
 
-interface BaseDialogProps {
+export interface BaseDialogProps {
     isOpen: boolean;
     closeDialog: () => void;
+    state?: string;
     title?: string;
     content?: any;
     extra?: React.ReactNode;
 };
 
-interface ControlBarProps {
+export interface ControlBarProps {
     activeIndex: number;
     isPlaying: boolean;
     items: { title: string }[];
@@ -19,40 +20,49 @@ interface ControlBarProps {
     setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-interface LinkBarProps {
+export interface LinkBarProps {
     simplyResumeIcon?: boolean;
 };
 
-interface ScrollTopBaseProps {
+export interface ScrollTopBaseProps {
     children: ReactNode;
     threshold?: number;
     alwaysVisible?: boolean;
 }
 
-interface BackToTopProps {
+export interface BackToTopProps {
     variant: string;
     alwaysVisible?: boolean;
     textContent?: string;
-    iconNode?: any
+    iconNode?: any;
 }
 
-
-interface SkillList {
+export interface SkillList {
     category: string;
     technologies: TechnologyProps[];
 }
-interface TechnologyProps {
+export interface TechnologyProps {
     name: string;
-    icon?: IconType;
+    icon?: any;
     class: string;
 }
 
-export {
-    BaseDialogProps,
-    ControlBarProps,
-    LinkBarProps,
-    ScrollTopBaseProps,
-    BackToTopProps,
-    SkillList,
-    TechnologyProps
+
+export interface BackgroundBlobsProps {
+    variant?: ViewItems;
+    side?: 'right' | 'left' | 'both';
+}
+
+export interface BlobItem {
+    width: number;
+    height: number;
+    top?: number | string;
+    bottom?: number | string;
+    left?: number | string;
+    right?: number | string;
+    rotate?: number;
+    borderRadius?: string,
+    background: string;
+    filter?: string;
+    zIndex?: number;
 }

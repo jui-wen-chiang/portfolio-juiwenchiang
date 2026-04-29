@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { Container, Box, Button, IconButton, FormControl, MenuItem, Select } from 'src/components/mui/components';
+import { Container, IconButton, FormControl, MenuItem, Select } from 'src/components/mui/components';
 import { ControlButton } from 'src/assets/styles/commonStyles'
 
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
@@ -8,6 +7,7 @@ import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import PauseCircleFilledRoundedIcon from '@mui/icons-material/PauseCircleFilledRounded';
 
 import type { ControlBarProps } from "src/types/components/tools"
+
 
 export default function ControlBar({
     activeIndex,

@@ -1,0 +1,56 @@
+
+const eduData = [
+    {
+        class: 'education',
+        title: 'Computer Programming Diploma',
+        date: '2025 January - 2026 April',
+        location: "George Brown College, Toronto",
+        description: [
+            "Database Management course",
+            "Database Management course",
+            "Object Oriented Programming course",
+            "Web Develop course",
+            "Full-stack development course",
+        ]
+    },
+    {
+        class: 'certification',
+        title: 'Al Smart Application Development Practical Training Course',
+        date: '2022 January - 2022 March',
+        location: "Commerce Development Research Institute, Taiwan",
+        description: [
+            "Fine-tuned NLP models using TensorFlow and BERT, improving classification accuracy.",
+            "Parsed online data using BeautifulSoup to build training datasets for sentiment analysis.",
+            "Created a chatbot with LINE API integration to provide users with an alternative UI.",
+            "Designed and created dashboards using Tableau, reducing users' data search time.",
+            "Utilized Figma for designing user interfaces for mobile applications."
+        ]
+    },
+    {
+        class: 'certification',
+        title: 'UI/UX Interface Design Course',
+        date: '2021 March - 2021 June',
+        location: "Workforce Development Agency, Taiwan",
+        description: [
+            "UI/UX Design Aesthetics",
+            "Interface Design Process and Practice",
+            "Responsive Web Design (RWD)",
+            "Mobile App Product Planning and Design",
+        ]
+    },
+    {
+        class: 'education',
+        title: 'Bachelor of Art and Design Degree',
+        date: '2013 - 2017',
+        location: "National Dong Hwa University, Taiwan",
+        description: [
+            "Aesthetic",
+            "Basic Design",
+            "Color Theory",
+            "Product Packing Design",
+        ]
+    },
+];
+
+
+export { eduData }
