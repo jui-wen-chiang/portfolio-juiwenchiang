@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { projecstData } from "src/data/projectsData";
+import { projecstData } from "src/data/views/projectsData";
 import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
@@ -12,6 +12,8 @@ export default function ProjectsView() {
     const [selected, setSelected] = useState<typeof projecstData[0] | null>(null);
     const handleOpen = (item: typeof projecstData[0]) => setSelected(item);
     const handleClose = () => setSelected(null);
+
+    const typeOrder = ['frontend', 'backend', 'database', 'ai', 'devops', 'tool', 'design'];
 
     return (
         <ViewBox data-aos="zoom-in">
@@ -29,16 +31,16 @@ export default function ProjectsView() {
                         <CardCover className="card-cover">
                             <p className="title">{item.title}</p>
                             <p className="role">Role: {item.role}</p>
-                            {item.tech.some(t => t.display === 'cover' && t.icon) && (
+                            {item.tech.some(t => t.display === 'cover') && (
                                 <Box className="chips-box">
                                     {item.tech
-                                        .filter(t => t.display === 'cover' && t.icon)
+                                        .filter(t => t.display === 'cover')
                                         .map((tech, i) => (
                                             <Chip key={i} label={tech.lable} className="chip" />
                                         ))}
                                 </Box>
                             )}
-                            <Box className="button" >
+                            <Box className="button">
                                 {item.link?.map((link, i) => (
                                     <Button
                                         key={i}
@@ -118,13 +120,15 @@ export default function ProjectsView() {
 
                                         <Typography variant="subtitle2" sx={{ my: 1 }}> {selected.role}</Typography>
                                         <Box className="chips">
-                                            {selected.tech.map((tech, i) => (
-                                                <Chip
-                                                    key={i}
-                                                    label={tech.lable}
-                                                    icon={tech?.icon && <tech.icon />}
-                                                />
-                                            ))}
+                                            {selected.tech
+                                                .sort((a, b) => typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type))
+                                                .map((tech, i) => (
+                                                    <Chip
+                                                        key={i}
+                                                        label={tech.lable}
+                                                        icon={tech?.icon && <tech.icon />}
+                                                    />
+                                                ))}
                                         </Box>
                                         <Typography variant="body1" sx={{ mb: 1 }}> {selected.summary}</Typography>
                                     </Box>

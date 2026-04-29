@@ -55,6 +55,12 @@ const skillData: Array<SkillList> = [
             { class: 'frontend', name: 'CSS', icon: Css3OriginalIcon },
             { class: 'frontend', name: 'React', icon: ReactOriginalIcon },
             { class: 'frontend', name: 'Vuejs', icon: VuejsOriginalIcon },
+            // -- extra --
+            // { class: 'frontend', name: 'Tailwind CSS', icon: TailwindcssOriginalIcon },
+            // { class: 'Bootstrap', name: 'Vuejs', icon: BootstrapPlainIcon },
+            // { class: 'frontend', name: 'Material UI', icon: MaterialuiOriginalIcon },
+            // { class: 'frontend', name: 'Vite', icon: ViteOriginalIcon },
+            // { class: 'frontend', name: 'Eslint', icon: EslintPlainIcon },
         ]
     },
     {
@@ -66,6 +72,10 @@ const skillData: Array<SkillList> = [
             { class: 'backend', name: 'Django', icon: DjangoPlainIcon },
             { class: 'backend', name: 'C#', icon: CsharpPlainIcon },
             { class: 'backend', name: 'Java', icon: JavaOriginalIcon },
+            // -- extra --
+            // { class: 'backend', name: 'ASPNet', icon: DotNetPlainIcon },
+            // { class: 'backend', name: 'PHP', icon: PhpOriginalIcon },
+            // { class: 'backend', name: 'Flask', icon: FlaskOriginalIcon },
         ]
     },
     {
@@ -88,6 +98,11 @@ const skillData: Array<SkillList> = [
             { class: 'tool', name: 'Supabase', icon: SupabasePlainIcon },
             { class: 'design', name: 'Figma', icon: FigmaPlainIcon },
             { class: 'design', name: 'Illustrator', icon: IllustratorPlainIcon },
+            // -- extra --
+            // { class: 'tool', name: 'Anaconda', icon: AnacondaOriginalIcon },
+            // { class: 'tool', name: 'Sonarqube', icon: SonarqubeOriginalIcon },
+            // { class: 'tool', name: 'Jenkins', icon: JenkinsOriginalIcon },
+            // { class: 'design', name: 'Photoshop', icon: PhotoshopPlainIcon },
         ]
     }
 ];

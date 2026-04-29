@@ -1,4 +1,4 @@
-import { aboutData } from "src/data/aboutData";
+import { aboutData } from "src/data/views/aboutData";
 import { Typography, Box, Chip } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ColorScheme } from 'src/theme/UIstandard';

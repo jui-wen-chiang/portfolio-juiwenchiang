@@ -8,7 +8,8 @@ export type techCategory =
     | "database"
     | "ai"
     | "devops"
-    | "tool";
+    | "tool"
+    | "design";
 
 export interface projects {
     type: "side" | "business";

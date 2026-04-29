@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
-import { eduData } from "src/data/eduData"
+import { eduData } from "src/data/views/eduData"
 import { StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
 import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';

@@ -4,8 +4,8 @@ const experienceData = [
         class: 'career',
         title: 'AI Research Assistant',
         date: '2025 October - 2025 December',
-        location: "George Brown College",
-        src: "https://www.mirle.com.tw/en/",
+        location: "George Brown College Research & Innovation Division",
+        src: "https://www.georgebrown.ca/research-innovation",
         description: [
             "Aligned cross-functional teams on RAG/XAI implementation by mapping complex architectures into clear system diagrams.",
             "Validated UXAgent integration feasibility by testing output compatibility across client platforms.",

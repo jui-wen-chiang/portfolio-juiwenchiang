@@ -18,7 +18,6 @@ const eduData = [
         title: 'Al Smart Application Development Practical Training Course',
         date: '2022 January - 2022 March',
         location: "Commerce Development Research Institute, Taiwan",
-        // src: "https://www.mirle.com.tw/en/",
         description: [
             "Fine-tuned NLP models using TensorFlow and BERT, improving classification accuracy.",
             "Parsed online data using BeautifulSoup to build training datasets for sentiment analysis.",
@@ -32,7 +31,6 @@ const eduData = [
         title: 'UI/UX Interface Design Course',
         date: '2021 March - 2021 June',
         location: "Workforce Development Agency, Taiwan",
-        // src: "https://www.mirle.com.tw/en/",
         description: [
             "UI/UX Design Aesthetics",
             "Interface Design Process and Practice",
@@ -45,7 +43,6 @@ const eduData = [
         title: 'Bachelor of Art and Design Degree',
         date: '2013 - 2017',
         location: "National Dong Hwa University, Taiwan",
-        // src: "https://www.mirle.com.tw/en/",
         description: [
             "Aesthetic",
             "Basic Design",

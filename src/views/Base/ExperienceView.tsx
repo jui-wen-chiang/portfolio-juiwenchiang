@@ -1,6 +1,6 @@
 import React from 'react'
-import { experienceData } from "src/data/experienceData"
-import { Typography, Step, StepButton, StepContent, CardContent } from 'src/components/mui/components';
+import { experienceData } from "src/data/views/experienceData"
+import { Typography, Step, StepButton, StepContent, CardContent, Link } from 'src/components/mui/components';
 import { SchoolIcon, WorkIcon, AutoStoriesIcon } from 'src/components/mui/icons';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
@@ -62,6 +62,11 @@ export default function ExperienceView() {
                                         <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.location}
                                         </Typography>
+                                        <Link href={item.src}>
+                                            <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
+                                                {item.src}
+                                            </Typography>
+                                        </Link>
                                         {item.description?.map((bullet, i) => (
                                             <ListContainer key={i}>
                                                 <ListContent className='list-content'>{bullet}</ListContent>

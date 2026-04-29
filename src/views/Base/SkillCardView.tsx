@@ -1,4 +1,4 @@
-import { skillData } from "src/data/skillCardData";
+import { skillData } from "src/data/views/skillCardData";
 import { SkillBox, SkillItemContainer } from 'src/assets/styles/views/SkillCardStyle'
 import { ColContainer } from 'src/assets/styles/commonStyles';
 import { Typography } from 'src/components/mui/components';
