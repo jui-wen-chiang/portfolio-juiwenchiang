@@ -9,7 +9,7 @@ export type techCategory =
     | "ai"
     | "devops"
     | "tool";
-    
+
 export interface projects {
     type: "side" | "business";
     title: string;
@@ -31,10 +31,18 @@ export interface projects {
         label: string,
         url: string
     }>;
+    detailImg?: [{
+        tag: "case";
+        url: string;
+        lable: string;
+        source: string;
+        bgColor: string;
+    }];
     summary: string;
-    problem: string;
     solution: string;
-    impact: string;
+    task: string;
+    actions: Array<string>;
+    results: Array<string>;
 }
 
 export interface timelineItem {

@@ -3,8 +3,9 @@ import { projecstData } from "src/data/projectsData";
 import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
-import CloseIcon from '@mui/icons-material/Close';
-import { ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
+import { CloseIcon, ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
+import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ColorScheme } from 'src/theme/UIstandard'
 
 
 export default function ProjectsView() {
@@ -49,8 +50,8 @@ export default function ProjectsView() {
                                         color='primary'
                                         startIcon={
                                             link.type === 'repo'
-                                                ? <GitHubIcon/>
-                                                : <DescriptionIcon/>
+                                                ? <GitHubIcon />
+                                                : <DescriptionIcon />
                                         }
                                     >{link.label}
                                     </Button>
@@ -83,7 +84,6 @@ export default function ProjectsView() {
             >
                 {selected && (
                     <>
-                        {/* <BackgroundBlobs variant="hero" /> */}
                         <DetailBox>
                             <Box className="close-button" >
                                 <IconButton onClick={handleClose} > <CloseIcon /> </IconButton>
@@ -91,36 +91,66 @@ export default function ProjectsView() {
 
                             <Box className="main-section">
                                 <Box className="info">
-                                    <Typography variant="h5" sx={{ mb: 2 }}> {selected.title} </Typography>
-                                    {selected.link?.map((link) => (
-                                        <IconButton color='primary' size='large' href={link.url}
-                                            target="_blank">
-                                            {link.type === 'repo'
-                                                ? <GitHubIcon />
-                                                : <DescriptionIcon />}
-                                        </IconButton>
-                                    ))}
-                                    <Typography variant="subtitle1" sx={{ mb: 2 }}> {selected.role}</Typography>
-                                    <Box className="chips">
-                                        {selected.tech.map((tech, i) => (
-                                            <Chip
-                                                key={i}
-                                                label={tech.lable}
-                                                icon={tech?.icon && <tech.icon />}
-                                            />
-                                        ))}
+                                    {selected.detailImg
+                                        ?.filter(img => img.tag === 'case')
+                                        .map((img, i) => (
+                                            <Box key={i} className="img-detail"
+                                                sx={{ backgroundColor: img.bgColor }} >
+                                                <Box component="img" className='img-detail-content'
+                                                    src={img.url}
+                                                    alt={img.lable}
+                                                />
+                                            </Box>
+                                        ))
+                                    }
+                                    <Box className="brief">
+                                        <Box className="brief-title">
+                                            {selected.link?.map((link) => (
+                                                <IconButton color='primary' size='large' href={link.url}
+                                                    target="_blank">
+                                                    {link.type === 'repo'
+                                                        ? <GitHubIcon />
+                                                        : <DescriptionIcon />}
+                                                </IconButton>
+                                            ))}
+                                            <Typography variant="h6" sx={{ my: 1, color: ColorScheme.primary.dark }}> {selected.title} </Typography>
+                                        </Box>
+
+                                        <Typography variant="subtitle2" sx={{ my: 1 }}> {selected.role}</Typography>
+                                        <Box className="chips">
+                                            {selected.tech.map((tech, i) => (
+                                                <Chip
+                                                    key={i}
+                                                    label={tech.lable}
+                                                    icon={tech?.icon && <tech.icon />}
+                                                />
+                                            ))}
+                                        </Box>
+                                        <Typography variant="body1" sx={{ mb: 1 }}> {selected.summary}</Typography>
                                     </Box>
                                 </Box>
                                 <Divider sx={{ my: '1.5rem' }} />
-                                <Box className="summary">
-                                    <p className="summary-text"> {selected.summary}</p>
-                                </Box>
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Problem </Typography>
-                                <Typography> {selected.problem} </Typography>
+
+
                                 <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
                                 <Typography> {selected.solution} </Typography>
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Impact </Typography>
-                                <Typography> {selected.impact} </Typography>
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
+                                <Typography> {selected.task} </Typography>
+
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Actions </Typography>
+                                {selected.actions.map((bullet: string) => (
+                                    <ListContainer>
+                                        <ListContent className='list-content'>{bullet}</ListContent>
+                                    </ListContainer>
+                                ))}
+
+                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Results </Typography>
+                                {selected.results.map((bullet: string) => (
+                                    <ListContainer>
+                                        <ListContent className='list-content'>{bullet}</ListContent>
+                                    </ListContainer>
+                                ))}
+
                             </Box>
                         </DetailBox>
                     </>

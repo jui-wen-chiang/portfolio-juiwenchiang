@@ -73,7 +73,7 @@ const CardImg = styled('img')({
     inset: 0,
     width: '100%',
     height: '100%',
-    objectFit: 'cover'
+    // objectFit: 'cover'
 });
 
 
@@ -151,14 +151,38 @@ const DetailBox = styled(Box)({
         padding: '2rem',
         '& .info': {
             display: 'flex',
+            alignItems: 'center',
             flexDirection: 'column',
-            alignItems: 'center'
+
+            '& .img-detail': {
+                padding: '1rem',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: '0.5rem',
+                '& .img-detail-content': {
+                    width: '55%',
+                    borderRadius: '1rem',
+                }
+            },
+            '& .brief': {
+                padding: '0.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                '& .brief-title': {
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap:1.5
+                }
+            }
         },
         '& .chips': {
             display: 'flex',
             flexWrap: 'wrap',
             gap: '0.5rem',
-            mb: 2
+            margin: '1rem 0'
         },
         '& .summary': {
             background: ColorScheme.primary.dark,

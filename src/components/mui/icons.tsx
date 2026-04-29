@@ -1,6 +1,7 @@
 export { default as MenuIcon } from '@mui/icons-material/Menu';
 export { default as WorkIcon } from '@mui/icons-material/Work';
 export { default as SunnyIcon } from '@mui/icons-material/Sunny';
+export { default as CloseIcon } from '@mui/icons-material/Close';
 
 // side bar
 export { default as HomeIcon } from '@mui/icons-material/Home';
