@@ -14,13 +14,39 @@ const ProjectRows = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
         gridTemplateColumns: 'repeat(1fr)',
     },
+    [theme.breakpoints.between('sm', 'md')]: {
+        width: '80%',
+    },
     [theme.breakpoints.up('md')]: {
         gridTemplateColumns: 'repeat(2, 1fr)',
-    },
+    }
 }));
 
+const activeCardStyles = {
+    '& .card-overlay': {
+        background: 'rgba(255, 255, 255, 0.55)',
+    },
+    '& .card-cover': {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        borderRadius: '1rem',
+        '& *': { color: ColorScheme.primary.dark },
+        '& .chip': {
+            background: 'rgba(30,64,175,0.18)',
+            border: '0.5px solid rgba(30,64,175,0.35)',
+        },
+        // '& .button': {
+        //     color: ColorScheme.text.light,
+        // }
+    },
+};
 
-const CardRoot = styled(Box)({
+const CardRoot = styled(Box)(({ theme }) => ({
     position: 'relative',
     borderRadius: '1rem',
     overflow: 'hidden',
@@ -35,49 +61,31 @@ const CardRoot = styled(Box)({
     },
     '&:hover': {
         transform: 'translateY(-8px)',
-        '& .card-overlay': {
-            background: 'rgba(255, 255, 255, 0.55)',
-        },
-        '& .card-cover': {
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: '2rem',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            borderRadius: '1rem',
-            '& * ': {
-                color: ColorScheme.primary.dark
-            },
-            '& .chip': {
-                background: 'rgba(30,64,175,0.18)',
-                border: '0.5px solid rgba(30,64,175,0.35)',
-            },
-            '& .button': {
-                '& .MuiButton-icon *': {
-                    color: `${ColorScheme.text.light} !important`,
-                },
-                '& .MuiButton-root': {
-                    color: ColorScheme.text.light
-                }
-            }
-        },
-    }
-});
+        ...activeCardStyles,
+    },
+    [theme.breakpoints.down('md')]: {
+        height: '18rem',
+        ...activeCardStyles,
+    },
+}));
 
+const CardImgWrapper = styled(Box)({
+    position: 'relative',
+    width: '100%',
+    aspectRatio: '16 / 9',
+    overflow: 'hidden',
+    borderRadius: '0.5rem',
+});
 
 const CardImg = styled('img')({
     position: 'absolute',
     inset: 0,
     width: '100%',
     height: '100%',
-    // objectFit: 'cover'
+    objectFit: 'cover'
 });
 
-
-const CardCover = styled(Box)({
+const CardCover = styled(Box)(({ theme }) => ({
     position: 'absolute',
     bottom: '0.5rem',
     left: '0.5rem',
@@ -92,26 +100,38 @@ const CardCover = styled(Box)({
     borderRadius: '1rem',
     transition: 'all 0.5s ease',
 
+
     '& * ': {
         padding: '0.1rem',
         margin: '0.15rem 0',
         fontSize: '0.75rem',
-        color: ColorScheme.text.light
+        color: ColorScheme.text.light,
+
     },
     '& .title': {
         ...TypographyScheme.subtitle1,
-        color: ColorScheme.text.light
+        color: ColorScheme.text.light,
+        [theme.breakpoints.down('md')]: {
+            color: ColorScheme.primary.dark,
+        },
     },
     '& .role': {
         ...TypographyScheme.body1,
         fontStyle: "normal",
-        color: ColorScheme.text.light
+        color: ColorScheme.text.light,
+        [theme.breakpoints.down('md')]: {
+            color: ColorScheme.primary.dark,
+        },
     },
     '& .chips-box': {
         display: 'flex',
         gap: '0.7rem',
         alignItems: 'center',
-        marginTop: '1rem'
+        flexWrap: 'wrap',
+        marginTop: '1rem',
+        [theme.breakpoints.down('md')]: {
+            marginTop: 0
+        },
     },
     '& .chip': {
         height: 22,
@@ -128,12 +148,14 @@ const CardCover = styled(Box)({
         '& .MuiButton-root': {
             height: '36px',
             whiteSpace: 'nowrap',
-            borderRadius: '2rem'
+            borderRadius: '2rem',
+            color: ColorScheme.text.light,
+        },
+        '&. MuiButton-icon': {
+            color: ColorScheme.text.light,
         }
     }
-});
-
-
+}));
 
 const DetailBox = styled(Box)({
     '& .close-button': {
@@ -174,7 +196,7 @@ const DetailBox = styled(Box)({
                 '& .brief-title': {
                     display: 'flex',
                     flexDirection: 'row',
-                    gap:1.5
+                    gap: 1.5
                 }
             }
         },
@@ -198,7 +220,7 @@ const DetailBox = styled(Box)({
 });
 
 export {
-    ProjectRows, CardRoot, CardImg, CardCover, DetailBox
+    ProjectRows, CardRoot, CardImgWrapper, CardImg, CardCover, DetailBox
 }
 
 

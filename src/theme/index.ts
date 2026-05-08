@@ -4,7 +4,19 @@ import { BreakPointsSchem, TypographyScheme, PaletteScheme } from "src/theme/UIs
 let theme = createTheme({
     breakpoints: { values: BreakPointsSchem },
     typography: TypographyScheme,
-    palette: PaletteScheme
+    palette: PaletteScheme,
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                'html, body, #root': {
+                    margin: 0,
+                    padding: 0,
+                    width: '100%',
+                    overflowX: 'clip',
+                },
+            },
+        },
+    },
 });
 
 theme = responsiveFontSizes(theme);

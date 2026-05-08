@@ -2,7 +2,7 @@ import { Fab, Button } from "@mui/material";
 import { KeyboardArrowUp as KeyboardArrowUpIcon } from "@mui/icons-material";
 import ScrollTopBase from "./ScrollTopBase";
 import type { BackToTopProps } from "src/types/components/tools";
-import { ColorScheme } from "src/theme/UIstandard";
+import { FontFamilyScheme, ColorScheme } from "src/theme/UIstandard";
 
 
 export default function BackToTop(props: BackToTopProps) {
@@ -15,8 +15,9 @@ export default function BackToTop(props: BackToTopProps) {
                 <Button
                     variant="text"
                     sx={{
-                        color:ColorScheme.text.light,
-                        fontSize:'1.3rem'
+                        color: ColorScheme.text.dark,
+                        fontSize: '1.3rem',
+                        fontFamily: FontFamilyScheme.signature
                     }}
                 >
                     {textContent}
@@ -29,7 +30,7 @@ export default function BackToTop(props: BackToTopProps) {
                     size="small"
                     aria-label="scroll back to top"
                     sx={{
-                        color:ColorScheme.text.light,
+                        color: ColorScheme.text.light,
                         backgroundColor: ColorScheme.secondary.dark,
                         '&:hover': {
                             backgroundColor: ColorScheme.secondary.main,
@@ -37,7 +38,7 @@ export default function BackToTop(props: BackToTopProps) {
                         position: 'fixed', bottom: 16, right: 16
                     }}
                 >
-                    <KeyboardArrowUpIcon/>
+                    <KeyboardArrowUpIcon />
                 </Fab>
             );
             break;

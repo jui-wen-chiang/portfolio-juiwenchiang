@@ -1,18 +1,19 @@
 import { styled } from "@mui/material/styles";
 import { Container, Box, Typography } from 'src/components/mui/components';
-import * as base from "src/assets/styles/baseStyle";
 import { ColorScheme } from "src/theme/UIstandard";
 
 
-const HomeContainer = styled(Container)(() => ({
+const HomeContainer = styled(Container)(({ theme }) => ({
     width: '100%',
-    height: '100vh',
+    // height: '100vh',
+    minHeight: '100vh',
     justifyItems: 'center',
     padding: '10rem',
     paddingTop: '13rem',
-    [`@media (max-width:${base.breakpoints.sm}px)`]: {
-        padding: '1.5rem',
-        paddingTop: '7rem'
+    [theme.breakpoints.down('md')]: {
+        minHeight: '100svh',
+        padding: '1rem',
+        paddingTop: '2rem'
     }
 }));
 
@@ -23,12 +24,15 @@ const ContentWrapper = styled(Box)({
     alignItems: 'flex-end'
 });
 
-const ContentBox = styled(Box)(() => ({
+const ContentBox = styled(Box)(({ theme }) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
-    paddingBottom: '5rem'
+    paddingBottom: '5rem',
+    [theme.breakpoints.down('md')]: {
+        paddingBottom: '2rem',
+    }
 }));
 
 const GradientText = styled(Typography)({
@@ -37,7 +41,6 @@ const GradientText = styled(Typography)({
     WebkitTextFillColor: 'transparent',
     lineHeight: 1.3,
     paddingBottom: '1.8rem',
-    // paddingRight: '0.1em',
     fontWeight: 'bold'
 });
 

@@ -1,44 +1,23 @@
 import * as React from 'react';
-import { useState, useRef, useEffect } from "react";
 import ROUTES from "src/router/pageRouters";
-import { useTheme } from '@mui/material/styles';
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
-import { AppBar, Container, Menu, Box } from "src/components/mui/components";
-
-import {
-  BaseAppBar, HorizontalAppBar, HorizontalContainer,
-  VerticalSideBar, VerticalNavBar, VerticalNavItems,
-  XSBoxLayout, MDBoxLayout, CustomMenu, MenuSlotProps, ButtonStyle
-} from 'src/assets/styles/components/appbarStyle'
-import { Toolbar, MenuItem, IconButton, Button, Tooltip } from "src/components/mui/components";
+import { BaseAppBar, HorizontalLayout, CustomMenu, MenuSlotProps,VerticalIconButton } from 'src/assets/styles/components/appbarStyle'
+import { MenuItem, IconButton, Button, Tooltip } from "src/components/mui/components";
 import { MenuIcon } from 'src/components/mui/icons';
 import { ColorScheme } from "src/theme/UIstandard"
 import BackToTop from 'src/components/tools/BackToTop/BackToTop';
 
 
 export default function Appbar() {
-  /*
-   The difference between the two responsive layouts is not obvious,
-   so use sx.display { xs: '', md: '' }
-   instead of useMediaQuery(theme.breakpoints.up('md'))
-   */
-  const [appBarHeight, setAppBarHeight] = useState(64);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const appBarRef = useRef(null);
   const open = Boolean(anchorElNav);
-  const theme = useTheme();
 
-  // const classes = useStyles();
-
-  // scroll to page
-  const handleScroll = (id) => {
+  const handleScroll = (id: any) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Menu
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -47,29 +26,68 @@ export default function Appbar() {
     setAnchorElNav(null);
   };
 
-  // set App Bar Height
-  useEffect(() => {
-    const updateHeight = () => {
-      if (appBarRef.current) {
-        setAppBarHeight(appBarRef.current.offsetHeight);
-      }
-    };
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
-  }, [appBarHeight]);
-
-
   return (
     <BaseAppBar>
+      {/* theme.breakpoints.down('md')) */}
+      <HorizontalLayout>
+        <BackToTop variant="text" textContent="JUI WEN, CHIANG" alwaysVisible={true} />
+        <IconButton
+          onClick={handleOpenNavMenu}
+          size="small"
+          sx={{ ml: 2 }}
+          aria-controls={open ? 'menu-appbar' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}>
+          <MenuIcon sx={{ color: ColorScheme.text.dark }} />
+        </IconButton>
+        <CustomMenu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          open={open}
+          onClose={handleCloseNavMenu}
+          slotProps={{
+            paper: {
+              elevation: 0,
+              sx: (theme) => MenuSlotProps(theme),
+            },
+          }}
+        >
+          {ROUTES.map(({ path, name }) => (
+            <MenuItem key={path} sx={{ justifyContent: 'flex-end' }} >
+              <Button
+                key={path}
+                color="neutral"
+                size="large"
+                onClick={() => {
+                  handleScroll(path);
+                  handleCloseNavMenu();
+                }}
+                sx={{
+                  whiteSpace: 'normal',
+                  wordBreak: 'break-word',
+                  textAlign: 'right',
+                  lineHeight: 1.3,
+                }}
+              >
+                {name}
+              </Button>
+            </MenuItem>
+          ))}
+        </CustomMenu>
+      </HorizontalLayout>
+
+      {/* theme.breakpoints.up('md')) */}
       {ROUTES.map(({ path, name, icon: Icon }) => (
         <Tooltip key={path} title={name} placement="right">
-          <IconButton
+          <VerticalIconButton
             onClick={() => handleScroll(path)}
-            sx={{ color: ColorScheme.primary.dark }}
+            // sx={{
+            //   display: { xs: 'none', md: 'flex' },
+            //   color: ColorScheme.primary.dark,
+            // }}
           >
             <Icon />
-          </IconButton>
+          </VerticalIconButton>
         </Tooltip>
       ))}
     </BaseAppBar>

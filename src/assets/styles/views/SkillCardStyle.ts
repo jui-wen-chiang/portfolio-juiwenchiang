@@ -1,32 +1,54 @@
 import { styled } from '@mui/material/styles';
 import * as base from "src/assets/styles/baseStyle";
-import * as common from "src/assets/styles/commonStyles";
-import type { ContainerProps } from "src/components/mui/components";
 import { Box } from "src/components/mui/components";
 
 
-const SkillBox = styled(Box)(({ theme }) => ({
+const SkillLayout = styled(Box)({
     width: '100%',
-    display: 'grid',
-    margin: '0 auto',
-    gap: theme.spacing(2),
-    gridTemplateColumns: 'repeat(2, 1fr)', // xs
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    paddingTop: '1rem',
 
-    [theme.breakpoints.up('sm')]: {
-        gridTemplateColumns: 'repeat(3, 1fr)',
+    '& .category': {
+        fontWeight: '500',
+        padding: '1rem',
+        textAlign: 'center'
     },
-    [theme.breakpoints.up('md')]: {
-        gridTemplateColumns: 'repeat(4, 1fr)',
+    '& .item-box': {
+        padding: '0.5rem',
+        textAlign: 'center'
+    },
+    '& .skill-name': {
+        display: 'block',
+        fontStyle: 'normal'
+    }
+});
+
+const SkillWrapper = styled(Box)(({ theme }) => ({
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '1rem',
+    [theme.breakpoints.down('md')]: {
+        justifyContent: 'flex-start',
     }
 }));
 
 
-const SkillItemContainer = styled(common.ColContainer)<ContainerProps>({
+const CategoryBox = styled(Box)({
     ...base.basePaperColor,
     ...base.baseBoxShadow,
-    margin: '0.5rem',
-    marginBottom: '1rem',
+    padding: '1rem',
+    minWidth: '80px',
+    maxWidth: '100px',
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
     borderRadius: '0.5rem',
+    flex: '1 1 80px',
+    alignItems: 'center'
 });
 
-export { SkillBox, SkillItemContainer }
+export { SkillLayout, SkillWrapper, CategoryBox }

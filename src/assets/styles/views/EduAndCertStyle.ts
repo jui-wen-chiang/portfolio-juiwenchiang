@@ -1,8 +1,18 @@
 import * as base from "src/assets/styles/baseStyle";
 import { styled } from "@mui/material/styles";
-import { Card } from 'src/components/mui/components';
-import { Tab } from "src/components/mui/components";
+import { Card, Box, Tab } from 'src/components/mui/components';
 import { ColorScheme } from 'src/theme/UIstandard';
+
+
+const TabBox = styled(Box)(({ theme }) => ({
+    width: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '2rem',
+    [theme.breakpoints.down('md')]: {
+        width: '100%'
+    }
+}));
 
 
 const StyledTab = styled(Tab)(({ theme }) => ({
@@ -31,5 +41,5 @@ const ExperienceCard = styled(Card)(() => ({
 }));
 
 
-export { StyledTab, ExperienceCard }
+export { TabBox, StyledTab, ExperienceCard }
 

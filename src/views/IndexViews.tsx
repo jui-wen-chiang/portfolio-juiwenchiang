@@ -1,11 +1,7 @@
-import { useEffect, useRef } from 'react';
-// style
+import { useRef } from 'react';
 import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
 import { ViewsContainer } from 'src/assets/styles/commonStyles';
-// import VantaFogBackground from "src/components/tools/Background/VantaFogBackground";
-// import BackgroundBlobs from "src/components/tools/Background/BackgroundBlobs";
-import * as UIstandard from 'src/theme/UIstandard.ts';
 
 // Base Views
 import HomeView from 'src/views/Base/Home';
@@ -16,11 +12,6 @@ import EduAndCertView from 'src/views/Base/EduAndCertView';
 import ProjectsView from 'src/views/Base/ProjectView';
 import ContactView from 'src/views/Base/ContactView';
 import FooterView from 'src/views/Base/Footer';
-// User Views
-// import MindMapView from 'src/views/User/MindMapView';
-// import TimelineView from 'src/views/User/TimelineView';
-// import TimelinePage from 'src/views/User/timeline';
-// import GalleryView from 'src/views/User/GalleryView';
 
 
 const viewMapping: Array<ViewMappingItem> = [
@@ -59,46 +50,13 @@ const viewMapping: Array<ViewMappingItem> = [
 ];
 
 
-type IndexViewsProps = {
-  onColorChange: (color: string) => void;
-  onSectionChange: (id: string) => void;
-};
-
-export default function IndexViews({ onColorChange, onSectionChange }: IndexViewsProps) {
+export default function IndexViews() {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          const sectionId = (entry.target as HTMLElement).dataset.id;
-          if (!sectionId) return;
-
-          onSectionChange(sectionId);
-
-          const bgColor = UIstandard.BGCOLORS[sectionId as keyof typeof UIstandard.BGCOLORS];
-          if (bgColor) onColorChange(bgColor);
-        });
-      },
-      {
-        root: null,
-        threshold: 0.5,
-      }
-    );
-
-    Object.values(sectionRefs.current).forEach((section) => {
-      if (section instanceof Element) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, [onColorChange, onSectionChange]);
 
   return (
     <ViewsContainer>
       {viewMapping.map((view) => {
-        const mbSetting = view.id === 'home' ? 0 : view.id === 'footer' ? 1.5 : 10;
+        const mySetting = view.id === 'home' ? 0 : view.id === 'footer' ? 1.5 : 10;
 
         return (
           <Box
@@ -108,14 +66,12 @@ export default function IndexViews({ onColorChange, onSectionChange }: IndexView
             sx={{
               width: '100%',
               scrollMarginTop: '80px',
-              my: mbSetting,
-              position: 'relative',
+              my: mySetting
             }}
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current[view.id] = el;
             }}
           >
-            {/* <BackgroundBlobs variant={view.id} /> */}
             {view.component}
           </Box>
         );

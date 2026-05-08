@@ -42,7 +42,7 @@ export default function ExperienceView() {
     return (
         <ViewBox component="section" aria-label="Experience" data-aos="zoom-in">
             <Typography variant="h2" sx={{ textAlign: "center" }}>Experience</Typography>
-            <StyledStepper nonLinear orientation="vertical" activeStep={-1} sx={{ padding: '2rem' }}>
+            <StyledStepper nonLinear orientation="vertical" activeStep={-1}>
                 {experienceData.map((item, index) => {
                     const isOpen = openSteps.includes(index);
 
@@ -55,18 +55,18 @@ export default function ExperienceView() {
                             </StepButton>
                             <StepContent>
                                 <StepCard>
-                                    <CardContent>
+                                   <CardContent>
                                         <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.date}
                                         </Typography>
-                                        <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
+                                        <Typography variant="caption"  sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.location}
                                         </Typography>
-                                        <Link href={item.src}>
-                                            <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
+                                        {/* <Link href={item.src}>
+                                            <Typography variant="caption" noWrap={false} sx={{ display: "block", margin: '0.5rem' }}>
                                                 {item.src}
                                             </Typography>
-                                        </Link>
+                                        </Link> */}
                                         {item.description?.map((bullet, i) => (
                                             <ListContainer key={i}>
                                                 <ListContent className='list-content'>{bullet}</ListContent>

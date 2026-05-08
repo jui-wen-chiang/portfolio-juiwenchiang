@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { projecstData } from "src/data/views/projectsData";
 import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
-import { ProjectRows, CardRoot, CardImg, CardCover, DetailBox } from 'src/assets/styles/views/ProjectStyle';
+import {
+    ProjectRows, CardRoot, CardImgWrapper, CardImg, CardCover, DetailBox
+} from 'src/assets/styles/views/ProjectStyle';
 import { CloseIcon, ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { ColorScheme } from 'src/theme/UIstandard'
@@ -21,12 +23,14 @@ export default function ProjectsView() {
             <ProjectRows>
                 {projecstData.map((item, index) => (
                     <CardRoot className="card-root" key={index}>
-                        <CardImg
-                            className="card-img"
-                            src={item.img.url}
-                            alt={item.img.lable}
-                            loading="lazy"
-                        />
+                        <CardImgWrapper>
+                            <CardImg
+                                className="card-img"
+                                src={item.img.url}
+                                alt={item.img.lable}
+                                loading="lazy"
+                            />
+                        </CardImgWrapper>
                         <Box className="card-overlay" />
                         <CardCover className="card-cover">
                             <p className="title">{item.title}</p>

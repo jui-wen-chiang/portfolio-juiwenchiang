@@ -35,3 +35,7 @@ export { default as ReadMoreIcon } from '@mui/icons-material/ReadMore';
 export { default as MoreIcon } from '@mui/icons-material/More';
 export { default as DescriptionIcon } from '@mui/icons-material/Description';
 export { default as CloudDownloadIcon } from '@mui/icons-material/CloudDownload';
+
+
+export { default as ExpandLessIcon } from '@mui/icons-material/ExpandLess';
+export { default as ExpandMoreIcon } from '@mui/icons-material/ExpandMore';

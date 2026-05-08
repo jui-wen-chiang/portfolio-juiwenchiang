@@ -1,32 +1,68 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useTheme, useMediaQuery } from '@mui/material';
+
 import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { eduData } from "src/data/views/eduData"
-import { StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
-import { Box, Tabs, Typography, CardContent } from 'src/components/mui/components';
+import { TabBox, StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
+import { Box, Tabs, Typography, CardContent, Collapse, IconButton } from 'src/components/mui/components';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ExpandLessIcon, ExpandMoreIcon } from 'src/components/mui/icons';
+
 
 
 function CustomTabPanel(props: TabPanelProps) {
   const { items } = props;
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(prev => prev === index ? null : index);
+  };
 
   return (
-    <ExperienceCard>
-      <CardContent>
-        {items.map((item) => (
-          <Box sx={{ padding: '0.8rem 0' }}>
-            <Typography variant="subtitle1" className='title'>{item.title}</Typography>
-            <Typography variant="caption" className='info'>{item.date} </Typography>
-            <Typography variant="caption" className='info'>{item.location} </Typography>
-            {item.description?.map((bullet: string) => (
-              <ListContainer>
-                <ListContent className='list-content'>{bullet}</ListContent>
-              </ListContainer>
-            ))}
-          </Box>
-        ))}
+    // <Box>
+      <ExperienceCard>
+        <CardContent>
+      {items.map((item, index) => (
+        <Box sx={{ padding: '0.8rem 0' }}>
+          <Typography variant="subtitle1" className='title'>{item.title}</Typography>
+          {isMobile ? (
+            <Box
+              onClick={() => handleToggle(index)}
+              sx={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
+            >
+              <Typography variant="caption" className='info'>{item.date}</Typography>
+              <Typography variant="caption" className='info'>{item.location}</Typography>
+              {openIndex === index
+                ? <IconButton aria-label="ExpandLess"><ExpandLessIcon /></IconButton>
+                : <IconButton aria-label="ExpandMore"><ExpandMoreIcon /></IconButton>}
+              <Collapse in={openIndex === index}>
+                {item.description?.map((bullet: string, i: number) => (
+                  <ListContainer key={i}>
+                    <ListContent className='list-content'>{bullet}</ListContent>
+                  </ListContainer>
+                ))}
+              </Collapse>
+            </Box>
+          ) : (
+            <>
+              <Typography variant="caption" className='info'>{item.date}</Typography>
+              <Typography variant="caption" className='info'>{item.location}</Typography>
+              {item.description?.map((bullet: string) => (
+                <ListContainer>
+                  <ListContent className='list-content'>{bullet}</ListContent>
+                </ListContainer>
+              ))}
+            </>
+          )}
+        </Box>
+      ))}
       </CardContent>
-    </ExperienceCard >
+      </ExperienceCard >
+    // </Box>
   );
 }
 
@@ -51,15 +87,16 @@ export default function EduAndCertView() {
   return (
     <ViewBox component="section" aria-label="Education" data-aos="zoom-in" sx={{ justifyContent: 'center', alignItems: 'center' }}>
       <Typography variant="h2" sx={{ textAlign: "center" }}>Education & Professional Development</Typography>
-      <Box sx={{ width: '80%', display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+      <TabBox>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
-          variant="scrollable"
+          // variant="scrollable"
+          variant="fullWidth"
           scrollButtons="auto"
           allowScrollButtonsMobile
-          sx={{marginBottom:'0.5rem'}}
+          sx={{ marginBottom: '0.5rem' }}
         >
           {categoryData.map((item: { [key: string]: any }) => (
             <StyledTab key={item.class} label={item.class} value={item.class} />
@@ -70,7 +107,7 @@ export default function EduAndCertView() {
             <CustomTabPanel key={category.class} items={category.children} />
           ) : null
         )}
-      </Box>
+      </TabBox>
     </ViewBox>
   );
 };

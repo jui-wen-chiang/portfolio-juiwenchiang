@@ -115,3 +115,6 @@ export type { DrawerProps } from "@mui/material/Drawer";
 // alert
 export { default as Alert } from '@mui/material/Alert';
 export { default as AlertTitle } from '@mui/material/AlertTitle';
+
+// collapse
+export { default as Collapse } from '@mui/material/Collapse';

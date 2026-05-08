@@ -1,11 +1,13 @@
 import { styled, alpha, type Theme } from '@mui/material/styles';
-import * as base from "src/assets/styles/baseStyle";
-import { AppBar, Container, Menu, Box, Toolbar } from "src/components/mui/components";
+import { AppBar, Menu, Box, IconButton } from "src/components/mui/components";
+import { ColorScheme } from "src/theme/UIstandard"
 
-//-----
+
+// Display vertical app bar on large screens (≥1200px) 
+// Ortherwise will be horizontal app bar
+
 const BaseAppBar = styled(AppBar)(({ theme }) => ({
     width: '100%',
-    height: '100vh',
     // vertical app bar
     position: 'sticky',
     backgroundColor: 'transparent',
@@ -13,8 +15,11 @@ const BaseAppBar = styled(AppBar)(({ theme }) => ({
     alignItems: 'center',
     boxShadow: 'none',
 
+    [theme.breakpoints.up('lg')]: {
+        height: '100vh',
+    },
     // horizontal app bar
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('lg')]: {
         position: "fixed",
         display: 'flex',
         flexDirection: 'row',
@@ -22,62 +27,28 @@ const BaseAppBar = styled(AppBar)(({ theme }) => ({
         alignItems: 'start',
     }
 }));
-//------
 
-// horizontal bar
-const HorizontalAppBar = styled(AppBar)(({ theme }) => ({
-    height: 70,
-    boxShadow: 'none',
-    backgroundColor: 'transparent',
-    backgroundImage: 'none',
-}));
-
-const HorizontalContainer = styled(Container)(({ theme }) => ({
-    ...base.baseBoxShadow,
-    width: '95%',
-    height: '7vh',
-    padding: '2rem',
-    marginTop: `calc(var(--template-frame-height, 0px) + 0.5rem)`,
-    display: 'flex',
-    alignItems: 'center',
-    backdropFilter: 'blur(24px)',
-    backgroundColor: alpha(theme.palette.primary.main, 0.4),
-    borderRadius: `calc(${theme.shape.borderRadius}px + 5rem)`,
-}));
-
-const XSBoxLayout = styled(Box)(({ theme }) => ({
+const HorizontalLayout = styled(Box)(({ theme }) => ({
     width: '100%',
+    height: '7vh',
+    padding: '1rem',
     flexGrow: 1,
     display: 'flex',
     alignItems: 'center',
     justifyContent: "space-between",
-    [theme.breakpoints.up('md')]: {
-        display: 'none',
+    backdropFilter: 'blur(24px)',
+    backgroundColor: alpha(theme.palette.primary.main, 0.5),
+    [theme.breakpoints.up('lg')]: {
+        display: 'none'
     }
 }));
 
-const MDBoxLayout = styled(Box)(({ theme }) => ({
-    width: '100%',
-    flexGrow: 1,
-    display: 'none',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'flex-end',
-    [theme.breakpoints.up('md')]: {
-        display: 'flex',
-    }
-}));
 
 const CustomMenu = styled(Menu)(({ theme }) => ({
     "& .MuiPaper-root": {
-        width: '90vw',
-        // maxWidth: '90vw',
-        // minWidth: '90vw',
-        display: 'block',
-        // right: '0 !important',
         boxShadow: 'none',
         backdropFilter: 'blur(24px)',
-        backgroundColor: alpha(theme.palette.primary.main, 0.4),
+        backgroundColor: alpha(theme.palette.primary.main, 0.4)
     },
 }));
 
@@ -108,61 +79,12 @@ const MenuSlotProps = (theme: Theme) => ({
     },
 });
 
-const ButtonStyle = {
-    padding: "0 1rem",
-    fontSize: '1.2rem',
-    ...base.dmSerifFontFamily
-};
-
-// vertical bar
-const VerticalSideBar = styled(Box)({
-    top: '0',
-    left: '10',
-    bottom: '0',
-    width: '10%',
-    boxShadow: '0',
-    bgcolor: 'transparent',
-    backgroundImage: 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-    // margin: '2rem'
-});
-
-const VerticalNavBar = styled(Toolbar)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: "column",
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexShrink: 0,
-
-    // 覆蓋毛玻璃效果
-    // position: 'fixed',
-    // width: '100%',
-    // zIndex: 100,
-    // backgroundColor: 'rgba(255, 255, 255, 0.7)', // 半透明白
-    // backdropFilter: 'blur(10px)', // 毛玻璃效果
-    // borderBottom: '1px solid rgba(0, 0, 0, 0.05)', // 極淡的細線
+const VerticalIconButton = styled(IconButton)(({ theme }) => ({
+    color: ColorScheme.primary.dark,
+    [theme.breakpoints.down('lg')]: {
+        display: 'none'
+    }
 }));
 
-const VerticalNavItems = styled(Box)({
-    display: 'flex',
-    flexDirection: "column",
-    alignItems: 'center',
-    gap: 10
-});
 
-export {
-    BaseAppBar,
-    HorizontalAppBar,
-    HorizontalContainer,
-    XSBoxLayout,
-    MDBoxLayout,
-    CustomMenu,
-    MenuSlotProps,
-    ButtonStyle,
-    VerticalSideBar,
-    VerticalNavBar,
-    VerticalNavItems
-}
+export { BaseAppBar, HorizontalLayout, CustomMenu, MenuSlotProps, VerticalIconButton }

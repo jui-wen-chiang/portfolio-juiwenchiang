@@ -10,7 +10,7 @@ export default function AboutView() {
         <ViewBox component="section" aria-label="About" data-aos="fade-left"
             sx={{ position: 'relative', overflow: 'hidden' }}>
             <Typography variant="h2" sx={{ textAlign: "center" }}>About</Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', padding: '2rem' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', padding: '2rem',  }}>
                 {aboutData.services.map((item, index) => {
                     return (
                         <Chip key={index} label={item.tag}
@@ -18,14 +18,15 @@ export default function AboutView() {
                                 mr: 2,
                                 boxShadow: 1,
                                 color: ColorScheme.text.light,
-                                backgroundColor: ColorScheme.secondary.dark
+                                backgroundColor: ColorScheme.secondary.dark,
+                                margin:'0.5rem'
                             }}
                         />
                     )
                 })}
             </Box>
             <Typography>{aboutData.summary}</Typography>
-            <br/>
+            <br />
             <Typography>Highlights:</Typography>
             {aboutData.highlights.map((bullet: string) => (
                 <ListContainer>
