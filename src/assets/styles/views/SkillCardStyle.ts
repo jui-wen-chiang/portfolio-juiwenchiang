@@ -31,8 +31,10 @@ const SkillWrapper = styled(Box)(({ theme }) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     gap: '1rem',
-    [theme.breakpoints.down('md')]: {
-        justifyContent: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+        // justifyContent: 'flex-start',
+        // justifyContent: 'space-between',
+        justifyContent: 'center'
     }
 }));
 

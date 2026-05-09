@@ -5,12 +5,12 @@ import { ColorScheme } from 'src/theme/UIstandard';
 
 
 const TabBox = styled(Box)(({ theme }) => ({
+    ...base.responsivePadding(theme, 'compact'),
     width: '80%',
     display: 'flex',
     flexDirection: 'column',
-    padding: '2rem',
     [theme.breakpoints.down('md')]: {
-        width: '100%'
+        width: '100%',
     }
 }));
 
@@ -23,6 +23,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
         fontSize: '0.9rem',
     }
 }));
+
 
 const ExperienceCard = styled(Card)(() => ({
     ...base.commBorderRadius,
@@ -37,6 +38,15 @@ const ExperienceCard = styled(Card)(() => ({
     '& .info': {
         display: "block",
         margin: '0.3rem',
+    },
+    '& .expand-box': {
+        display: 'flex',
+        flexDirection: 'column',
+        cursor: 'pointer'
+    },
+    '& .expand-button': {
+        color:ColorScheme.secondary.dark,
+        margin:'0.5rem 0'
     }
 }));
 

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
-import { ViewsContainer } from 'src/assets/styles/commonStyles';
+import { responsiveSectionSpacing, ViewsContainer } from 'src/assets/styles/commonStyles';
 
 // Base Views
 import HomeView from 'src/views/Base/Home';
@@ -56,18 +56,13 @@ export default function IndexViews() {
   return (
     <ViewsContainer>
       {viewMapping.map((view) => {
-        const mySetting = view.id === 'home' ? 0 : view.id === 'footer' ? 1.5 : 10;
 
         return (
           <Box
             key={view.id}
             data-id={view.id}
             id={view.id}
-            sx={{
-              width: '100%',
-              scrollMarginTop: '80px',
-              my: mySetting
-            }}
+            sx={(theme) => responsiveSectionSpacing(theme, view.id)}
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current[view.id] = el;
             }}

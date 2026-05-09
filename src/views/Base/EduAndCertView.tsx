@@ -5,7 +5,7 @@ import { useTheme, useMediaQuery } from '@mui/material';
 import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { eduData } from "src/data/views/eduData"
 import { TabBox, StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
-import { Box, Tabs, Typography, CardContent, Collapse, IconButton } from 'src/components/mui/components';
+import { Box, Tabs, Typography, CardContent, Collapse, Button } from 'src/components/mui/components';
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import { ExpandLessIcon, ExpandMoreIcon } from 'src/components/mui/icons';
@@ -22,47 +22,45 @@ function CustomTabPanel(props: TabPanelProps) {
     setOpenIndex(prev => prev === index ? null : index);
   };
 
-  return (
-    // <Box>
-      <ExperienceCard>
-        <CardContent>
-      {items.map((item, index) => (
-        <Box sx={{ padding: '0.8rem 0' }}>
-          <Typography variant="subtitle1" className='title'>{item.title}</Typography>
-          {isMobile ? (
-            <Box
-              onClick={() => handleToggle(index)}
-              sx={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
-            >
-              <Typography variant="caption" className='info'>{item.date}</Typography>
-              <Typography variant="caption" className='info'>{item.location}</Typography>
-              {openIndex === index
-                ? <IconButton aria-label="ExpandLess"><ExpandLessIcon /></IconButton>
-                : <IconButton aria-label="ExpandMore"><ExpandMoreIcon /></IconButton>}
-              <Collapse in={openIndex === index}>
-                {item.description?.map((bullet: string, i: number) => (
-                  <ListContainer key={i}>
-                    <ListContent className='list-content'>{bullet}</ListContent>
-                  </ListContainer>
-                ))}
-              </Collapse>
-            </Box>
-          ) : (
-            <>
-              <Typography variant="caption" className='info'>{item.date}</Typography>
-              <Typography variant="caption" className='info'>{item.location}</Typography>
-              {item.description?.map((bullet: string) => (
-                <ListContainer>
-                  <ListContent className='list-content'>{bullet}</ListContent>
-                </ListContainer>
-              ))}
-            </>
-          )}
-        </Box>
+  const DescriptionList = ({ items: bullets }: { items: string[] }) => (
+    <>
+      {bullets.map((bullet, i) => (
+        <ListContainer key={i}>
+          <ListContent className='list-content'>{bullet}</ListContent>
+        </ListContainer>
       ))}
+    </>
+  );
+
+  return (
+    <ExperienceCard>
+      <CardContent>
+        {items.map((item, index) => (
+          <Box sx={{ padding: '0.8rem 0' }}>
+            <Typography variant="subtitle1" className='title'>{item.title}</Typography>
+            <Typography variant="caption" className='info'>{item.date}</Typography>
+            <Typography variant="caption" className='info'>{item.location}</Typography>
+            {isMobile ? (
+              <Box onClick={() => handleToggle(index)} className='expand-box'>
+                <Button aria-label={openIndex === index ? 'ExpandLess' : 'ExpandMore'}
+                className='expand-button'
+                  variant="outlined"
+                  size="small"
+                  endIcon={openIndex === index ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                >
+                  {openIndex === index ? 'Expand Less' : 'Expand More'}
+                </Button>
+                <Collapse in={openIndex === index}>
+                  <DescriptionList items={item.description ?? []} />
+                </Collapse>
+              </Box>
+            ) : (
+              <DescriptionList items={item.description ?? []} />
+            )}
+          </Box>
+        ))}
       </CardContent>
-      </ExperienceCard >
-    // </Box>
+    </ExperienceCard >
   );
 }
 

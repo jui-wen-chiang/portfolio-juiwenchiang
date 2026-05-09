@@ -1,4 +1,5 @@
 import React from 'react'
+import { useMediaQuery, useTheme } from '@mui/material';
 import { experienceData } from "src/data/views/experienceData"
 import { Typography, Step, StepButton, StepContent, CardContent, Link } from 'src/components/mui/components';
 import { SchoolIcon, WorkIcon, AutoStoriesIcon } from 'src/components/mui/icons';
@@ -9,6 +10,9 @@ import { ColorScheme } from 'src/theme/UIstandard';
 
 
 export default function ExperienceView() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
     const [openSteps, setOpenSteps] = React.useState<number[]>(() =>
         // default open items
         experienceData.reduce<number[]>((acc, item, index) => {
@@ -25,7 +29,8 @@ export default function ExperienceView() {
         );
     };
 
-    const IconColor = (step: number) => () => {
+    const IconColor = (step: number) => {
+        if (isMobile) return ColorScheme.primary.dark;
         return openSteps.includes(step) ? ColorScheme.primary.dark : 'black';
     };
 
@@ -44,22 +49,25 @@ export default function ExperienceView() {
             <Typography variant="h2" sx={{ textAlign: "center" }}>Experience</Typography>
             <StyledStepper nonLinear orientation="vertical" activeStep={-1}>
                 {experienceData.map((item, index) => {
-                    const isOpen = openSteps.includes(index);
+                    const isOpen = isMobile || openSteps.includes(index);
 
                     return (
                         <Step key={item.title} expanded={isOpen}>
-                            <StepButton icon={StepIcon(item.class)} onClick={toggleStep(index)} sx={{ color: IconColor(index) }}>
+                            <StepButton icon={StepIcon(item.class)} onClick={toggleStep(index)}
+                                sx={{
+                                    color: IconColor(index)
+                                }}>
                                 <Typography variant="h6" sx={{ color: IconColor(index) }}>
                                     {item.title}
                                 </Typography>
                             </StepButton>
                             <StepContent>
                                 <StepCard>
-                                   <CardContent>
+                                    <CardContent>
                                         <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.date}
                                         </Typography>
-                                        <Typography variant="caption"  sx={{ display: "block", margin: '0.5rem' }}>
+                                        <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.location}
                                         </Typography>
                                         {/* <Link href={item.src}>

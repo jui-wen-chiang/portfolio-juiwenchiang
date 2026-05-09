@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box } from 'src/components/mui/components';
+import * as base from "src/assets/styles/baseStyle";
 import { ColorScheme, TypographyScheme } from 'src/theme/UIstandard';
 
 
@@ -11,15 +12,15 @@ const ProjectRows = styled(Box)(({ theme }) => ({
     display: 'grid',
     gap: '2rem',
     mt: 2,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.down('md')]: {
         gridTemplateColumns: 'repeat(1fr)',
     },
-    [theme.breakpoints.between('sm', 'md')]: {
-        width: '80%',
-    },
-    [theme.breakpoints.up('md')]: {
-        gridTemplateColumns: 'repeat(2, 1fr)',
-    }
+    // [theme.breakpoints.between('sm', 'md')]: {
+    //     width: '80%',
+    // },
+    // [theme.breakpoints.up('md')]: {
+    //     gridTemplateColumns: 'repeat(2, 1fr)',
+    // }
 }));
 
 const activeCardStyles = {
@@ -64,8 +65,13 @@ const CardRoot = styled(Box)(({ theme }) => ({
         ...activeCardStyles,
     },
     [theme.breakpoints.down('md')]: {
-        height: '18rem',
+        height: 'auto',
+        minHeight: '20rem',
         ...activeCardStyles,
+        '& .card-overlay': {
+            position: 'relative',
+            inset: 'unset'
+        }
     },
 }));
 
@@ -106,7 +112,6 @@ const CardCover = styled(Box)(({ theme }) => ({
         margin: '0.15rem 0',
         fontSize: '0.75rem',
         color: ColorScheme.text.light,
-
     },
     '& .title': {
         ...TypographyScheme.subtitle1,
@@ -143,21 +148,20 @@ const CardCover = styled(Box)(({ theme }) => ({
         display: 'flex',
         gap: '0.7rem',
         justifyContent: 'space-evenly',
-        color: ColorScheme.text.light,
         fontSize: '1rem',
         '& .MuiButton-root': {
             height: '36px',
             whiteSpace: 'nowrap',
             borderRadius: '2rem',
             color: ColorScheme.text.light,
-        },
-        '&. MuiButton-icon': {
-            color: ColorScheme.text.light,
+            '& .MuiButton-startIcon, & .MuiButton-startIcon *': {
+                color: ColorScheme.text.light,
+            },
         }
     }
 }));
 
-const DetailBox = styled(Box)({
+const DetailBox = styled(Box)(({ theme }) => ({
     '& .close-button': {
         position: 'relative',
         '& .MuiIconButton-root': {
@@ -170,14 +174,13 @@ const DetailBox = styled(Box)({
         }
     },
     '& .main-section': {
-        padding: '2rem',
+        ...base.responsivePadding(theme, 'compact'),
         '& .info': {
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-
             '& .img-detail': {
-                padding: '1rem',
+                ...base.responsivePadding(theme, 'compact'),
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
@@ -186,6 +189,9 @@ const DetailBox = styled(Box)({
                 '& .img-detail-content': {
                     width: '55%',
                     borderRadius: '1rem',
+                    [theme.breakpoints.down('md')]: {
+                        width: '100%'
+                    }
                 }
             },
             '& .brief': {
@@ -217,7 +223,7 @@ const DetailBox = styled(Box)({
             }
         }
     }
-});
+}));
 
 export {
     ProjectRows, CardRoot, CardImgWrapper, CardImg, CardCover, DetailBox

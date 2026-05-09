@@ -1,17 +1,51 @@
 import { styled } from "@mui/material/styles";
 import * as base from "./baseStyle";
+import type { Theme } from '@mui/material/styles';
 import type { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
 import type { ContainerProps } from "src/components/mui/components";
 import { Container, Box, Button, List, ListItem } from "src/components/mui/components";
 
 
-const ViewsContainer = styled(Box)<ViewsContainerProps>(() => ({
+const spacingConfig = {
+    home: { base: 0, lg: 0, sm: 0 },
+    footer: { base: 1.5, lg: 1, sm: 0.5 },
+    default: { base: 10, lg: 7, sm: 4 },
+};
+
+export const responsiveSectionSpacing = (theme: Theme, id: string) => {
+    const config = spacingConfig[id as keyof typeof spacingConfig] ?? spacingConfig.default;
+
+    return {
+        width: '100%',
+        // scrollMarginTop: '5rem',
+        scrollMarginTop: '80px',
+        marginTop: config.base,
+        marginBottom: config.base,
+
+        [theme.breakpoints.down('lg')]: {
+            // scrollMarginTop: '5rem',
+            marginTop: config.lg,
+            marginBottom: config.lg,
+        },
+        [theme.breakpoints.down('sm')]: {
+            // scrollMarginTop: '5rem',
+            marginTop: config.sm,
+            marginBottom: config.sm,
+        },
+    };
+};
+
+const ViewsContainer = styled(Box)<ViewsContainerProps>(({ theme }) => ({
+    ...base.responsivePadding(theme, 'compact'),
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
     width: '100%',
-    padding: '2rem',
-    paddingBottom:0
+    // padding: '2rem',
+    paddingBottom: 0,
+    // [theme.breakpoints.down('md')]: {
+    //     padding: '1rem',
+    // }
 }));
 
 
@@ -33,7 +67,6 @@ const RowContainer = styled(Container)<ContainerProps>(({ theme }) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-
     [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
     }
@@ -62,8 +95,8 @@ const ListContainer = styled(List)(({ theme }) => ({
     padding: '0.15rem 0 ',
     paddingLeft: theme.spacing(3), // Indent a little to make the bullet visible
     '& .list-content': {
-        padding:0,
-        margin:'0.1rem 0'
+        padding: 0,
+        margin: '0.1rem 0'
     }
 }));
 
