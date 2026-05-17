@@ -45,8 +45,12 @@ const ExperienceCard = styled(Card)(() => ({
         cursor: 'pointer'
     },
     '& .expand-button': {
-        color:ColorScheme.secondary.dark,
-        margin:'0.5rem 0'
+        margin: '0.5rem 0',
+        color: ColorScheme.secondary.dark,
+        borderColor: ColorScheme.secondary.dark,
+        '&:hover': {
+            borderColor: ColorScheme.secondary.main
+        }
     }
 }));
 

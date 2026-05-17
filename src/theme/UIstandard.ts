@@ -4,11 +4,11 @@ import type { TypographyVariantsOptions } from '@mui/material';
 
 
 export const BreakPointsSchem = {
-  xs: 0,        
-  sm: 360,   // mobile
-  md: 400,   // phones
-  lg: 768,   // tablets
-  xl: 1024,  // laptop
+    xs: 0,
+    sm: 360,   // mobile
+    md: 500,   // phones
+    lg: 768,   // tablets
+    xl: 1024,  // laptop
 };
 
 

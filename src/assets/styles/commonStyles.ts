@@ -17,18 +17,14 @@ export const responsiveSectionSpacing = (theme: Theme, id: string) => {
 
     return {
         width: '100%',
-        // scrollMarginTop: '5rem',
-        scrollMarginTop: '80px',
+        scrollMarginTop: '5rem',
         marginTop: config.base,
         marginBottom: config.base,
-
         [theme.breakpoints.down('lg')]: {
-            // scrollMarginTop: '5rem',
             marginTop: config.lg,
             marginBottom: config.lg,
         },
         [theme.breakpoints.down('sm')]: {
-            // scrollMarginTop: '5rem',
             marginTop: config.sm,
             marginBottom: config.sm,
         },
@@ -41,11 +37,7 @@ const ViewsContainer = styled(Box)<ViewsContainerProps>(({ theme }) => ({
     flexDirection: 'column',
     minHeight: '100vh',
     width: '100%',
-    // padding: '2rem',
     paddingBottom: 0,
-    // [theme.breakpoints.down('md')]: {
-    //     padding: '1rem',
-    // }
 }));
 
 

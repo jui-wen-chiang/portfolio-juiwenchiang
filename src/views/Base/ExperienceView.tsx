@@ -52,7 +52,7 @@ export default function ExperienceView() {
                     const isOpen = isMobile || openSteps.includes(index);
 
                     return (
-                        <Step key={item.title} expanded={isOpen}>
+                        <Step key={item.title} expanded={isOpen} >
                             <StepButton icon={StepIcon(item.class)} onClick={toggleStep(index)}
                                 sx={{
                                     color: IconColor(index)
@@ -63,7 +63,7 @@ export default function ExperienceView() {
                             </StepButton>
                             <StepContent>
                                 <StepCard>
-                                    <CardContent>
+                                    <CardContent >
                                         <Typography variant="caption" sx={{ display: "block", margin: '0.5rem' }}>
                                             {item.date}
                                         </Typography>
