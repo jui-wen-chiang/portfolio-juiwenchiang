@@ -35,12 +35,12 @@ function AppLayout() {
   }, []);
 
   return (
-    <AppLayoutContainer maxWidth={false}>
+    <AppLayoutContainer maxWidth={false} bgColor={bgColor}>
       <ViewSection component="header" flex={5}>
         <Appbar />
       </ViewSection>
-      <ViewSection component="main" flex={95}>
-        <IndexViews />
+      <ViewSection component="main" flex={95} sx={{mb:0, pb:0}}>
+        <IndexViews onColorChange={setBgColor} onSectionChange={setSectionId} />
       </ViewSection>
       <BackToTop />
     </AppLayoutContainer>

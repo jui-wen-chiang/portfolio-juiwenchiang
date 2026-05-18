@@ -172,10 +172,10 @@ export const PaletteScheme: ThemeOptions['palette'] = {
 
 // refer to AppLayoutContainer background
 export const BGCOLORS = {
-    home: '#F5F7FF',
+    home: '#e3f0ff',
     about: '#EEF2FF',
     experience: '#EEF2FF',
-    projects: '#F5F7FF',
+    projects: '#f5f9ff',
     eduAndcert: '#F5F7FF',
     skills: '#EEF2FF',
     contact: '#EEF2FF',

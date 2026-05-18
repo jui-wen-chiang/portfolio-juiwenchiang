@@ -12,15 +12,10 @@ const ProjectRows = styled(Box)(({ theme }) => ({
     display: 'grid',
     gap: '2rem',
     mt: 2,
-    [theme.breakpoints.down('md')]: {
-        gridTemplateColumns: 'repeat(1fr)',
-    },
-    // [theme.breakpoints.between('sm', 'md')]: {
-    //     width: '80%',
-    // },
-    // [theme.breakpoints.up('md')]: {
-    //     gridTemplateColumns: 'repeat(2, 1fr)',
-    // }
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    [theme.breakpoints.down('xl')]: {
+        gridTemplateColumns: 'repeat(1, 1fr)',
+    }
 }));
 
 const activeCardStyles = {
@@ -179,6 +174,9 @@ const DetailBox = styled(Box)(({ theme }) => ({
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
+            [theme.breakpoints.up('md')]: {
+                flexDirection: 'row'
+            },
             '& .img-detail': {
                 ...base.responsivePadding(theme, 'compact'),
                 width: '100%',
@@ -186,11 +184,15 @@ const DetailBox = styled(Box)(({ theme }) => ({
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: '0.5rem',
+                [theme.breakpoints.up('md')]: {
+                    width: '80%',
+                    justifyContent: 'flex-start'
+                },
                 '& .img-detail-content': {
-                    width: '55%',
                     borderRadius: '1rem',
-                    [theme.breakpoints.down('md')]: {
-                        width: '100%'
+                    width: '100%',
+                    [theme.breakpoints.up('md')]: {
+                        justifyContent: 'flex-start'
                     }
                 }
             },
@@ -199,10 +201,23 @@ const DetailBox = styled(Box)(({ theme }) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                [theme.breakpoints.up('md')]: {
+                    alignItems: 'flex-start',
+                },
                 '& .brief-title': {
                     display: 'flex',
                     flexDirection: 'row',
                     gap: 1.5
+                },
+                '& .brief-title-text': {
+                    marginTop: 1.5,
+                    marginBottom: 1,
+                    color: ColorScheme.primary.dark
+                },
+                '& .brief-role': {
+                    marginTop: 1,
+                    marginBottom: 1,
+                    fontStyle: 'normal'
                 }
             }
         },

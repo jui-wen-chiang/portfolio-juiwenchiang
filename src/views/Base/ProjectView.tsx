@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { projecstData } from "src/data/views/projectsData";
-import { Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
+import { Card, CardContent, Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
 import { ViewBox } from 'src/assets/styles/layoutStyles';
 import {
     ProjectRows, CardRoot, CardImgWrapper, CardImg, CardCover, DetailBox
 } from 'src/assets/styles/views/ProjectStyle';
 import { CloseIcon, ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
 import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
-import { ColorScheme } from 'src/theme/UIstandard'
 
 
 export default function ProjectsView() {
@@ -94,14 +93,14 @@ export default function ProjectsView() {
                             <Box className="close-button" >
                                 <IconButton onClick={handleClose} > <CloseIcon /> </IconButton>
                             </Box>
-
                             <Box className="main-section">
                                 <Box className="info">
                                     {selected.detailImg
                                         ?.filter(img => img.tag === 'case')
                                         .map((img, i) => (
                                             <Box key={i} className="img-detail"
-                                                sx={{ backgroundColor: img.bgColor }} >
+                                            // sx={{ backgroundColor: img.bgColor }} 
+                                            >
                                                 <Box component="img" className='img-detail-content'
                                                     src={img.url}
                                                     alt={img.lable}
@@ -119,10 +118,9 @@ export default function ProjectsView() {
                                                         : <DescriptionIcon />}
                                                 </IconButton>
                                             ))}
-                                            <Typography variant="h6" sx={{ my: 1, color: ColorScheme.primary.dark }}> {selected.title} </Typography>
+                                            <Typography variant="h6" className='brief-title-text'> {selected.title} </Typography>
                                         </Box>
-
-                                        <Typography variant="subtitle2" sx={{ my: 1 }}> {selected.role}</Typography>
+                                        <Typography variant="subtitle2" className='brief-role'> {selected.role}</Typography>
                                         <Box className="chips">
                                             {selected.tech
                                                 .sort((a, b) => typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type))
@@ -139,11 +137,21 @@ export default function ProjectsView() {
                                 </Box>
                                 <Divider sx={{ my: '1.5rem' }} />
 
+                                {/* <Card sx={{ bgcolor: 'primary.light' }}>
+                                    <CardContent>
+                                        <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
+                                        <Typography> {selected.solution} </Typography>
+                                        <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
+                                        <Typography> {selected.task} </Typography>
+                                    </CardContent>
+                                </Card> */}
 
                                 <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
                                 <Typography> {selected.solution} </Typography>
                                 <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
                                 <Typography> {selected.task} </Typography>
+
+
 
                                 <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Actions </Typography>
                                 {selected.actions.map((bullet: string) => (

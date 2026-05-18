@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
 import { responsiveSectionSpacing, ViewsContainer } from 'src/assets/styles/commonStyles';
+import * as UIstandard from 'src/theme/UIstandard.ts';
 
 // Base Views
 import HomeView from 'src/views/Base/Home';
@@ -50,13 +51,47 @@ const viewMapping: Array<ViewMappingItem> = [
 ];
 
 
-export default function IndexViews() {
+type IndexViewsProps = {
+  onColorChange: (color: string) => void;
+  onSectionChange: (id: string) => void;
+};
+
+
+export default function IndexViews({ onColorChange, onSectionChange }: IndexViewsProps) {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const sectionId = (entry.target as HTMLElement).dataset.id;
+          if (!sectionId) return;
+
+          onSectionChange(sectionId);
+
+          const bgColor = UIstandard.BGCOLORS[sectionId as keyof typeof UIstandard.BGCOLORS];
+          if (bgColor) onColorChange(bgColor);
+        });
+      },
+      {
+        root: null,
+        threshold: 0.3,
+      }
+    );
+
+    Object.values(sectionRefs.current).forEach((section) => {
+      if (section instanceof Element) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [onColorChange, onSectionChange]);
+
 
   return (
     <ViewsContainer>
       {viewMapping.map((view) => {
-
         return (
           <Box
             key={view.id}

@@ -5,12 +5,16 @@ import { ColorScheme } from "src/theme/UIstandard";
 
 const HomeContainer = styled(Container)(({ theme }) => ({
     width: '100%',
-    // height: '100vh',
     minHeight: '100vh',
     justifyItems: 'center',
     padding: '10rem',
     paddingTop: '13rem',
-    [theme.breakpoints.down('md')]: {
+    // [theme.breakpoints.down('md')]: {
+    //     minHeight: '100svh',
+    //     padding: '1rem',
+    //     paddingTop: '2rem'
+    // }
+    [theme.breakpoints.down('xl')]: {
         minHeight: '100svh',
         padding: '1rem',
         paddingTop: '2rem'
