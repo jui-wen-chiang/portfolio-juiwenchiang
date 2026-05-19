@@ -109,17 +109,23 @@ export default function ProjectsView() {
                                         ))
                                     }
                                     <Box className="brief">
-                                        <Box className="brief-title">
+                                        <Box>
                                             {selected.link?.map((link) => (
-                                                <IconButton color='primary' size='large' href={link.url}
-                                                    target="_blank">
-                                                    {link.type === 'repo'
+                                                <Button
+                                                    className='brief-icons'
+                                                    color='primary'
+                                                    size='large'
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    variant="contained"
+                                                    startIcon={link.type === 'repo'
                                                         ? <GitHubIcon />
-                                                        : <DescriptionIcon />}
-                                                </IconButton>
+                                                        : <DescriptionIcon />}>
+                                                    {link.label}
+                                                </Button>
                                             ))}
-                                            <Typography variant="h6" className='brief-title-text'> {selected.title} </Typography>
                                         </Box>
+                                        <Typography variant="h6" className='brief-title'> {selected.title} </Typography>
                                         <Typography variant="subtitle2" className='brief-role'> {selected.role}</Typography>
                                         <Typography variant="body1" sx={{ my: 1.5 }}> {selected.summary}</Typography>
                                         <Box className="chips">

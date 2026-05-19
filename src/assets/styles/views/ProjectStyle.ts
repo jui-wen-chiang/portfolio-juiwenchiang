@@ -1,7 +1,7 @@
 import { styled, alpha } from "@mui/material/styles";
 import { Box } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
-import { ColorScheme, TypographyScheme,BGCOLORS } from 'src/theme/UIstandard';
+import { ColorScheme, TypographyScheme, BGCOLORS } from 'src/theme/UIstandard';
 
 
 const ProjectRows = styled(Box)(({ theme }) => ({
@@ -174,9 +174,6 @@ const DetailBox = styled(Box)(({ theme }) => ({
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-            [theme.breakpoints.up('xl')]: {
-                flexDirection: 'row'
-            },
             '& .img-detail': {
                 ...base.responsivePadding(theme, 'compact'),
                 paddingLeft: 0,
@@ -185,15 +182,11 @@ const DetailBox = styled(Box)(({ theme }) => ({
                 justifyContent: 'center',
                 alignItems: 'center',
                 [theme.breakpoints.up('xl')]: {
-                    width: '100%',
-                    justifyContent: 'flex-start'
+                    width: '70%',
                 },
                 '& .img-detail-content': {
                     borderRadius: '0.6rem',
                     width: '100%',
-                    [theme.breakpoints.up('xl')]: {
-                        justifyContent: 'flex-start'
-                    }
                 }
             },
             '& .brief': {
@@ -201,16 +194,12 @@ const DetailBox = styled(Box)(({ theme }) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                [theme.breakpoints.up('md')]: {
-                    alignItems: 'flex-start',
+                '& .brief-icons': {
+                    gap: 2,
+                    margin: 1.5,
                 },
                 '& .brief-title': {
-                    // display: 'flex',
-                    // flexDirection: 'row',
-                    gap: 1.5
-                },
-                '& .brief-title-text': {
-                    marginTop: 1.5,
+                    marginTop: 2,
                     marginBottom: 1,
                     color: ColorScheme.primary.dark
                 },

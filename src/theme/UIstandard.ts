@@ -173,9 +173,9 @@ export const PaletteScheme: ThemeOptions['palette'] = {
 // refer to AppLayoutContainer background
 export const BGCOLORS = {
     home: '#e3f0ff',
-    about: '#EEF2FF',
+    about: '#f5f7fe',
     experience: '#EEF2FF',
-    projects: '#f5f9ff',
+    projects: '#f9fbff',
     eduAndcert: '#F5F7FF',
     skills: '#EEF2FF',
     contact: '#EEF2FF',
