@@ -121,6 +121,7 @@ export default function ProjectsView() {
                                             <Typography variant="h6" className='brief-title-text'> {selected.title} </Typography>
                                         </Box>
                                         <Typography variant="subtitle2" className='brief-role'> {selected.role}</Typography>
+                                        <Typography variant="body1" sx={{ my: 1.5 }}> {selected.summary}</Typography>
                                         <Box className="chips">
                                             {selected.tech
                                                 .sort((a, b) => typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type))
@@ -132,41 +133,31 @@ export default function ProjectsView() {
                                                     />
                                                 ))}
                                         </Box>
-                                        <Typography variant="body1" sx={{ mb: 1 }}> {selected.summary}</Typography>
                                     </Box>
                                 </Box>
                                 <Divider sx={{ my: '1.5rem' }} />
-
-                                {/* <Card sx={{ bgcolor: 'primary.light' }}>
-                                    <CardContent>
-                                        <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
-                                        <Typography> {selected.solution} </Typography>
-                                        <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
-                                        <Typography> {selected.task} </Typography>
-                                    </CardContent>
-                                </Card> */}
-
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
-                                <Typography> {selected.solution} </Typography>
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
-                                <Typography> {selected.task} </Typography>
-
-
-
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Actions </Typography>
-                                {selected.actions.map((bullet: string) => (
-                                    <ListContainer>
-                                        <ListContent className='list-content'>{bullet}</ListContent>
-                                    </ListContainer>
-                                ))}
-
-                                <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Results </Typography>
-                                {selected.results.map((bullet: string) => (
-                                    <ListContainer>
-                                        <ListContent className='list-content'>{bullet}</ListContent>
-                                    </ListContainer>
-                                ))}
-
+                                <Box>
+                                    <Card className='area-card'>
+                                        <CardContent>
+                                            <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Solution </Typography>
+                                            <Typography> {selected.solution} </Typography>
+                                            <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Task </Typography>
+                                            <Typography> {selected.task} </Typography>
+                                        </CardContent>
+                                    </Card>
+                                    <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Actions </Typography>
+                                    {selected.actions.map((bullet: string) => (
+                                        <ListContainer>
+                                            <ListContent className='list-content'>{bullet}</ListContent>
+                                        </ListContainer>
+                                    ))}
+                                    <Typography variant="subtitle1" sx={{ my: '0.8rem' }}> Results </Typography>
+                                    {selected.results.map((bullet: string) => (
+                                        <ListContainer>
+                                            <ListContent className='list-content'>{bullet}</ListContent>
+                                        </ListContainer>
+                                    ))}
+                                </Box>
                             </Box>
                         </DetailBox>
                     </>

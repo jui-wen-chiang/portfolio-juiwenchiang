@@ -1,7 +1,7 @@
-import { styled } from "@mui/material/styles";
+import { styled, alpha } from "@mui/material/styles";
 import { Box } from 'src/components/mui/components';
 import * as base from "src/assets/styles/baseStyle";
-import { ColorScheme, TypographyScheme } from 'src/theme/UIstandard';
+import { ColorScheme, TypographyScheme,BGCOLORS } from 'src/theme/UIstandard';
 
 
 const ProjectRows = styled(Box)(({ theme }) => ({
@@ -174,24 +174,24 @@ const DetailBox = styled(Box)(({ theme }) => ({
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('xl')]: {
                 flexDirection: 'row'
             },
             '& .img-detail': {
                 ...base.responsivePadding(theme, 'compact'),
+                paddingLeft: 0,
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderRadius: '0.5rem',
-                [theme.breakpoints.up('md')]: {
-                    width: '80%',
+                [theme.breakpoints.up('xl')]: {
+                    width: '100%',
                     justifyContent: 'flex-start'
                 },
                 '& .img-detail-content': {
-                    borderRadius: '1rem',
+                    borderRadius: '0.6rem',
                     width: '100%',
-                    [theme.breakpoints.up('md')]: {
+                    [theme.breakpoints.up('xl')]: {
                         justifyContent: 'flex-start'
                     }
                 }
@@ -205,8 +205,8 @@ const DetailBox = styled(Box)(({ theme }) => ({
                     alignItems: 'flex-start',
                 },
                 '& .brief-title': {
-                    display: 'flex',
-                    flexDirection: 'row',
+                    // display: 'flex',
+                    // flexDirection: 'row',
                     gap: 1.5
                 },
                 '& .brief-title-text': {
@@ -224,6 +224,7 @@ const DetailBox = styled(Box)(({ theme }) => ({
         '& .chips': {
             display: 'flex',
             flexWrap: 'wrap',
+            alignItems: 'flex-end',
             gap: '0.5rem',
             margin: '1rem 0'
         },
@@ -236,6 +237,9 @@ const DetailBox = styled(Box)(({ theme }) => ({
                 padding: '1.5rem',
                 magrin: '1.5rem 0'
             }
+        },
+        '& .area-card': {
+            backgroundColor: alpha(BGCOLORS.home, 0.5),
         }
     }
 }));

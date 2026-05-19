@@ -3,7 +3,7 @@ import { AppBar, Menu, Box, IconButton } from "src/components/mui/components";
 import { ColorScheme } from "src/theme/UIstandard"
 
 
-// Display vertical app bar on large screens (≥1200px) 
+// Display vertical app bar on large screens
 // Ortherwise will be horizontal app bar
 
 const BaseAppBar = styled(AppBar)(({ theme }) => ({
@@ -36,8 +36,10 @@ const HorizontalLayout = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: "space-between",
-    backdropFilter: 'blur(24px)',
-    backgroundColor: alpha(theme.palette.primary.main, 0.5),
+    backgroundImage: 'linear-gradient(to right,rgba(71, 118, 230, 0.75) 0%,rgba(142, 84, 233, 0.75) 51%,rgba(71, 118, 230, 0.75) 100%)',
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+    borderBottom: '2px solid rgba(255, 255, 255, 0.15)',
     [theme.breakpoints.up('lg')]: {
         display: 'none'
     }
@@ -74,7 +76,7 @@ const MenuSlotProps = (theme: Theme) => ({
         transform: 'translateY(-50%) rotate(45deg)',
         zIndex: 0,
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('lg')]: {
         display: 'none',
     },
 });

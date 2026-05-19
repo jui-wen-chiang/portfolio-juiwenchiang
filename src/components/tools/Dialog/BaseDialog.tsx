@@ -16,7 +16,7 @@ const stateColor = (state: DialogState | string | undefined) => {
 export default function BaseDialog({ isOpen, closeDialog, state, title, content, extra }: BaseDialogProps) {
 
   return (
-    <Dialog open={isOpen} onClose={closeDialog} maxWidth="sm" fullWidth>
+    <Dialog open={isOpen} onClose={closeDialog} maxWidth="lg" fullWidth>
       {title && (
         <DialogTitle sx={{ color: `${stateColor(state)}.main` }}>
           {title}

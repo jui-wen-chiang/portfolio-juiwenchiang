@@ -14,10 +14,15 @@ export default function ContactView() {
         <ColContainer data-aos="fade-left">
             <Typography variant="h2" sx={{ padding: '2rem' }}>Let's Connect </Typography>
             <Typography>
-                I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out!
+                I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out! My email is <strong>raewen.juiwenchiang@gmail.com</strong>
             </Typography>
             <Button variant="contained" onClick={() => setOpen(true)} sx={{ margin: '2rem', color: ColorScheme.text.light, backgroundColor: ColorScheme.secondary.dark }} >Drop Me a Line</Button>
-            <BaseDialog isOpen={open} closeDialog={() => setOpen(false)} state="info" extra={<ContactUs onClose={() => setOpen(false)} />} />
+            <BaseDialog
+                isOpen={open}
+                closeDialog={() => setOpen(false)}
+                extra={<ContactUs onClose={() => setOpen(false)} />}
+                state="info"
+            />
         </ColContainer>
     )
 }

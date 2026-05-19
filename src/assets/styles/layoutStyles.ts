@@ -26,7 +26,7 @@ const AppLayoutContainer = styled(Container)<{ bgColor?: string }>(({ theme, bgC
     },
     '& > *': {
         position: 'relative',
-        zIndex: 1,
+        // zIndex: 1,
     },
     [theme.breakpoints.down('lg')]: {
         flexDirection: 'column',
