@@ -9,10 +9,10 @@ const HomeContainer = styled(Container)(({ theme }) => ({
     justifyItems: 'center',
     padding: '10rem',
     paddingTop: '13rem',
-    [theme.breakpoints.down('xl')]: {
+    [theme.breakpoints.down('lg')]: {
         minHeight: '100svh',
         padding: '1rem',
-        paddingTop: '2rem'
+        paddingTop: '5rem'
     }
 }));
 
