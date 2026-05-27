@@ -14,7 +14,7 @@ import PauseCircleFilledRoundedIcon from '@mui/icons-material/PauseCircleFilledR
 import { timelineData } from "src/data/timeline"
 // style
 import 'src/assets/styles/timeline.css';
-import LinearProgress from '@mui/material/LinearProgress';
+// import MyLinearProgress from '@mui/material/LinearProgress';
 
 
 export default function TimelinePage() {
@@ -62,15 +62,15 @@ export default function TimelinePage() {
     }, [isPlaying]);
 
     // Move this page to the selected item
-    const scrollSelect = (item, index) => {
-        const el = refs.current[index]; // DOM
-        if (el) {
-            el.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-        }
-    };
+    // const scrollSelect = (item, index) => {
+    //     const el = refs.current[index]; // DOM
+    //     if (el) {
+    //         el.scrollIntoView({
+    //             behavior: "smooth",
+    //             block: "center"
+    //         });
+    //     }
+    // };
 
     // test
     const customContent = [
@@ -305,7 +305,7 @@ export default function TimelinePage() {
 
                     // parseDetailsAsHTML={true}
                     // readMore={true}
-                    onItemSelected={(item, index) => scrollSelect(item, index)}
+                    // onItemSelected={(item, index) => scrollSelect(item, index)}
                     // theme={{
                     //     primary: "red",
                     //     secondary: "blue",
@@ -317,7 +317,7 @@ export default function TimelinePage() {
                     cardHeight={300} // sets the height of the timeline card to 200px
                     mediaHeight={50} // sets the height of the media element to 100px
                     contentDetailsHeight={50} // sets the height of the detailed text to 80px
-                    readMore={true}
+                    // readMore={true}
                     parseDetailsAsHTML
                     // textOverlay
                 >

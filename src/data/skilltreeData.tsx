@@ -1,4 +1,4 @@
-import { skilltreeItem } from "src/types/data/viewsData"
+import type { skilltreeItem } from "src/types/data/viewsData"
 
 const initialNodes: skilltreeItem[] = [
     {

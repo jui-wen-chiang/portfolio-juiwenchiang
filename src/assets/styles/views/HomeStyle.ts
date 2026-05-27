@@ -1,32 +1,47 @@
 import { styled } from "@mui/material/styles";
-import { Container, Box } from 'src/components/mui/components';
-import * as base from "src/assets/styles/baseStyle";
+import { Container, Box, Typography } from 'src/components/mui/components';
+import { ColorScheme } from "src/theme/UIstandard";
+
 
 const HomeContainer = styled(Container)(({ theme }) => ({
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
     justifyItems: 'center',
     padding: '10rem',
-    paddingTop: '12rem',
-    [`@media (max-width:${base.breakpoints.sm}px)`]: {
-        padding: '1.5rem',
-        paddingTop: '7rem'
+    paddingTop: '13rem',
+    [theme.breakpoints.down('lg')]: {
+        minHeight: '100svh',
+        padding: '1rem',
+        paddingTop: '5rem'
     }
 }));
 
 const ContentWrapper = styled(Box)({
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-end'
 });
 
 const ContentBox = styled(Box)(({ theme }) => ({
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    // padding: '0 0 rem 0'
-    paddingBottom: '2rem'
+    alignItems: 'flex-end',
+    paddingBottom: '5rem',
+    [theme.breakpoints.down('md')]: {
+        paddingBottom: '2rem',
+    }
 }));
 
+const GradientText = styled(Typography)({
+    background: `linear-gradient(90deg, ${ColorScheme.primary.dark}, ${ColorScheme.secondary.dark})`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    lineHeight: 1.3,
+    paddingBottom: '1.8rem',
+    fontWeight: 'bold'
+});
 
-export { HomeContainer, ContentWrapper, ContentBox }
 
+export { HomeContainer, ContentWrapper, ContentBox, GradientText }

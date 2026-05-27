@@ -1,6 +1,7 @@
 
 import { memo } from 'react';
-import { Handle, Position, NodeProps } from '@xyflow/react';
+import type { NodeProps } from '@xyflow/react';
+import { Handle, Position } from '@xyflow/react';
 // memo is a Higher Order Component, used to make the function component remember the last output and skip re-rendering if the props have not changed.
 
 import { Container, Box } from 'src/components/mui/components';

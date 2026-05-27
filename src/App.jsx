@@ -9,36 +9,38 @@ import Appbar from './components/tools/Bars/MyAppBar.tsx';
 import BackToTop from './components/tools/BackToTop/BackToTop.tsx';
 import IndexViews from "src/views/IndexViews";
 // style
-import { Container, Box } from "src/components/mui/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@xyflow/react/dist/style.css';
 import { useState, useEffect } from 'react';
-
+import { Container, Box } from "src/components/mui/components";
 import { AppLayoutContainer, ViewSection, ViewBox } from 'src/assets/styles/layoutStyles';
-
-import { BGCOLORS } from 'src/theme/UIstandard.ts'
-// import { displayPartsToString } from 'typescript';
+import { BGCOLORS } from 'src/theme/UIstandard'
+import BackgroundLayer from "src/components/tools/Background/BackgroundLayer";
+// animation
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 function AppLayout() {
   const [bgColor, setBgColor] = useState(BGCOLORS.home);
+  const [sectionId, setSectionId] = useState('home');
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      mirror: true, // 關鍵：讓往上捲動時也能觸發動畫
-      once: false,  // 讓動畫可以重複觸發
+      mirror: true,
+      once: false,
     });
   }, []);
 
   return (
-    <AppLayoutContainer style={{ backgroundColor: bgColor }} maxWidth={false}>
-      <ViewSection flex={5}>
+    <AppLayoutContainer maxWidth={false} bgColor={bgColor}>
+      <ViewSection component="header" flex={5}>
         <Appbar />
       </ViewSection>
-      <ViewSection flex={95}>
-        <IndexViews onColorChange={setBgColor} />
+      <ViewSection component="main" flex={95} sx={{mb:0, pb:0}}>
+        <IndexViews onColorChange={setBgColor} onSectionChange={setSectionId} />
       </ViewSection>
       <BackToTop />
     </AppLayoutContainer>

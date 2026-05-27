@@ -116,9 +116,10 @@
 // ]
 
 
+import type {
+  MotionValue} from "framer-motion";
 import {
   motion,
-  MotionValue,
   useScroll,
   useSpring,
   useTransform,

@@ -1,59 +1,52 @@
-/* react-icons */ 
-
 // Programming Language
-export { FaPython } from "react-icons/fa";
-export { RiJavascriptFill } from "react-icons/ri";
-export { SiJavascript } from "react-icons/si";
 
-export { FaJava } from "react-icons/fa";
-export { SiTypescript } from "react-icons/si";
-export { FaHtml5 } from "react-icons/fa";
-export { FaCss3Alt } from "react-icons/fa";
-export { TbBrandCSharp } from "react-icons/tb";
-export { PiFileCSharp } from "react-icons/pi";
-export { FaPhp } from "react-icons/fa";
+export {
+    // front-end
+    JavascriptPlainIcon,
+    TypescriptPlainIcon,
+    TailwindcssOriginalIcon,
+    BootstrapPlainIcon,
+    Html5OriginalIcon,
+    Css3OriginalIcon,
+    ReactOriginalIcon,
+    VuejsOriginalIcon,
+    MaterialuiOriginalIcon,
+    ViteOriginalIcon,
+    EslintPlainIcon,
+    // back-end
+    NodejsOriginalIcon,
+    CsharpPlainIcon,
+    DotNetPlainIcon,
+    JavaOriginalIcon,
+    PythonOriginalIcon,
+    FlaskOriginalIcon,
+    DjangorestOriginalIcon,
+    FastapiOriginalIcon,
+    PhpOriginalIcon,
+    // Machine Learning
+    TensorflowOriginalIcon,
+    PytorchOriginalIcon,
+    // DataBase
+    PostgresqlPlainIcon,
+    MongodbPlainIcon,
+    MysqlOriginalIcon,
+    RedisPlainIcon,
+    // Tools & Platforms
+    GitPlainIcon,
+    DockerPlainIcon,
+    AnacondaOriginalIcon,
+    VercelOriginalIcon,
+    SupabasePlainIcon,
+    SonarqubeOriginalIcon,
+    JenkinsOriginalIcon,
+    // Design
+    FigmaPlainIcon,
+    PhotoshopPlainIcon,
+    IllustratorPlainIcon,
+} from '@devicon/react';
 
-// Frontend Frameworks & UI
-export { RiReactjsFill } from "react-icons/ri";
-export { FaVuejs } from "react-icons/fa";
-export { SiMui } from "react-icons/si";
-export { SiVite } from "react-icons/si";
-
-// Backend Frameworks
-export { SiFlask } from "react-icons/si";
-export { DiDjango } from "react-icons/di";
-export { SiDjango } from "react-icons/si";
-export { SiFastapi } from "react-icons/si";
-
-// Machine Learning
-export { SiTensorflow } from "react-icons/si";
-export { SiPytorch } from "react-icons/si";
-
-// DataBase & Analysis
-export { SiMysql } from "react-icons/si";
-export { GrMysql } from "react-icons/gr";
-
-export { BiLogoPostgresql } from "react-icons/bi";
-export { SiMongodb } from "react-icons/si";
-export { DiRedis } from "react-icons/di";
-export { IoLogoTableau } from "react-icons/io5";
-
-export { SiJsonwebtokens } from "react-icons/si";
-
-
-// Tools & Platforms
-export { FaGitAlt } from "react-icons/fa";
-export { FaDocker } from "react-icons/fa";
-export { SiAnaconda } from "react-icons/si";
-export { IoLogoVercel } from "react-icons/io5";
-export { SiRender } from "react-icons/si";
-export { RiSupabaseFill } from "react-icons/ri";
-
-
-// Code Quality & Testing Tools
-export { SiSonarqube } from "react-icons/si";
-
-// others
-export { IoLogoFigma } from "react-icons/io5";
-export { FaLine } from "react-icons/fa";
-export { FaJenkins } from "react-icons/fa";
+// import SiRender from "@devicon/react/flask/original";
+// import FaLine from "@devicon/react/flask/original";
+// import FaJenkins from "@devicon/react/flask/original";
+// import IoLogoTableau from "@devicon/react/flask/original";
+// import SiJsonwebtokens from "@devicon/react/flask/original";

@@ -1,32 +1,51 @@
-/* react-devicon */
-// 'react-devicon/javascript/original' 
-// import IconMongodb from 'react-devicon/mongodb/original-wordmark' 
-// import IconMysql from 'react-devicon/mysql/original-wordmark'
+export {
+    // front-end
+    JavascriptPlainIcon,
+    TypescriptPlainIcon,
+    TailwindcssOriginalIcon,
+    BootstrapPlainIcon,
+    Html5OriginalIcon,
+    Css3OriginalIcon,
+    ReactOriginalIcon,
+    VuejsOriginalIcon,
+    MaterialuiOriginalIcon,
+    ViteOriginalIcon,
+    EslintPlainIcon,
+    // back-end
+    NodejsOriginalIcon,
+    CsharpPlainIcon,
+    DotNetPlainIcon,
+    JavaOriginalIcon,
+    PythonOriginalIcon,
+    FlaskOriginalIcon,
+    DjangoPlainIcon,
+    FastapiOriginalIcon,
+    PhpOriginalIcon,
+    // Machine Learning
+    TensorflowOriginalIcon,
+    PytorchOriginalIcon,
+    // DataBase
+    PostgresqlPlainIcon,
+    MongodbPlainIcon,
+    MysqlOriginalIcon,
+    RedisPlainIcon,
+    // Tools & Platforms
+    GitPlainIcon,
+    DockerPlainIcon,
+    AnacondaOriginalIcon,
+    AzurePlainIcon,
+    VercelOriginalIcon,
+    SupabasePlainIcon,
+    SonarqubeOriginalIcon,
+    JenkinsOriginalIcon,
+    // Design
+    FigmaPlainIcon,
+    PhotoshopPlainIcon,
+    IllustratorPlainIcon,
+} from '@devicon/react';
 
-// Programming Language
-export { default as IconCsharp } from "react-devicon/csharp/original";
-export { default as IconPython } from "react-devicon/python/original";
-export { default as IconJava } from "react-devicon/java/original";
-export { default as IconJavascript } from "react-devicon/javascript/plain";
-export { default as IconTypescript } from "react-devicon/typescript/plain";
-export { default as IconHtml5 } from "react-devicon/html5/original";
-export { default as IconCss3 } from "react-devicon/css3/original";
-export { default as IconPhp } from "react-devicon/php/original";
-
-// Frameworks
-export { default as IconReact } from "react-devicon/react/original";
-export { default as IconVuejs } from "react-devicon/vuejs/original";
-// Tools
-export { default as IconGit } from "react-devicon/git/original";
-export { default as IconDocker } from "react-devicon/docker/original";
-export { default as IconLinux } from "react-devicon/linux/original";
-export { default as IconMocha } from "react-devicon/mocha/plain";
-// Databese
-export { default as IconMongodb } from "react-devicon/mongodb/original";
-export { default as IconMysql } from "react-devicon/mysql/original";
-export { default as IconRedis } from "react-devicon/redis/original";
-// others
-export { default as IconNodejs } from "react-devicon/nodejs/original";
-export { default as IconSass } from "react-devicon/sass/original";
-export { default as IconUbuntu } from "react-devicon/ubuntu/plain";
-export { default as IconJquery } from "react-devicon/jquery/original";
+// import SiRender from "@devicon/react/flask/original";
+// import FaLine from "@devicon/react/flask/original";
+// import FaJenkins from "@devicon/react/flask/original";
+// import IoLogoTableau from "@devicon/react/flask/original";
+// import SiJsonwebtokens from "@devicon/react/flask/original";

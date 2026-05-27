@@ -1,6 +1,6 @@
-import { timelineItem } from "src/types/data/viewsData"
+// import { timelineItem } from "src/types/data/viewsData"
 
-export const timelineData: Array<timelineItem> = [
+export const timelineData: Array<any> = [
     {
         title: "Concrete Jungle Travel",
         subtitle: "New York - the concrete jungle",
