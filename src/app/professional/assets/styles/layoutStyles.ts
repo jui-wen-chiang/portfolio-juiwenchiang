@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Container, Box } from "src/components/mui/components";
-import * as base from "./baseStyle";
+import * as base from "../../../../assets/styles/baseStyle";
 
 const { VITE_PUBLIC_URL: PUBLIC_URL } = import.meta.env;
 

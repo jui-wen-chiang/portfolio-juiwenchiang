@@ -1,8 +1,8 @@
 import { personalInof } from "src/data/views/homeData"
-import { HomeContainer, ContentWrapper, ContentBox, GradientText } from "src/assets/styles/views/HomeStyle"
+import { HomeContainer, ContentWrapper, ContentBox, GradientText } from "src/app/professional/assets/styles/views/HomeStyle"
 import { Box, Typography } from 'src/components/mui/components';
-import LinkBar from 'src/components/tools/Bars/LinkingBar';
-import { ViewBox } from "src/assets/styles/layoutStyles";
+import LinkBar from 'src/app/professional/components/tools/Bars/LinkingBar';
+import { ViewBox } from "src/app/professional/assets/styles/layoutStyles";
 
 
 export default function HomeView() {

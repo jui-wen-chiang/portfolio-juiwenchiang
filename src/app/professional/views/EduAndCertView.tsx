@@ -4,10 +4,10 @@ import { useTheme, useMediaQuery } from '@mui/material';
 
 import type { TabPanelProps } from "src/types/view/ExperienceTabProps"
 import { eduData } from "src/data/views/eduData"
-import { TabBox, StyledTab, ExperienceCard } from "src/assets/styles/views/EduAndCertStyle"
+import { TabBox, StyledTab, ExperienceCard } from "src/app/professional/assets/styles/views/EduAndCertStyle"
 import { Box, Tabs, Typography, CardContent, Collapse, Button } from 'src/components/mui/components';
-import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
-import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ListContainer, ListContent } from 'src/app/professional/assets/styles/commonStyles.ts';
+import { ViewBox } from 'src/app/professional/assets/styles/layoutStyles';
 import { ExpandLessIcon, ExpandMoreIcon } from 'src/components/mui/icons';
 
 

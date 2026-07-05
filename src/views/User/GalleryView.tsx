@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { galleryData } from "src/data/galleryData"
 
-import { RowContainer } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/app/professional/assets/styles/commonStyles'
 import { Container, Box, IconButton, Typography } from 'src/components/mui/components';
 import { ArrowBackRoundedIcon, ArrowForwardRoundedIcon } from 'src/components/mui/icons';
 

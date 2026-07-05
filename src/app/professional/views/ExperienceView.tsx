@@ -3,9 +3,9 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { experienceData } from "src/data/views/experienceData"
 import { Typography, Step, StepButton, StepContent, CardContent, Link } from 'src/components/mui/components';
 import { SchoolIcon, WorkIcon, AutoStoriesIcon } from 'src/components/mui/icons';
-import { ViewBox } from 'src/assets/styles/layoutStyles';
-import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
-import { StyledStepper, StepCard } from 'src/assets/styles/views/ExperienceStyle';
+import { ViewBox } from 'src/app/professional/assets/styles/layoutStyles';
+import { ListContainer, ListContent } from 'src/app/professional/assets/styles/commonStyles';
+import { StyledStepper, StepCard } from 'src/app/professional/assets/styles/views/ExperienceStyle';
 import { ColorScheme } from 'src/theme/UIstandard';
 
 

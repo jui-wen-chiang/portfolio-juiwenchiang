@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { projecstData } from "src/data/views/projectsData";
 import { Card, CardContent, Typography, Box, Chip, Dialog, Button, IconButton, Divider } from 'src/components/mui/components';
-import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ViewBox } from 'src/app/professional/assets/styles/layoutStyles';
 import {
     ProjectRows, CardRoot, CardImgWrapper, CardImg, CardCover, DetailBox
-} from 'src/assets/styles/views/ProjectStyle';
+} from 'src/app/professional/assets/styles/views/ProjectStyle';
 import { CloseIcon, ReadMoreIcon, GitHubIcon, DescriptionIcon } from 'src/components/mui/icons'
-import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ListContainer, ListContent } from 'src/app/professional/assets/styles/commonStyles';
 
 
 export default function ProjectsView() {

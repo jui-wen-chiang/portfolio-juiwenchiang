@@ -1,18 +1,18 @@
 import { useRef, useEffect } from 'react';
 import type { ViewMappingItem } from "src/types/view/index";
 import { Box } from 'src/components/mui/components';
-import { responsiveSectionSpacing, ViewsContainer } from 'src/assets/styles/commonStyles';
+import { responsiveSectionSpacing, ViewsContainer } from 'src/app/professional/assets/styles/commonStyles';
 import * as UIstandard from 'src/theme/UIstandard.ts';
 
 // Base Views
-import HomeView from 'src/views/Base/Home';
-import AboutView from 'src/views/Base/About';
-import SkillCardView from "src/views/Base/SkillCardView";
-import ExperienceView from 'src/views/Base/ExperienceView';
-import EduAndCertView from 'src/views/Base/EduAndCertView';
-import ProjectsView from 'src/views/Base/ProjectView';
-import ContactView from 'src/views/Base/ContactView';
-import FooterView from 'src/views/Base/Footer';
+import HomeView from 'src/app/professional/views/Home';
+import AboutView from 'src/app/professional/views/About';
+import SkillCardView from "src/app/professional/views/SkillCardView";
+import ExperienceView from 'src/app/professional/views/ExperienceView';
+import EduAndCertView from 'src/app/professional/views/EduAndCertView';
+import ProjectsView from 'src/app/professional/views/ProjectView';
+import ContactView from 'src/app/professional/views/ContactView';
+import FooterView from 'src/app/professional/views/Footer';
 
 
 const viewMapping: Array<ViewMappingItem> = [

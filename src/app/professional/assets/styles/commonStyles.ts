@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import * as base from "./baseStyle";
+import * as base from "../../../../assets/styles/baseStyle";
 import type { Theme } from '@mui/material/styles';
 import type { ViewsContainerProps, RatioRowProps } from "src/types/styles/commonStyle"
 import type { ContainerProps } from "src/components/mui/components";

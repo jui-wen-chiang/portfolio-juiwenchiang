@@ -1,12 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import ROUTES from "src/router/pageRouters";
+import RootShell from "src/components/RootShell";
+import LandingPage from "src/components/LandingPage";
+import ProfessionalLayout from "src/app/professional/ProfessionalLayout";
+import MapLayout from "src/app/map/MapLayout";
+import ArtLayout from "src/app/art/ArtLayout";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      {ROUTES.map(({ path, element }) => (
-        <Route key={path} path={path} element={element} />
-      ))}
+      <Route element={<RootShell />}>
+        <Route index element={<LandingPage />} />
+        <Route path="/professional/*" element={<ProfessionalLayout />} />
+        <Route path="/map/*" element={<MapLayout />} />
+        <Route path="/art/*" element={<ArtLayout />} />
+      </Route>
     </Routes>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { ColContainer } from 'src/assets/styles/commonStyles';
+import { ColContainer } from 'src/app/professional/assets/styles/commonStyles';
 import { Button, Typography } from 'src/components/mui/components';
-import ContactUs from 'src/components/tools/contactForm';
+import ContactUs from 'src/app/professional/components/contactForm';
 import BaseDialog from 'src/components/tools/Dialog/BaseDialog'
 import { ColorScheme } from 'src/theme/UIstandard';
 

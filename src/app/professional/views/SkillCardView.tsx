@@ -1,6 +1,6 @@
 import { skillData } from "src/data/views/skillCardData";
-import { SkillLayout, SkillWrapper, CategoryBox } from 'src/assets/styles/views/SkillCardStyle'
-import { ColContainer } from 'src/assets/styles/commonStyles';
+import { SkillLayout, SkillWrapper, CategoryBox } from 'src/app/professional/assets/styles/views/SkillCardStyle'
+import { ColContainer } from 'src/app/professional/assets/styles/commonStyles';
 import { Box, Typography } from 'src/components/mui/components';
 
 

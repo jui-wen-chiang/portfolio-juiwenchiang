@@ -1,6 +1,5 @@
-import React from 'react';
 import Tree from 'react-d3-tree';
-import { RowContainer } from 'src/assets/styles/commonStyles'
+import { RowContainer } from 'src/app/professional/assets/styles/commonStyles'
 
 // This is a simplified example of an org chart with a depth of 2.
 // Note how deeper levels are defined recursively via the `children` property.

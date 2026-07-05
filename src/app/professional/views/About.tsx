@@ -1,8 +1,8 @@
 import { aboutData } from "src/data/views/aboutData";
 import { Typography, Box, Chip } from 'src/components/mui/components';
-import { ViewBox } from 'src/assets/styles/layoutStyles';
+import { ViewBox } from 'src/app/professional/assets/styles/layoutStyles';
 import { ColorScheme } from 'src/theme/UIstandard';
-import { ListContainer, ListContent } from 'src/assets/styles/commonStyles';
+import { ListContainer, ListContent } from 'src/app/professional/assets/styles/commonStyles';
 
 
 export default function AboutView() {

@@ -1,7 +1,7 @@
 import { styled, alpha } from '@mui/material/styles';
 import * as base from "src/assets/styles/baseStyle";
 
-const portraitImage = (theme) => ({
+const portraitImage = (theme: { breakpoints: { down: (arg0: string) => any; }; }) => ({
     width: {
         xs: '100%',
         sm: '70%',

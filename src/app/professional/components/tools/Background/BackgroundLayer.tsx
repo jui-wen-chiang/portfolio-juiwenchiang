@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import BackgroundBlobs from 'src/components/tools/Background/BackgroundBlobs';
+import BackgroundBlobs from 'src/app/professional/components/tools/Background/BackgroundBlobs';
 
 type BackgroundLayerProps = {
   sectionId: string;

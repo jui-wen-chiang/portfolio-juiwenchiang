@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Grid, Typography, Button } from 'src/components/mui/components';
-import { UserTextField, inputPropsStyle } from 'src/assets/styles/components/contactFormStyle';
-import { ColContainer } from 'src/assets/styles/commonStyles';
+import { UserTextField, inputPropsStyle } from 'src/app/professional/assets/styles/components/contactFormStyle';
+import { ColContainer } from 'src/app/professional/assets/styles/commonStyles';
 import { ColorScheme } from "src/theme/UIstandard"
 import BaseDialog from 'src/components/tools/Dialog/BaseDialog'
 
