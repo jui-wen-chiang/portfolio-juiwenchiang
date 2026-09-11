@@ -21,6 +21,7 @@ export default function HomeView() {
                         <Typography variant="h6">{personalInof.subtitle}</Typography>
                         <GradientText variant="h1"> {personalInof.name}</GradientText>
                         <Typography variant="h6">{personalInof.summary}</Typography>
+                        <Typography >{personalInof.keySkill}</Typography>
                     </ContentBox>
                     <LinkBar simplyResumeIcon={false} />
                 </ContentWrapper>
