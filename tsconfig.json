@@ -1,32 +1,8 @@
-// {
-//   "compilerOptions": {
-//     "baseUrl": ".",
-//     "paths": {
-//       "@/*": ["src/*"],
-//       // "src/*": ["./src/*"]
-//     }
-//   },
-//   "files": [],
-//   "references": [
-//     { "path": "./tsconfig.app.json" },
-//     { "path": "./tsconfig.node.json" }
-//   ]
-// }
-
-//@
-// {
-//   "compilerOptions": {
-//     "baseUrl": ".",
-//     "paths": {
-//       "@/*": ["src/*"]
-//     }
-//   }
-// }
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "moduleResolution": "bundler",   // 用 modern bundler 模式
-    "ignoreDeprecations": "6.0"     // 短期靜音，可以之後再刪掉
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0"
   }
 }
